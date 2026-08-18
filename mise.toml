@@ -1,18 +1,28 @@
-[tools]
-hk = "latest"
-pkl = "latest"
-apm = "latest"
-bun = "latest"
-cocogitto = "latest"
-git-cliff = "latest"
-prettier = "latest"
-
-[tasks.pre-commit]
-run = "hk run pre-commit"
-
 [env]
 HK_MISE = 1
 
 [hooks]
 # Automatically install/update hooks when tools are installed
-postinstall = "hk install --mise"
+postinstall = ["hk install --mise"]
+
+[tasks.ai-setup]
+run = "apm install"
+
+[tasks.pre-commit]
+run = "hk run pre-commit"
+
+[tools]
+apm = { postinstall = "apm install", version = "latest" }
+"aqua:numtide/treefmt" = "latest"
+bun = "latest"
+cocogitto = "latest"
+git-cliff = "latest"
+hk = "latest"
+pkl = "latest"
+prettier = "latest"
+uv = "latest"
+yq = "latest"
+
+[[watch_files]]
+patterns = ["apm.yml"]
+task = "ai-setup"
