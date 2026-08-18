@@ -30,7 +30,7 @@ Co-authored-by: <Model Name> via <Tool> <noreply@provider-domain>
 **Examples:**
 
 ```txt
-feat(precommit): add spell checking to commit messages
+feat(pre-commit): add spell checking to commit messages
 
 Co-authored-by: Claude Sonnet 4.6 via opencode <noreply@anthropic.com>
 ```
@@ -53,7 +53,7 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 
 Before substantive work, ensure project skills and MCP servers are installed.
 
-1. From the repository root, run either:
+1. From the repository root, run `mise run ai-setup`, or:
 
    ```sh
    apm install
@@ -71,9 +71,23 @@ Configuration lives in `apm.yml`. Do not skip this when skills or MCP tools are 
 
 ## Project Context
 
-- **Project Type**: Template repository for minimal project setup
-- **Key Technologies**: pre-commit hooks, MegaLinter, prek
-- **Purpose**: Provides a standardized starting point for new projects with quality checks
+- **Project Type**: Project scaffolded from [copier-mr-mise](https://github.com/MRDGH2821/copier-mr-mise)
+- **Key Technologies**: mise, hk, MegaLinter, treefmt, cspell, APM
+- **Purpose**: Standardized starting point with tool management, git hooks, and quality checks
+- **Template updates**: `copier update` (review scripts in the template's `copier.yml`)
+
+## Layout
+
+| Path               | Purpose                                             |
+| ------------------ | --------------------------------------------------- |
+| `mise.toml`        | Tools, tasks, `hk install --mise` postinstall hook  |
+| `hk.pkl`           | hk hook config (pre-commit, commit-msg, fix, check) |
+| `apm.yml`          | APM skills and MCP servers                          |
+| `cog.toml`         | Conventional-commit scopes and version bump hooks   |
+| `.mega-linter.yml` | MegaLinter config                                   |
+| `.treefmt.toml`    | Full-tree formatter                                 |
+| `.cspell.json`     | Spell-check dictionary                              |
+| `.agents/logs/`    | AI-assisted work logs                               |
 
 ## Branch naming strategy
 
@@ -105,7 +119,7 @@ For example:
 
 - Follow existing code style and conventions in the project
 - Run linters and formatters before committing changes
-- Ensure all changes pass pre-commit hooks
+- Ensure all changes pass git hooks (`hk run pre-commit`)
 
 ### File Operations
 
@@ -131,27 +145,43 @@ For example:
 
 - Use `--help` or `help` subcommand to get help on a command. It can even reveal hints on how to proceed ahead or optimize the number of steps.
 - Check tool documentation before asking the user for configuration details
+- Tools are managed by **mise**. Prefer `mise run <task>` over ad-hoc binaries when a task exists.
 
-## Linting and Formatting
+## Tooling
+
+### mise & hk
+
+Use the configured mise mcp server. If mise's mcp tools are not available, tell the user to fix by referring the following:
+
+- For mise - <https://mise.jdx.dev/mcp.html>
+- For hk - <https://hk.jdx.dev/agents.html#mcp>
+
+### Using hk from a coding agent
+
+Inspect and plan before running. Scope checks to changed files with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`, inspect command effects, and require approval for unknown or destructive commands.
+
+Consume JSON or JSONL diagnostics while retaining raw output, and always review the diff produced by a fix.
+
+MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, and `get_diff` rather than invoking arbitrary shell commands.
 
 ### MegaLinter
 
-- Configuration is in `.mega-linter.yml`
-- Run locally with: `bunx mega-linter-runner --flavor documentation`
-- Check reports in `megalinter-reports/` directory
-- Not all linters need to pass - some are informational
+- Config: `.mega-linter.yml`
+- Use the MegaLinter skill when it is installed
+- Reports: `megalinter-reports/`
+- Not all linters need to pass — some are informational
 
-### CSpell (Spell Checking)
+### CSpell
 
-- Configuration is in `.cspell.json`
+- Config: `.cspell.json`
 - Add project-specific words to the `words` array
 - Don't disable spell checking without good reason
-- Both file content and commit messages are spell-checked
+- Run with `mise run cspell`
 
 ### treefmt
 
-- Run `treefmt -vv` before every commit to format all supported file types (markdown, JSON, YAML, etc.)
-- Must be run manually — it is not a pre-commit hook
+- Run `treefmt -vv` before every commit to format all supported file types
+- This is separate from hk: hk formats staged files on commit; treefmt formats the tree
 
 ## Commit Messages
 
@@ -164,21 +194,23 @@ For example:
 ### Examples
 
 ```txt
-feat(precommit): add spell checking to commit messages
+feat(pre-commit): add spell checking to commit messages
 fix(cspell): resolve configuration issue
 docs: update AGENTS.md with guidelines
 chore(cspell): add technical terms to dictionary
 ```
 
+Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json`, `apm.yml`, and `CHANGELOG.md` (git-cliff).
+
 ## Troubleshooting
 
 ### Common Issues
 
-**Pre-commit hooks failing on commit:**
+**Git hooks failing on commit:**
 
 - Read the error message — it usually points directly to the fix
 - Try to fix the issue and retry the commit; do not skip hooks
-- Fix formatting issues first (treefmt, whitespace)
+- Fix formatting first (`treefmt -vv` or `hk run fix`)
 - Then address spell checking and linting
 
 **Spell check failures:**
@@ -186,12 +218,6 @@ chore(cspell): add technical terms to dictionary
 - Add legitimate technical terms to `.cspell.json` `words` array
 - Use proper capitalization for proper nouns
 - Don't add obvious typos to the dictionary
-
-**Template syntax errors:**
-
-- Ensure template syntax is valid before committing
-- Check for missing closing tags or brackets
-- Test template rendering if applicable
 
 ### Getting Help
 
@@ -204,11 +230,10 @@ chore(cspell): add technical terms to dictionary
 1. Understand the current state of the project
 2. Check if similar functionality already exists
 3. Review relevant configuration files
-4. Consider impact on users who will use this template
 
 ### When Adding Dependencies
 
-- Prefer tools that don't require heavy installation
+- Prefer tools that don't require heavy installation; add them via `mise.toml` when they should be shared
 - Document installation steps clearly
 - Consider cross-platform compatibility
 - Update relevant configuration files
@@ -216,5 +241,4 @@ chore(cspell): add technical terms to dictionary
 ### Testing Changes
 
 - Verify the project structure is correct
-- Test on a clean environment if possible
 - Ensure documentation is updated
