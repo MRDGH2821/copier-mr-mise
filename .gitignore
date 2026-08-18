@@ -1,12 +1,13 @@
 # agents
 .agent/skills
+.agents/mcp_config.json
 .agents/skills
+.cursor/mcp.json
 .cursor/skills
 .github/skills
 .mcp.json
 .opencode/skills
 .vscode/mcp.json
-/.agents/skills
 apm_modules/
 opencode.json
 
