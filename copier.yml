@@ -1,0 +1,51 @@
+---
+_exclude:
+  - "*.py[co]"
+  - "{% if ci != 'github' %}.github{% endif %}"
+  - "{% if ci != 'gitlab' %}.gitlab-ci.yml{% endif %}"
+  - "{% if not use_agents %}AGENTS.md{% endif %}"
+  - "{% if not use_skills %}.agents/skills{% endif %}"
+  - "{% if not use_skills %}apm.yml{% endif %}"
+  - .DS_Store
+  - .git
+  - .pre-commit-config-copier.yaml
+  - .svn
+  - __pycache__
+  - copier.yaml
+  - copier.yml
+  - megalinter-reports
+  - ~*
+_min_copier_version: 9.0.0
+_subdirectory: template
+_tasks:
+  - command: command -v direnv > /dev/null 2>&1 && echo "✓ Direnv is installed" || echo "✗ Direnv not found! Please install from here - https://direnv.net/"
+    when: "{{ _copier_operation == 'copy' }}"
+  - command: command -v nix > /dev/null 2>&1 && echo "✓ Nix is installed" || echo "✗ Nix not found! Please install from here - https://nixos.org/"
+    when: "{{ _copier_operation == 'copy' }}"
+  - command: uvx --from apm-cli apm install
+    when: "{{ use_skills and _copier_operation == 'update' }}"
+  - command: uvx --from lic-cli lic
+    when: "{{ _copier_operation == 'copy' }}"
+ci:
+  choices:
+    GitHub CI: github
+    GitLab CI: gitlab
+  default: github
+  help: What Continuous Integration service do you want to use?
+  type: str
+project_name:
+  help: Enter the name of your project.
+  type: str
+  validator: "{% if not project_name %} project_name must not be empty. {% elif not (project_name | regex_search('^[a-zA-Z][a-zA-Z0-9 ._-]*$')) %} project_name must start with a letter and contain only letters, digits, spaces, dots, hyphens, or underscores. {% endif %}"
+use_agents:
+  default: false
+  help: Use AGENTS.md?
+  type: bool
+use_skills:
+  default: false
+  help: Use skills?
+  type: bool
+use_taste_skill:
+  default: false
+  help: Use taste-skill?
+  type: bool
