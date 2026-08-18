@@ -1,35 +1,12 @@
 author: MRDGH2821
 dependencies:
   apm:
-    - git: vercel-labs/skills
-      ref: v1.5.20
-      skills:
-        - find-skills
-    - git: github/awesome-copilot
-      skills:
-        - git-commit
-    - git: kucherenko/jscpd
-      ref: v5.0.12
-      skills:
-        - dry-refactoring
+    - git: https://github.com/MRDGH2821/copier-mr-mise
+
     {% if use_taste_skill %}
-    - git: Leonxlnx/taste-skill
+    - git: https://github.com/Leonxlnx/taste-skill
     {% endif %}
-  mcp:
-      - args:
-          - mcp
-        command: mise
-        name: mise
-        registry: false
-        transport: stdio
-      - args:
-          - mcp
-          - root
-          - .
-        command: hk
-        name: hk
-        registry: false
-        transport: stdio
+  mcp: []
 includes: auto
 name: {{ project_name }}
 scripts: {}
