@@ -14,9 +14,6 @@ local linters = new Mapping<String, Step> {
   ["rumdl"] = Builtins.rumdl
   ["rumdl-format"] = Builtins.rumdl_format
   ["typos"] = Builtins.typos
-  ["cspell"] {
-    check = "cspell --no-must-find-files --no-progress --no-summary --files"
-  }
   ["pkl-format"] = Builtins.pkl_format
 }
 
@@ -30,9 +27,6 @@ hooks {
     steps {
       ["conventional-commit"] = Builtins.cocogitto_commit_msg
       ["typos"] = Builtins.typos
-      ["cspell"] {
-        check = "cspell --no-must-find-files --no-progress --no-summary --files"
-      }
     }
   }
   ["fix"] {

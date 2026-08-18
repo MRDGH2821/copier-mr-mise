@@ -5,11 +5,10 @@ HK_MISE = 1
 # Automatically install/update hooks when tools are installed
 postinstall = ["hk install --mise"]
 
-[tasks.ai-setup]
-run = "apm install"
-
-[tasks.pre-commit]
-run = "hk run pre-commit"
+[tasks]
+ai-setup = "apm install"
+cspell = "cspell ."
+pre-commit = "hk run pre-commit"
 
 [tools]
 apm = { postinstall = "apm install", version = "latest" }
