@@ -26,6 +26,11 @@ includes = ["**/.*ignore", ".*ignore"]
 options = ["git+https://github.com/lorenzwalthert/gitignore-tidy"]
 priority = 1
 
+[formatter.pkl]
+command = "pkl"
+includes = ["*.pkl"]
+options = ["format", "-w", "."]
+
 [formatter.prettier]
 command = "bunx"
 # tombi: format.rules.array-values-order = "ascending"
