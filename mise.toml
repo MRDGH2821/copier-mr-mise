@@ -1,4 +1,4 @@
-# schema=https://mise.jdx.dev/schema/mise.json
+#:schema https://mise.jdx.dev/schema/mise.json
 [tools]
 apm = "latest"
 bun = "latest"
