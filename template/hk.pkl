@@ -1,18 +1,8 @@
 amends "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Config.pkl"
 import "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Builtins.pkl"
-// Using a coding agent? See https://hk.jdx.dev/agents
 
 local linters = new Mapping<String, Step> {
-    // Add linters here. Examples:
     ["prettier"] = Builtins.prettier
-    ["eslint"] = Builtins.eslint
-    // ["ruff"] = Builtins.ruff
-
-    // Or define custom steps:
-    // ["custom"] {
-    //     glob = "**/*.py"
-    //     check = "mypy {{ files }}"
-    // }
 }
 
 hooks {
@@ -23,7 +13,7 @@ hooks {
     }
     ["commit-msg"] {
         steps {
-            ["conventional-commit"] = Builtins.cocogitto-commit-msg
+            ["conventional-commit"] = Builtins.cocogitto_commit_msg
             ["typos"] = Builtins.typos
         }
     }
