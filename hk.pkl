@@ -6,10 +6,13 @@ local linters = new Mapping<String, Step> {
   ["prettier"] = Builtins.prettier
   ["betterleaks"] = Builtins.betterleaks
   ["sort-package-json"] = Builtins.sort_package_json
-  ["yamlfmt"] = Builtins.yamlfmt
+  ["yamlfix"] {
+    glob = List("**/*.yml", "**/*.yaml")
+    check = "yamlfix --check {{files}}"
+    fix = "yamlfix {{files}}"
+  }
   ["yamllint"] = Builtins.yamllint
   ["tombi"] = Builtins.tombi
-  ["tombi-format"] = Builtins.tombi_format
   ["mise"] = Builtins.mise
   ["rumdl"] = Builtins.rumdl
   ["rumdl-format"] = Builtins.rumdl_format
