@@ -1,5 +1,7 @@
 ---
 # all, none, or list of linter keys
+ACTION_ZIZMOR_UNSECURED_ENV_VARIABLES:
+  - GITHUB_TOKEN
 ADDITIONAL_EXCLUDED_DIRECTORIES:
   - apm_modules
 APPLY_FIXES: all
