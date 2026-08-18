@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.2.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.1.0..v0.2.0) - 2026-08-18
+
+### Features
+
+- update agents.md - ([657e556](https://github.com/MRDGH2821/copier-mr-mise/commit/657e55680a908fcb1d463ecd2eed5ed1d9d3832a)) - MRDGH2821
+
+---
+
 ## [0.1.0] - 2026-08-18
 
 ### Bug Fixes
