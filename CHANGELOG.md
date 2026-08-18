@@ -4,6 +4,38 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.3.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.2.0..v0.3.0) - 2026-08-18
+
+### Bug Fixes
+
+- **(megalinter)** allow zizmor to access github token - ([ceca1e7](https://github.com/MRDGH2821/copier-mr-mise/commit/ceca1e7195c567a22a1dafd363c6eb970f811d56)) - MRDGH2821
+- **(pre-commit)** align YAML fixers on double quotes - ([aa8e09b](https://github.com/MRDGH2821/copier-mr-mise/commit/aa8e09b00c3f8b7d2c7e18621327ec39df2520a5)) - MRDGH2821
+
+### Features
+
+- **(treefmt)** add pkl formatter - ([2f4cc9d](https://github.com/MRDGH2821/copier-mr-mise/commit/2f4cc9dde2201cd1770fc1d76152e23684440e0c)) - MRDGH2821
+- update config & hooks - ([772a060](https://github.com/MRDGH2821/copier-mr-mise/commit/772a060572ac0abc1f60717e4d782f8f24750a5b)) - MRDGH2821
+- add yamllint config - ([d21f592](https://github.com/MRDGH2821/copier-mr-mise/commit/d21f5921aed92f7211facaeb0fd0a1b6409070f0)) - MRDGH2821
+- add ls lint hook - ([6a2d6e1](https://github.com/MRDGH2821/copier-mr-mise/commit/6a2d6e12c1e7c7165dc6241362fdbc3efc531bcf)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- add full link to skills - ([6ccba0b](https://github.com/MRDGH2821/copier-mr-mise/commit/6ccba0bd0d3c3963827a32063ac764de324915be)) - MRDGH2821
+- apply linter fixes - ([46791a7](https://github.com/MRDGH2821/copier-mr-mise/commit/46791a709fa7421bb9e468b15a4449c51641b651)) - MRDGH2821
+- simplify config - ([ef20efb](https://github.com/MRDGH2821/copier-mr-mise/commit/ef20efb8a4efc7007bde155cd74b9e4a8f2a9855)) - MRDGH2821
+- update word list - ([0c89d6e](https://github.com/MRDGH2821/copier-mr-mise/commit/0c89d6e949ac5a6e7ab32334c287404c29601a09)) - MRDGH2821
+
+### Style
+
+- format files - ([19870d5](https://github.com/MRDGH2821/copier-mr-mise/commit/19870d59fff608eb95bbcb6ff5a6409fdb40c18d)) - MRDGH2821
+- format files - ([9ddcff3](https://github.com/MRDGH2821/copier-mr-mise/commit/9ddcff3f39b24f4c16d44b2a15636067207aa0d9)) - MRDGH2821
+
+### Ci
+
+- update versions - ([3768eea](https://github.com/MRDGH2821/copier-mr-mise/commit/3768eeabcc0b19e0ff79ce23bf36f1831d9f0e48)) - MRDGH2821
+
+---
+
 ## [0.2.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.1.0..v0.2.0) - 2026-08-18
 
 ### Features
