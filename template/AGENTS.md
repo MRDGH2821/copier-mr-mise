@@ -49,7 +49,6 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 - One trailer per AI model involved
 - **Never omit this trailer** when the commit was AI-assisted — this is how git history stays honest
 
-
 ## Setup: skills and MCP
 
 Before substantive work, ensure project skills and MCP servers are installed.
@@ -69,7 +68,6 @@ Before substantive work, ensure project skills and MCP servers are installed.
 2. **Reload the agent** (new chat / restart the agent session) so installed skills and MCP servers are picked up.
 
 Configuration lives in `apm.yml`. Do not skip this when skills or MCP tools are missing or stale.
-
 
 ## Project Context
 

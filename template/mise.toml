@@ -1,17 +1,17 @@
-[tools]
-hk = "latest"
-pkl = "latest"
-apm = "latest"
-bun = "latest"
-cocogitto = "latest"
-git-cliff = "latest"
-
-[tasks.pre-commit]
-run = "hk run pre-commit"
-
 [env]
 HK_MISE = 1
 
 [hooks]
 # Automatically install/update hooks when tools are installed
 postinstall = "hk install --mise"
+
+[tasks.pre-commit]
+run = "hk run pre-commit"
+
+[tools]
+apm = "latest"
+bun = "latest"
+cocogitto = "latest"
+git-cliff = "latest"
+hk = "latest"
+pkl = "latest"
