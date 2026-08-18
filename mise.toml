@@ -1,7 +1,10 @@
-#:schema https://mise.jdx.dev/schema/mise.json
 [tools]
+hk = "latest"
+pkl = "latest"
 apm = "latest"
 bun = "latest"
 cocogitto = "latest"
 git-cliff = "latest"
-hk = "latest"
+
+[tasks.pre-commit]
+run = "hk run pre-commit"
