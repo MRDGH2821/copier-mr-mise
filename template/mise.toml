@@ -16,10 +16,12 @@ apm = { postinstall = "apm install", version = "latest" }
 "aqua:numtide/treefmt" = "latest"
 bun = "latest"
 cocogitto = "latest"
+cspell = "latest"
 git-cliff = "latest"
 hk = "latest"
 pkl = "latest"
 prettier = "latest"
+tombi = "latest"
 uv = "latest"
 yq = "latest"
 
