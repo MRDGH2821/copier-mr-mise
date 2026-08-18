@@ -305,12 +305,12 @@ dependencies:
     name: megalinter
     package_type: skill_bundle
     repo_url: oxsecurity/megalinter
-    resolved_at: "2026-08-18T09:05:46+00:00"
+    resolved_at: "2026-08-18T09:57:03+00:00"
     resolved_commit: 15e5b45552097e318c93de385779ce3b1084052c
     resolved_ref: v10.0.0
     resolved_tag: v10.0.0
     version: 10.0.0
-  - content_hash: sha256:bd08e34ee9cce2f9fb6c2b9483368375f7dce3e7e9146a68a331993041231d03
+  - content_hash: sha256:e6d06ca594a9ba70886fb2382605e7060d3af88bd6a163f2c9cb46d07dc15c5b
     deployed_file_hashes:
       .agents/skills/find-skills/SKILL.md: sha256:c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f
     deployed_files:
@@ -320,11 +320,11 @@ dependencies:
     name: skills
     package_type: skill_bundle
     repo_url: vercel-labs/skills
-    resolved_commit: c042b919289e113a419da93d4c0db9b4c91fe368
-    resolved_ref: v1.5.20
+    resolved_commit: a4d243c3d4f86cdf9385dd1b6a0733f6937e70b5
+    resolved_ref: v1.5.22
     skill_subset:
       - find-skills
-    version: unknown
+    version: 0.0.0
 deployments:
   - active_owner: vercel-labs/skills
     content_hash:
@@ -1657,7 +1657,16 @@ deployments:
     runtime: antigravity
     scope: project
     target: mcp
-    value: nixos
+    value: hk
+  - active_owner: .
+    content_hash:
+    kind: uri
+    owners:
+      - .
+    runtime: antigravity
+    scope: project
+    target: mcp
+    value: mise
   - active_owner: .
     content_hash:
     kind: uri
@@ -1666,7 +1675,16 @@ deployments:
     runtime: cursor
     scope: project
     target: mcp
-    value: nixos
+    value: hk
+  - active_owner: .
+    content_hash:
+    kind: uri
+    owners:
+      - .
+    runtime: cursor
+    scope: project
+    target: mcp
+    value: mise
   - active_owner: .
     content_hash:
     kind: uri
@@ -1675,7 +1693,16 @@ deployments:
     runtime: opencode
     scope: project
     target: mcp
-    value: nixos
+    value: hk
+  - active_owner: .
+    content_hash:
+    kind: uri
+    owners:
+      - .
+    runtime: opencode
+    scope: project
+    target: mcp
+    value: mise
   - active_owner: .
     content_hash:
     kind: uri
@@ -1684,25 +1711,48 @@ deployments:
     runtime: vscode
     scope: project
     target: mcp
-    value: nixos
-generated_at: "2026-08-18T09:06:04.519093+00:00"
+    value: hk
+  - active_owner: .
+    content_hash:
+    kind: uri
+    owners:
+      - .
+    runtime: vscode
+    scope: project
+    target: mcp
+    value: mise
+generated_at: "2026-08-18T09:57:25.911217+00:00"
 lockfile_version: "2"
 mcp_configs:
-  nixos:
+  hk:
     args:
-      - mcp-nixos
-    command: uvx
-    name: nixos
+      - mcp
+      - root
+      - .
+    command: hk
+    name: hk
+    registry: false
+    transport: stdio
+  mise:
+    args:
+      - mcp
+    command: mise
+    name: mise
     registry: false
     transport: stdio
 mcp_servers:
-  - nixos
+  - hk
+  - mise
 mcp_target_servers:
   antigravity:
-    - nixos
+    - hk
+    - mise
   cursor:
-    - nixos
+    - hk
+    - mise
   opencode:
-    - nixos
+    - hk
+    - mise
   vscode:
-    - nixos
+    - hk
+    - mise

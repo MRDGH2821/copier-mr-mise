@@ -3,7 +3,7 @@ author: MRDGH2821
 dependencies:
   apm:
     - git: vercel-labs/skills
-      ref: v1.5.20
+      ref: v1.5.22
       skills:
         - find-skills
     - git: github/awesome-copilot
@@ -13,9 +13,17 @@ dependencies:
       ref: 10.0.0
   mcp:
     - args:
-        - mcp-nixos
-      command: uvx
-      name: nixos
+        - mcp
+      command: mise
+      name: mise
+      registry: false
+      transport: stdio
+    - args:
+        - mcp
+        - root
+        - .
+      command: hk
+      name: hk
       registry: false
       transport: stdio
 description: Copier template for my projects
@@ -28,4 +36,4 @@ targets:
   - copilot
   - cursor
   - opencode
-version: 0.34.1
+version: 0.0.0
