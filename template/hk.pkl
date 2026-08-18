@@ -7,7 +7,7 @@ local linters = new Mapping<String, Step> {
   ["betterleaks"] = Builtins.betterleaks
   ["sort-package-json"] = Builtins.sort_package_json
   ["yamlfix"] {
-    glob = List("**/*.yml", "**/*.yaml")
+    types = List("yaml")
     check = "yamlfix --check {{files}}"
     fix = "yamlfix {{files}}"
   }
@@ -18,6 +18,10 @@ local linters = new Mapping<String, Step> {
   ["rumdl-format"] = Builtins.rumdl_format
   ["typos"] = Builtins.typos
   ["pkl-format"] = Builtins.pkl_format
+  ["ls-lint"] {
+    check = "ls-lint ."
+    batch = false
+  }
 }
 
 hooks {
