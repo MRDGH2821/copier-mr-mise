@@ -17,3 +17,7 @@ rules:
   new-lines:
     level: warning
     type: unix
+  quoted-strings:
+    allow-quoted-quotes: true
+    quote-type: double
+    required: false

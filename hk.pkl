@@ -3,31 +3,32 @@ amends "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Config.
 import "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Builtins.pkl"
 
 local linters = new Mapping<String, Step> {
-  ["prettier"] = Builtins.prettier
   ["betterleaks"] = Builtins.betterleaks
-  ["sort-package-json"] = Builtins.sort_package_json
-  ["yamlfix"] {
-    types = List("yaml")
-    check = "yamlfix --check {{files}}"
-    fix = "yamlfix {{files}}"
-  }
-  ["yamllint"] = Builtins.yamllint
-  ["tombi"] = Builtins.tombi
-  ["mise"] = Builtins.mise
-  ["rumdl"] = Builtins.rumdl
-  ["rumdl-format"] = Builtins.rumdl_format
-  ["typos"] = Builtins.typos
-  ["pkl-format"] = Builtins.pkl_format
   ["ls-lint"] {
     check = "ls-lint ."
     batch = false
   }
+  ["mise"] = Builtins.mise
+  ["pkl-format"] = Builtins.pkl_format
+  ["prettier"] = Builtins.prettier
+  ["rumdl"] = Builtins.rumdl
+  ["rumdl-format"] = Builtins.rumdl_format
+  ["sort-package-json"] = Builtins.sort_package_json
+  ["tombi"] = Builtins.tombi
+  ["typos"] = Builtins.typos
+  ["yamlfix"] {
+    types = List("yaml")
+    check = "yamlfix --check {{files}}"
+    fix = "yamlfix {{files}}"
+    depends = List("prettier")
+  }
+  ["yamllint"] = (Builtins.yamllint) {
+    depends = List("yamlfix")
+  }
 }
 
 hooks {
-  ["pre-commit"] {
-    fix = true
-    stash = "git"
+  ["check"] {
     steps = linters
   }
   ["commit-msg"] {
@@ -40,7 +41,9 @@ hooks {
     fix = true
     steps = linters
   }
-  ["check"] {
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
     steps = linters
   }
 }
