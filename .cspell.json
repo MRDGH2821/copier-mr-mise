@@ -16,11 +16,5 @@
   "language": "en,en-GB",
   "noConfigSearch": true,
   "useGitignore": true,
-  "userWords": [
-    "inital"
-  ],
-  "version": "0.2",
-  "words": [
-  
-  ]
+  "version": "0.2"
 }
