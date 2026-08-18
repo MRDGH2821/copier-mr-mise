@@ -5,6 +5,7 @@ apm = "latest"
 bun = "latest"
 cocogitto = "latest"
 git-cliff = "latest"
+prettier = "latest"
 
 [tasks.pre-commit]
 run = "hk run pre-commit"
