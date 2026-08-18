@@ -1,0 +1,7 @@
+# schema=https://mise.jdx.dev/schema/mise.json
+[tools]
+apm = "latest"
+bun = "latest"
+cocogitto = "latest"
+git-cliff = "latest"
+hk = "latest"
