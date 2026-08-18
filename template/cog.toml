@@ -14,7 +14,7 @@ pre_bump_hooks = [
   "bun pm version {{version}} --no-git-tag-version",
   "yq -i '.version = \"{{version}}\"' apm.yml",
   "bunx git-cliff -o CHANGELOG.md --tag {{version_tag}}",
-  "nix fmt -- CHANGELOG.md apm.yml"
+  "treefmt CHANGELOG.md apm.yml"
 ]
 pre_package_bump_hooks = []
 # tombi: format.rules.array-values-order = "ascending"
@@ -25,7 +25,7 @@ scopes = [
   "github",
   "jscpd",
   "megalinter",
-  "nix",
+  "mise",
   "pre-commit",
   "prettier",
   "treefmt",
