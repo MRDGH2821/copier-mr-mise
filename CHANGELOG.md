@@ -4,6 +4,38 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.4.4](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.4.3..v0.4.4) - 2026-08-24
+
+### Bug Fixes
+
+- **(megalinter)** update pre-commands - ([4b006ac](https://github.com/MRDGH2821/copier-mr-mise/commit/4b006ac59e56701b5c8a83247a7f22685429f9c7)) - MRDGH2821
+- **(megalinter)** exclude node_modules and apm_modules from kingfisher and fix treefmt config - ([3fe1187](https://github.com/MRDGH2821/copier-mr-mise/commit/3fe1187ca3d12db8cce01d68cc9de10b1ee08195)) - MRDGH2821
+- **(megalinter)** exclude node_modules and apm_modules via kingfisher arguments - ([d130e94](https://github.com/MRDGH2821/copier-mr-mise/commit/d130e948749c35253f2e0b4cb958a9589751c964)) - MRDGH2821
+- **(mise)** merge treefmt commands - ([ce0faac](https://github.com/MRDGH2821/copier-mr-mise/commit/ce0faace09ed45579df3a3156d5074cd29a135d9)) - MRDGH2821
+- **(mise)** add missing tools - ([b681b54](https://github.com/MRDGH2821/copier-mr-mise/commit/b681b5409e143ce78ad786d7076dba7d8aa6a772)) - MRDGH2821
+- **(treefmt)** run treefmt twice - ([df36d90](https://github.com/MRDGH2821/copier-mr-mise/commit/df36d906ac28fc163401d866c06bb88619723ff7)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update word list - ([88963ec](https://github.com/MRDGH2821/copier-mr-mise/commit/88963eca601fb4f8cd439ea486b2bab3e557559b)) - MRDGH2821
+- **(hk)** update config version - ([5aca1c3](https://github.com/MRDGH2821/copier-mr-mise/commit/5aca1c346041129103881e92efc0d15d9ce4b670)) - MRDGH2821
+- add bun post install command - ([c668503](https://github.com/MRDGH2821/copier-mr-mise/commit/c668503ad493618121b04b5ebb3a6a31993917e2)) - MRDGH2821
+
+### Refactoring
+
+- **(hk)** completely migrate formatters from treefmt - ([8395054](https://github.com/MRDGH2821/copier-mr-mise/commit/83950541b6301a7ae396120d2eb20daa489a5052)) - MRDGH2821
+
+### Build
+
+- **(mise)** add treefmt version - ([400dcb3](https://github.com/MRDGH2821/copier-mr-mise/commit/400dcb3082c8ee7e881708bb3fe64d648862e06c)) - MRDGH2821
+
+### Ci
+
+- **(github)** add permissions and disable credential persistence in mise-check - ([17963aa](https://github.com/MRDGH2821/copier-mr-mise/commit/17963aa6bea6c48d72fececa4eb2fe21ebb9768c)) - MRDGH2821
+- **(mise)** use cache - ([8373f12](https://github.com/MRDGH2821/copier-mr-mise/commit/8373f12bb4f3a78a294bd408c28e06f1ee9796ed)) - MRDGH2821
+
+---
+
 ## [0.4.3](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.4.2..v0.4.3) - 2026-08-24
 
 ### Ci
