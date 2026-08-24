@@ -16,7 +16,7 @@ prepare = ["bun install"]
 [tools]
 apm = { postinstall = "apm install", version = "latest" }
 "aqua:numtide/treefmt" = "2.5.0"
-bun = "latest"
+bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
 cspell = "latest"
 git-cliff = "latest"
