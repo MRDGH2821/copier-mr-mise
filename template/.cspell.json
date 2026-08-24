@@ -21,19 +21,12 @@
   "words": [
     "artipacked",
     "bunx",
-    "cachix",
     "cocogitto",
     "devenv",
     "direnv",
-    "kucherenko",
-    "Leonxlnx",
     "MRDGH",
-    "nixos",
     "nixpkgs",
-    "numtide",
-    "otbs",
     "pipx",
-    "prek",
     "pycache",
     "pytest",
     "rumdl",
@@ -43,7 +36,6 @@
     "topo",
     "treefmt",
     "venv",
-    "vercel",
     "yamlfix",
     "zizmor"
   ]
