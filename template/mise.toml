@@ -15,7 +15,7 @@ prepare = ["bun install"]
 
 [tools]
 apm = { postinstall = "apm install", version = "latest" }
-"aqua:numtide/treefmt" = "latest"
+"aqua:numtide/treefmt" = "2.5.0"
 bun = "latest"
 cocogitto = "latest"
 cspell = "latest"
