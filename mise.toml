@@ -11,6 +11,7 @@ check = ["treefmt --ci"]
 cspell = "cspell ."
 fmt = "treefmt"
 pre-commit = "hk run pre-commit"
+prepare = ["bun install"]
 
 [tools]
 apm = { postinstall = "apm install", version = "latest" }
