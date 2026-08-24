@@ -10,7 +10,19 @@ DISABLE_LINTERS:
   - REPOSITORY_DEVSKIM
 IGNORE_GITIGNORED_FILES: true
 JAVASCRIPT_DEFAULT_STYLE: prettier
+JSON_PRETTIER_PRE_COMMANDS:
+  - command: npm ci
+    continue_if_failed: true
+    cwd: workspace
+    secured_env: true
+    tag: default
 MARKDOWN_DEFAULT_STYLE: rumdl
 PYTHON_DEFAULT_STYLE: ruff
 SHOW_ELAPSED_TIME: true
 TYPESCRIPT_DEFAULT_STYLE: prettier
+YAML_PRETTIER_PRE_COMMANDS:
+  - command: npm ci
+    continue_if_failed: true
+    cwd: workspace
+    secured_env: true
+    tag: default
