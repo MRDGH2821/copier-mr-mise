@@ -15,6 +15,7 @@ prepare = ["bun install"]
 
 [tools]
 apm = { postinstall = "apm install", version = "latest" }
+betterleaks = "latest"
 bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
 cspell = "latest"
@@ -25,9 +26,11 @@ ls-lint = "latest"
 "pipx:yamlfix" = "latest"
 pkl = "latest"
 prettier = "latest"
+ruff = "latest"
 rumdl = "latest"
 tombi = "latest"
 typos = "latest"
+typstyle = "latest"
 uv = "latest"
 yamllint = "latest"
 yq = "latest"
