@@ -11,6 +11,7 @@ DISABLE_LINTERS:
   - REPOSITORY_DEVSKIM
 IGNORE_GITIGNORED_FILES: true
 JAVASCRIPT_DEFAULT_STYLE: prettier
+REPOSITORY_KINGFISHER_ARGUMENTS: "--exclude node_modules --exclude apm_modules"
 JSON_PRETTIER_PRE_COMMANDS:
   - command: npm i -g bun
     continue_if_failed: false
