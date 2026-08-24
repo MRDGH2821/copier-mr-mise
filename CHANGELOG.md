@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.4.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.3.0..v0.4.0) - 2026-08-24
+
+### Bug Fixes
+
+- **(megalinter)** add pre commands - ([cd16f32](https://github.com/MRDGH2821/copier-mr-mise/commit/cd16f32edcb106b5ce1323f898bdacfa74042d24)) - MRDGH2821
+
+### Features
+
+- add treefmt ci - ([7fc9858](https://github.com/MRDGH2821/copier-mr-mise/commit/7fc985825929eb9c04cffd98610073d9c1256c88)) - MRDGH2821
+- mirror changes from root - ([b23ab56](https://github.com/MRDGH2821/copier-mr-mise/commit/b23ab569c741ff2779580f13c54337b6aeb30feb)) - MRDGH2821
+
+### Build
+
+- **(mise)** add tasks - ([d5f334a](https://github.com/MRDGH2821/copier-mr-mise/commit/d5f334ada642c5b03ad7bfec797a4e6c81004801)) - MRDGH2821
+- **(mise)** add typos - ([43e8eb5](https://github.com/MRDGH2821/copier-mr-mise/commit/43e8eb56dbe6cab8ffc7682e3bfa0e39c3157ccd)) - MRDGH2821
+
+### Ci
+
+- **(treefmt)** use mise instead of nix - ([9046557](https://github.com/MRDGH2821/copier-mr-mise/commit/90465575564fa23d1e866c87d6c6e12d6159b25c)) - MRDGH2821
+
+---
+
 ## [0.3.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.2.0..v0.3.0) - 2026-08-18
 
 ### Bug Fixes
