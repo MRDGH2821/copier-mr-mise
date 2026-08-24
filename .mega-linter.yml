@@ -11,7 +11,6 @@ DISABLE_LINTERS:
   - REPOSITORY_DEVSKIM
 IGNORE_GITIGNORED_FILES: true
 JAVASCRIPT_DEFAULT_STYLE: prettier
-REPOSITORY_KINGFISHER_ARGUMENTS: "--exclude node_modules --exclude apm_modules"
 JSON_PRETTIER_PRE_COMMANDS:
   - command: npm i -g bun
     continue_if_failed: false
@@ -25,6 +24,7 @@ JSON_PRETTIER_PRE_COMMANDS:
     tag: default
 MARKDOWN_DEFAULT_STYLE: rumdl
 PYTHON_DEFAULT_STYLE: ruff
+REPOSITORY_KINGFISHER_ARGUMENTS: --exclude node_modules --exclude apm_modules
 SHOW_ELAPSED_TIME: true
 TYPESCRIPT_DEFAULT_STYLE: prettier
 YAML_PRETTIER_PRE_COMMANDS:
