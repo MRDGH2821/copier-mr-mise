@@ -7,15 +7,14 @@ postinstall = ["hk install --mise"]
 
 [tasks]
 ai-setup = "apm install"
-check = ["treefmt --ci -vv && treefmt --ci"]
+check = ["hk check --all"]
 cspell = "cspell ."
-fmt = "treefmt"
+fmt = "hk fix --all"
 pre-commit = "hk run pre-commit"
 prepare = ["bun install"]
 
 [tools]
 apm = { postinstall = "apm install", version = "latest" }
-"aqua:numtide/treefmt" = "2.5.0"
 bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
 cspell = "latest"

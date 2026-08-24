@@ -72,7 +72,7 @@ Configuration lives in `apm.yml`. Do not skip this when skills or MCP tools are 
 ## Project Context
 
 - **Project**: `copier-mr-mise` (v0.1.0) — Copier 9+ template for MRDGH2821 projects
-- **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, treefmt, cspell, and optional AGENTS.md / APM skills
+- **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, cspell, and optional AGENTS.md / APM skills
 - **Usage**: `copier copy gh:MRDGH2821/copier-mr-mise "/path/to/folder"` then later `copier update`
 
 This repository is the **template**, not a generated project. Generated files live under `template/` (`_subdirectory: template` in `copier.yml`).
@@ -88,7 +88,6 @@ This repository is the **template**, not a generated project. Generated files li
 | `apm.yml`          | APM skills and MCP servers                                   |
 | `cog.toml`         | Conventional-commit scopes and version bump hooks            |
 | `.mega-linter.yml` | MegaLinter config; CI in `.github/workflows/mega-linter.yml` |
-| `.treefmt.toml`    | Full-tree formatter                                          |
 | `.cspell.json`     | Spell-check dictionary                                       |
 | `.agents/logs/`    | AI-assisted work logs                                        |
 
@@ -187,10 +186,10 @@ MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, 
 - Don't disable spell checking without good reason
 - Run with `mise run cspell`
 
-### treefmt
+### Formatting and Hooks (hk)
 
-- Run `treefmt -vv` before every commit to format all supported file types
-- This is separate from hk: hk formats staged files on commit; treefmt formats the tree
+- Run `hk run fix` or `mise run fmt` before committing to format all supported file types
+- `hk` integrates formatters and linters in `hk.pkl` for staged files and hook checks
 
 ## Commit Messages
 
@@ -219,7 +218,7 @@ Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json`, 
 
 - Read the error message — it usually points directly to the fix
 - Try to fix the issue and retry the commit; do not skip hooks
-- Fix formatting first (`treefmt -vv` or `hk run fix`)
+- Fix formatting first (`hk run fix` or `mise run fmt`)
 - Then address spell checking and linting
 
 **Spell check failures:**
