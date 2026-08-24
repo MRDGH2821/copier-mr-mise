@@ -7,7 +7,7 @@ postinstall = ["hk install --mise"]
 
 [tasks]
 ai-setup = "apm install"
-check = ["treefmt --ci"]
+check = ["treefmt --ci -vv", "treefmt --ci"]
 cspell = "cspell ."
 fmt = "treefmt"
 pre-commit = "hk run pre-commit"
