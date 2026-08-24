@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.4.3](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.4.2..v0.4.3) - 2026-08-24
+
+### Ci
+
+- **(mise)** rename job name - ([127eb98](https://github.com/MRDGH2821/copier-mr-mise/commit/127eb987b47455fed14c797330b4b53b75b4d265)) - MRDGH2821
+- **(mise)** add concurrency control - ([172c9fd](https://github.com/MRDGH2821/copier-mr-mise/commit/172c9fd9aeeee12eb86d1962dcb4b292f61afb9b)) - MRDGH2821
+
+---
+
 ## [0.4.2](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.4.1..v0.4.2) - 2026-08-24
 
 ### Bug Fixes
