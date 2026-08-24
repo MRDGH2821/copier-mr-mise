@@ -11,7 +11,12 @@ DISABLE_LINTERS:
 IGNORE_GITIGNORED_FILES: true
 JAVASCRIPT_DEFAULT_STYLE: prettier
 JSON_PRETTIER_PRE_COMMANDS:
-  - command: npm ci
+  - command: npm i -g bun
+    continue_if_failed: false
+    cwd: workspace
+    secured_env: true
+    tag: default
+  - command: bun ci
     continue_if_failed: true
     cwd: workspace
     secured_env: true
@@ -21,7 +26,12 @@ PYTHON_DEFAULT_STYLE: ruff
 SHOW_ELAPSED_TIME: true
 TYPESCRIPT_DEFAULT_STYLE: prettier
 YAML_PRETTIER_PRE_COMMANDS:
-  - command: npm ci
+  - command: npm i -g bun
+    continue_if_failed: false
+    cwd: workspace
+    secured_env: true
+    tag: default
+  - command: bun ci
     continue_if_failed: true
     cwd: workspace
     secured_env: true
