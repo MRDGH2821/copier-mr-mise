@@ -85,6 +85,7 @@ Configuration lives in `apm.yml`. Do not skip this when skills or MCP tools are 
 | `apm.yml`          | APM skills and MCP servers                          |
 | `cog.toml`         | Conventional-commit scopes and version bump hooks   |
 | `.mega-linter.yml` | MegaLinter config                                   |
+| `.treefmt.toml`    | Full-tree formatter                                 |
 | `.cspell.json`     | Spell-check dictionary                              |
 | `.agents/logs/`    | AI-assisted work logs                               |
 

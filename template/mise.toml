@@ -9,12 +9,13 @@ postinstall = ["hk install --mise"]
 ai-setup = "apm install"
 check = ["hk check --all"]
 cspell = "cspell ."
-fmt = "hk fix --all"
+fmt = ["hk fix --all", "treefmt"]
 pre-commit = "hk run pre-commit"
 prepare = ["bun install"]
 
 [tools]
 apm = { postinstall = "apm install", version = "latest" }
+"aqua:numtide/treefmt" = "latest"
 betterleaks = "latest"
 bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"

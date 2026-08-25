@@ -88,6 +88,7 @@ This repository is the **template**, not a generated project. Generated files li
 | `apm.yml`          | APM skills and MCP servers                                   |
 | `cog.toml`         | Conventional-commit scopes and version bump hooks            |
 | `.mega-linter.yml` | MegaLinter config; CI in `.github/workflows/mega-linter.yml` |
+| `.treefmt.toml`    | Full-tree formatter                                          |
 | `.cspell.json`     | Spell-check dictionary                                       |
 | `.agents/logs/`    | AI-assisted work logs                                        |
 
