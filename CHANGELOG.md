@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.7.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.6.0..v0.7.0) - 2026-08-25
+
+### Features
+
+- add keep-sorted & config - ([5bf4d04](https://github.com/MRDGH2821/copier-mr-mise/commit/5bf4d04fde323a2d9f877e5e059c8c423f682d01)) - MRDGH2821
+
+---
+
 ## [0.6.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.5.1..v0.6.0) - 2026-08-25
 
 ### Features
