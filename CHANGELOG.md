@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.8.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.7.0..v0.8.0) - 2026-08-25
+
+### Features
+
+- add cspell hook - ([34d7cca](https://github.com/MRDGH2821/copier-mr-mise/commit/34d7cca5651f5ff132e4712de3b33e5759e85d83)) - MRDGH2821
+
+---
+
 ## [0.7.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.6.0..v0.7.0) - 2026-08-25
 
 ### Features
