@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.6.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.5.1..v0.6.0) - 2026-08-25
+
+### Features
+
+- **(treefmt)** add more formatters - ([8bf644f](https://github.com/MRDGH2821/copier-mr-mise/commit/8bf644f1d6eb02a826840b89f3016eb5665467f8)) - MRDGH2821
+
+---
+
 ## [0.5.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.5.0..v0.5.1) - 2026-08-25
 
 ### Bug Fixes
