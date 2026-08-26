@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.9.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.8.0..v0.9.0) - 2026-08-26
+
+### Bug Fixes
+
+- fix commands - ([873f271](https://github.com/MRDGH2821/copier-mr-mise/commit/873f271fe0ebd1aeb8b250cb3d61eef0672f3b4d)) - MRDGH2821
+- set typescript files kebab-case - ([e53a69b](https://github.com/MRDGH2821/copier-mr-mise/commit/e53a69b8b5cec94dd21f27848b823bc592494720)) - MRDGH2821
+
+### Features
+
+- add conventional commits ci - ([1c9eeb4](https://github.com/MRDGH2821/copier-mr-mise/commit/1c9eeb4476e8ea92883aaa246d32667ce87a1faf)) - MRDGH2821
+- add claude related stuff - ([afbd694](https://github.com/MRDGH2821/copier-mr-mise/commit/afbd6940eb581f8d48bbed45afcc9c432ac050f9)) - MRDGH2821
+- add tombi formatter hook - ([25data3c](https://github.com/MRDGH2821/copier-mr-mise/commit/25daa3c42bfa52437a30dc5f6cff51758b887453)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- update apm.lock.yaml - ([c9cd418](https://github.com/MRDGH2821/copier-mr-mise/commit/c9cd418298047f1c73d2b0d7d75a9d1cd03edfaf)) - MRDGH2821
+
+### Ci
+
+- **(cocogitto)** run conventional commit check on push and pull requests - ([59e226f](https://github.com/MRDGH2821/copier-mr-mise/commit/59e226f4cb8f260c13401d3fc582b8bc743ace49)) - MRDGH2821
+
+---
+
 ## [0.8.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.7.0..v0.8.0) - 2026-08-25
 
 ### Features
