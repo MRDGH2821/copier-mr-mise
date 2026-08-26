@@ -31,9 +31,12 @@ includes: auto
 name: copier-mr-mise
 scripts: {}
 targets:
+  # keep-sorted start
   - agent-skills
   - antigravity
+  - claude
   - copilot
   - cursor
   - opencode
+  # keep-sorted end
 version: 0.8.0

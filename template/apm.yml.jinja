@@ -1,8 +1,8 @@
+---
 author: MRDGH2821
 dependencies:
   apm:
     - git: https://github.com/MRDGH2821/copier-mr-mise
-
     {% if use_taste_skill %}
     - git: https://github.com/Leonxlnx/taste-skill
     {% endif %}
@@ -11,9 +11,12 @@ includes: auto
 name: {{ project_name }}
 scripts: {}
 targets:
+  # keep-sorted start
   - agent-skills
   - antigravity
+  - claude
   - copilot
   - cursor
   - opencode
+  # keep-sorted end
 version: 0.0.0
