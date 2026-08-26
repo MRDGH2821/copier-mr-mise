@@ -18,12 +18,8 @@ _exclude:
 _min_copier_version: 9.0.0
 _subdirectory: template
 _tasks:
-  - command: command -v direnv > /dev/null 2>&1 && echo "✓ Direnv is installed" || echo "✗ Direnv not found! Please install from here - https://direnv.net/"
+  - command: command -v mise > /dev/null 2>&1 && echo "✓ mise is installed" || echo "✗ mise not found! Please install from here - https://mise.jdx.dev/"
     when: "{{ _copier_operation == 'copy' }}"
-  - command: command -v nix > /dev/null 2>&1 && echo "✓ Nix is installed" || echo "✗ Nix not found! Please install from here - https://nixos.org/"
-    when: "{{ _copier_operation == 'copy' }}"
-  - command: uvx --from apm-cli apm install
-    when: "{{ use_skills and _copier_operation == 'update' }}"
   - command: uvx --from lic-cli lic
     when: "{{ _copier_operation == 'copy' }}"
 ci:
