@@ -56,7 +56,19 @@ trim = true
 # An array of regex based parsers for extracting data from the commit message.
 # Assigns commits to groups.
 # Optionally sets the commit's scope and can decide to exclude commits from further processing.
-commit_parsers = [{ group = "Features", message = "^feat" }, { group = "Bug Fixes", message = "^fix" }, { group = "Documentation", message = "^doc" }, { group = "Performance", message = "^perf" }, { group = "Refactoring", message = "^refactor" }, { group = "Style", message = "^style" }, { group = "Revert", message = "^revert" }, { group = "Tests", message = "^test" }, { message = "^chore\\(version\\):", skip = true }, { group = "Miscellaneous Chores", message = "^chore" }, { body = ".*security", group = "Security" }]
+commit_parsers = [
+  { group = "Features", message = "^feat" },
+  { group = "Bug Fixes", message = "^fix" },
+  { group = "Documentation", message = "^doc" },
+  { group = "Performance", message = "^perf" },
+  { group = "Refactoring", message = "^refactor" },
+  { group = "Style", message = "^style" },
+  { group = "Revert", message = "^revert" },
+  { group = "Tests", message = "^test" },
+  { message = "^chore\\(version\\):", skip = true },
+  { group = "Miscellaneous Chores", message = "^chore" },
+  { body = ".*security", group = "Security" }
+]
 # An array of regex based parsers to modify commit messages prior to further processing.
 commit_preprocessors = []
 # Parse commits according to the conventional commits specification.
