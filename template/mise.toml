@@ -17,6 +17,7 @@ prepare = ["bun install"]
 apm = { postinstall = "apm install", version = "latest" }
 "aqua:google/keep-sorted" = "latest"
 "aqua:numtide/treefmt" = "latest"
+"aqua:owenlamont/ryl" = "latest"
 betterleaks = "latest"
 bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
@@ -34,7 +35,6 @@ tombi = "latest"
 typos = "latest"
 typstyle = "latest"
 uv = "latest"
-yamllint = "latest"
 yq = "latest"
 
 [[watch_files]]

@@ -79,18 +79,18 @@ This repository is the **template**, not a generated project. Generated files li
 
 ## Layout
 
-| Path               | Purpose                                                      |
-| ------------------ | ------------------------------------------------------------ |
-| `copier.yml`       | Copier questions, exclusions, post-copy tasks                |
-| `template/`        | Files copied into generated projects                         |
-| `mise.toml`        | Tools, tasks, `hk install --mise` postinstall hook           |
-| `hk.pkl`           | hk hook config (pre-commit, commit-msg, fix, check)          |
-| `apm.yml`          | APM skills and MCP servers                                   |
-| `cog.toml`         | Conventional-commit scopes and version bump hooks            |
-| `.mega-linter.yml` | MegaLinter config; CI in `.github/workflows/mega-linter.yml` |
-| `.treefmt.toml`    | Full-tree formatter                                          |
-| `.cspell.json`     | Spell-check dictionary                                       |
-| `.agents/logs/`    | AI-assisted work logs                                        |
+| Path                  | Purpose                                                      |
+| --------------------- | ------------------------------------------------------------ |
+| `copier.yml`          | Copier questions, exclusions, post-copy tasks                |
+| `template/`           | Files copied into generated projects                         |
+| `mise.toml`           | Tools, tasks, `hk install --mise` postinstall hook           |
+| `.config/hk.pkl`      | hk hook config (pre-commit, commit-msg, fix, check)          |
+| `apm.yml`             | APM skills and MCP servers                                   |
+| `cog.toml`            | Conventional-commit scopes and version bump hooks            |
+| `.mega-linter.yml`    | MegaLinter config; CI in `.github/workflows/mega-linter.yml` |
+| `.treefmt.toml`       | Full-tree formatter                                          |
+| `.config/cspell.json` | Spell-check dictionary                                       |
+| `.agents/logs/`       | AI-assisted work logs                                        |
 
 Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
 
@@ -182,7 +182,7 @@ MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, 
 
 ### CSpell
 
-- Config: `.cspell.json`
+- Config: `.config/cspell.json`
 - Add project-specific words to the `words` array
 - Don't disable spell checking without good reason
 - Run with `mise run cspell`
@@ -190,7 +190,7 @@ MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, 
 ### Formatting and Hooks (hk)
 
 - Run `hk run fix` or `mise run fmt` before committing to format all supported file types
-- `hk` integrates formatters and linters in `hk.pkl` for staged files and hook checks
+- `hk` integrates formatters and linters in `.config/hk.pkl` for staged files and hook checks
 
 ## Commit Messages
 
@@ -224,7 +224,7 @@ Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json`, 
 
 **Spell check failures:**
 
-- Add legitimate technical terms to `.cspell.json` `words` array
+- Add legitimate technical terms to `.config/cspell.json` `words` array
 - Use proper capitalization for proper nouns
 - Don't add obvious typos to the dictionary
 
