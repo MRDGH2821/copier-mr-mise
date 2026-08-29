@@ -39,4 +39,4 @@ targets:
   - cursor
   - opencode
   # keep-sorted end
-version: 0.9.0
+version: 0.10.0

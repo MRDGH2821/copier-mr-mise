@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.10.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.9.0..v0.10.0) - 2026-08-29
+
+### Documentation
+
+- recommend project-level .config directory in template - ([ec2148d](https://github.com/MRDGH2821/copier-mr-mise/commit/ec2148dc28689e11a484256c09c8d1e49caa9e09)) - MRDGH2821
+- update sentence - ([ab964c1](https://github.com/MRDGH2821/copier-mr-mise/commit/ab964c109bd8e97de387fea9aa318f0542d80a32)) - MRDGH2821
+
+### Features
+
+- add tombi config - ([49eb841](https://github.com/MRDGH2821/copier-mr-mise/commit/49eb841278f7260a23159c6748f98f3eebd09b4c)) - MRDGH2821
+- migrate from yamllint to ryl - ([d4767c6](https://github.com/MRDGH2821/copier-mr-mise/commit/d4767c6b173b7cab444df49ea6730de5d408f42a)) - MRDGH2821
+- add typos config - ([a46ec19](https://github.com/MRDGH2821/copier-mr-mise/commit/a46ec192383dfab5a6573f2e0b9e6ea002cfbb15)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- finalise ryl over yamllint - ([763be55](https://github.com/MRDGH2821/copier-mr-mise/commit/763be558a6ec5390745288c0d0290995324a87bb)) - MRDGH2821
+
+### Refactoring
+
+- move configs inside subfolder - ([9fa13ea](https://github.com/MRDGH2821/copier-mr-mise/commit/9fa13ea010c7205113460fbd4ffa78e7458fba53)) - MRDGH2821
+- move config in subfolder - ([78da1ac](https://github.com/MRDGH2821/copier-mr-mise/commit/78da1ac9b46b0347d706d0041aa234f54ff748ec)) - MRDGH2821
+- move hk.pkl in .config - ([464f7d0](https://github.com/MRDGH2821/copier-mr-mise/commit/464f7d0e569b1dfddaad778be0734ee5d675c3d6)) - MRDGH2821
+- align template/ config layout with root's .config structure - ([423ffff](https://github.com/MRDGH2821/copier-mr-mise/commit/423ffffca7efd4e91b5e6eece7000da368c37a4a)) - MRDGH2821
+
+### Style
+
+- format files - ([19b9529](https://github.com/MRDGH2821/copier-mr-mise/commit/19b9529b3e19494f7c9a8b22cce0949dd874867d)) - MRDGH2821
+
+---
+
 ## [0.9.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.8.0..v0.9.0) - 2026-08-26
 
 ### Bug Fixes
@@ -15,7 +45,7 @@ All notable changes to this project will be documented in this file. See [conven
 
 - add conventional commits ci - ([1c9eeb4](https://github.com/MRDGH2821/copier-mr-mise/commit/1c9eeb4476e8ea92883aaa246d32667ce87a1faf)) - MRDGH2821
 - add claude related stuff - ([afbd694](https://github.com/MRDGH2821/copier-mr-mise/commit/afbd6940eb581f8d48bbed45afcc9c432ac050f9)) - MRDGH2821
-- add tombi formatter hook - ([25data3c](https://github.com/MRDGH2821/copier-mr-mise/commit/25daa3c42bfa52437a30dc5f6cff51758b887453)) - MRDGH2821
+- add tombi formatter hook - ([25daa3c](https://github.com/MRDGH2821/copier-mr-mise/commit/25daa3c42bfa52437a30dc5f6cff51758b887453)) - MRDGH2821
 
 ### Miscellaneous Chores
 
