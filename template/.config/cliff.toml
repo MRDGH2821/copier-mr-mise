@@ -46,8 +46,8 @@ All notable changes to this project will be documented in this file. See [conven
 """
 # postprocessors
 postprocessors = [
-  # Replace the placeholder `<REPO>` with a URL.
-  { pattern = '\$REPO', replace = "" }  # replace repository URL
+  # Replace the placeholder `<REPO>` with the repository URL.
+  { pattern = '\$REPO', replace = "" }
 ]
 # Remove leading and trailing whitespaces from the changelog's body.
 trim = true

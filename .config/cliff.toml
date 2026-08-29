@@ -46,7 +46,7 @@ All notable changes to this project will be documented in this file. See [conven
 """
 # postprocessors
 postprocessors = [
-  # Replace the placeholder `<REPO>` with the repository URL
+  # Replace the placeholder `<REPO>` with the repository URL.
   { pattern = '\$REPO', replace = "https://github.com/MRDGH2821/copier-mr-mise" }
 ]
 # Remove leading and trailing whitespaces from the changelog's body.
