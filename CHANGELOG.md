@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.11.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.10.0..v0.11.0) - 2026-08-30
+
+### Features
+
+- refresh targets & add scripts - ([c70debf](https://github.com/MRDGH2821/copier-mr-mise/commit/c70debfb650e249a0867d52818cd6d5ac60c81d4)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update word list - ([4e017d9](https://github.com/MRDGH2821/copier-mr-mise/commit/4e017d9be07348ca1a9dc288bb54626d1213cb92)) - MRDGH2821
+- **(treefmt)** ignore toml file for prettier - ([1e4c8b5](https://github.com/MRDGH2821/copier-mr-mise/commit/1e4c8b55ae35df173cd2963eb14c760cd3ef2e62)) - MRDGH2821
+- remove prettier plugin - ([64cb372](https://github.com/MRDGH2821/copier-mr-mise/commit/64cb3727c2a098aa8190909b259556a45503c76c)) - MRDGH2821
+
+### Refactoring
+
+- rename file - ([3475209](https://github.com/MRDGH2821/copier-mr-mise/commit/34752093c1ad938c076e85ca8e9ff4b6689bf39c)) - MRDGH2821
+
+---
+
 ## [0.10.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.9.0..v0.10.0) - 2026-08-29
 
 ### Documentation
