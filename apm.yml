@@ -3,7 +3,7 @@ author: MRDGH2821
 dependencies:
   apm:
     - git: https://github.com/vercel-labs/skills
-      ref: v1.5.22
+      ref: v1.5.23
       skills:
         - find-skills
     - git: https://github.com/github/awesome-copilot
@@ -29,13 +29,19 @@ dependencies:
 description: Copier template for my projects
 includes: auto
 name: copier-mr-mise
-scripts: {}
+scripts:
+  antigravity: agy plugin install https://github.com/obra/superpowers
+  claude: |
+    claude plugin marketplace add obra/superpowers-marketplace
+    claude plugin install superpowers@superpowers-marketplace
+  codex: codex plugin add superpowers@openai-curated
+  cursor: cursor-agent plugin marketplace add https://github.com/obra/superpowers
+  opencode: opencode plugin superpowers@git+https://github.com/obra/superpowers.git -g
 targets:
   # keep-sorted start
-  - agent-skills
   - antigravity
   - claude
-  - copilot
+  - codex
   - cursor
   - opencode
   # keep-sorted end
