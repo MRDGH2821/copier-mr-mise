@@ -175,7 +175,7 @@ MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, 
 
 ### MegaLinter
 
-- Config: `.mega-linter.yml` (CI: oxsecurity/megalinter v9.6.0)
+- Config: `.mega-linter.yml` (CI: oxsecurity/megalinter v10.0.0)
 - Use the project MegaLinter skill rather than inventing a flavor
 - Reports: `megalinter-reports/`
 - Not all linters need to pass — some are informational

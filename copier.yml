@@ -4,6 +4,7 @@ _exclude:
   - "{% if ci != 'github' %}.github{% endif %}"
   - "{% if ci != 'gitlab' %}.gitlab-ci.yml{% endif %}"
   - "{% if not use_agents %}AGENTS.md{% endif %}"
+  - "{% if not use_agents %}CLAUDE.md{% endif %}"
   - "{% if not use_skills %}.agents/skills{% endif %}"
   - "{% if not use_skills %}apm.yml{% endif %}"
   - .DS_Store
