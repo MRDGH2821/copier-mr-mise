@@ -4,6 +4,47 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.12.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.11.0..v0.12.0) - 2026-09-06
+
+### Bug Fixes
+
+- **(megalinter)** specify jscpd file location - ([efca091](https://github.com/MRDGH2821/copier-mr-mise/commit/efca0913a34fd97cbb0be608430548ee32e4216b)) - MRDGH2821
+- add migration commands - ([4c3854a](https://github.com/MRDGH2821/copier-mr-mise/commit/4c3854a595fb25d40b16d639f09717ae75f2eda2)) - MRDGH2821
+
+### Documentation
+
+- record cross-repo config-sync verification - ([efb608c](https://github.com/MRDGH2821/copier-mr-mise/commit/efb608ce4e2a629fb439481915d6c56a0160b743)) - MRDGH2821
+
+### Features
+
+- integrate cog check in mise run check - ([ac5c0a4](https://github.com/MRDGH2821/copier-mr-mise/commit/ac5c0a4f99130521ffc95814a92a26c09f726d06)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** sync template dictionary words with root - ([5eae490](https://github.com/MRDGH2821/copier-mr-mise/commit/5eae490e87cf56a9db5af897d5352acc908572f1)) - MRDGH2821
+- **(megalinter)** update jscpd location - ([eae6975](https://github.com/MRDGH2821/copier-mr-mise/commit/eae6975687dbf2a9926aea291d0b581024c0cf00)) - MRDGH2821
+- **(mise)** remove unused yamllint tool - ([36c617c](https://github.com/MRDGH2821/copier-mr-mise/commit/36c617cff5a5c6ca44b3f77139c1de758cd82531)) - MRDGH2821
+- align mega-linter merge, v10 pins, CLAUDE exclude - ([61bc4bc](https://github.com/MRDGH2821/copier-mr-mise/commit/61bc4bcfe6161f2b97412aba2c446903791218b9)) - MRDGH2821
+- ignore more agent stuff - ([6f9b50f](https://github.com/MRDGH2821/copier-mr-mise/commit/6f9b50f5ff1fe5e508e0ae86255d40f661326f1e)) - MRDGH2821
+- update lock file - ([08a5e9e](https://github.com/MRDGH2821/copier-mr-mise/commit/08a5e9eca52621b20bf404fcebcd809d2ed9a69d)) - MRDGH2821
+- sync template .gitignore with root ignore patterns - ([e1febc0](https://github.com/MRDGH2821/copier-mr-mise/commit/e1febc02463a05c9fd47a0cadfe31c129afcbafe)) - MRDGH2821
+- drop stale yamllint glob and sync ryl key-ordering - ([2029b6b](https://github.com/MRDGH2821/copier-mr-mise/commit/2029b6b42f2ed5ae4fe929b78a6f9ab9e4c1cc8f)) - MRDGH2821
+- update word list - ([d9a0fd1](https://github.com/MRDGH2821/copier-mr-mise/commit/d9a0fd14e65df44617186f725e7c28aee8ce8cb1)) - MRDGH2821
+- update copier min version - ([66639fa](https://github.com/MRDGH2821/copier-mr-mise/commit/66639fa991751934abbf0cd3346d49fd153cdc33)) - MRDGH2821
+- remove cspell task - ([286036e](https://github.com/MRDGH2821/copier-mr-mise/commit/286036efb0c10fbf183a81fefd0be474fa9a19c3)) - MRDGH2821
+
+### Refactoring
+
+- **(treefmt)** move config inside .config - ([0d7a723](https://github.com/MRDGH2821/copier-mr-mise/commit/0d7a723c30f7cca257f0b6ee8db9ccbbdc74c092)) - MRDGH2821
+- **(treefmt)** relocate template jscpd/treefmt configs into .config/ - ([46c4d9c](https://github.com/MRDGH2821/copier-mr-mise/commit/46c4d9c64d9ce599c8d9ddf8b326956081ba2555)) - MRDGH2821
+- move into .config - ([d0cc227](https://github.com/MRDGH2821/copier-mr-mise/commit/d0cc2276d3a4b64fae51da92dd027fa94c79ffb0)) - MRDGH2821
+
+### Ci
+
+- update workflow versions - ([361bf54](https://github.com/MRDGH2821/copier-mr-mise/commit/361bf544d0e493bce2c2c8ea993d331334460482)) - MRDGH2821
+
+---
+
 ## [0.11.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.10.0..v0.11.0) - 2026-08-30
 
 ### Features
