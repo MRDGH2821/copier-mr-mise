@@ -79,18 +79,18 @@ This repository is the **template**, not a generated project. Generated files li
 
 ## Layout
 
-| Path                  | Purpose                                                      |
-| --------------------- | ------------------------------------------------------------ |
-| `copier.yml`          | Copier questions, exclusions, post-copy tasks                |
-| `template/`           | Files copied into generated projects                         |
-| `mise.toml`           | Tools, tasks, `hk install --mise` postinstall hook           |
-| `.config/hk.pkl`      | hk hook config (pre-commit, commit-msg, fix, check)          |
-| `apm.yml`             | APM skills and MCP servers                                   |
-| `cog.toml`            | Conventional-commit scopes and version bump hooks            |
-| `.mega-linter.yml`    | MegaLinter config; CI in `.github/workflows/mega-linter.yml` |
-| `.treefmt.toml`       | Full-tree formatter                                          |
-| `.config/cspell.json` | Spell-check dictionary                                       |
-| `.agents/logs/`       | AI-assisted work logs                                        |
+| Path                   | Purpose                                                      |
+| ---------------------- | ------------------------------------------------------------ |
+| `copier.yml`           | Copier questions, exclusions, post-copy tasks                |
+| `template/`            | Files copied into generated projects                         |
+| `mise.toml`            | Tools, tasks, `hk install --mise` postinstall hook           |
+| `.config/hk.pkl`       | hk hook config (pre-commit, commit-msg, fix, check)          |
+| `apm.yml`              | APM skills and MCP servers                                   |
+| `cog.toml`             | Conventional-commit scopes and version bump hooks            |
+| `.mega-linter.yml`     | MegaLinter config; CI in `.github/workflows/mega-linter.yml` |
+| `.config/treefmt.toml` | Full-tree formatter                                          |
+| `.config/cspell.json`  | Spell-check dictionary                                       |
+| `.agents/logs/`        | AI-assisted work logs                                        |
 
 Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
 
