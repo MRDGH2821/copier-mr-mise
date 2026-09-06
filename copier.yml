@@ -16,6 +16,25 @@ _exclude:
   - copier.yml
   - megalinter-reports
   - ~*
+_migrations:
+  - command: mv -b .github/workflows/treefmt.yml .github/workflows/mise-check.yml
+    version: v0.4.1
+  - command: |
+      mkdir -p .config
+      mv -b cliff.toml .config/cliff.toml
+      mv -b .cspell.json .config/cspell.json
+      mv -b hk.pkl .config/hk.pkl
+      mv -b .rumdl.toml .config/rumdl.toml
+      mv -b .ryl.toml .config/ryl.toml
+    version: v0.10.0
+  - command: mv -b typos.toml .typos.toml
+    version: v0.11.0
+  - command: |
+      mkdir -p .config
+      mv -b .jscpd.json .config/jscpd.json
+      mv -b .treefmt.toml .config/treefmt.toml
+      rm -f  .github/workflows/cocogitto.yml
+    version: v0.12.0
 _min_copier_version: 9.3.0
 _subdirectory: template
 _tasks:
