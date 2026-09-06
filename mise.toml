@@ -35,7 +35,6 @@ tombi = "latest"
 typos = "latest"
 typstyle = "latest"
 uv = "latest"
-yamllint = "latest"
 yq = "latest"
 
 [[watch_files]]
