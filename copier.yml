@@ -16,7 +16,7 @@ _exclude:
   - copier.yml
   - megalinter-reports
   - ~*
-_min_copier_version: 9.0.0
+_min_copier_version: 9.3.0
 _subdirectory: template
 _tasks:
   - command: command -v mise > /dev/null 2>&1 && echo "✓ mise is installed" || echo "✗ mise not found! Please install from here - https://mise.jdx.dev/"
