@@ -3,14 +3,16 @@ author: MRDGH2821
 dependencies:
   apm:
     - git: https://github.com/vercel-labs/skills
-      ref: v1.5.23
+      path: skills/find-skills
+      ref: v1.5.24
       skills:
         - find-skills
     - git: https://github.com/github/awesome-copilot
+      path: skills/git-commit
       skills:
         - git-commit
     - git: https://github.com/oxsecurity/megalinter
-      ref: v10.0.0
+      ref: v10.1.0
   mcp:
     - args:
         - mcp
