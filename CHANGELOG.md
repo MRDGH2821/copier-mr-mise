@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.12.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.12.0..v0.12.1) - 2026-09-08
+
+### Bug Fixes
+
+- add paths & update refs - ([1ac9398](https://github.com/MRDGH2821/copier-mr-mise/commit/1ac939806eb64bd2210a34fbf039bdfe80c2c0b8)) - MRDGH2821
+
+### Documentation
+
+- add ai logs - ([9939440](https://github.com/MRDGH2821/copier-mr-mise/commit/993944052b2d007823b88269f6b506380ec127c1)) - MRDGH2821
+
+---
+
 ## [0.12.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.11.0..v0.12.0) - 2026-09-06
 
 ### Bug Fixes
