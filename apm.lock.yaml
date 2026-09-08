@@ -217,8 +217,6 @@ mcp_configs:
   hk:
     args:
       - mcp
-      - root
-      - .
     command: hk
     name: hk
     registry: false

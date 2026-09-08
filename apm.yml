@@ -22,8 +22,6 @@ dependencies:
       transport: stdio
     - args:
         - mcp
-        - root
-        - .
       command: hk
       name: hk
       registry: false
