@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.12.2](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.12.1..v0.12.2) - 2026-09-08
+
+### Bug Fixes
+
+- fix mcp command - ([b5c4b5d](https://github.com/MRDGH2821/copier-mr-mise/commit/b5c4b5d809bd73afba8de2b9956e499486a94a22)) - MRDGH2821
+
+---
+
 ## [0.12.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.12.0..v0.12.1) - 2026-09-08
 
 ### Bug Fixes
