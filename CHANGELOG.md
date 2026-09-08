@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.12.3](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.12.2..v0.12.3) - 2026-09-08
+
+### Bug Fixes
+
+- ignore apm.lock.yaml in jscpd - ([5fb64c7](https://github.com/MRDGH2821/copier-mr-mise/commit/5fb64c7706165d8b99ce3d485318dbc5d974e4ef)) - MRDGH2821
+
+---
+
 ## [0.12.2](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.12.1..v0.12.2) - 2026-09-08
 
 ### Bug Fixes
