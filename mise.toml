@@ -22,7 +22,7 @@ bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
 cspell = "latest"
 git-cliff = "latest"
-hk = "latest"
+hk = "2.0.0"
 ls-lint = "latest"
 "npm:sort-package-json" = "latest"
 "pipx:yamlfix" = "latest"
