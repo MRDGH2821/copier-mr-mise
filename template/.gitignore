@@ -2,8 +2,10 @@
 .agent/skills
 .agents/mcp_config.json
 .agents/skills
+.claude/settings.json
 .claude/skills
 .codex/config.toml
+.cursor/hooks.json
 .cursor/mcp.json
 .cursor/skills
 .github/skills
@@ -11,6 +13,7 @@
 .opencode/skills
 .superpowers
 .vscode/mcp.json
+apm.lock.yaml
 apm_modules/
 opencode.json
 
