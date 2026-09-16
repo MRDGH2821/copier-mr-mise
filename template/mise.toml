@@ -8,21 +8,26 @@ postinstall = ["hk install --mise"]
 [tasks]
 ai-setup = "apm install"
 check = ["hk check --all", "cog check"]
-fmt = ["hk fix --all", "treefmt"]
-pre-commit = "hk run pre-commit"
 prepare = ["bun install"]
+
+[tasks.fmt]
+run = ["hk fix --all", { task = "treefmt" }]
+
+[tasks.treefmt]
+run = "treefmt"
+run_windows = "echo 'Treefmt not supported on Windows'"
 
 [tools]
 apm = { postinstall = "apm install", version = "latest" }
 "aqua:google/keep-sorted" = "latest"
-"aqua:numtide/treefmt" = "latest"
+"aqua:numtide/treefmt" = { os = ["linux", "macos"], version = "2.6.0" }
 "aqua:owenlamont/ryl" = "latest"
 betterleaks = "latest"
 bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
 cspell = "latest"
 git-cliff = "latest"
-hk = "latest"
+hk = "2.0.1"
 ls-lint = "latest"
 "npm:sort-package-json" = "latest"
 "pipx:yamlfix" = "latest"
