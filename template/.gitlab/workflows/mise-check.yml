@@ -1,5 +1,8 @@
 ---
 detect-arch:
+  artifacts:
+    reports:
+      dotenv: arch.env
   image: debian:13-slim
   script:
     - |
@@ -8,9 +11,6 @@ detect-arch:
         aarch64 | arm64) echo "MISE_ARCH=arm64" ;;
         *) echo "MISE_ARCH=$(uname -m)" ;;
       esac > arch.env
-  artifacts:
-    reports:
-      dotenv: arch.env
 mise-check:
   before_script:
     - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates tar
