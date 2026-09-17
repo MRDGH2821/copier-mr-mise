@@ -1,4 +1,16 @@
 ---
+detect-arch:
+  image: debian:13-slim
+  script:
+    - |
+      case "$(uname -m)" in
+        x86_64) echo "MISE_ARCH=amd64" ;;
+        aarch64 | arm64) echo "MISE_ARCH=arm64" ;;
+        *) echo "MISE_ARCH=$(uname -m)" ;;
+      esac > arch.env
+  artifacts:
+    reports:
+      dotenv: arch.env
 mise-check:
   before_script:
     - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates tar
@@ -7,11 +19,14 @@ mise-check:
       files:
         - bin/mise
         - mise.toml
-      prefix: mise-debian13-amd64
+      prefix: mise-debian13-${MISE_ARCH}
     paths:
       - .mise/installs/
       - .mise/cache/
   image: debian:13-slim
+  needs:
+    - artifacts: true
+      job: detect-arch
   script:
     - ./bin/mise install
     - ./bin/mise run prepare
