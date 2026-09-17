@@ -1,0 +1,60 @@
+---
+body:
+  - attributes:
+      description: What did you expect to happen instead?
+      label: What happened?
+    id: what-happened
+    type: textarea
+    validations:
+      required: true
+  - attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. copier copy gh:MRDGH2821/copier-mr-mise ...
+        2. ...
+    id: reproduce
+    type: textarea
+    validations:
+      required: false
+  - attributes:
+      label: When did this happen?
+      options:
+        - Generating a new project (copier copy)
+        - Updating an existing project (copier update)
+        - Working in this repo (copier-mr-mise itself)
+    id: when
+    type: dropdown
+    validations:
+      required: true
+  - attributes:
+      description: Output of `copier --version`
+      label: Copier version
+    id: copier-version
+    type: input
+    validations:
+      required: false
+  - attributes:
+      description: Output of `mise --version`
+      label: mise version
+    id: mise-version
+    type: input
+    validations:
+      required: false
+  - attributes:
+      label: Relevant log output
+      render: shell
+    id: logs
+    type: textarea
+    validations:
+      required: false
+  - attributes:
+      label: Additional context
+    id: context
+    type: textarea
+    validations:
+      required: false
+description: Report a problem with the template or a generated project
+labels:
+  - bug
+name: Bug Report
+title: "fix: "
