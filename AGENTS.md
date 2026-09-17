@@ -56,23 +56,17 @@ Before substantive work, ensure project skills and MCP servers are installed.
 1. From the repository root, run `mise run ai-setup`, or:
 
    ```sh
-   apm install
-   ```
-
-   or, if `apm` is not on `PATH`:
-
-   ```sh
-   uvx --from apm-cli apm install
+   capa install
    ```
 
 2. **Reload the agent** (new chat / restart the agent session) so installed skills and MCP servers are picked up.
 
-Configuration lives in `apm.yml`. Do not skip this when skills or MCP tools are missing or stale.
+Configuration lives in `capabilities.yaml`. Do not skip this when skills or MCP tools are missing or stale.
 
 ## Project Context
 
 - **Project**: `copier-mr-mise` (v0.1.0) — Copier 9+ template for MRDGH2821 projects
-- **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, cspell, and optional AGENTS.md / APM skills
+- **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, cspell, and optional AGENTS.md / capa skills
 - **Usage**: `copier copy gh:MRDGH2821/copier-mr-mise "/path/to/folder"` then later `copier update`
 
 This repository is the **template**, not a generated project. Generated files live under `template/` (`_subdirectory: template` in `copier.yml`).
@@ -85,7 +79,7 @@ This repository is the **template**, not a generated project. Generated files li
 | `template/`            | Files copied into generated projects                         |
 | `mise.toml`            | Tools, tasks, `hk install --mise` postinstall hook           |
 | `.config/hk.pkl`       | hk hook config (pre-commit, commit-msg, fix, check)          |
-| `apm.yml`              | APM skills and MCP servers                                   |
+| `capabilities.yaml`    | Skills, MCP servers, and providers (capa)                    |
 | `cog.toml`             | Conventional-commit scopes and version bump hooks            |
 | `.mega-linter.yml`     | MegaLinter config; CI in `.github/workflows/mega-linter.yml` |
 | `.config/treefmt.toml` | Full-tree formatter                                          |
@@ -94,9 +88,9 @@ This repository is the **template**, not a generated project. Generated files li
 
 Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
 
-**Jinja templates** (do not break Copier syntax): `template/README.md.jinja`, `template/package.json.jinja`, `template/apm.yml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
+**Jinja templates** (do not break Copier syntax): `template/README.md.jinja`, `template/package.json.jinja`, `template/capabilities.yaml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
 
-**Copier answers** (`copier.yml`): `project_name`, `ci` (`github` or `gitlab`), `use_agents`, `use_skills`, `use_taste_skill`. Post-copy checks direnv and Nix; `lic` runs on copy; `apm install` runs on update when `use_skills` is true.
+**Copier answers** (`copier.yml`): `project_name`, `ci` (`github` or `gitlab`), `use_agents`, `use_skills`, `use_taste_skill`. Post-copy checks direnv and Nix; `lic` runs on copy; `capa install` runs automatically via mise's tool postinstall hook and its `capabilities.yaml` file watcher.
 
 ## Branch naming strategy
 
@@ -209,7 +203,7 @@ docs: update AGENTS.md with guidelines
 chore(cspell): add technical terms to dictionary
 ```
 
-Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json`, `apm.yml`, and `CHANGELOG.md` (git-cliff).
+Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json` and `CHANGELOG.md` (git-cliff).
 
 ## Troubleshooting
 
