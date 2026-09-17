@@ -8,6 +8,9 @@ postinstall = ["hk install --mise"]
 [settings]
 lockfile = true
 
+[settings.github]
+use_git_credentials = true
+
 [tasks]
 ai-setup = "capa install"
 check = ["hk check --all", "cog check"]
