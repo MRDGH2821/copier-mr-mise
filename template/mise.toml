@@ -6,7 +6,7 @@ HK_MISE = 1
 postinstall = ["hk install --mise"]
 
 [tasks]
-ai-setup = "apm install"
+ai-setup = "capa install"
 check = ["hk check --all", "cog check"]
 prepare = ["bun install"]
 
@@ -18,7 +18,6 @@ run = "treefmt"
 run_windows = "echo 'Treefmt not supported on Windows'"
 
 [tools]
-apm = { postinstall = "apm install", version = "latest" }
 "aqua:google/keep-sorted" = "latest"
 "aqua:numtide/treefmt" = { os = ["linux", "macos"], version = "2.6.0" }
 "aqua:owenlamont/ryl" = "latest"
@@ -27,6 +26,7 @@ bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
 cspell = "latest"
 git-cliff = "latest"
+"github:infragate/capa" = { postinstall = "capa install", version = "2.2.0" }
 hk = "2.0.1"
 ls-lint = "latest"
 "npm:sort-package-json" = "latest"
@@ -42,5 +42,5 @@ uv = "latest"
 yq = "latest"
 
 [[watch_files]]
-patterns = ["apm.yml"]
+patterns = ["capabilities.yaml"]
 task = "ai-setup"
