@@ -592,7 +592,7 @@ specifiers = ["latest"]
 version = "1.19.1"
 backend = "pipx:yamlfix"
 specifiers = ["latest"]
-uv = { path = ".mise/locks/pipx-yamlfix/1.19.1", digest = "sha256:69bf5916d1d7f059dda4d33de7750e0f62e548fdfa5c791b608aa5866ec3901e" }
+uv = { path = ".mise/locks/pipx-yamlfix/1.19.1", digest = "sha256:49f2be575340e9cc433b94c58e9d01a850e2bea30a55ce8a50b7c096495cff24" }
 
 [[tools.pkl]]
 version = "0.32.1"
