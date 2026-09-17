@@ -19,6 +19,13 @@ plugins:
       repo: oxsecurity/megalinter
     id: megalinter
     type: github
+{% if use_taste_skill %}
+  - def:
+      description: Frontend design taste skills including brutalist, minimalist, soft, redesign, stitch, and more
+      repo: Leonxlnx/taste-skill
+    id: taste-skill
+    type: github
+{% endif %}
 providers:
   # keep-sorted start
   - antigravity
