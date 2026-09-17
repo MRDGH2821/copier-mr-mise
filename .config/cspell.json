@@ -3,6 +3,7 @@
   "caseSensitive": false,
   "ignorePaths": [
     "**/.git/**",
+    "**/.local/bin/mise",
     "**/.pnpm-lock.json",
     "**/node_modules/**",
     "**/vscode-extension/**",

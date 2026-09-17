@@ -32,9 +32,13 @@ opencode.json
 .devenv
 .direnv
 .git
+.mise
 .pre-commit-config.yaml
 .svn
 .venv/
+!/template/.local/
+!/template/.local/bin/
+!/template/.local/bin/mise
 __MACOSX
 __pycache__
 dist/

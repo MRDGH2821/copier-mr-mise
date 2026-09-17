@@ -1,0 +1,18 @@
+---
+mise-check:
+  before_script:
+    - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates tar
+  cache:
+    key:
+      files:
+        - .local/bin/mise
+        - mise.toml
+      prefix: mise-debian13-amd64
+    paths:
+      - .mise/installs/
+      - .mise/cache/
+  image: debian:13-slim
+  script:
+    - ./.local/bin/mise install
+    - ./.local/bin/mise run prepare
+    - ./.local/bin/mise run check
