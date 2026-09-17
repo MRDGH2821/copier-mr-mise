@@ -51,6 +51,7 @@ options = ["format", "-w", "."]
 command = "bunx"
 # tombi: format.rules.array-values-order = "ascending"
 excludes = [
+  "**/bin/mise",
   "*.*ignore",
   "*.aac",
   "*.docx",
