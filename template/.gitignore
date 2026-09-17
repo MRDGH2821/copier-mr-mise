@@ -36,9 +36,6 @@ opencode.json
 .pre-commit-config.yaml
 .svn
 .venv/
-!/.local/
-!/.local/bin/
-!/.local/bin/mise
 __MACOSX
 __pycache__
 dist/
