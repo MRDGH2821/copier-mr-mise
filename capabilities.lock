@@ -1,6 +1,6 @@
 version: 1
 generator: capa@2.2.0
-generatedAt: '2026-09-17T00:10:48.078Z'
+generatedAt: '2026-09-17T21:27:00.485Z'
 skills:
   - id: bootstrap
     source: github
@@ -25,6 +25,38 @@ skills:
     requestedVersion: null
     requestedRef: null
     resolvedRef: 9ce814859eaa473178a1463ee3aa0c54a8860b86
+    resolvedVersion: null
+  - id: grill-me
+    source: github
+    repo: mattpocock/skills
+    skillName: grill-me
+    requestedVersion: null
+    requestedRef: null
+    resolvedRef: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e
+    resolvedVersion: null
+  - id: grill-with-docs
+    source: github
+    repo: mattpocock/skills
+    skillName: grill-with-docs
+    requestedVersion: null
+    requestedRef: null
+    resolvedRef: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e
+    resolvedVersion: null
+  - id: grilling
+    source: github
+    repo: mattpocock/skills
+    skillName: grilling
+    requestedVersion: null
+    requestedRef: null
+    resolvedRef: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e
+    resolvedVersion: null
+  - id: to-tickets
+    source: github
+    repo: mattpocock/skills
+    skillName: to-tickets
+    requestedVersion: null
+    requestedRef: null
+    resolvedRef: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e
     resolvedVersion: null
 plugins:
   - id: megalinter
