@@ -4,6 +4,53 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.13.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.12.3..v0.13.0) - 2026-09-17
+
+### Bug Fixes
+
+- **(copier)** exclude capabilities.yaml when skills are disabled - ([07465e3](https://github.com/MRDGH2821/copier-mr-mise/commit/07465e309453aab4cd9cba781f8c5458c76386b5)) - MRDGH2821
+- **(cspell)** add words from recent commit messages - ([8464635](https://github.com/MRDGH2821/copier-mr-mise/commit/8464635f0701461e50876e1bd68707cab27b390a)) - MRDGH2821
+- **(hk)** sync template config with root - ([f5ad0b6](https://github.com/MRDGH2821/copier-mr-mise/commit/f5ad0b6c6878aa98e7ae55b7d5660efb94e7f4a1)) - MRDGH2821
+- **(mise)** move committed wrapper to bin/mise - ([d0e803c](https://github.com/MRDGH2821/copier-mr-mise/commit/d0e803cf3ccd55402e4e27779d13043133a7f446)) - MRDGH2821
+- **(mise)** regenerate template/mise.lock with full checksums - ([2b4144d](https://github.com/MRDGH2821/copier-mr-mise/commit/2b4144dff222600613a0aa1c15ee6d9a6f3d3726)) - MRDGH2821
+- **(mise)** use git credentials to get around api limits - ([baac5d2](https://github.com/MRDGH2821/copier-mr-mise/commit/baac5d2cf01129df8071fb1e38e7d237f64f388d)) - MRDGH2821
+- ignore more ai stuff - ([9c49c68](https://github.com/MRDGH2821/copier-mr-mise/commit/9c49c68b9a2f026f06cb8c61f1ec9575b37bbf2d)) - MRDGH2821
+- use v2.0.1 in hk.pkl - ([ee0c3d9](https://github.com/MRDGH2821/copier-mr-mise/commit/ee0c3d9a5232c632d6aee85b85952c6bac0e63ea)) - MRDGH2821
+
+### Documentation
+
+- replace stale apm.yml references with capabilities.yaml - ([3a2b67d](https://github.com/MRDGH2821/copier-mr-mise/commit/3a2b67dce544d0ddee8b05f0ceaa3372dac3efdb)) - MRDGH2821
+
+### Features
+
+- **(github)** add bug report and feature request issue templates - ([089ee81](https://github.com/MRDGH2821/copier-mr-mise/commit/089ee81f50b9d189295e11a0b7a3e2c530cfb2bf)) - MRDGH2821
+- **(mise)** pin versions & update tasks - ([a2d2ab4](https://github.com/MRDGH2821/copier-mr-mise/commit/a2d2ab4e14c513daece1851ae41cf21886f8ea7a)) - MRDGH2821
+- **(mise)** wire up GitLab CI check for generated projects - ([822b2c0](https://github.com/MRDGH2821/copier-mr-mise/commit/822b2c04741b7e1de212660cf8bf669b19dd5254)) - MRDGH2821
+- **(mise)** detect runner arch dynamically for GitLab cache key - ([a33d6cc](https://github.com/MRDGH2821/copier-mr-mise/commit/a33d6cc2913e21636d0d26cd033b6cfe5b7577fd)) - MRDGH2821
+- migrate to capabilities - ([473b8f9](https://github.com/MRDGH2821/copier-mr-mise/commit/473b8f95e932f25721cfc377a8ab3c7514feaf69)) - MRDGH2821
+- templatify & add taste skill - ([04cc533](https://github.com/MRDGH2821/copier-mr-mise/commit/04cc53358e6de2efc48f49135f7114fe7698668d)) - MRDGH2821
+- add grill me skill - ([20a36b8](https://github.com/MRDGH2821/copier-mr-mise/commit/20a36b826a1d9043bfc099a7dfd2cd7547734dad)) - MRDGH2821
+- add to-tickets skill - ([8e1d19f](https://github.com/MRDGH2821/copier-mr-mise/commit/8e1d19f046bbcc26faf315d44839824b3577cb04)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- migrate hooks to v2.0.0 - ([1988c55](https://github.com/MRDGH2821/copier-mr-mise/commit/1988c55eb20e16e756c405f7c4065caa0522e19c)) - MRDGH2821
+- update versions - ([b6d1f6d](https://github.com/MRDGH2821/copier-mr-mise/commit/b6d1f6dab210554b77302d3afa48abafc8ed49c7)) - MRDGH2821
+- add lockfiles - ([1aa9928](https://github.com/MRDGH2821/copier-mr-mise/commit/1aa99286b6dc182f2a7ab6f1e0eb84dc4a3bcc76)) - MRDGH2821
+- update exclusions - ([35ff3e0](https://github.com/MRDGH2821/copier-mr-mise/commit/35ff3e04b8563803ea3c098258be2e51c9f372d6)) - MRDGH2821
+- use lock files & update capa - ([67f90f8](https://github.com/MRDGH2821/copier-mr-mise/commit/67f90f88c068e8e77fd1d2723d55f2d110e80bd6)) - MRDGH2821
+- update lock files - ([1033f5e](https://github.com/MRDGH2821/copier-mr-mise/commit/1033f5ec1f28146473f9be8d6258f1f81534f5eb)) - MRDGH2821
+
+### Style
+
+- format files - ([3be89c2](https://github.com/MRDGH2821/copier-mr-mise/commit/3be89c2581482cf2a1446add1359675eeb6a7b82)) - MRDGH2821
+
+### Build
+
+- update hk to v2.0.0 - ([5118570](https://github.com/MRDGH2821/copier-mr-mise/commit/5118570883a97a7196557439b2e95959e21675c9)) - MRDGH2821
+
+---
+
 ## [0.12.3](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.12.2..v0.12.3) - 2026-09-08
 
 ### Bug Fixes
