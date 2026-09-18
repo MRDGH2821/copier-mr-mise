@@ -484,64 +484,64 @@ url = "https://github.com/orhun/git-cliff/releases/download/v2.14.1/git-cliff-2.
 url_api = "https://api.github.com/repos/orhun/git-cliff/releases/assets/539702434"
 
 [[tools."github:infragate/capa"]]
-version = "2.2.1"
+version = "2.2.2"
 backend = "github:infragate/capa"
-specifiers = ["2.2.1"]
+specifiers = ["2.2.2"]
 
 [tools."github:infragate/capa"."platforms.linux-arm64"]
-checksum = "sha256:0dbee1360b9682d47c26d7fe01fc4354fc93da6a476578ef1ee25c7dc06207f7"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-aarch64-unknown-linux-gnu"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024575"
+checksum = "sha256:cba202bf561fa8c844e3051b075a02c7751fb7bcc1159abbb0c14860f6e52476"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-aarch64-unknown-linux-gnu"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287911"
 
 [tools."github:infragate/capa"."platforms.linux-arm64-musl"]
-checksum = "sha256:0dbee1360b9682d47c26d7fe01fc4354fc93da6a476578ef1ee25c7dc06207f7"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-aarch64-unknown-linux-gnu"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024575"
+checksum = "sha256:cba202bf561fa8c844e3051b075a02c7751fb7bcc1159abbb0c14860f6e52476"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-aarch64-unknown-linux-gnu"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287911"
 
 [tools."github:infragate/capa"."platforms.linux-x64"]
-checksum = "sha256:75fb5b9126e49433298e698afdbf0c8e1c1c7c2fef6a6b56d58f986d0cfc9fdb"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-x86_64-unknown-linux-gnu"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024570"
+checksum = "sha256:7eee8c2789ac540090c5f713dbfecd19ab5aa707fc11f465e2f51a49012effa8"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-x86_64-unknown-linux-gnu"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287912"
 
 [tools."github:infragate/capa"."platforms.linux-x64-baseline"]
-checksum = "sha256:75fb5b9126e49433298e698afdbf0c8e1c1c7c2fef6a6b56d58f986d0cfc9fdb"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-x86_64-unknown-linux-gnu"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024570"
+checksum = "sha256:7eee8c2789ac540090c5f713dbfecd19ab5aa707fc11f465e2f51a49012effa8"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-x86_64-unknown-linux-gnu"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287912"
 
 [tools."github:infragate/capa"."platforms.linux-x64-musl"]
-checksum = "sha256:75fb5b9126e49433298e698afdbf0c8e1c1c7c2fef6a6b56d58f986d0cfc9fdb"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-x86_64-unknown-linux-gnu"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024570"
+checksum = "sha256:7eee8c2789ac540090c5f713dbfecd19ab5aa707fc11f465e2f51a49012effa8"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-x86_64-unknown-linux-gnu"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287912"
 
 [tools."github:infragate/capa"."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:75fb5b9126e49433298e698afdbf0c8e1c1c7c2fef6a6b56d58f986d0cfc9fdb"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-x86_64-unknown-linux-gnu"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024570"
+checksum = "sha256:7eee8c2789ac540090c5f713dbfecd19ab5aa707fc11f465e2f51a49012effa8"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-x86_64-unknown-linux-gnu"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287912"
 
 [tools."github:infragate/capa"."platforms.macos-arm64"]
-checksum = "sha256:ca5be3bfd90a82719aaffcc04f139ffc7ea6f299bd905917c8c653b36e2ec797"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-aarch64-apple-darwin"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024576"
+checksum = "sha256:7055002d309fa9045c8eb4b36d8ef18ec5044faa07e87851e0c2584ad2fd6b2f"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-aarch64-apple-darwin"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287902"
 
 [tools."github:infragate/capa"."platforms.macos-x64"]
-checksum = "sha256:89cda1802803e9c70e774d1a506f8f65ddb9cb776410bb342450a47c524fce0c"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-x86_64-apple-darwin"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024583"
+checksum = "sha256:8fc5ce52b87c0858ff4d39c415fb5b6a865983203995eada5b795eb01768fcf2"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-x86_64-apple-darwin"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287906"
 
 [tools."github:infragate/capa"."platforms.macos-x64-baseline"]
-checksum = "sha256:89cda1802803e9c70e774d1a506f8f65ddb9cb776410bb342450a47c524fce0c"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-x86_64-apple-darwin"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024583"
+checksum = "sha256:8fc5ce52b87c0858ff4d39c415fb5b6a865983203995eada5b795eb01768fcf2"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-x86_64-apple-darwin"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287906"
 
 [tools."github:infragate/capa"."platforms.windows-x64"]
-checksum = "sha256:eedd7bdc52e8f3a3523dec918960c68e167c126ea214ba412110fbbb1042bf0f"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-x86_64-pc-windows-msvc.exe"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024574"
+checksum = "sha256:e77764c30b2585f02fd3b4345bd0b49f84d62f793d0c37e538b7f0fdbf4edd8f"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-x86_64-pc-windows-msvc.exe"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287901"
 
 [tools."github:infragate/capa"."platforms.windows-x64-baseline"]
-checksum = "sha256:eedd7bdc52e8f3a3523dec918960c68e167c126ea214ba412110fbbb1042bf0f"
-url = "https://github.com/infragate/capa/releases/download/v2.2.1/capa-x86_64-pc-windows-msvc.exe"
-url_api = "https://api.github.com/repos/infragate/capa/releases/assets/569024574"
+checksum = "sha256:e77764c30b2585f02fd3b4345bd0b49f84d62f793d0c37e538b7f0fdbf4edd8f"
+url = "https://github.com/infragate/capa/releases/download/v2.2.2/capa-x86_64-pc-windows-msvc.exe"
+url_api = "https://api.github.com/repos/infragate/capa/releases/assets/571287901"
 
 [[tools.hk]]
 version = "2.0.1"
@@ -732,74 +732,74 @@ backend = "npm:prettier"
 specifiers = ["latest"]
 
 [[tools.ruff]]
-version = "0.16.7"
+version = "0.16.8"
 backend = "aqua:astral-sh/ruff"
 specifiers = ["latest"]
 
 [tools.ruff."platforms.linux-arm64"]
-checksum = "sha256:1e06b11127c28387c8066da4ce6a617a84a359591be09dbf581fbb0c3e006239"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530686"
+checksum = "sha256:8ff18ee07d6ed3cfbd05fdc9012646a79482c00045dbcbf32416ef8f14ab1f7e"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294361"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.linux-arm64-musl"]
-checksum = "sha256:dd669efe4ac74ffd5842b26147c36cdd6c93b9cf0d10d5e53c12ec5b44f540bd"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530691"
+checksum = "sha256:57a4e072b6b74a4dd0036b7b253e056bdb70e02c68504ca6f2bfca2707d03fb6"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294370"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.linux-x64"]
-checksum = "sha256:73894c7b7c9a53fd66ed715eb3a1ec65077f316328e377057a98bdb7fcba0326"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530800"
+checksum = "sha256:c4a8c7c152532bcb7e7ede4bd6ccd440dcacddffcdcdd79b90090ac6021f41c2"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294510"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.linux-x64-baseline"]
-checksum = "sha256:73894c7b7c9a53fd66ed715eb3a1ec65077f316328e377057a98bdb7fcba0326"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530800"
+checksum = "sha256:c4a8c7c152532bcb7e7ede4bd6ccd440dcacddffcdcdd79b90090ac6021f41c2"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294510"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.linux-x64-musl"]
-checksum = "sha256:8d28939cf5cabe54a2f8f7cbfab52c643436d1bc70474198181db9e48f504411"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530803"
+checksum = "sha256:e56aa612121de356f37d05f3284cd806081fb72d5dbd4814b3810c5a23c562cc"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294522"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:8d28939cf5cabe54a2f8f7cbfab52c643436d1bc70474198181db9e48f504411"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530803"
+checksum = "sha256:e56aa612121de356f37d05f3284cd806081fb72d5dbd4814b3810c5a23c562cc"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294522"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.macos-arm64"]
-checksum = "sha256:80221a5e0b1ae29262a74496f2ad1380c1ab52b3edd8cee13ec76d8acff406ca"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530669"
+checksum = "sha256:0ffa53899f2970d24f14fbed8d8265c87180b159b7100794d97a1527dc60fa79"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294350"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.macos-x64"]
-checksum = "sha256:6f3b98ec349f470b7efde5294d44e5171613ddaac3c251a918a7946b303d3ec2"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530779"
+checksum = "sha256:bccb4d49c5c9f7e69fd42df2475730a08a641af31b8e0ee5e775e3dd829c4686"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294476"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.macos-x64-baseline"]
-checksum = "sha256:6f3b98ec349f470b7efde5294d44e5171613ddaac3c251a918a7946b303d3ec2"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530779"
+checksum = "sha256:bccb4d49c5c9f7e69fd42df2475730a08a641af31b8e0ee5e775e3dd829c4686"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294476"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.windows-x64"]
-checksum = "sha256:a099e761fb841fc33d44031aa37e16a3d154922fd3da284396e58ae687973e45"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530794"
+checksum = "sha256:7985e06caf14b0077cb68da41edbf812e1d9654fe4c144d72b71138e96350129"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294490"
 provenance = "github-attestations"
 
 [tools.ruff."platforms.windows-x64-baseline"]
-checksum = "sha256:a099e761fb841fc33d44031aa37e16a3d154922fd3da284396e58ae687973e45"
-url = "https://github.com/astral-sh/ruff/releases/download/0.16.7/ruff-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/555530794"
+checksum = "sha256:7985e06caf14b0077cb68da41edbf812e1d9654fe4c144d72b71138e96350129"
+url = "https://github.com/astral-sh/ruff/releases/download/0.16.8/ruff-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/568294490"
 provenance = "github-attestations"
 
 [[tools.rumdl]]
