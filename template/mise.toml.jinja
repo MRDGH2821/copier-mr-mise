@@ -46,6 +46,12 @@ typos = "latest"
 typstyle = "latest"
 uv = "latest"
 yq = "latest"
+{% if ci == 'github' %}
+gh = { postinstall = "gh auth login", version = "latest" }
+{% endif %}
+{% if ci == 'gitlab' %}
+glab = { postinstall = "glab auth login", version = "latest" }
+{% endif %}
 
 [[watch_files]]
 patterns = ["capabilities.yaml"]

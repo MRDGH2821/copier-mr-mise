@@ -26,6 +26,18 @@ plugins:
     id: taste-skill
     type: github
 {% endif %}
+
+{% if ci == 'gitlab' %}
+  - def:
+      repo: gitlab-org/ai/skills::claude-plugin/plugins/glab
+    id: glab
+    type: gitlab
+  - def:
+      repo: gitlab-org/ai/skills::claude-plugin/plugins/gitlab-pipeline-watch
+    id: gitlab-pipeline-watch
+    type: gitlab
+{% endif %}
+
 providers:
   # keep-sorted start
   - antigravity
@@ -82,4 +94,10 @@ skills:
       repo: mattpocock/skills@to-tickets
     id: to-tickets
     type: github
+{% if ci == 'github' %}
+  - def:
+      repo: github/awesome-copilot@gh-cli
+    id: gh-cli
+    type: github
+{% endif %}
 tools: []
