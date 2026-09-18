@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.14.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.13.0..v0.14.0) - 2026-09-18
+
+### Bug Fixes
+
+- use official gh cli skill - ([9da86e2](https://github.com/MRDGH2821/copier-mr-mise/commit/9da86e233fa348cf2eab6eeff4453e91430689a1)) - MRDGH2821
+
+### Features
+
+- install gh or glab as per ci - ([41cc3ad](https://github.com/MRDGH2821/copier-mr-mise/commit/41cc3add7630da0494057fb1417baedfe10cbe89)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(mise)** update lock files - ([7182fb6](https://github.com/MRDGH2821/copier-mr-mise/commit/7182fb69216bba912b97843596b1cb16ea99c426)) - MRDGH2821
+
+### Build
+
+- **(mise)** install gh cli - ([f91f9de](https://github.com/MRDGH2821/copier-mr-mise/commit/f91f9dedfd9fb7a4b4c1c22e1ad54a55c5c15e18)) - MRDGH2821
+- **(mise)** bump capa version - ([c616612](https://github.com/MRDGH2821/copier-mr-mise/commit/c616612df0ab57b54bba5d07b4404236036cc5ef)) - MRDGH2821
+- bump prettier version - ([ff3b0d2](https://github.com/MRDGH2821/copier-mr-mise/commit/ff3b0d221e1f09e435bd1356d1c8b4c45cc42b08)) - MRDGH2821
+
+---
+
 ## [0.13.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.12.3..v0.13.0) - 2026-09-17
 
 ### Bug Fixes
