@@ -31,6 +31,7 @@ betterleaks = "latest"
 bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
 cspell = "latest"
+gh = { postinstall = "gh auth login", version = "latest" }
 git-cliff = "latest"
 "github:infragate/capa" = { postinstall = "capa install", version = "2.2.1" }
 hk = "2.0.1"
