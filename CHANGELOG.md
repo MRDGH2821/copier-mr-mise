@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.15.4](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.3..v0.15.4) - 2026-09-19
+
+### Bug Fixes
+
+- **(cocogitto)** ignore merge commits in cog check - ([963f587](https://github.com/MRDGH2821/copier-mr-mise/commit/963f5877af17f5c365e178a22c21822319f5de48)) - MRDGH2821
+- exclude lockfiles from content linters/formatters - ([6cfc67b](https://github.com/MRDGH2821/copier-mr-mise/commit/6cfc67bd4936491fce499b12bfbfd209f40080fb)) - MRDGH2821
+
+### Documentation
+
+- add checklist for end users - ([19147a5](https://github.com/MRDGH2821/copier-mr-mise/commit/19147a54400debee045190b824ef906374827faa)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update words - ([0244a23](https://github.com/MRDGH2821/copier-mr-mise/commit/0244a23c1de07cc29aa1da44ab6faed0d94644bd)) - MRDGH2821
+- gitignore local agent-talk identity directory - ([0b8134c](https://github.com/MRDGH2821/copier-mr-mise/commit/0b8134cd56ef3e782321ba4aacd149f5c68a1b89)) - MRDGH2821
+- no need for this as gitignore-tidy formats it - ([0b71df5](https://github.com/MRDGH2821/copier-mr-mise/commit/0b71df549251345a294704270857f5aa4be140ba)) - MRDGH2821
+- quote link - ([fc1a902](https://github.com/MRDGH2821/copier-mr-mise/commit/fc1a90221d0e972d8d5ac63d9548f61ae618ec26)) - MRDGH2821
+- merge pull request #1 from MRDGH2821/fix/lockfile-lint-exclusions - ([54a1c2d](https://github.com/MRDGH2821/copier-mr-mise/commit/54a1c2d6a4b8d6b37a70cc8ae536518b8006cf58)) - Mihir Rabade
+
+### Ci
+
+- **(mise)** restrict checks on pull requests - ([00fe7b3](https://github.com/MRDGH2821/copier-mr-mise/commit/00fe7b3792cb71575ca31c56cccc9ccbdaca1240)) - MRDGH2821
+- add forgejo compatibility - ([fc73582](https://github.com/MRDGH2821/copier-mr-mise/commit/fc73582b1d36ea25099f51540b8c89185f6b66a8)) - MRDGH2821
+- remove forgejo compatibility - ([595bb49](https://github.com/MRDGH2821/copier-mr-mise/commit/595bb49a89ea06629d3847e62ba298e7afb5bda7)) - MRDGH2821
+
+---
+
 ## [0.15.3](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.2..v0.15.3) - 2026-09-19
 
 ### Bug Fixes
