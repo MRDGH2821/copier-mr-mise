@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.15.3](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.2..v0.15.3) - 2026-09-19
+
+### Bug Fixes
+
+- **(mise)** apply ci suggested fixes - ([11aff8a](https://github.com/MRDGH2821/copier-mr-mise/commit/11aff8a68dd5c063e5122856b150ef5c324b00dc)) - MRDGH2821
+- commit mise lock sidecar files - ([bc40cd2](https://github.com/MRDGH2821/copier-mr-mise/commit/bc40cd2d50c15d29d74b8670aed13eb44c4976b9)) - MRDGH2821
+- exclude mise sidecars from being formatted - ([ddc8b8b](https://github.com/MRDGH2821/copier-mr-mise/commit/ddc8b8b2c58ac97a7c652a1e7217466f35086112)) - MRDGH2821
+
+---
+
 ## [0.15.2](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.1..v0.15.2) - 2026-09-19
 
 ### Bug Fixes
