@@ -29,6 +29,7 @@ opencode.json
 # others
 *.local
 .DS_Store
+.agent-talk/
 .devenv
 .direnv
 .git
