@@ -17,7 +17,7 @@ check = ["hk check --all", "cog check"]
 prepare = ["bun install"]
 
 [tasks.fmt]
-run = ["hk fix --all", { task = "treefmt" }]
+run = [{ task = "treefmt" }, "hk fix --all"]
 
 [tasks.treefmt]
 run = "treefmt"
@@ -39,6 +39,7 @@ hk = "2.0.1"
 ls-lint = "latest"
 "npm:sort-package-json" = "latest"
 "pipx:lorenzwalthert/gitignore-tidy" = "latest"
+"pipx:toml-sort" = "latest"
 "pipx:yamlfix" = "latest"
 pkl = "latest"
 prettier = "latest"
@@ -47,7 +48,6 @@ rumdl = "latest"
 tombi = "latest"
 typos = "latest"
 typstyle = "latest"
-uv = "latest"
 yq = "latest"
 
 [[watch_files]]

@@ -17,7 +17,7 @@ check = ["hk check --all", "cog check"]
 prepare = ["bun install"]
 
 [tasks.fmt]
-run = ["hk fix --all", { task = "treefmt" }]
+run = [{ task = "treefmt" }, "hk fix --all"]
 
 [tasks.treefmt]
 run = "treefmt"
@@ -29,6 +29,7 @@ run_windows = "echo 'Treefmt not supported on Windows'"
 "aqua:owenlamont/ryl" = "latest"
 betterleaks = "latest"
 bun = { postinstall = "bun install", version = "latest" }
+"cargo:MRDGH2821/Sort-Markdown-Tables" = "latest"
 cocogitto = "latest"
 cspell = "latest"
 git-cliff = "latest"
@@ -36,6 +37,8 @@ git-cliff = "latest"
 hk = "2.0.1"
 ls-lint = "latest"
 "npm:sort-package-json" = "latest"
+"pipx:lorenzwalthert/gitignore-tidy" = "latest"
+"pipx:toml-sort" = "latest"
 "pipx:yamlfix" = "latest"
 pkl = "latest"
 prettier = "latest"
@@ -44,7 +47,6 @@ rumdl = "latest"
 tombi = "latest"
 typos = "latest"
 typstyle = "latest"
-uv = "latest"
 yq = "latest"
 {% if ci == 'github' %}
 gh = { postinstall = "gh auth login", version = "latest" }
