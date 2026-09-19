@@ -12,7 +12,7 @@ lockfile = true
 use_git_credentials = true
 
 [tasks]
-ai-setup = "capa install"
+ai-setup = "capa install --yes"
 check = ["hk check --all", "cog check"]
 prepare = ["bun install"]
 
@@ -33,7 +33,7 @@ bun = { postinstall = "bun install", version = "latest" }
 cocogitto = "latest"
 cspell = "latest"
 git-cliff = "latest"
-"github:infragate/capa" = { postinstall = "capa install", version = "2.2.2" }
+"github:infragate/capa" = { postinstall = "capa install --yes", version = "2.2.2" }
 hk = "2.0.1"
 ls-lint = "latest"
 "npm:sort-package-json" = "latest"
@@ -49,7 +49,7 @@ typos = "latest"
 typstyle = "latest"
 yq = "latest"
 {% if ci == 'github' %}
-gh = { postinstall = "gh auth login", version = "latest" }
+gh = "latest"
 {% endif %}
 {% if ci == 'gitlab' %}
 glab = { postinstall = "glab auth login", version = "latest" }
