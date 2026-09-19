@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.15.5](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.4..v0.15.5) - 2026-09-19
+
+### Bug Fixes
+
+- **(megalinter)** exclude .mise sidecars from vulnerability scanning - ([f0aa52b](https://github.com/MRDGH2821/copier-mr-mise/commit/f0aa52bea147ef53d023ba6362624f06eace006a)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update words - ([db370a2](https://github.com/MRDGH2821/copier-mr-mise/commit/db370a21ea467b530109443f319e59f9a57c25ca)) - MRDGH2821
+
+---
+
 ## [0.15.4](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.3..v0.15.4) - 2026-09-19
 
 ### Bug Fixes
