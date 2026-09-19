@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.15.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.14.0..v0.15.0) - 2026-09-19
+
+### Features
+
+- update configs - ([37fb441](https://github.com/MRDGH2821/copier-mr-mise/commit/37fb441b0ef91959906c4aabc9fdd9bb3027af19)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update words - ([fcb270b](https://github.com/MRDGH2821/copier-mr-mise/commit/fcb270bc905c9c1211114218cb0b19978f14de77)) - MRDGH2821
+- remove empty tables - ([de85b07](https://github.com/MRDGH2821/copier-mr-mise/commit/de85b074d359777c6d57cc5190e933500af3d155)) - MRDGH2821
+
+### Refactoring
+
+- rearrange tools & ownerships - ([4f477f9](https://github.com/MRDGH2821/copier-mr-mise/commit/4f477f9ca96403408a361974bda4643f8e092b02)) - MRDGH2821
+
+### Style
+
+- format files - ([fa15468](https://github.com/MRDGH2821/copier-mr-mise/commit/fa15468f6afc321aa3cba9518f334e247b3c0c12)) - MRDGH2821
+
+### Build
+
+- **(mise)** use precompiled binary from github - ([857e867](https://github.com/MRDGH2821/copier-mr-mise/commit/857e867b0e98ddc2f639bf171f7ed23927e5f593)) - MRDGH2821
+
+---
+
 ## [0.14.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.13.0..v0.14.0) - 2026-09-18
 
 ### Bug Fixes
