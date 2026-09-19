@@ -1,6 +1,7 @@
 # :schema https://schemastore.org/treefmt.json
 
 allow-missing-formatter = true
+excludes = [".mise/**"]
 
 [formatter.cspell-sort]
 command = "yq"

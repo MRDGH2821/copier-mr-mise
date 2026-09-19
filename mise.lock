@@ -348,7 +348,7 @@ url_api = "https://api.github.com/repos/cocogitto/cocogitto/releases/assets/3666
 
 [[tools.cspell]]
 version = "10.3.3"
-aube = { path = ".mise/locks/cspell/10.3.3", digest = "sha256:584cf3551a7f3c16bc2ec3e2941282eada12d2b4919fc6c01f18530a4b38632c" }
+aube = { path = ".mise/locks/cspell/10.3.3", digest = "sha256:39a60fe569b045a8ab78f2cfadec31878d5da496092d0d9e765efbb9ccc17045" }
 backend = "npm:cspell"
 specifiers = ["latest"]
 
@@ -715,7 +715,7 @@ url_api = "https://api.github.com/repos/loeffel-io/ls-lint/releases/assets/26085
 
 [[tools."npm:sort-package-json"]]
 version = "4.0.0"
-aube = { path = ".mise/locks/npm-sort-package-json/4.0.0", digest = "sha256:2de77ad8c040659272b1d6208b2f675fb5216614eb08c1e6b481d7fd9576eb29" }
+aube = { path = ".mise/locks/npm-sort-package-json/4.0.0", digest = "sha256:be49619f125067df495b3f00553faf3d44557913e3885464950fbe461c40d79d" }
 backend = "npm:sort-package-json"
 specifiers = ["latest"]
 
@@ -798,7 +798,7 @@ url_api = "https://api.github.com/repos/apple/pkl/releases/assets/487426668"
 
 [[tools.prettier]]
 version = "3.9.8"
-aube = { path = ".mise/locks/prettier/3.9.8", digest = "sha256:5c76115168054cd13c6ad573ac7befc182bce737bc8bca3ed27b8287e2611eeb" }
+aube = { path = ".mise/locks/prettier/3.9.8", digest = "sha256:f1e8198984daca61d8b3693e3bbc61c6ddac967bc646c95cfdffed73b46429fc" }
 backend = "npm:prettier"
 specifiers = ["latest"]
 
