@@ -29,7 +29,7 @@ run_windows = "echo 'Treefmt not supported on Windows'"
 "aqua:owenlamont/ryl" = "latest"
 betterleaks = "latest"
 bun = { postinstall = "bun install", version = "latest" }
-"cargo:MRDGH2821/Sort-Markdown-Tables" = "latest"
+"github:MRDGH2821/Sort-Markdown-Tables" = "latest"
 cocogitto = "latest"
 cspell = "latest"
 gh = { postinstall = "gh auth login", version = "latest" }
