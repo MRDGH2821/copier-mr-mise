@@ -58,6 +58,7 @@ local linters = new Mapping<String, Step> {
     types = List("yaml")
   }
 }
+exclude = List("**/.mise/**")
 steps = linters
 hooks {
   ["commit-msg"] {
