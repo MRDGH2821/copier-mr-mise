@@ -32,7 +32,13 @@ bun = { postinstall = "bun install", version = "latest" }
 "github:MRDGH2821/Sort-Markdown-Tables" = "latest"
 cocogitto = "latest"
 cspell = "latest"
+{% if ci == 'github' %}
+gh = "latest"
+{% endif %}
 git-cliff = "latest"
+{% if ci == 'gitlab' %}
+glab = { postinstall = "glab auth login", version = "latest" }
+{% endif %}
 "github:infragate/capa" = { postinstall = "capa install --yes", version = "2.2.2" }
 hk = "2.0.1"
 ls-lint = "latest"
@@ -47,13 +53,8 @@ rumdl = "latest"
 tombi = "latest"
 typos = "latest"
 typstyle = "latest"
+uv = "latest"
 yq = "latest"
-{% if ci == 'github' %}
-gh = "latest"
-{% endif %}
-{% if ci == 'gitlab' %}
-glab = { postinstall = "glab auth login", version = "latest" }
-{% endif %}
 
 [[watch_files]]
 patterns = ["capabilities.yaml"]

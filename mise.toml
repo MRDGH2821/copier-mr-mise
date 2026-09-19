@@ -48,6 +48,7 @@ rumdl = "latest"
 tombi = "latest"
 typos = "latest"
 typstyle = "latest"
+uv = "latest"
 yq = "latest"
 
 [[watch_files]]
