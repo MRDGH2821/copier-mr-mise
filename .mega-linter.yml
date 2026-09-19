@@ -16,6 +16,7 @@ DISABLE_LINTERS:
   - REPOSITORY_DEVSKIM
   - TYPESCRIPT_STANDARD
   # keep-sorted end
+FILTER_REGEX_EXCLUDE: (\.mise/|/locks/|\.lock$|(^|/)go\.sum$|(^|/)npm-shrinkwrap\.json$|(^|/)package-lock\.json$|(^|/)pnpm-lock\.yaml$)
 IGNORE_GITIGNORED_FILES: true
 JAVASCRIPT_DEFAULT_STYLE: prettier
 JSON_PRETTIER_PRE_COMMANDS:

@@ -58,7 +58,18 @@ local linters = new Mapping<String, Step> {
     types = List("yaml")
   }
 }
-exclude = List("**/.mise/**")
+exclude =
+  List(
+    // keep-sorted start
+    "**/*.lock",
+    "**/.mise/**",
+    "**/go.sum",
+    "**/locks/**",
+    "**/npm-shrinkwrap.json",
+    "**/package-lock.json",
+    "**/pnpm-lock.yaml"
+    // keep-sorted end
+  )
 steps = linters
 hooks {
   ["commit-msg"] {
