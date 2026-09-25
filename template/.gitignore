@@ -11,6 +11,7 @@
 .cursor/hooks.json
 .cursor/mcp.json
 .cursor/skills
+.gemini/settings.json
 .github/skills
 .mcp.json
 .opencode/agents
@@ -35,6 +36,7 @@ opencode.json
 .pre-commit-config.yaml
 .svn
 .venv/
+.worktrees
 __MACOSX
 __pycache__
 dist/
