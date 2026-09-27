@@ -17,8 +17,8 @@ check = ["hk check --all", "cog check"]
 prepare = ["bun install"]
 
 [tasks.format]
-run = [{ task = "treefmt" }, "hk fix --all"]
 alias = "fmt"
+run = [{ task = "treefmt" }, "hk fix --all"]
 
 [tasks.treefmt]
 run = "treefmt"

@@ -3,6 +3,6 @@
   "version": "0.15.5",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "^3.9.7"
+    "oxfmt": "^0.70.0"
   }
 }

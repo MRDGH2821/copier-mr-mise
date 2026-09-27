@@ -25,7 +25,7 @@ local linters = new Mapping<String, Step> {
   ["newlines"] = Builtins.newlines
   ["pkl"] = Builtins.pkl
   ["pkl-format"] = Builtins.pkl_format
-  ["oxfmt"] = Builtins.prettier
+  ["oxfmt"] = Builtins.oxfmt
   ["ruff"] = (Builtins.ruff) { depends = List("ruff-format") }
   ["ruff-format"] = Builtins.ruff_format
   ["rumdl"] = (Builtins.rumdl) { depends = List("rumdl-format") }
@@ -53,7 +53,7 @@ local linters = new Mapping<String, Step> {
   }
   ["yamlfix"] {
     check = "yamlfix --check {{files}}"
-    depends = List("prettier")
+    depends = List("oxfmt")
     fix = "yamlfix {{files}}"
     types = List("yaml")
   }
