@@ -36,8 +36,8 @@ editorconfig-checker = "latest"
 gh = "latest"
 git-cliff = "latest"
 "github:MRDGH2821/Sort-Markdown-Tables" = "latest"
-"github:infragate/capa" = { postinstall = "capa install --yes", version = "2.2.2" }
-hk = "2.0.1"
+"github:infragate/capa" = { postinstall = "capa install --yes", version = "2.2.4" }
+hk = "2.2.0"
 ls-lint = "latest"
 oxfmt = "latest"
 "pipx:lorenzwalthert/gitignore-tidy" = "latest"
