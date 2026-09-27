@@ -1,7 +1,0 @@
-**/*.lock
-**/.mise/**
-**/go.sum
-**/locks/**
-**/npm-shrinkwrap.json
-**/package-lock.json
-**/pnpm-lock.yaml
