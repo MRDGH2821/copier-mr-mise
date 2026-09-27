@@ -47,7 +47,7 @@ All notable changes to this project will be documented in this file. See [conven
 # postprocessors
 postprocessors = [
   # Replace the placeholder `<REPO>` with the repository URL.
-  { pattern = '\$REPO', replace = "" }
+  { pattern = '\$REPO', replace = "__FILL_ME_IN__" }
 ]
 # Remove leading and trailing whitespaces from the changelog's body.
 trim = true
@@ -85,3 +85,11 @@ sort_commits = "oldest"
 split_commits = false
 # Order releases topologically instead of chronologically.
 topo_order = false
+
+[remote.github]
+owner = "__FILL_ME_IN__"
+repo = "__FILL_ME_IN__"
+
+[remote.gitlab]
+owner = "__FILL_ME_IN__"
+repo = "__FILL_ME_IN__"

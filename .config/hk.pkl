@@ -5,6 +5,11 @@ import "package://github.com/jdx/hk/releases/download/v2.2.0/hk@2.2.0#/Builtins.
 local linters = new Mapping<String, Step> {
   ["betterleaks"] = Builtins.betterleaks
   ["check-merge-conflict"] = Builtins.check_merge_conflict
+  ["check-placeholders"] {
+    check =
+      "if grep -EIn '(<placeholder>|CHANGEME|FILL_ME_IN|NOCOMMIT)' {{files}}; then false; else test $? -eq 1; fi"
+    exclude = List("template/**", ".config/hk.pkl", ".config/cspell.json")
+  }
   ["cspell"] {
     check = "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{files}}"
     batch = false
