@@ -1,4 +1,5 @@
 # agents
+.agent-talk/
 .agent/skills
 .agents/mcp_config.json
 .agents/skills
