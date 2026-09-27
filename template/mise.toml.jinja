@@ -16,8 +16,9 @@ ai-setup = "capa install --yes"
 check = ["hk check --all", "cog check"]
 prepare = ["bun install"]
 
-[tasks.fmt]
+[tasks.format]
 run = [{ task = "treefmt" }, "hk fix --all"]
+alias = "fmt"
 
 [tasks.treefmt]
 run = "treefmt"
