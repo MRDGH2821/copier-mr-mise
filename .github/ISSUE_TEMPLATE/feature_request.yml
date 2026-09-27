@@ -29,4 +29,4 @@ description: Suggest an idea for the template
 labels:
   - enhancement
 name: Feature Request
-title: "feat: "
+title: "[REQUEST]: "

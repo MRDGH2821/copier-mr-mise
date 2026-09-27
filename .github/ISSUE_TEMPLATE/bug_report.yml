@@ -57,4 +57,4 @@ description: Report a problem with the template or a generated project
 labels:
   - bug
 name: Bug Report
-title: "fix: "
+title: "[BUG]: "
