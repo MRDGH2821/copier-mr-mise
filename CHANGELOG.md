@@ -4,6 +4,42 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.16.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.5..v0.16.0) - 2026-09-28
+
+### Bug Fixes
+
+- fix oxfmt references and editorconfig - ([dc5f52f](https://github.com/MRDGH2821/copier-mr-mise/commit/dc5f52fd1457f6be818297167999a5bcc34c001e)) - MRDGH2821
+- sync config with root - ([96671db](https://github.com/MRDGH2821/copier-mr-mise/commit/96671dbff280ba84f21be3fbd1bd1830b40797e8)) - MRDGH2821
+- use proper prefixes - ([94c5975](https://github.com/MRDGH2821/copier-mr-mise/commit/94c59752270dfe1166166666f4b482caee043d6b)) - MRDGH2821
+
+### Features
+
+- **(mise)** add task alias - ([5ab2bd0](https://github.com/MRDGH2821/copier-mr-mise/commit/5ab2bd005468fcb69b643efa1d2db5db571690a8)) - MRDGH2821
+- add oxfmt & editorconfig - ([09b1126](https://github.com/MRDGH2821/copier-mr-mise/commit/09b1126a51fcb8461503d73eec241f53162f297e)) - MRDGH2821
+- add agents.md marker - ([e643935](https://github.com/MRDGH2821/copier-mr-mise/commit/e64393546a98e26df42b26a04cd09fe7b6849676)) - MRDGH2821
+- add placeholder hook & remove checklist - ([520bd1f](https://github.com/MRDGH2821/copier-mr-mise/commit/520bd1f3f74432a5d644aa88b6f5b3bf0433dabb)) - MRDGH2821
+- sync template with root - ([e708e1c](https://github.com/MRDGH2821/copier-mr-mise/commit/e708e1cb38b735466e5304060227006b5627a83f)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- update config - ([9540bc7](https://github.com/MRDGH2821/copier-mr-mise/commit/9540bc70877ac99f3969bd2c1e4b49041f9f951a)) - MRDGH2821
+- merge ignore list into oxfmt - ([7e9ab4c](https://github.com/MRDGH2821/copier-mr-mise/commit/7e9ab4cc2b70e3581e41863832b5fca28e90d4e4)) - MRDGH2821
+- update ignores - ([69bc6c8](https://github.com/MRDGH2821/copier-mr-mise/commit/69bc6c86391908721f58936b909a140ea4c34406)) - MRDGH2821
+
+### Style
+
+- format files - ([f8424b4](https://github.com/MRDGH2821/copier-mr-mise/commit/f8424b4979fb5151e0e0216228a488c251c0b949)) - MRDGH2821
+
+### Build
+
+- **(mise)** bump versions - ([36ab6b1](https://github.com/MRDGH2821/copier-mr-mise/commit/36ab6b114d476a018b0aaf50442fb728777ad377)) - MRDGH2821
+
+### Ci
+
+- **(mise)** run mise check on specific branches - ([910b776](https://github.com/MRDGH2821/copier-mr-mise/commit/910b7769a9b33f93f1664e1fa9a4180a7e23ebac)) - MRDGH2821
+
+---
+
 ## [0.15.5](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.4..v0.15.5) - 2026-09-19
 
 ### Bug Fixes
