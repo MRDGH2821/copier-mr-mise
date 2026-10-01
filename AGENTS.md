@@ -1,6 +1,32 @@
+<!-- capa:start:__base__ -->
+
 # AGENTS Instructions
 
 This file provides guidance for AI coding assistants working with this project.
+<!-- capa:end:__base__ -->
+
+<!-- capa:start:branch-naming-strategy -->
+
+## Branch naming strategy
+
+Since many people will be contributing to this repository, we use a branching strategy that allows for parallel development while keeping the main branch stable.
+
+Use the following branching strategy:
+
+`<human first name>/<work type>/<work name>`
+
+For example:
+
+- `john/feat/add-packages`
+- `jane/fix/ui-bugs`
+- `joy/refactor/payment`
+
+`<human first name>` - will be derived from `git config user.name` or the author's first name. Ask the author for their first name if it's not available.
+`<work type>` - the type of work being done (e.g., `feat`, `fix`, `refactor`). Should match commit types from conventional commits.
+`<work name>` - the name of the work being done (e.g., `add-packages`, `ui-bugs`, `payment`)
+<!-- capa:end:branch-naming-strategy -->
+
+<!-- capa:start:rule:co-authored-commits -->
 
 ## MANDATORY: AI Co-authored-by Trailer
 
@@ -49,88 +75,11 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 - One trailer per AI model involved
 - **Never omit this trailer** when the commit was AI-assisted — this is how git history stays honest
 
-## Setup: skills and MCP
+<!-- capa:end:rule:co-authored-commits -->
 
-Before substantive work, ensure project skills and MCP servers are installed.
+<!-- capa:start:rule:ai-logs -->
 
-1. From the repository root, run `mise run ai-setup`, or:
-
-   ```sh
-   capa install
-   ```
-
-2. **Reload the agent** (new chat / restart the agent session) so installed skills and MCP servers are picked up.
-
-Configuration lives in `capabilities.yaml`. Do not skip this when skills or MCP tools are missing or stale.
-
-## Project Context
-
-- **Project**: `copier-mr-mise` (v0.1.0) — Copier 9+ template for MRDGH2821 projects
-- **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, cspell, and optional AGENTS.md / capa skills
-- **Usage**: `copier copy gh:MRDGH2821/copier-mr-mise "/path/to/folder"` then later `copier update`
-
-This repository is the **template**, not a generated project. Generated files live under `template/` (`_subdirectory: template` in `copier.yml`).
-
-## Layout
-
-| Path                   | Purpose                                                      |
-| ---------------------- | ------------------------------------------------------------ |
-| `copier.yml`           | Copier questions, exclusions, post-copy tasks                |
-| `template/`            | Files copied into generated projects                         |
-| `mise.toml`            | Tools, tasks, `hk install --mise` postinstall hook           |
-| `.config/hk.pkl`       | hk hook config (pre-commit, commit-msg, fix, check)          |
-| `capabilities.yaml`    | Skills, MCP servers, and providers (capa)                    |
-| `cog.toml`             | Conventional-commit scopes and version bump hooks            |
-| `.mega-linter.yml`     | MegaLinter config; CI in `.github/workflows/mega-linter.yml` |
-| `.config/treefmt.toml` | Full-tree formatter                                          |
-| `.config/cspell.json`  | Spell-check dictionary                                       |
-| `.agents/logs/`        | AI-assisted work logs                                        |
-
-Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
-
-**Jinja templates** (do not break Copier syntax): `template/README.md.jinja`, `template/package.json.jinja`, `template/capabilities.yaml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
-
-**Copier answers** (`copier.yml`): `project_name`, `ci` (`github` or `gitlab`), `use_agents`, `use_skills`, `use_taste_skill`. Post-copy checks direnv and Nix; `lic` runs on copy; `capa install` runs automatically via mise's tool postinstall hook and its `capabilities.yaml` file watcher.
-
-## Branch naming strategy
-
-Since many people will be contributing to this repository, we use a branching strategy that allows for parallel development while keeping the main branch stable.
-
-Use the following branching strategy:
-
-`<human first name>/<work type>/<work name>`
-
-For example:
-
-- `john/feat/add-packages`
-- `jane/fix/ui-bugs`
-- `joy/refactor/payment`
-
-`<human first name>` - will be derived from `git config user.name` or the author's first name. Ask the author for their first name if it's not available.
-`<work type>` - the type of work being done (e.g., `feat`, `fix`, `refactor`). Should match commit types from conventional commits.
-`<work name>` - the name of the work being done (e.g., `add-packages`, `ui-bugs`, `payment`)
-
-## General Guidelines
-
-### Communication
-
-- Explain what you're doing and why before making changes
-- Ask for clarification when requirements are ambiguous
-- Provide context for decisions, especially when multiple approaches exist
-
-### Code Quality
-
-- Follow existing code style and conventions in the project
-- Run linters and formatters before committing changes
-- Ensure all changes pass git hooks (`hk run pre-commit`)
-
-### File Operations
-
-- Always check if a file exists before attempting to modify it
-- Use appropriate tools to search for files rather than guessing paths
-- Preserve file formatting and structure unless explicitly asked to change it
-
-### AI-Assisted Work Documentation
+## AI-Assisted Work Documentation
 
 - Document all AI-assisted changes in the `.agents/logs` folder as markdown files
 - Use the naming format: `YYYY-MM-DD.md` (e.g., `2024-12-15.md`)
@@ -144,47 +93,9 @@ For example:
 - Place any other relevant documents (prompts, examples, references) in the `.agents` folder
 - This provides transparency and helps track AI contributions to the project
 
-## Dev Environment Tips
+<!-- capa:end:rule:ai-logs -->
 
-- Use `--help` or `help` subcommand to get help on a command. It can even reveal hints on how to proceed ahead or optimize the number of steps.
-- Check tool documentation before asking the user for configuration details
-- Tools are managed by **mise**. Prefer `mise run <task>` over ad-hoc binaries when a task exists.
-
-## Tooling
-
-### mise & hk
-
-Use the configured mise mcp server. If mise's mcp tools are not available, tell the user to fix by referring the following:
-
-- For mise - <https://mise.jdx.dev/mcp.html>
-- For hk - <https://hk.jdx.dev/agents.html#mcp>
-
-### Using hk from a coding agent
-
-Inspect and plan before running. Scope checks to changed files with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`, inspect command effects, and require approval for unknown or destructive commands.
-
-Consume JSON or JSONL diagnostics while retaining raw output, and always review the diff produced by a fix.
-
-MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, and `get_diff` rather than invoking arbitrary shell commands.
-
-### MegaLinter
-
-- Config: `.mega-linter.yml` (CI: oxsecurity/megalinter v10.0.0)
-- Use the project MegaLinter skill rather than inventing a flavor
-- Reports: `megalinter-reports/`
-- Not all linters need to pass — some are informational
-
-### CSpell
-
-- Config: `.config/cspell.json`
-- Add project-specific words to the `words` array
-- Don't disable spell checking without good reason
-- Run with `mise run cspell`
-
-### Formatting and Hooks (hk)
-
-- Run `hk run fix` or `mise run fmt` before committing to format all supported file types
-- `hk` integrates formatters and linters in `.config/hk.pkl` for staged files and hook checks
+<!-- capa:start:rule:commit-messages -->
 
 ## Commit Messages
 
@@ -204,53 +115,4 @@ chore(cspell): add technical terms to dictionary
 ```
 
 Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json` and `CHANGELOG.md` (git-cliff).
-
-## Troubleshooting
-
-### Common Issues
-
-**Git hooks failing on commit:**
-
-- Read the error message — it usually points directly to the fix
-- Try to fix the issue and retry the commit; do not skip hooks
-- Fix formatting first (`hk run fix` or `mise run fmt`)
-- Then address spell checking and linting
-
-**Spell check failures:**
-
-- Add legitimate technical terms to `.config/cspell.json` `words` array
-- Use proper capitalization for proper nouns
-- Don't add obvious typos to the dictionary
-
-**Template syntax errors:**
-
-- Ensure Jinja / Copier syntax is valid before committing
-- Check for missing closing tags or brackets
-- Test with `copier copy` into a throwaway directory when changing `copier.yml` or `template/`
-
-### Getting Help
-
-- Review existing configuration files for examples
-
-## Best Practices
-
-### Before Making Changes
-
-1. Understand the current state of the project
-2. Check if similar functionality already exists
-3. Review relevant configuration files
-4. Consider impact on users who will generate projects from this template
-5. If the file also exists under `template/`, update both (and `template/AGENTS.md` when changing these instructions)
-
-### When Adding Dependencies
-
-- Prefer tools that don't require heavy installation; add them via `mise.toml` when they should ship with the template
-- Document installation steps clearly
-- Consider cross-platform compatibility
-- Update relevant configuration files in **root and** `template/`
-
-### Testing Changes
-
-- Verify the project structure is correct
-- Test template rendering with Copier when template files change
-- Ensure documentation is updated
+<!-- capa:end:rule:commit-messages -->
