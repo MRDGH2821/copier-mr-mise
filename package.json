@@ -1,8 +1,5 @@
 {
   "name": "copier-mr-mise",
   "version": "0.16.0",
-  "license": "MIT",
-  "devDependencies": {
-    "oxfmt": "^0.70.0"
-  }
+  "license": "MIT"
 }
