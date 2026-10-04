@@ -1,4 +1,5 @@
-# :schema https://docs.cocogitto.io/cog-schema.json
+#:schema https://docs.cocogitto.io/cog-schema.json
+
 branch_whitelist = []
 disable_bump_commit = false
 disable_changelog = true
