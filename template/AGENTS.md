@@ -76,10 +76,12 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 **Format:**
 
 ```txt
-Co-authored-by: <Model Name> via <Tool> <noreply@provider-domain>
+Co-authored-by: <Model full Name and version> via <Harness> <noreply@provider-domain>
 ```
 
-**Provider noreply addresses:**
+**Provider attribution addresses:**
+
+Choose the address for the model provider. The harness can come from a different provider.
 
 <!-- smt -->
 
@@ -93,6 +95,10 @@ Co-authored-by: <Model Name> via <Tool> <noreply@provider-domain>
 | Mistral                 | `noreply@mistral.ai`     |
 | OpenAI (GPT / o-series) | `noreply@openai.com`     |
 | xAI (Grok)              | `noreply@x.ai`           |
+
+If the provider is not listed, search its official documentation or public repositories
+for a documented attribution email address. Use that address rather than guessing one
+from the provider's domain.
 
 **Examples:**
 
@@ -110,9 +116,9 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 
 **Rules:**
 
-- Use the **exact model name and version** you are running as (e.g. `Claude Sonnet 4.6`, not just `Claude`)
-- Use the **tool name** as it is commonly known (e.g. `opencode`, `Cursor`, `Copilot`, `Zed`)
-- If the model version is unknown, use the model family name (e.g. `Claude Sonnet`)
+- Use the **full model name and version** supplied by the current session (e.g. `Claude Sonnet 4.6`, not just `Claude`)
+- Use the **harness name** as it is commonly known (e.g. `Codex`, `opencode`, `Cursor`, `Copilot`, `Zed`). The harness is the application or CLI running the model.
+- If the exact model version is unavailable, use the most specific known model name (e.g. `Claude Sonnet`). Do not guess a version.
 - One trailer per AI model involved
 - **Never omit this trailer** when the commit was AI-assisted — this is how git history stays honest
 
