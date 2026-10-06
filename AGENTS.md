@@ -69,6 +69,53 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 
+## MANDATORY: AI Co-authored-by Trailer
+
+> **Every commit made with AI assistance MUST include a `Co-authored-by` trailer. No exceptions.**
+
+**Format:**
+
+```txt
+Co-authored-by: <Model Name> via <Tool> <noreply@provider-domain>
+```
+
+**Provider noreply addresses:**
+
+<!-- smt -->
+
+| Provider                | noreply address          |
+| ----------------------- | ------------------------ |
+| Anthropic (Claude)      | `noreply@anthropic.com`  |
+| Cursor                  | `cursoragent@cursor.com` |
+| Google (Gemini)         | `noreply@google.com`     |
+| Meta (Llama)            | `noreply@meta.com`       |
+| Microsoft (Copilot)     | `noreply@microsoft.com`  |
+| Mistral                 | `noreply@mistral.ai`     |
+| OpenAI (GPT / o-series) | `noreply@openai.com`     |
+| xAI (Grok)              | `noreply@x.ai`           |
+
+**Examples:**
+
+```txt
+feat(pre-commit): add spell checking to commit messages
+
+Co-authored-by: Claude Sonnet 4.6 via opencode <noreply@anthropic.com>
+```
+
+```txt
+fix(cspell): resolve configuration issue
+
+Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
+```
+
+**Rules:**
+
+- Use the **exact model name and version** you are running as (e.g. `Claude Sonnet 4.6`, not just `Claude`)
+- Use the **tool name** as it is commonly known (e.g. `opencode`, `Cursor`, `Copilot`, `Zed`)
+- If the model version is unknown, use the model family name (e.g. `Claude Sonnet`)
+- One trailer per AI model involved
+- **Never omit this trailer** when the commit was AI-assisted — this is how git history stays honest
+
 ## Setup: skills and MCP
 
 Tools and tasks are managed by **mise**. Prefer an existing `mise run <task>`
@@ -125,6 +172,20 @@ Before creating a branch, follow the
 - Match existing style and keep every changed line within the requested scope.
 - Define how to verify the change, run the relevant checks, and review the final diff.
 - Report what changed, which checks ran, and any failures or checks you could not run.
+
+### AI-Assisted Work Documentation
+
+- Document all AI-assisted changes in the `.agents/logs` folder as markdown files
+- Use the naming format: `YYYY-MM-DD.md` (e.g., `2024-12-15.md`)
+- Each documentation file should include:
+  - The prompt or request that initiated the work
+  - The author of the prompt (can be obtained from `git config user.name` or by asking the user)
+  - Description of what was done
+  - Which AI model was used (e.g., Claude Sonnet 4.5, GPT-4, etc.)
+- If more prompts are provided on the same day, append them to the existing log file with timestamps
+- Use the `date` command to generate timestamps (e.g., `date --iso-8601=seconds` or `date '+%Y-%m-%d %H:%M:%S'`)
+- Place any other relevant documents (prompts, examples, references) in the `.agents` folder
+- This provides transparency and helps track AI contributions to the project
 
 ## Dev Environment Tips
 

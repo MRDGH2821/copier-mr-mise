@@ -29,7 +29,7 @@ Install [mise](https://mise.jdx.dev/getting-started.html) before you start.
 Run these commands from the repository root:
 
 ```sh
-mise trust mise.toml
+mise trust
 mise install
 mise run prepare
 ```
@@ -48,7 +48,7 @@ If `AGENTS.md` exists, read it before using an AI agent on this project.
 
 When an AI agent creates a branch, it must use the following naming strategy:
 
-`<human first name>/<work type>/<work name>`
+`<human first name or username>/<work type>/<work name>`
 
 For example:
 
@@ -56,7 +56,7 @@ For example:
 - `jane/fix/ui-bugs`
 - `joy/refactor/payment`
 
-`<human first name>` - will be derived from `git config user.name` or the author's first name. Ask the author for their first name if it's not available.
+`<human first name or username>` - will be derived from `git config user.name` or the author's first name. Ask the author for their first name if it's not available.
 `<work type>` - the type of work being done (e.g., `feat`, `fix`, `refactor`). Should match commit types from conventional commits.
 `<work name>` - the name of the work being done (e.g., `add-packages`, `ui-bugs`, `payment`)
 
