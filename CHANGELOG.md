@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.17.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.17.0..v0.17.1) - 2026-10-06
+
+### Bug Fixes
+
+- add post bump hooks from root - ([293e41d](https://github.com/MRDGH2821/copier-mr-mise/commit/293e41d2c6b53c567002a13c0c98935d812d9e39)) - MRDGH2821
+
+---
+
 ## [0.17.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.16.0..v0.17.0) - 2026-10-06
 
 ### Bug Fixes
