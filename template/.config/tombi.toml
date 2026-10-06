@@ -2,9 +2,9 @@
 line-width = 80
 
 [[schemas]]
-include = ["cog.toml"]
 path = "https://docs.cocogitto.io/cog-schema.json"
+include = ["cog.toml"]
 
 [[schemas]]
-include = ["treefmt.toml"]
 path = "https://schemastore.org/treefmt.json"
+include = ["treefmt.toml"]
