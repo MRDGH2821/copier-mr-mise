@@ -4,6 +4,55 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.17.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.16.0..v0.17.0) - 2026-10-06
+
+### Bug Fixes
+
+- run oxfmt after smt - ([f1efeda](https://github.com/MRDGH2821/copier-mr-mise/commit/f1efeda3f4f1241360583112ca03edba0a6c493e)) - MRDGH2821
+- run tombi-format after toml-sort - ([70488a9](https://github.com/MRDGH2821/copier-mr-mise/commit/70488a9c4c47ef156fa5e2ca1c1f1238a421ed82)) - MRDGH2821
+
+### Documentation
+
+- add Andrej Karpathy's guidelines - ([54e34a4](https://github.com/MRDGH2821/copier-mr-mise/commit/54e34a4c98523e1ca32475203edb14610b9db95b)) - MRDGH2821
+- align shared agent guidance across root and template - ([d8f1c46](https://github.com/MRDGH2821/copier-mr-mise/commit/d8f1c46e2d8dbc3de5bba7ca04cf1a081da097d4)) - MRDGH2821
+- move agent branch naming guidance to contribution guides - ([52d37b9](https://github.com/MRDGH2821/copier-mr-mise/commit/52d37b92ab896d6b4c4d3cf71a2686463c2143d0)) - MRDGH2821
+- expand repository and template contribution guides - ([0057cd3](https://github.com/MRDGH2821/copier-mr-mise/commit/0057cd323e3a55357709c26597a555be4fbf4f77)) - MRDGH2821
+- synchronize root and template contribution policies - ([82ca559](https://github.com/MRDGH2821/copier-mr-mise/commit/82ca559a0cd67f6f8ab3724122fe08a7f0a4508f)) - MRDGH2821
+- clarify AI attribution guidance and record research - ([da14aae](https://github.com/MRDGH2821/copier-mr-mise/commit/da14aaee84f1e7094c3f350d985a2f005f2e0114)) - MRDGH2821
+
+### Features
+
+- install full plugin of Matt Pocock & cleanup inline rules - ([406f7b2](https://github.com/MRDGH2821/copier-mr-mise/commit/406f7b22cbfbaf3be9e42158c14b9bcc591d95ad)) - MRDGH2821
+- add Andrej Karpathy guidelines - ([ca44660](https://github.com/MRDGH2821/copier-mr-mise/commit/ca44660d0e23f27cc625692f076e4807a3cd9dfa)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update words - ([bfc28db](https://github.com/MRDGH2821/copier-mr-mise/commit/bfc28db3b6c52c7105e8f109fefd7974edd76a51)) - MRDGH2821
+- **(cspell)** update word list - ([d20705c](https://github.com/MRDGH2821/copier-mr-mise/commit/d20705ca5de68358fa2d0395d45436aa8453ebb1)) - MRDGH2821
+- **(zed)** add diff tasks - ([a69ddf8](https://github.com/MRDGH2821/copier-mr-mise/commit/a69ddf89bd38618be377318a6152f9a97db56487)) - MRDGH2821
+- refactor agents.md rules & sections - ([0618b2a](https://github.com/MRDGH2821/copier-mr-mise/commit/0618b2ad3dc9fe2473ba37f9153b9e167b04fb02)) - MRDGH2821
+- add tombi schemas - ([4ca0b4f](https://github.com/MRDGH2821/copier-mr-mise/commit/4ca0b4fce4468cfd1d8e8e9c815571ca8a0b7595)) - MRDGH2821
+- fix schema syntax - ([ddd3666](https://github.com/MRDGH2821/copier-mr-mise/commit/ddd3666ad87db76117f279a97ff40f5ec2c4fe0e)) - MRDGH2821
+- remove inline content - ([a6cb521](https://github.com/MRDGH2821/copier-mr-mise/commit/a6cb521f7f755b623a19c80990d53e48199827ff)) - MRDGH2821
+- remove inline schema directives - ([83a4c14](https://github.com/MRDGH2821/copier-mr-mise/commit/83a4c14d70798455b5129178adbe54c86dbc64a9)) - MRDGH2821
+- bring back old instructions - ([b931181](https://github.com/MRDGH2821/copier-mr-mise/commit/b931181d3baba6b2a50a4eb478dd931fdfcf77a0)) - MRDGH2821
+- sync config with root - ([e6b8883](https://github.com/MRDGH2821/copier-mr-mise/commit/e6b88836802e55b0e03d7b652f02bb34324ce648)) - MRDGH2821
+- sync configs - ([85f1786](https://github.com/MRDGH2821/copier-mr-mise/commit/85f17867320f3bc8d46a4fec75f4034100d401fb)) - MRDGH2821
+- remove empty config options - ([ef39857](https://github.com/MRDGH2821/copier-mr-mise/commit/ef398571168a6bacd24964daab2e23d00c13d57f)) - MRDGH2821
+- add post bump hook - ([05586b7](https://github.com/MRDGH2821/copier-mr-mise/commit/05586b7a73004d6f10fc192cbfb6f95afa88d341)) - MRDGH2821
+
+### Style
+
+- format files - ([d16e4ae](https://github.com/MRDGH2821/copier-mr-mise/commit/d16e4ae4e7bba089e6cf49900892e89955d5c71d)) - MRDGH2821
+
+### Build
+
+- **(mise)** update tools & lock files - ([4afffdd](https://github.com/MRDGH2821/copier-mr-mise/commit/4afffddf932dc8370b41f02cdd79a451a17192ab)) - MRDGH2821
+- remove oxfmt - ([bcdeaee](https://github.com/MRDGH2821/copier-mr-mise/commit/bcdeaee4b3841ce73c102cdd3862b712c9d3db36)) - MRDGH2821
+- update oxfmt version - ([21d9311](https://github.com/MRDGH2821/copier-mr-mise/commit/21d93118c5a0d6fd250f6ea832d74daf0a310b3a)) - MRDGH2821
+
+---
+
 ## [0.16.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.15.5..v0.16.0) - 2026-09-28
 
 ### Bug Fixes
