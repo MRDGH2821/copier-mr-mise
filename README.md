@@ -16,6 +16,10 @@ copier update
 
 Copier will warn you about scripts. Review them in [copier.yml](./copier.yml)
 
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, checks, and template validation.
+
 ## License
 
 [MIT](./LICENCE.txt)
