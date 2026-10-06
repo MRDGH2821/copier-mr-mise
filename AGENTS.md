@@ -112,6 +112,11 @@ Many tooling files exist at the **root** (this repo) **and** under `template/` (
 
 **Copier answers** (`copier.yml`): `project_name`, `ci` (`github` or `gitlab`), `use_agents`, `use_skills`, `use_taste_skill`. Post-copy checks mise; `lic` runs on copy; `capa install` runs automatically via mise's tool postinstall hook and its `capabilities.yaml` file watcher.
 
+## Branch naming strategy
+
+Before creating a branch, follow the
+[branch naming strategy in CONTRIBUTING.md](CONTRIBUTING.md#branch-naming-strategy).
+
 ## General Guidelines
 
 - Explain the intended change, state material assumptions, and clarify ambiguous requirements.
