@@ -32,7 +32,6 @@ providers:
   - cursor
   - opencode
   # keep-sorted end
-rules: []
 servers:
   - def:
       args:

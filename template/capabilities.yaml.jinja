@@ -19,6 +19,12 @@ plugins:
       repo: oxsecurity/megalinter
     id: megalinter
     type: github
+  - def:
+      description: Matt Pocock's agent skills for real engineering (grilling, spec/ticket flows, TDD, code review, domain modelling and more).
+      repo: mattpocock/skills
+    id: mattpocock-skills
+    type: github
+
 {% if use_taste_skill %}
   - def:
       description: Frontend design taste skills including brutalist, minimalist, soft, redesign, stitch, and more
@@ -77,22 +83,6 @@ skills:
   - def:
       repo: github/awesome-copilot@git-commit
     id: git-commit
-    type: github
-  - def:
-      repo: mattpocock/skills@grill-me
-    id: grill-me
-    type: github
-  - def:
-      repo: mattpocock/skills@grill-with-docs
-    id: grill-with-docs
-    type: github
-  - def:
-      repo: mattpocock/skills@grilling
-    id: grilling
-    type: github
-  - def:
-      repo: mattpocock/skills@to-tickets
-    id: to-tickets
     type: github
 {% if ci == 'github' %}
   - def:
