@@ -1,0 +1,54 @@
+[
+  {
+    "allow_concurrent_runs": false,
+    "args": ["mise.toml", "./template/mise.toml.jinja"],
+    "command": "meld",
+    "hide": "on_success",
+    "label": "diff: mise.toml",
+    "reveal": "always",
+    "reveal_target": "dock",
+    "save": "all",
+    "shell": "system",
+    "show_command": true,
+    "show_summary": true
+  },
+  {
+    "allow_concurrent_runs": false,
+    "args": ["capabilities.yaml", "./template/capabilities.yaml.jinja"],
+    "command": "meld",
+    "hide": "on_success",
+    "label": "diff: capabilities.yaml",
+    "reveal": "always",
+    "reveal_target": "dock",
+    "save": "all",
+    "shell": "system",
+    "show_command": true,
+    "show_summary": true
+  },
+  {
+    "allow_concurrent_runs": false,
+    "args": ["package.json", "./template/package.json.jinja"],
+    "command": "meld",
+    "hide": "on_success",
+    "label": "diff: package.json",
+    "reveal": "always",
+    "reveal_target": "dock",
+    "save": "all",
+    "shell": "system",
+    "show_command": true,
+    "show_summary": true
+  },
+  {
+    "allow_concurrent_runs": false,
+    "args": ["./", "./template/"],
+    "command": "meld",
+    "hide": "on_success",
+    "label": "diff: template",
+    "reveal": "always",
+    "reveal_target": "dock",
+    "save": "all",
+    "shell": "system",
+    "show_command": true,
+    "show_summary": true
+  }
+]
