@@ -118,19 +118,23 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 
 ## Setup: skills and MCP
 
-Before substantive work, ensure project skills and MCP servers are installed.
+Tools and tasks are managed by **mise**. Prefer an existing `mise run <task>`
+over an ad-hoc command. Inspect `mise.toml` and command `--help` output before
+assuming a task or option exists.
 
-1. From the repository root, run `mise run ai-setup`, or:
+If `capabilities.yaml` exists and project skills or MCP tools are missing or
+stale:
 
-   ```sh
-   capa install
-   ```
+1. From the repository root, run `mise run ai-setup` (or `capa install --yes`).
+2. Reload the agent session so installed skills and MCP servers are picked up.
 
-2. **Reload the agent** (new chat / restart the agent session) so installed skills and MCP servers are picked up.
-
-Configuration lives in `capabilities.yaml`. Do not skip this when skills or MCP tools are missing or stale.
+If the project omits `capabilities.yaml`, use the available tools and instructions.
 
 ## Project Context
+
+Read `README.md`, dependency manifests, and relevant source files to learn the
+project's purpose, architecture, and commands. The application language and
+framework depend on the generated project.
 
 - **Project Type**: Project scaffolded from [copier-mr-mise](https://github.com/MRDGH2821/copier-mr-mise)
 - **Key Technologies**: mise, hk, MegaLinter, cspell, capa
@@ -187,23 +191,12 @@ For example:
 
 ## General Guidelines
 
-### Communication
-
-- Explain what you're doing and why before making changes
-- Ask for clarification when requirements are ambiguous
-- Provide context for decisions, especially when multiple approaches exist
-
-### Code Quality
-
-- Follow existing code style and conventions in the project
-- Run linters and formatters before committing changes
-- Ensure all changes pass git hooks (`hk run pre-commit`)
-
-### File Operations
-
-- Always check if a file exists before attempting to modify it
-- Use appropriate tools to search for files rather than guessing paths
-- Preserve file formatting and structure unless explicitly asked to change it
+- Explain the intended change, state material assumptions, and clarify ambiguous requirements.
+- Read the relevant code and configuration before editing; reuse existing functionality.
+- Inspect the working tree and preserve changes made by the user or other agents.
+- Match existing style and keep every changed line within the requested scope.
+- Define how to verify the change, run the relevant checks, and review the final diff.
+- Report what changed, which checks ran, and any failures or checks you could not run.
 
 ### AI-Assisted Work Documentation
 
@@ -229,56 +222,50 @@ For example:
 
 ### mise & hk
 
-Use the configured mise mcp server. If mise's mcp tools are not available, tell the user to fix by referring the following:
+Use the configured mise and hk MCP tools when available. If their configuration
+is missing, report it and refer to:
 
-- For mise - <https://mise.jdx.dev/mcp.html>
-- For hk - <https://hk.jdx.dev/agents.html#mcp>
+- mise: <https://mise.jdx.dev/mcp.html>
+- hk: <https://hk.jdx.dev/agents.html#mcp>
 
 ### Using hk from a coding agent
 
-Inspect and plan before running. Scope checks to changed files with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`, inspect command effects, and require approval for unknown or destructive commands.
+Inspect the configuration and plan before running. Scope checks to changed files
+with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`,
+review command effects, and require approval for unknown or destructive commands.
+Use `--no-stage` when formatting. Use `--stash none` when checking an explicit
+file list in the working tree without stashing changes.
 
-Consume JSON or JSONL diagnostics while retaining raw output, and always review the diff produced by a fix.
-
-MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, and `get_diff` rather than invoking arbitrary shell commands.
+Consume JSON or JSONL diagnostics while retaining raw output, and review the
+diff produced by a fix. MCP clients should use `inspect_project`, `plan`, safe
+run tools, paged output, and `get_diff`.
 
 ### MegaLinter
 
-- Config: `.mega-linter.yml`
-- Use the MegaLinter skill when it is installed
-- Reports: `megalinter-reports/`
-- Not all linters need to pass — some are informational
+Read `.mega-linter.yml` and the selected CI configuration to determine which
+checks block CI. Use the installed MegaLinter skill when available. Reports live
+in `megalinter-reports/`; distinguish failures from informational reports.
 
 ### CSpell
 
-- Config: `.config/cspell.json`
-- Add project-specific words to the `words` array
-- Don't disable spell checking without good reason
-- Run with `mise run cspell`
+Use the hk `cspell` step to check affected files. Its command and options live
+in `.config/hk.pkl`. Correct spelling errors and add legitimate project-specific
+terms to the `words` array in `.config/cspell.json` rather than disabling checks.
 
 ### Formatting and Hooks (hk)
 
-- Run `hk run fix` or `mise run fmt` before committing to format all supported file types
-- `hk` integrates formatters and linters in `.config/hk.pkl` for staged files and hook checks
+Before committing, format affected files with `hk fix --no-stage` and run
+`hk run pre-commit --check` with the same file scope. Resolve failures and retry
+without skipping hooks. The `mise run fmt` task formats the full repository;
+review its scope before using it.
 
 ## Commit Messages
 
-### Format
+Follow Conventional Commits: `<type>(<scope>): <description>`.
+Consult `cog.toml` for valid scopes and release hooks; it is the source of truth.
 
-- Follow Conventional Commits format: `<type>(<scope>): <description>` as given here - <https://www.conventionalcommits.org/en/v1.0.0/>
-- Valid types: `build`, `chore`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `revert`, `style`, `test`
-- For valid scopes, refer to the `scopes` array in `cog.toml` — it is the source of truth.
-
-### Examples
-
-```txt
-feat(pre-commit): add spell checking to commit messages
-fix(cspell): resolve configuration issue
-docs: update AGENTS.md with guidelines
-chore(cspell): add technical terms to dictionary
-```
-
-Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json` and `CHANGELOG.md` (git-cliff).
+Version bumps use cocogitto (`cog bump`). Inspect the configured hooks before
+running a release command.
 
 ## Troubleshooting
 
@@ -288,7 +275,7 @@ Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json` a
 
 - Read the error message — it usually points directly to the fix
 - Try to fix the issue and retry the commit; do not skip hooks
-- Fix formatting first (`hk run fix` or `mise run fmt`)
+- Fix formatting first (`hk fix` or `mise run fmt`)
 - Then address spell checking and linting
 
 **Spell check failures:**
@@ -311,12 +298,13 @@ Version bumps use cocogitto (`cog bump`); pre-bump hooks update `package.json` a
 
 ### When Adding Dependencies
 
-- Prefer tools that don't require heavy installation; add them via `mise.toml` when they should be shared
+- Prefer tools that don't require heavy installation; add development tools via `mise.toml`
+- Use the project's package manager for application dependencies and keep lockfiles consistent.
 - Document installation steps clearly
 - Consider cross-platform compatibility
 - Update relevant configuration files
 
 ### Testing Changes
 
-- Verify the project structure is correct
+- Run relevant tests and configured checks; if no test command exists, verify the affected behavior directly.
 - Ensure documentation is updated

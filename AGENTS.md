@@ -71,21 +71,21 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ## Setup: skills and MCP
 
-Before substantive work, ensure project skills and MCP servers are installed.
+Tools and tasks are managed by **mise**. Prefer an existing `mise run <task>`
+over an ad-hoc command. Inspect `mise.toml` and command `--help` output before
+assuming a task or option exists.
 
-1. From the repository root, run `mise run ai-setup`, or:
+If `capabilities.yaml` exists and project skills or MCP tools are missing or
+stale:
 
-   ```sh
-   capa install
-   ```
+1. From the repository root, run `mise run ai-setup` (or `capa install --yes`).
+2. Reload the agent session so installed skills and MCP servers are picked up.
 
-2. **Reload the agent** (new chat / restart the agent session) so installed skills and MCP servers are picked up.
-
-Configuration lives in `capabilities.yaml`. Do not skip this when skills or MCP tools are missing or stale.
+If the project omits `capabilities.yaml`, use the available tools and instructions.
 
 ## Project Context
 
-- **Project**: `copier-mr-mise` (v0.1.0) — Copier 9+ template for MRDGH2821 projects
+- **Project**: `copier-mr-mise` — Copier 9+ template for MRDGH2821 projects
 - **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, cspell, and optional AGENTS.md / capa skills
 - **Usage**: `copier copy gh:MRDGH2821/copier-mr-mise "/path/to/folder"` then later `copier update`
 
@@ -106,31 +106,20 @@ This repository is the **template**, not a generated project. Generated files li
 | `.config/cspell.json`  | Spell-check dictionary                                       |
 | `.agents/logs/`        | AI-assisted work logs                                        |
 
-Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
+Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies. Keep common policies in `AGENTS.md` and `template/AGENTS.md` aligned; keep Copier maintenance instructions in the root file.
 
 **Jinja templates** (do not break Copier syntax): `template/README.md.jinja`, `template/package.json.jinja`, `template/capabilities.yaml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
 
-**Copier answers** (`copier.yml`): `project_name`, `ci` (`github` or `gitlab`), `use_agents`, `use_skills`, `use_taste_skill`. Post-copy checks direnv and Nix; `lic` runs on copy; `capa install` runs automatically via mise's tool postinstall hook and its `capabilities.yaml` file watcher.
+**Copier answers** (`copier.yml`): `project_name`, `ci` (`github` or `gitlab`), `use_agents`, `use_skills`, `use_taste_skill`. Post-copy checks mise; `lic` runs on copy; `capa install` runs automatically via mise's tool postinstall hook and its `capabilities.yaml` file watcher.
 
 ## General Guidelines
 
-### Communication
-
-- Explain what you're doing and why before making changes
-- Ask for clarification when requirements are ambiguous
-- Provide context for decisions, especially when multiple approaches exist
-
-### Code Quality
-
-- Follow existing code style and conventions in the project
-- Run linters and formatters before committing changes
-- Ensure all changes pass git hooks (`hk run pre-commit`)
-
-### File Operations
-
-- Always check if a file exists before attempting to modify it
-- Use appropriate tools to search for files rather than guessing paths
-- Preserve file formatting and structure unless explicitly asked to change it
+- Explain the intended change, state material assumptions, and clarify ambiguous requirements.
+- Read the relevant code and configuration before editing; reuse existing functionality.
+- Inspect the working tree and preserve changes made by the user or other agents.
+- Match existing style and keep every changed line within the requested scope.
+- Define how to verify the change, run the relevant checks, and review the final diff.
+- Report what changed, which checks ran, and any failures or checks you could not run.
 
 ## Dev Environment Tips
 
@@ -142,37 +131,50 @@ Many tooling files exist at the **root** (this repo) **and** under `template/` (
 
 ### mise & hk
 
-Use the configured mise mcp server. If mise's mcp tools are not available, tell the user to fix by referring the following:
+Use the configured mise and hk MCP tools when available. If their configuration
+is missing, report it and refer to:
 
-- For mise - <https://mise.jdx.dev/mcp.html>
-- For hk - <https://hk.jdx.dev/agents.html#mcp>
+- mise: <https://mise.jdx.dev/mcp.html>
+- hk: <https://hk.jdx.dev/agents.html#mcp>
 
 ### Using hk from a coding agent
 
-Inspect and plan before running. Scope checks to changed files with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`, inspect command effects, and require approval for unknown or destructive commands.
+Inspect the configuration and plan before running. Scope checks to changed files
+with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`,
+review command effects, and require approval for unknown or destructive commands.
+Use `--no-stage` when formatting. Use `--stash none` when checking an explicit
+file list in the working tree without stashing changes.
 
-Consume JSON or JSONL diagnostics while retaining raw output, and always review the diff produced by a fix.
-
-MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, and `get_diff` rather than invoking arbitrary shell commands.
+Consume JSON or JSONL diagnostics while retaining raw output, and review the
+diff produced by a fix. MCP clients should use `inspect_project`, `plan`, safe
+run tools, paged output, and `get_diff`.
 
 ### MegaLinter
 
-- Config: `.mega-linter.yml` (CI: oxsecurity/megalinter v10.0.0)
-- Use the project MegaLinter skill rather than inventing a flavor
-- Reports: `megalinter-reports/`
-- Not all linters need to pass — some are informational
+Read `.mega-linter.yml` and the selected CI configuration to determine which
+checks block CI. Use the installed MegaLinter skill when available. Reports live
+in `megalinter-reports/`; distinguish failures from informational reports.
 
 ### CSpell
 
-- Config: `.config/cspell.json`
-- Add project-specific words to the `words` array
-- Don't disable spell checking without good reason
-- Run with `mise run cspell`
+Use the hk `cspell` step to check affected files. Its command and options live
+in `.config/hk.pkl`. Correct spelling errors and add legitimate project-specific
+terms to the `words` array in `.config/cspell.json` rather than disabling checks.
 
 ### Formatting and Hooks (hk)
 
-- Run `hk run fix` or `mise run fmt` before committing to format all supported file types
-- `hk` integrates formatters and linters in `.config/hk.pkl` for staged files and hook checks
+Before committing, format affected files with `hk fix --no-stage` and run
+`hk run pre-commit --check` with the same file scope. Resolve failures and retry
+without skipping hooks. The `mise run fmt` task formats the full repository;
+review its scope before using it.
+
+## Commit Messages
+
+Follow Conventional Commits: `<type>(<scope>): <description>`.
+Consult `cog.toml` for valid scopes and release hooks; it is the source of truth.
+
+Version bumps use cocogitto (`cog bump`). Inspect the configured hooks before
+running a release command.
 
 ## Troubleshooting
 
@@ -182,7 +184,7 @@ MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, 
 
 - Read the error message — it usually points directly to the fix
 - Try to fix the issue and retry the commit; do not skip hooks
-- Fix formatting first (`hk run fix` or `mise run fmt`)
+- Fix formatting first (`hk fix` or `mise run fmt`)
 - Then address spell checking and linting
 
 **Spell check failures:**
@@ -213,13 +215,14 @@ MCP clients should use `inspect_project`, `plan`, safe run tools, paged output, 
 
 ### When Adding Dependencies
 
-- Prefer tools that don't require heavy installation; add them via `mise.toml` when they should ship with the template
+- Prefer tools that don't require heavy installation; add development tools via `mise.toml`
+- Use the project's package manager for application dependencies and keep lockfiles consistent.
 - Document installation steps clearly
 - Consider cross-platform compatibility
 - Update relevant configuration files in **root and** `template/`
 
 ### Testing Changes
 
-- Verify the project structure is correct
+- Run relevant tests and configured checks; if no test command exists, verify the affected behavior directly.
 - Test template rendering with Copier when template files change
 - Ensure documentation is updated
