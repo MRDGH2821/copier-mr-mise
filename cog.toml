@@ -37,8 +37,6 @@ skip_ci = "[skip ci]"
 skip_untracked = false
 tag_prefix = "v"
 
-[bump_profiles]
-
 [changelog]
 authors = [{ signature = "ask.mrdgh2821@outlook.com", username = "MRDGH2821" }]
 owner = "MRDGH2821"
@@ -46,9 +44,3 @@ path = "CHANGELOG.md"
 remote = "github.com"
 repository = "copier-mr-mise"
 template = "remote"
-
-[commit_types]
-
-[git_hooks]
-
-[monorepo.packages]
