@@ -4,6 +4,47 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.18.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.17.1..v0.18.0) - 2026-10-13
+
+### Bug Fixes
+
+- follow editor config - ([568f5fd](https://github.com/MRDGH2821/copier-mr-mise/commit/568f5fd7edfc42a7f206e9c0d9ec43f4ac753e2f)) - MRDGH2821
+
+### Documentation
+
+- document GitLab CI job capabilities - ([7212828](https://github.com/MRDGH2821/copier-mr-mise/commit/72128280ef49dead8df46f0298fbea66b59f0208)) - MRDGH2821
+
+### Features
+
+- **(copier)** add scheduled template update checks - ([94c143f](https://github.com/MRDGH2821/copier-mr-mise/commit/94c143f4edbb023f9849cf351f330a417b46beef)) - MRDGH2821
+- add prepare-ci command - ([b8ccbc7](https://github.com/MRDGH2821/copier-mr-mise/commit/b8ccbc7c497ab16b3ff481b37d42f9143214058f)) - MRDGH2821
+- add atomic commits skill - ([e717d11](https://github.com/MRDGH2821/copier-mr-mise/commit/e717d11849bb748fdc77b6e8da448bcc4722c294)) - MRDGH2821
+- update ignores list - ([bc9de38](https://github.com/MRDGH2821/copier-mr-mise/commit/bc9de383834dcf8e80c0ca0879cbcb40392fc289)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- remove schema directive - ([fe94744](https://github.com/MRDGH2821/copier-mr-mise/commit/fe94744cf5b2023a3c3619422cc43c59e53661e8)) - MRDGH2821
+- merge pull request #5 from MRDGH2821/MRDGH2821/feat/copier-template-updates - ([8b40b5c](https://github.com/MRDGH2821/copier-mr-mise/commit/8b40b5c70c95694b9c02a6a23f66a56a86e6b38a)) - Mihir Rabade
+
+### Style
+
+- format files - ([bb28c03](https://github.com/MRDGH2821/copier-mr-mise/commit/bb28c038a14d0135bfe2301c25a9dcb447837c0b)) - MRDGH2821
+
+### Build
+
+- **(mise)** update lock files - ([cf02b95](https://github.com/MRDGH2821/copier-mr-mise/commit/cf02b95d69a3ef33d02ffa2ead0ad62a78d66cd0)) - MRDGH2821
+- **(mise)** add lock files - ([b27c4d2](https://github.com/MRDGH2821/copier-mr-mise/commit/b27c4d2ca8a1ca94173bcbd094c2b3098cba25a6)) - MRDGH2821
+- **(mise)** pin resolved tool versions - ([1cb08b7](https://github.com/MRDGH2821/copier-mr-mise/commit/1cb08b77ff1f55d45738b3ed5907b4f764cbaa52)) - MRDGH2821
+- **(mise)** update versions - ([1db5f90](https://github.com/MRDGH2821/copier-mr-mise/commit/1db5f90cb39b893d0e768c8947e5a6b36be761f4)) - MRDGH2821
+- add bun types - ([e9f9670](https://github.com/MRDGH2821/copier-mr-mise/commit/e9f96700ac4942a9fc73160dee02a007e9ecb209)) - MRDGH2821
+
+### Ci
+
+- **(mise)** automate weekly tool updates - ([4c40d42](https://github.com/MRDGH2821/copier-mr-mise/commit/4c40d42430df7a3ce5001e5a30b39811026d44a1)) - MRDGH2821
+- check every day - ([f36f4ec](https://github.com/MRDGH2821/copier-mr-mise/commit/f36f4ec971812f753b2d231539601664b38576e9)) - MRDGH2821
+
+---
+
 ## [0.17.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.17.0..v0.17.1) - 2026-10-06
 
 ### Bug Fixes
