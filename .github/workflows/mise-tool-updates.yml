@@ -1,0 +1,39 @@
+---
+jobs:
+  update-tools:
+    name: Update mise tools
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        with:
+          cache: false
+          install: false
+      - name: Resolve GitLab CLI pin
+        run: echo "MISE_TEMPLATE_GLAB_VERSION=$(mise latest glab)" >> "$GITHUB_ENV"
+      - name: Upgrade pinned tools
+        run: mise upgrade --bump --yes --no-prune --exclude pipx:lorenzwalthert/gitignore-tidy
+      - name: Sync Copier template pins
+        run: bun run .github/scripts/sync-mise-template.ts
+      - uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7.0.11
+        with:
+          add-paths: |-
+            mise.toml
+            mise.lock
+            template/mise.toml.jinja
+          body: "Scheduled update of the mise tool pins and lockfile."
+          branch: automation/mise-tool-updates
+          commit-message: "build(mise): update tool versions"
+          delete-branch: true
+          title: "build(mise): update tool versions"
+          token: ${{ secrets.GITHUB_TOKEN }}
+name: Mise Tool Updates
+on: # yamllint disable-line rule:truthy
+  schedule:
+    - cron: "0 9 * * 1"
+permissions: {}
