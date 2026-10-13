@@ -38,11 +38,11 @@ gh = "2.102.0"
 {% endif %}
 git-cliff = "2.14.2"
 {% if ci == 'gitlab' %}
-glab = { postinstall = "glab auth login", version = "1.122.0" }
+glab = "1.122.0"
 {% endif %}
 "github:MRDGH2821/Sort-Markdown-Tables" = "0.5.0"
-"github:infragate/capa" = { postinstall = "capa install --yes", version = "2.2.4" }
-hk = "2.5.0"
+"github:infragate/capa" = { postinstall = "capa install --yes", version = "2.3.0" }
+hk = { version = "2.6.0", workflow = "release.yml" }
 ls-lint = "2.3.1"
 oxfmt = "0.72.0"
 "pipx:lorenzwalthert/gitignore-tidy" = "latest"
@@ -51,9 +51,9 @@ oxfmt = "0.72.0"
 pkl = "0.32.1"
 ruff = "0.17.0"
 rumdl = "0.2.79"
-tombi = "1.8.0"
+tombi = "1.8.4"
 typos = "1.51.1"
-typstyle = "0.15.1"
+typstyle = "0.15.2"
 uv = "0.13.0"
 yq = "4.54.1"
 
