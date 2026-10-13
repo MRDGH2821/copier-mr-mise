@@ -6,6 +6,17 @@
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, checks, and the contribution workflow.
 
+{% if ci == 'gitlab' %}
+
+## GitLab scheduled Copier check
+
+GitLab schedules are configured in project settings, not in `.gitlab-ci.yml`.
+
+- [ ] Create a pipeline schedule targeting the default branch.
+- [ ] Set cron to `0 9 * * 1` (Mondays at 09:00 UTC).
+
+{% endif %}
+
 ## Recommendations
 
 ### Configuration directory

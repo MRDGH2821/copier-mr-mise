@@ -1,0 +1,29 @@
+---
+copier-template-version:
+  before_script:
+    - apt-get update && apt-get install -y --no-install-recommends ca-certificates curl git tar
+  image: debian:13-slim
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - when: never
+  script:
+    - |
+      set -euo pipefail
+      preview_dir="${CI_PROJECT_DIR}/../copier-template-version-check-${CI_JOB_ID}"
+      git worktree add --detach "${preview_dir}" "${CI_COMMIT_SHA}"
+      cd "${preview_dir}"
+      ./bin/mise install uv yq
+      yq_bin="$(./bin/mise which yq)"
+      env -i HOME="${HOME}" PATH="${PATH}" bash -c './bin/mise exec uv -- uvx --from copier copier update --defaults --skip-tasks --trust'
+      current_ref=$(git -C "${CI_PROJECT_DIR}" show "${CI_COMMIT_SHA}:.copier-answers.yml" | "${yq_bin}" -r '._commit' -)
+      latest_ref=$("${yq_bin}" -r '._commit' .copier-answers.yml)
+      if [[ -z "${current_ref}" || -z "${latest_ref}" ]]; then
+        echo "ERROR: Could not read _commit from .copier-answers.yml."
+        exit 1
+      fi
+      if [[ "${current_ref}" != "${latest_ref}" ]]; then
+        echo "ERROR: Copier template is outdated: ${current_ref} -> ${latest_ref}. Run copier update."
+        exit 1
+      fi
+      echo "Copier template is current at ${latest_ref}."
+  stage: .pre

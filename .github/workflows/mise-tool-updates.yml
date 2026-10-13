@@ -26,7 +26,7 @@ jobs:
             mise.toml
             mise.lock
             template/mise.toml.jinja
-          body: "Scheduled update of the mise tool pins and lockfile."
+          body: Scheduled update of the mise tool pins and lockfile.
           branch: automation/mise-tool-updates
           commit-message: "build(mise): update tool versions"
           delete-branch: true
@@ -35,5 +35,5 @@ jobs:
 name: Mise Tool Updates
 on: # yamllint disable-line rule:truthy
   schedule:
-    - cron: "0 9 * * 0"
+    - cron: 0 9 * * 0
 permissions: {}
