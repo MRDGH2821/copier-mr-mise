@@ -65,7 +65,7 @@ user, rather than the researched repositories.
 
 Finish with a short submission checklist: focused diff, relevant verification,
 updated documentation, explanation of the result, and disclosure of checks that
-failed or could not run. Use “pull request or merge request” where the host is
+failed or could not run. Use "pull request or merge request" where the host is
 unknown, since the template offers GitHub and GitLab.
 
 ## Root repository only
