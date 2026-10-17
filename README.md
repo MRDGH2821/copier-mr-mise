@@ -2,16 +2,20 @@
 
 [Copier](https://copier.readthedocs.io/en/stable/) template for my projects.
 
+This template assumes that you have [mise](https://mise.jdx.dev/) installed already.
+
+Install it before using
+
 To use:
 
 ```sh
-copier copy gh:MRDGH2821/copier-mr-mise "/path/to/folder"
+mise exec copier -- copier copy gh:MRDGH2821/copier-mr-mise "/path/to/folder"
 ```
 
 To update:
 
 ```sh
-copier update
+mise exec copier -- copier update
 ```
 
 Copier will warn you about scripts. Review them in [copier.yml](./copier.yml)
