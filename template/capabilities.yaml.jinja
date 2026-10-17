@@ -35,11 +35,11 @@ plugins:
 
 {% if ci == 'gitlab' %}
   - def:
-      repo: gitlab-org/ai/skills::claude-plugin/plugins/glab
+      repo: gitlab-org/ai/skills::.claude-plugin/plugins/glab
     id: glab
     type: gitlab
   - def:
-      repo: gitlab-org/ai/skills::claude-plugin/plugins/gitlab-pipeline-watch
+      repo: gitlab-org/ai/skills::.claude-plugin/plugins/gitlab-pipeline-watch
     id: gitlab-pipeline-watch
     type: gitlab
 {% endif %}
