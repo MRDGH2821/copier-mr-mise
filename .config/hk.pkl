@@ -1,10 +1,12 @@
 amends "package://github.com/jdx/hk/releases/download/v2.6.0/hk@2.6.0#/Config.pkl"
 
 import "package://github.com/jdx/hk/releases/download/v2.6.0/hk@2.6.0#/Builtins.pkl"
+// Using a coding agent? See https://hk.jdx.dev/agents
 
 local linters = new Mapping<String, Step> {
   ["betterleaks"] = Builtins.betterleaks
-  ["check-merge-conflict"] = Builtins.check_merge_conflict
+  ["check_merge_conflict"] = Builtins.check_merge_conflict
+  ["check_shebang_scripts_are_executable"] = Builtins.check_shebang_scripts_are_executable
   ["check-placeholders"] {
     check =
       "if grep -EIn '(<placeholder>|CHANGEME|FILL_ME_IN|NOCOMMIT)' {{files}}; then false; else test $? -eq 1; fi"
@@ -16,6 +18,7 @@ local linters = new Mapping<String, Step> {
   }
   ["detect-private-key"] = Builtins.detect_private_key
   ["editorconfig-checker"] = Builtins.editorconfig_checker
+  ["fix_smart_quotes"] = Builtins.fix_smart_quotes
   ["gitignore-tidy"] {
     check = "gitignore-tidy {{files}}"
     fix = "gitignore-tidy {{files}}"
@@ -25,17 +28,17 @@ local linters = new Mapping<String, Step> {
     check = "keep-sorted --mode lint {{files}}"
     fix = "keep-sorted --mode fix {{files}}"
   }
-  ["ls-lint"] = Builtins.ls_lint
+  ["ls_lint"] = Builtins.ls_lint
   ["mise"] = Builtins.mise
-  ["newlines"] = Builtins.newlines
+  ["mixed_line_ending"] = Builtins.mixed_line_ending
+  ["oxfmt"] = Builtins.oxfmt
   ["pkl"] = Builtins.pkl
-  ["pkl-format"] = Builtins.pkl_format
-  ["oxfmt"] = (Builtins.oxfmt) { depends = List("sort-markdown-tables") }
-  ["ruff"] = (Builtins.ruff) { depends = List("ruff-format") }
-  ["ruff-format"] = Builtins.ruff_format
+  ["pkl_format"] = Builtins.pkl_format
+  ["ruff"] = Builtins.ruff
+  ["ruff_format"] = Builtins.ruff_format
   ["rumdl"] = (Builtins.rumdl) { depends = List("rumdl-format") }
-  ["rumdl-format"] = Builtins.rumdl_format
-  ["ryl"] = (Builtins.ryl) { depends = List("yamlfix") }
+  ["rumdl_format"] = Builtins.rumdl_format
+  ["ryl"] = Builtins.ryl
   ["ryl_markdown"] = Builtins.ryl_markdown
   ["sort-markdown-tables"] {
     check = "smt --check {{files}}"
@@ -43,7 +46,7 @@ local linters = new Mapping<String, Step> {
     types = List("markdown")
   }
   ["tombi"] = Builtins.tombi
-  ["tombi-format"] = (Builtins.tombi_format) { depends = List("toml-sort") }
+  ["tombi_format"] = (Builtins.tombi_format) { depends = List("toml-sort") }
   ["toml-sort"] {
     fix = "toml-sort --in-place --sort-table-keys --sort-inline-tables {{files}}"
     check = "toml-sort --check --sort-table-keys --sort-inline-tables {{files}}"
@@ -52,11 +55,7 @@ local linters = new Mapping<String, Step> {
   }
   ["trailing-whitespace"] = Builtins.trailing_whitespace
   ["typos"] = Builtins.typos
-  ["typstyle"] {
-    check = "typstyle -c {{files}}"
-    fix = "typstyle -i {{files}}"
-    glob = List("*.typ", "**/*.typ")
-  }
+  ["newlines"] = Builtins.newlines
 }
 exclude =
   List(
@@ -71,11 +70,15 @@ exclude =
     // keep-sorted end
   )
 steps = linters
+
 hooks {
+  ["pre-push"] {
+    steps = linters
+  }
   ["commit-msg"] {
     steps {
-      ["check-conventional-commit"] = Builtins.check_conventional_commit
-      ["conventional-commit"] = Builtins.cocogitto_commit_msg
+      ["check_conventional_commit"] = Builtins.check_conventional_commit
+      ["cocogitto_commit_msg"] = Builtins.cocogitto_commit_msg
       ["cspell"] {
         check =
           "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{commit_msg_file}}"
