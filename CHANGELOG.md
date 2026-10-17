@@ -4,6 +4,51 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.19.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.18.0..v0.19.0) - 2026-10-17
+
+### Bug Fixes
+
+- fix syntax - ([b60d467](https://github.com/MRDGH2821/copier-mr-mise/commit/b60d467a59517938667a8a10673f8f2cdf924bb8)) - MRDGH2821
+
+### Documentation
+
+- **(copier)** add review co-author footer guidance - ([0622fcb](https://github.com/MRDGH2821/copier-mr-mise/commit/0622fcb95b029cccceeab632bfc211a3077b4969)) - MRDGH2821
+- add copier link - ([bb31f6d](https://github.com/MRDGH2821/copier-mr-mise/commit/bb31f6d82e3ea0f98fc39ebb7599d3e8977448a9)) - MRDGH2821
+- add links for mise - ([88eeca0](https://github.com/MRDGH2821/copier-mr-mise/commit/88eeca0fe00bb0064e71b383c3d4a437e0abe0c5)) - MRDGH2821
+
+### Features
+
+- use task to regenerate mise wrapper - ([f537492](https://github.com/MRDGH2821/copier-mr-mise/commit/f537492a2890a1d88a88102d825d9e65bdca26a6)) - MRDGH2821
+- migrate yamlfix options to ryl - ([52eac9e](https://github.com/MRDGH2821/copier-mr-mise/commit/52eac9ef80f41f924f2d520aa5a1b2501f4040cf)) - MRDGH2821
+- update tool versions - ([e3ab889](https://github.com/MRDGH2821/copier-mr-mise/commit/e3ab889673978e1ed3c9f58c0b0078a238dbb157)) - MRDGH2821
+- update hooks - ([7862ec3](https://github.com/MRDGH2821/copier-mr-mise/commit/7862ec399238e2eec068672b7ed91ac8b62419c5)) - MRDGH2821
+- sync configs - ([710b293](https://github.com/MRDGH2821/copier-mr-mise/commit/710b29309e763f9dd45f006f7d348c8452477510)) - MRDGH2821
+- migrate treefmt config to hk sorter group - ([43b8495](https://github.com/MRDGH2821/copier-mr-mise/commit/43b849524ef962481d0aec287a106fa349115760)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- regenerate hk config - ([039f50b](https://github.com/MRDGH2821/copier-mr-mise/commit/039f50b88941fa7dc74abc68da9e6576f86edfba)) - MRDGH2821
+- convert to normal quotes - ([a2a754d](https://github.com/MRDGH2821/copier-mr-mise/commit/a2a754d610e53dc87dd74c73f39a2a346fc23ac1)) - MRDGH2821
+- add sync script - ([319e95c](https://github.com/MRDGH2821/copier-mr-mise/commit/319e95c8d0b8bc47390362c38ff489fa030106dc)) - MRDGH2821
+- re-order steps in hk.pkl - ([fa823ec](https://github.com/MRDGH2821/copier-mr-mise/commit/fa823ecaa2d8e11d834ec64f5d1b567cf7089da3)) - MRDGH2821
+
+### Style
+
+- format files - ([c851f13](https://github.com/MRDGH2821/copier-mr-mise/commit/c851f1360531b091ab30b800a3e965ce08e7c9b8)) - MRDGH2821
+
+### Build
+
+- **(mise)** bump versions - ([04cc64f](https://github.com/MRDGH2821/copier-mr-mise/commit/04cc64fd3b66b8e87dd1d1e67e436939abfc868a)) - MRDGH2821
+- update oxfmt - ([3885b23](https://github.com/MRDGH2821/copier-mr-mise/commit/3885b2379cfcd8a705c0225088408521984ab258)) - MRDGH2821
+- update bun.lock - ([167680a](https://github.com/MRDGH2821/copier-mr-mise/commit/167680a4aee54bd0e18df174735cc9936044a164)) - MRDGH2821
+
+### Ci
+
+- update cron schedule for Mise Tool Updates workflow - ([21a9ed8](https://github.com/MRDGH2821/copier-mr-mise/commit/21a9ed87b21b53cbb70a4f3a5de8f89bb98763e2)) - Mihir Rabade
+- update versions - ([03363bc](https://github.com/MRDGH2821/copier-mr-mise/commit/03363bcabc7caae9ad63e50d07541294baf56516)) - MRDGH2821
+
+---
+
 ## [0.18.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.17.1..v0.18.0) - 2026-10-13
 
 ### Bug Fixes
