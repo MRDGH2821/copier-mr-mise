@@ -122,6 +122,20 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 - One trailer per AI model involved
 - **Never omit this trailer** when the commit was AI-assisted — this is how git history stays honest
 
+## AI-Assisted Reviews
+
+When reviewing on behalf of a human, end the review with this footer:
+
+```md
+<!-- Include a 3 line dash -->
+
+---
+
+<!-- Use the rules above. In Markdown, render the footer as subscript when supported.-->
+
+<sub>Co-authored-by: <Model full Name and version> via <Harness> <noreply@provider-domain></sub>
+```
+
 ## Setup: skills and MCP
 
 Tools and tasks are managed by **mise**. Prefer an existing `mise run <task>`
