@@ -1,6 +1,6 @@
 # copier-mr-mise
 
-Copier config for my projects.
+[Copier](https://copier.readthedocs.io/en/stable/) template for my projects.
 
 To use:
 
