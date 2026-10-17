@@ -3,7 +3,28 @@ amends "package://github.com/jdx/hk/releases/download/v2.6.0/hk@2.6.0#/Config.pk
 import "package://github.com/jdx/hk/releases/download/v2.6.0/hk@2.6.0#/Builtins.pkl"
 
 local linters = new Mapping<String, Step> {
+  // Secrets
   ["betterleaks"] = Builtins.betterleaks
+  ["detect-private-key"] = Builtins.detect_private_key
+
+  // Config Files
+  ["pkl"] = Builtins.pkl
+  ["pkl_format"] = Builtins.pkl_format
+  ["gitignore-tidy"] {
+    check = "gitignore-tidy {{files}}"
+    fix = "gitignore-tidy {{files}}"
+    glob = List("**/.*ignore", ".*ignore")
+  }
+  ["tombi"] = Builtins.tombi
+  ["tombi_format"] = (Builtins.tombi_format) { depends = List("toml-sort") }
+  ["toml-sort"] {
+    check = "toml-sort --check --sort-table-keys --sort-inline-tables {{files}}"
+    exclude = List("tombi.toml")
+    fix = "toml-sort --in-place --sort-table-keys --sort-inline-tables {{files}}"
+    types = List("toml")
+  }
+
+  // Misc
   ["check_merge_conflict"] = Builtins.check_merge_conflict
   ["check_shebang_scripts_are_executable"] = Builtins.check_shebang_scripts_are_executable
   ["check-placeholders"] {
@@ -11,30 +32,19 @@ local linters = new Mapping<String, Step> {
       "if grep -EIn '(<placeholder>|CHANGEME|FILL_ME_IN|NOCOMMIT)' {{files}}; then false; else test $? -eq 1; fi"
     exclude = List(".config/hk.pkl", ".config/cspell.json")
   }
-  ["cspell"] {
-    check = "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{files}}"
-    batch = false
-  }
-  ["detect-private-key"] = Builtins.detect_private_key
-  ["editorconfig-checker"] = Builtins.editorconfig_checker
-  ["fix_smart_quotes"] = Builtins.fix_smart_quotes
-  ["gitignore-tidy"] {
-    check = "gitignore-tidy {{files}}"
-    fix = "gitignore-tidy {{files}}"
-    glob = List("**/.*ignore", ".*ignore")
-  }
   ["keep-sorted"] {
     check = "keep-sorted --mode lint {{files}}"
     fix = "keep-sorted --mode fix {{files}}"
   }
   ["ls_lint"] = Builtins.ls_lint
   ["mise"] = Builtins.mise
-  ["mixed_line_ending"] = Builtins.mixed_line_ending
-  ["oxfmt"] = Builtins.oxfmt
-  ["pkl"] = Builtins.pkl
-  ["pkl_format"] = Builtins.pkl_format
+
+  // Python
   ["ruff"] = Builtins.ruff
   ["ruff_format"] = Builtins.ruff_format
+
+  // Text
+  ["fix_smart_quotes"] = Builtins.fix_smart_quotes
   ["rumdl"] = (Builtins.rumdl) { depends = List("rumdl-format") }
   ["rumdl_format"] = Builtins.rumdl_format
   ["ryl"] = Builtins.ryl
@@ -44,17 +54,21 @@ local linters = new Mapping<String, Step> {
     fix = "smt --in-place {{files}}"
     types = List("markdown")
   }
-  ["tombi"] = Builtins.tombi
-  ["tombi_format"] = (Builtins.tombi_format) { depends = List("toml-sort") }
-  ["toml-sort"] {
-    fix = "toml-sort --in-place --sort-table-keys --sort-inline-tables {{files}}"
-    check = "toml-sort --check --sort-table-keys --sort-inline-tables {{files}}"
-    types = List("toml")
-    exclude = List("tombi.toml")
-  }
+
+  // Style Files
+  ["editorconfig-checker"] = Builtins.editorconfig_checker
   ["trailing-whitespace"] = Builtins.trailing_whitespace
-  ["typos"] = Builtins.typos
   ["newlines"] = Builtins.newlines
+  ["mixed_line_ending"] = Builtins.mixed_line_ending
+
+  // AIO
+  ["oxfmt"] = Builtins.oxfmt
+
+  // Spell Check
+  ["cspell"] {
+    check = "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{files}}"
+  }
+  ["typos"] = Builtins.typos
 }
 exclude =
   List(
