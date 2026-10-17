@@ -18,19 +18,14 @@ prepare-ci = ["bun ci"]
 
 [tasks.format]
 alias = "fmt"
-run = [{ task = "treefmt" }, "hk fix --all"]
+run = ["hk fix --all"]
 
 [tasks.prepare]
 interactive = true
 run = ["bun install", { task = "ai-setup" }]
 
-[tasks.treefmt]
-run = "treefmt"
-run_windows = "echo 'Treefmt not supported on Windows'"
-
 [tools]
 "aqua:google/keep-sorted" = "0.10.0"
-"aqua:numtide/treefmt" = { os = ["linux", "macos"], version = "2.6.0" }
 "aqua:owenlamont/ryl" = "0.25.0"
 betterleaks = "1.9.0"
 bun = "1.4.3"
@@ -51,7 +46,6 @@ ruff = "0.17.1"
 rumdl = "0.2.79"
 tombi = "1.8.5"
 typos = "1.51.1"
-typstyle = "0.15.2"
 uv = "0.13.1"
 yq = "4.54.1"
 

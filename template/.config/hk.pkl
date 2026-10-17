@@ -2,6 +2,69 @@ amends "package://github.com/jdx/hk/releases/download/v2.6.0/hk@2.6.0#/Config.pk
 
 import "package://github.com/jdx/hk/releases/download/v2.6.0/hk@2.6.0#/Builtins.pkl"
 
+local sorters = new Group {
+  steps {
+    ["cspell-sort"] {
+      glob =
+        List(
+          "**/.cSpell*",
+          "**/.cspell*",
+          "**/cSpell*",
+          "**/cspell*",
+          ".cSpell*",
+          ".cspell*",
+          "cSpell*",
+          "cspell*",
+        )
+      fix =
+        """
+        failed=0
+        for f in {{ files }}; do
+        yq -i '.words|= sort_by(downcase)|.ignorePaths|=sort_by(downcase)' "$f" || failed=1
+        done
+        exit $failed
+        """
+    }
+    ["jscpd-sort"] {
+      glob = List("**/.jscpd*", "**/jscpd*", ".jscpd*", "jscpd*")
+      fix =
+        """
+        failed=0
+        for f in {{ files }}; do
+        yq -i '.ignore|= sort_by(downcase)|.reporters|=sort_by(downcase)' "$f" || failed=1
+        done
+        exit $failed
+        """
+    }
+    ["keep-sorted"] {
+      check = "keep-sorted --mode lint {{files}}"
+      fix = "keep-sorted --mode fix {{files}}"
+    }
+    ["toml-sort"] {
+      check = "toml-sort --check --sort-table-keys --sort-inline-tables {{files}}"
+      exclude = List("**/tombi.toml")
+      fix = "toml-sort --in-place --sort-table-keys --sort-inline-tables {{files}}"
+      types = List("toml")
+    }
+    ["key-sort"] {
+      fix =
+        """
+        failed=0
+        for f in {{ files }}; do
+        yq -iP 'sort_keys(..)' "$f" || failed=1
+        done
+        exit $failed
+        """
+      types = List("json")
+    }
+    ["gitignore-tidy"] {
+      check = "gitignore-tidy {{files}}"
+      fix = "gitignore-tidy {{files}}"
+      glob = List("**/.*ignore", ".*ignore")
+    }
+  }
+}
+
 local linters = new Mapping<String, Step> {
   // Secrets
   ["betterleaks"] = Builtins.betterleaks
@@ -10,19 +73,8 @@ local linters = new Mapping<String, Step> {
   // Config Files
   ["pkl"] = Builtins.pkl
   ["pkl_format"] = Builtins.pkl_format
-  ["gitignore-tidy"] {
-    check = "gitignore-tidy {{files}}"
-    fix = "gitignore-tidy {{files}}"
-    glob = List("**/.*ignore", ".*ignore")
-  }
   ["tombi"] = Builtins.tombi
-  ["tombi_format"] = (Builtins.tombi_format) { depends = List("toml-sort") }
-  ["toml-sort"] {
-    check = "toml-sort --check --sort-table-keys --sort-inline-tables {{files}}"
-    exclude = List("tombi.toml")
-    fix = "toml-sort --in-place --sort-table-keys --sort-inline-tables {{files}}"
-    types = List("toml")
-  }
+  ["tombi_format"] = (Builtins.tombi_format) { depends = List("sorters") }
 
   // Misc
   ["check_merge_conflict"] = Builtins.check_merge_conflict
@@ -30,11 +82,7 @@ local linters = new Mapping<String, Step> {
   ["check-placeholders"] {
     check =
       "if grep -EIn '(<placeholder>|CHANGEME|FILL_ME_IN|NOCOMMIT)' {{files}}; then false; else test $? -eq 1; fi"
-    exclude = List(".config/hk.pkl", ".config/cspell.json")
-  }
-  ["keep-sorted"] {
-    check = "keep-sorted --mode lint {{files}}"
-    fix = "keep-sorted --mode fix {{files}}"
+    exclude = List("template/**", ".config/hk.pkl", ".config/cspell.json")
   }
   ["ls_lint"] = Builtins.ls_lint
   ["mise"] = Builtins.mise
@@ -61,9 +109,6 @@ local linters = new Mapping<String, Step> {
   ["newlines"] = Builtins.newlines
   ["mixed_line_ending"] = Builtins.mixed_line_ending
 
-  // AIO
-  ["oxfmt"] = Builtins.oxfmt
-
   // Spell Check
   ["cspell"] {
     check = "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{files}}"
@@ -82,7 +127,12 @@ exclude =
     "**/pnpm-lock.yaml"
     // keep-sorted end
   )
-steps = linters
+steps {
+  ["sorters"] = sorters
+  ...linters
+  // AIO
+  ["oxfmt"] = (Builtins.oxfmt) { depends = "sorters" }
+}
 
 hooks {
   ["pre-push"] {
