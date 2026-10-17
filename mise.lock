@@ -833,15 +833,6 @@ specifiers = [
 ]
 uv = { path = ".mise/locks/pipx-toml-sort/0.25.0", digest = "sha256:5ce7a14f3ea541945f9113a7a7db59a51541e5194ea0af96aa3f900035398fb3" }
 
-[[tools."pipx:yamlfix"]]
-version = "1.19.1"
-backend = "pipx:yamlfix"
-specifiers = [
-    "1.19.1",
-    "latest",
-]
-uv = { path = ".mise/locks/pipx-yamlfix/1.19.1", digest = "sha256:8ea6906f5b931c7ad3a89dde944d6f8e56b938f063ae649d29674fff647903e6" }
-
 [[tools.pkl]]
 version = "0.32.1"
 backend = "aqua:apple/pkl"
