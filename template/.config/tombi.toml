@@ -8,3 +8,7 @@ include = ["cog.toml"]
 [[schemas]]
 path = "https://schemastore.org/treefmt.json"
 include = ["treefmt.toml"]
+
+[[schemas]]
+path = "https://www.schemastore.org/ryl.json"
+include = ["ryl.toml"]
