@@ -5,7 +5,6 @@ _exclude:
   - "{% if ci != 'github' %}.github{% endif %}"
   - "{% if ci != 'gitlab' %}.gitlab-ci.yml{% endif %}"
   - "{% if ci != 'gitlab' %}.gitlab{% endif %}"
-  - "{% if ci != 'gitlab' %}bin{% endif %}"
   - "{% if not use_agents %}AGENTS.md{% endif %}"
   - "{% if not use_agents %}CLAUDE.md{% endif %}"
   - "{% if not use_skills %}.agents/skills{% endif %}"
@@ -47,6 +46,8 @@ _tasks:
     when: "{{ _copier_operation == 'copy' }}"
   - command: uvx --from lic-cli lic
     when: "{{ _copier_operation == 'copy' }}"
+  - command: mise generate install-script --localize --write
+    when: "{{ ci != 'github' }}"
 ci:
   choices:
     GitHub CI: github
