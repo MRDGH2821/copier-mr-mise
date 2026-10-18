@@ -778,7 +778,7 @@ specifiers = [
     "0.25.0",
     "latest",
 ]
-uv = { path = ".mise/locks/pipx-toml-sort/0.25.0", digest = "sha256:76b426bb0fdc9a1fb9b9866d1cf50ae2c18727629b18b625a21d5b4fb59c27e2" }
+uv = { path = ".mise/locks/pipx-toml-sort/0.25.0", digest = "sha256:bda02b66e79e96749cb1aeddc2beacc42f4d6c5f74d4f79408db79216e7d6a3b" }
 
 [[tools.pkl]]
 version = "0.32.1"
