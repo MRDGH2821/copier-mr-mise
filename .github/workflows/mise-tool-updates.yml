@@ -16,6 +16,8 @@ jobs:
           install: false
       - name: Resolve GitLab CLI pin
         run: echo "MISE_TEMPLATE_GLAB_VERSION=$(mise latest glab)" >> "$GITHUB_ENV"
+      - name: Resolve Forgejo CLI pin
+        run: echo "MISE_TEMPLATE_FORGEJO_CLI_VERSION=$(mise latest 'forgejo:forgejo-contrib/forgejo-cli')" >> "$GITHUB_ENV"
       - name: Upgrade pinned tools
         run: mise upgrade --bump --yes --no-prune --exclude pipx:lorenzwalthert/gitignore-tidy
       - name: Sync Copier template pins

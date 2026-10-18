@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. See [conven
 ### Features
 
 - add Forgejo as a CI option
+- refresh the Forgejo CLI pin automatically
 
 ## [0.19.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.18.0..v0.19.0) - 2026-10-17
 
