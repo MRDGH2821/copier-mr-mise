@@ -16,16 +16,16 @@ for (const [name, spec] of Object.entries(config.tools)) {
   const version = typeof spec === "string" ? spec : spec.version;
   if (version !== "latest") versions.set(name, version);
 }
-if (!versions.has("glab") && process.env.MISE_TEMPLATE_GLAB_VERSION) {
-  versions.set("glab", process.env.MISE_TEMPLATE_GLAB_VERSION);
+if (!versions.has("glab") && process.env.COPIER_TEMPLATE_GLAB_VERSION) {
+  versions.set("glab", process.env.COPIER_TEMPLATE_GLAB_VERSION);
 }
 if (
   !versions.has("forgejo:forgejo-contrib/forgejo-cli") &&
-  process.env.MISE_TEMPLATE_FORGEJO_CLI_VERSION
+  process.env.COPIER_TEMPLATE_FORGEJO_CLI_VERSION
 ) {
   versions.set(
     "forgejo:forgejo-contrib/forgejo-cli",
-    process.env.MISE_TEMPLATE_FORGEJO_CLI_VERSION
+    process.env.COPIER_TEMPLATE_FORGEJO_CLI_VERSION
   );
 }
 

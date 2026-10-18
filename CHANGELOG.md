@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file. See [conven
 
 ## Unreleased
 
+### Bug Fixes
+
+- configure git identity before automated hook stashing
+- rename updater variables to avoid mise tool-version parsing
+
 ### Features
 
 - add Forgejo as a CI option
