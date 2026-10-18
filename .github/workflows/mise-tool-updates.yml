@@ -43,5 +43,4 @@ on: # yamllint disable-line rule:truthy
   schedule:
     - cron: 0 9 * * *
   workflow_dispatch:
-permissions:
-  pull-requests: write
+permissions: {}
