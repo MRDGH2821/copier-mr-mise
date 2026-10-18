@@ -2,6 +2,7 @@
 _exclude:
   # keep-sorted start
   - "*.py[co]"
+  - "{% if ci != 'forgejo' %}.forgejo{% endif %}"
   - "{% if ci != 'github' %}.github{% endif %}"
   - "{% if ci != 'gitlab' %}.gitlab-ci.yml{% endif %}"
   - "{% if ci != 'gitlab' %}.gitlab{% endif %}"
@@ -50,6 +51,7 @@ _tasks:
     when: "{{ ci != 'github' }}"
 ci:
   choices:
+    Forgejo CI: forgejo
     GitHub CI: github
     GitLab CI: gitlab
   default: github
