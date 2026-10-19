@@ -4,39 +4,77 @@ jobs:
     if: needs.preview.outputs.update_available == 'true'
     name: Open or refresh update issue
     needs: preview
-    permissions:
-      contents: read
-      issues: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+      - uses: https://data.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ forgejo.sha }}
+      - uses: https://github.com/jdx/mise-action@9b200bcecbfd6303e69a4a261b2e09e3757440a7 # v5.2.0
+        with:
+          cache: true
+          install: false
+      - name: Install Forgejo CLI
+        run: mise install forgejo:forgejo-contrib/forgejo-cli
+      - env:
+          FORGEJO_SERVER_URL: ${{ forgejo.server_url }}
+          FORGEJO_TOKEN: ${{ forgejo.token }}
+        name: Authenticate Forgejo CLI
+        run: printf '%s' "$FORGEJO_TOKEN" | mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "$FORGEJO_SERVER_URL" auth add-token
+      - uses: https://data.forgejo.org/forgejo/download-artifact@d8d0a99033603453ad2255e58720b460a0555e1e # v4
         with:
           name: copier-update-preview
           path: ${{ runner.temp }}/copier-update-preview
       - env:
-          GH_TOKEN: ${{ github.token }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
+          FORGEJO_API_URL: ${{ forgejo.api_url }}
+          FORGEJO_REPOSITORY: ${{ forgejo.repository }}
+          FORGEJO_SERVER_URL: ${{ forgejo.server_url }}
+          FORGEJO_TOKEN: ${{ forgejo.token }}
         name: Open or refresh issue
         run: |-
           set -euo pipefail
           title="Copier template update available"
-          issue=$(gh issue list --repo "${GITHUB_REPOSITORY}" --state open --search "in:title ${title}" --json number,title --jq '.[] | select(.title == "Copier template update available") | .number' | head -n 1)
+          preview="${RUNNER_TEMP}/copier-update-preview/preview.md"
+          issue=$(
+            ISSUE_TITLE="${title}" node --input-type=module <<'NODE'
+          const apiUrl = process.env.FORGEJO_API_URL.replace(/\/+$/, "");
+          const url = new URL(
+            `${apiUrl}/repos/${process.env.FORGEJO_REPOSITORY}/issues`,
+          );
+          url.searchParams.set("state", "open");
+          url.searchParams.set("type", "issues");
+          url.searchParams.set("q", process.env.ISSUE_TITLE);
+          url.searchParams.set("limit", "100");
+          const response = await fetch(url, {
+            headers: { Authorization: `token ${process.env.FORGEJO_TOKEN}` },
+          });
+          if (!response.ok) {
+            throw new Error(`Forgejo issue search failed: ${response.status}`);
+          }
+          const issues = await response.json();
+          const issue = issues.find(
+            ({ title, pull_request }) =>
+              title === process.env.ISSUE_TITLE && !pull_request,
+          );
+          if (issue) console.log(issue.number);
+          NODE
+          )
           if [[ -n "${issue}" ]]; then
-            gh issue edit "${issue}" --repo "${GITHUB_REPOSITORY}" --body-file "${RUNNER_TEMP}/copier-update-preview/preview.md"
+            body=$(cat "${preview}")
+            mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "${FORGEJO_SERVER_URL}" issue edit "${FORGEJO_REPOSITORY}#${issue}" body "${body}"
           else
-            gh issue create --repo "${GITHUB_REPOSITORY}" --title "${title}" --body-file "${RUNNER_TEMP}/copier-update-preview/preview.md"
+            mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "${FORGEJO_SERVER_URL}" issue create "${title}" --repo "${FORGEJO_REPOSITORY}" --no-template --body-file "${preview}"
           fi
   preview:
     name: Preview Copier update
     outputs:
       update_available: ${{ steps.preview.outputs.update_available }}
-    permissions:
-      contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: https://data.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          ref: ${{ forgejo.sha }}
       - uses: https://github.com/jdx/mise-action@9b200bcecbfd6303e69a4a261b2e09e3757440a7 # v5.2.0
         with:
           cache: false
@@ -46,23 +84,23 @@ jobs:
         run: |
           set -euo pipefail
           preview_dir="${RUNNER_TEMP}/copier-preview"
-          git worktree add --detach "${preview_dir}" "${GITHUB_SHA}"
+          git worktree add --detach "${preview_dir}" "${FORGEJO_SHA}"
           cd "${preview_dir}"
           mise install uv
           mise exec uv -- uvx --from copier copier update --defaults --skip-tasks --trust
           git add -N -A
-          if git diff --quiet "${GITHUB_SHA}" --; then
-            echo "update_available=false" >> "${GITHUB_OUTPUT}"
+          if git diff --quiet "${FORGEJO_SHA}" --; then
+            echo "update_available=false" >> "${FORGEJO_OUTPUT}"
             exit 0
           fi
           patch="${RUNNER_TEMP}/copier-update.patch"
-          git diff --no-ext-diff --unified=3 "${GITHUB_SHA}" -- > "${patch}"
+          git diff --no-ext-diff --unified=3 "${FORGEJO_SHA}" -- > "${patch}"
           patch_size=$(wc -c < "${patch}")
           {
             echo "The latest Copier template would change this generated project."
             echo
             echo "## Changed files"
-            git diff --stat "${GITHUB_SHA}"
+            git diff --stat "${FORGEJO_SHA}"
             echo
             echo "## Potential changes"
             echo '```diff'
@@ -75,9 +113,9 @@ jobs:
             fi
             echo '```'
           } > "${RUNNER_TEMP}/copier-preview.md"
-          echo "update_available=true" >> "${GITHUB_OUTPUT}"
+          echo "update_available=true" >> "${FORGEJO_OUTPUT}"
       - if: steps.preview.outputs.update_available == 'true'
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        uses: https://data.forgejo.org/forgejo/upload-artifact@16871d9e8cfcf27ff31822cac382bbb5450f1e1e # v4
         with:
           if-no-files-found: error
           name: copier-update-preview
@@ -87,4 +125,3 @@ on: # yamllint disable-line rule:truthy
   schedule:
     - cron: 0 9 * * 1
   workflow_dispatch:
-permissions: {}
