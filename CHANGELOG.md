@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.21.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.21.0..v0.21.1) - 2026-10-19
+
+### Bug Fixes
+
+- **(hk)** remove pre-push hooks - ([548f753](https://github.com/MRDGH2821/copier-mr-mise/commit/548f7534b914776147a5b17162b00725b4bec434)) - MRDGH2821
+
+---
+
 ## [0.21.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.20.0..v0.21.0) - 2026-10-19
 
 ### Features

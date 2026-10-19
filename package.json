@@ -1,6 +1,6 @@
 {
   "name": "copier-mr-mise",
-  "version": "0.21.0",
+  "version": "0.21.1",
   "license": "MIT",
   "scripts": {
     "sync:mise": "bun .github/scripts/sync-mise-template.ts"
