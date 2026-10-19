@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.21.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.20.0..v0.21.0) - 2026-10-19
+
+### Features
+
+- add gitea in cliff.toml - ([a3ec49a](https://github.com/MRDGH2821/copier-mr-mise/commit/a3ec49a57db6f911b440dd02bb4079184bd646a6)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- merge pull request #9 from MRDGH2821/automation/mise-tool-updates - ([12e5d4e](https://github.com/MRDGH2821/copier-mr-mise/commit/12e5d4ea796be2300a75001c242852d2fb5280f3)) - Mihir Rabade
+
+### Build
+
+- **(mise)** update tool versions - ([16d1993](https://github.com/MRDGH2821/copier-mr-mise/commit/16d19934b545b989bf9d02c06dc4b46e91e57233)) - MRDGH2821
+- **(mise)** update lock files - ([5831753](https://github.com/MRDGH2821/copier-mr-mise/commit/583175353df2b1963fa7c1e76a79b2e51e5e9e17)) - MRDGH2821
+
+---
+
 ## [0.20.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.19.0..v0.20.0) - 2026-10-19
 
 ### Bug Fixes
