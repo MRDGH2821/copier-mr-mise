@@ -86,6 +86,10 @@ split_commits = false
 # Order releases topologically instead of chronologically.
 topo_order = false
 
+[remote.gitea]
+owner = "__FILL_ME_IN__"
+repo = "__FILL_ME_IN__"
+
 [remote.github]
 owner = "__FILL_ME_IN__"
 repo = "__FILL_ME_IN__"
