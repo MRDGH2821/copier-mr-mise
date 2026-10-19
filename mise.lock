@@ -315,7 +315,7 @@ url_api = "https://api.github.com/repos/cocogitto/cocogitto/releases/assets/3666
 
 [[tools.cspell]]
 version = "10.4.0"
-aube = { path = ".mise/locks/cspell/10.4.0", digest = "sha256:6c1ead3d9382496b8cb710a4a35d467430608da93fbcb88cf2594c4892ed6cc5" }
+aube = { path = ".mise/locks/cspell/10.4.0", digest = "sha256:3f3a5e091705e9d886f0d9d886e9b98eef7ad86c95762fab1956c38d3065aa41" }
 backend = "npm:cspell"
 specifiers = ["10.4.0"]
 
@@ -762,7 +762,7 @@ url_api = "https://api.github.com/repos/loeffel-io/ls-lint/releases/assets/64980
 
 [[tools.oxfmt]]
 version = "0.73.0"
-aube = { path = ".mise/locks/oxfmt/0.73.0", digest = "sha256:e42eeebedd060ec6393c40caa35362b541991453b9aab2de3d33d41a0c245a62" }
+aube = { path = ".mise/locks/oxfmt/0.73.0", digest = "sha256:19b08977fa42d6be640ee1207b7aacf0f0c8b6413bbbc45ab44ccccea3218904" }
 backend = "npm:oxfmt"
 specifiers = ["0.73.0"]
 
@@ -778,7 +778,7 @@ specifiers = [
     "0.25.0",
     "latest",
 ]
-uv = { path = ".mise/locks/pipx-toml-sort/0.25.0", digest = "sha256:10cd845c6ca436d7c5e6a8026581a62eb412e8310e7df45ea6d76c25e71617c7" }
+uv = { path = ".mise/locks/pipx-toml-sort/0.25.0", digest = "sha256:76b426bb0fdc9a1fb9b9866d1cf50ae2c18727629b18b625a21d5b4fb59c27e2" }
 
 [[tools.pkl]]
 version = "0.32.1"
