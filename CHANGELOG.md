@@ -4,20 +4,38 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
-## Unreleased
+## [0.20.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.19.0..v0.20.0) - 2026-10-19
 
 ### Bug Fixes
 
-- configure git identity before automated hook stashing
-- rename updater variables to avoid mise tool-version parsing
+- **(copier)** use documented issue form metadata - ([874531a](https://github.com/MRDGH2821/copier-mr-mise/commit/874531a462faf0ca78d4a91ff25a3516dfe00483)) - MRDGH2821
+- **(mise)** unblock tool update PR creation - ([9a3e68f](https://github.com/MRDGH2821/copier-mr-mise/commit/9a3e68fa2659f7e02e6fcdc6f2978fd52d7ecc5d)) - MRDGH2821
 
 ### Features
 
-- add Forgejo as a CI option
-- refresh the Forgejo CLI pin automatically
-- allow manual dispatch of mise tool updates
-- make Copier update notifications Forgejo-compatible
-- use Forgejo-native issue updates in template workflow
+- **(copier)** add Forgejo CI option - ([e4b7163](https://github.com/MRDGH2821/copier-mr-mise/commit/e4b716390dc510ebfb95b552b7ece249e5b2ddc5)) - MRDGH2821
+- **(mise)** update Forgejo CLI pin automatically - ([13bdbba](https://github.com/MRDGH2821/copier-mr-mise/commit/13bdbbace72b20a1df7d8edf90a56aed822cb7ae)) - MRDGH2821
+- add forgejo - ([c8307a4](https://github.com/MRDGH2821/copier-mr-mise/commit/c8307a4101bcb9a0241ebdc26ee31a83790843c3)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- merge pull request #7 from MRDGH2821/automation/mise-tool-updates - ([106f064](https://github.com/MRDGH2821/copier-mr-mise/commit/106f06447c0aa303c198a4bc7dc9edda50968c84)) - Mihir Rabade
+- merge pull request #8 from MRDGH2821/automation/mise-tool-updates - ([55dd979](https://github.com/MRDGH2821/copier-mr-mise/commit/55dd979051edfaca2eb3d259ced6047b5e793041)) - Mihir Rabade
+
+### Build
+
+- **(mise)** update tool versions - ([85d731e](https://github.com/MRDGH2821/copier-mr-mise/commit/85d731e6de164ed4912a109123aca97de49fb448)) - MRDGH2821
+- **(mise)** update lock files - ([96a05e9](https://github.com/MRDGH2821/copier-mr-mise/commit/96a05e9bcbd5763afa251402a829521377857dcf)) - MRDGH2821
+- **(mise)** update tool versions - ([19249dc](https://github.com/MRDGH2821/copier-mr-mise/commit/19249dc1c763c1d3205e51d02ddf1d17602efe25)) - MRDGH2821
+
+### Ci
+
+- **(copier)** adapt template update workflow for Forgejo - ([a878d31](https://github.com/MRDGH2821/copier-mr-mise/commit/a878d31bd5756b29b3e17d66cd72a6d955ac1c2e)) - MRDGH2821
+- **(mise)** add manual trigger for tool updates - ([e81706d](https://github.com/MRDGH2821/copier-mr-mise/commit/e81706d49ef5d6467430c207371c943e1e79c76f)) - MRDGH2821
+- fix permissions - ([1e0e180](https://github.com/MRDGH2821/copier-mr-mise/commit/1e0e1805d14cf163be713b41d2eb37cbd9a919d5)) - MRDGH2821
+- remove global ci permissions - ([aa0e1f3](https://github.com/MRDGH2821/copier-mr-mise/commit/aa0e1f3b17ddd2e0f741943972c9252c7f28eb69)) - MRDGH2821
+
+---
 
 ## [0.19.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.18.0..v0.19.0) - 2026-10-17
 
