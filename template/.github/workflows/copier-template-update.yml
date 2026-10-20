@@ -22,9 +22,9 @@ jobs:
           title="Copier template update available"
           issue=$(gh issue list --repo "${GITHUB_REPOSITORY}" --state open --search "in:title ${title}" --json number,title --jq '.[] | select(.title == "Copier template update available") | .number' | head -n 1)
           if [[ -n "${issue}" ]]; then
-            gh issue edit "${issue}" --repo "${GITHUB_REPOSITORY}" --body-file "${RUNNER_TEMP}/copier-update-preview/preview.md"
+            gh issue edit "${issue}" --repo "${GITHUB_REPOSITORY}" --body-file "${RUNNER_TEMP}/copier-update-preview/copier-preview.md"
           else
-            gh issue create --repo "${GITHUB_REPOSITORY}" --title "${title}" --body-file "${RUNNER_TEMP}/copier-update-preview/preview.md"
+            gh issue create --repo "${GITHUB_REPOSITORY}" --title "${title}" --body-file "${RUNNER_TEMP}/copier-update-preview/copier-preview.md"
           fi
   preview:
     name: Preview Copier update
