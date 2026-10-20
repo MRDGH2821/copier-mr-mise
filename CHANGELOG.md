@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.22.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.21.1..v0.22.0) - 2026-10-20
+
+### Bug Fixes
+
+- **(copier)** correct updater preview artifact path - ([75484f3](https://github.com/MRDGH2821/copier-mr-mise/commit/75484f33c0d8474bae210deabba6e7c130ee8425)) - MRDGH2821
+
+### Features
+
+- **(hk)** remove mise step - ([11be111](https://github.com/MRDGH2821/copier-mr-mise/commit/11be1113ddfe7a9789f91eb2cbf77d2cdb6228cc)) - MRDGH2821
+- add mise schema - ([a790731](https://github.com/MRDGH2821/copier-mr-mise/commit/a790731cc044c16ae8f6ed780df3bf0ee4cb1a00)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- merge pull request #11 from MRDGH2821/MRDGH2821/fix/copier-updater-preview-path - ([437b886](https://github.com/MRDGH2821/copier-mr-mise/commit/437b886e1678101e113e6a6174061dcfbec3acbf)) - Mihir Rabade
+- sync with root - ([d456154](https://github.com/MRDGH2821/copier-mr-mise/commit/d4561549db743b7c0bd986bcd4ba4f608c5e5ebd)) - MRDGH2821
+
+---
+
 ## [0.21.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.21.0..v0.21.1) - 2026-10-19
 
 ### Bug Fixes
