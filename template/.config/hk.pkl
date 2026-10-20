@@ -85,7 +85,6 @@ local linters = new Mapping<String, Step> {
     exclude = List("template/**", ".config/hk.pkl", ".config/cspell.json")
   }
   ["ls_lint"] = Builtins.ls_lint
-  ["mise"] = Builtins.mise
 
   // Python
   ["ruff"] = Builtins.ruff
