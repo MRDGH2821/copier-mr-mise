@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.22.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.22.0..v0.22.1) - 2026-10-22
+
+### Bug Fixes
+
+- fix forgejo actions & pins - ([18fafbb](https://github.com/MRDGH2821/copier-mr-mise/commit/18fafbb6e6fc4e9840e33ee3d9fa022efa0d921b)) - MRDGH2821
+
+### Documentation
+
+- mention Forgejo contribution pipeline - ([757b0ac](https://github.com/MRDGH2821/copier-mr-mise/commit/757b0ac36d515cc5cdf954ba217f3c7d13ed5a62)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- merge pull request #10 from MRDGH2821/automation/mise-tool-updates - ([8c6b159](https://github.com/MRDGH2821/copier-mr-mise/commit/8c6b15909d0508b3867883e63832c658c1e28c55)) - Mihir Rabade
+
+### Build
+
+- **(mise)** update tool versions - ([fcdea81](https://github.com/MRDGH2821/copier-mr-mise/commit/fcdea81d08922caf616015c41a7bf78ae5bc16da)) - MRDGH2821
+- update lock files - ([25fff60](https://github.com/MRDGH2821/copier-mr-mise/commit/25fff6018b47ef0ab9099b95d41e5e1244eee612)) - MRDGH2821
+- update tools & locks - ([1a317e8](https://github.com/MRDGH2821/copier-mr-mise/commit/1a317e831f0fb60d58e0b4e448424f9abcfa0ea6)) - MRDGH2821
+
+### Ci
+
+- update & pin sha - ([ba0f2da](https://github.com/MRDGH2821/copier-mr-mise/commit/ba0f2da9d9c250d9723be83fd7a51131bbc893d5)) - MRDGH2821
+- remove & fix actions - ([1eafe26](https://github.com/MRDGH2821/copier-mr-mise/commit/1eafe268c002dfa21fe0c534b385eb343fbf8566)) - MRDGH2821
+- use Forgejo-native fixer PRs - ([736fb03](https://github.com/MRDGH2821/copier-mr-mise/commit/736fb03fefa9eb98632d0a890b8e76f18a52fd0e)) - MRDGH2821
+
+---
+
 ## [0.22.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.21.1..v0.22.0) - 2026-10-20
 
 ### Bug Fixes

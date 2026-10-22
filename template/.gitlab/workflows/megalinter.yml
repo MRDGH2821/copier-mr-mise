@@ -9,7 +9,7 @@ mega-linter:
     when: always
   # You can override MegaLinter flavor used to have faster performances
   # More info at https://megalinter.io/latest/flavors/
-  image: ghcr.io/oxsecurity/megalinter:v10.1.0
+  image: ghcr.io/oxsecurity/megalinter@sha256:b09486c423063200d6f203b63121e0967719eee03c234844f6f1dd658f00a31b # ghcr.io/oxsecurity/megalinter:v10.1.0
   # if script: ["true"] does not work, you may try this instead:
   #   script: [ "/bin/bash /entrypoint.sh" ]
   script:
