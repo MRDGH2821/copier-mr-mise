@@ -1,6 +1,6 @@
 version: 1
 generator: capa@2.3.0
-generatedAt: '2026-10-22T08:39:37.929Z'
+generatedAt: '2026-10-22T09:44:24.869Z'
 skills:
   - id: atomic-commits
     source: github
@@ -72,7 +72,7 @@ plugins:
     requestedSearchName: null
     requestedVersion: null
     requestedRef: null
-    resolvedRef: 84589c4280414d45b90a130667cc3d6d244ab2c1
+    resolvedRef: f22193fe8e14044a69706e6668178577c5940380
     resolvedVersion: null
     manifestName: paad
     manifestVersion: 2.0.0
