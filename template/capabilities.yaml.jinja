@@ -95,3 +95,44 @@ skills:
     def:
       repo: nullswan/atomic-commits@atomic-commits
 tools: []
+{% if use_agents %}
+agents:
+  base:
+    type: local
+    path: .config/capabilities/instructions/project.md
+  additional:
+    - id: template-context
+      type: local
+      path: .config/capabilities/instructions/template.md
+rules:
+  - id: engineering
+    type: local
+    alwaysApply: true
+    description: Engineering workflow and change discipline
+    path: .config/capabilities/rules/engineering.md
+  - id: commits
+    type: local
+    alwaysApply: true
+    description: Branch naming and atomic Conventional Commits
+    path: .config/capabilities/rules/commits.md
+  - id: ai-co-author
+    type: local
+    alwaysApply: true
+    description: AI co-author trailers and provider attribution
+    path: .config/capabilities/rules/ai-co-author.md
+  - id: ai-logs
+    type: local
+    alwaysApply: true
+    description: AI-assisted work logs
+    path: .config/capabilities/rules/ai-logs.md
+  - id: ai-reviews
+    type: local
+    alwaysApply: true
+    description: AI-assisted review attribution
+    path: .config/capabilities/rules/ai-reviews.md
+  - id: tooling
+    type: local
+    alwaysApply: true
+    description: mise, hk, linting, and troubleshooting
+    path: .config/capabilities/rules/tooling.md
+{% endif %}

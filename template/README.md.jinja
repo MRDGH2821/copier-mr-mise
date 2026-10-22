@@ -6,6 +6,26 @@
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, checks, and the contribution workflow.
 
+{% if use_agents %}
+## Agent instructions
+
+Common guidance lives in `.config/capabilities/instructions/project.md`;
+generated-project context and recommendations live in
+`.config/capabilities/instructions/template.md`. Engineering, commit, AI co-author,
+AI work-log, AI review, and tooling policies live in `.config/capabilities/rules/`. `AGENTS.md` contains the
+rendered instructions, including when capa is not enabled.
+
+{% if use_skills %}
+Edit these Markdown sources, then run `mise run ai-setup` to refresh capa-managed
+provider files. Use `capa open` through mise to edit their declarations in the browser.
+Keep editable sources outside `.agents/rules/`, which capa uses for generated output.
+{% else %}
+If you edit these sources locally, keep the corresponding sections of `AGENTS.md`
+in sync; capa is not enabled to refresh it automatically.
+{% endif %}
+{% endif %}
+
+
 {% if ci == 'gitlab' %}
 
 ## GitLab scheduled Copier check

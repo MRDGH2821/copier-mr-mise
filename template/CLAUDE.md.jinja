@@ -1,0 +1,15 @@
+{% if use_skills %}
+<!-- capa:start:__base__ -->
+{% include 'template/.config/capabilities/instructions/project.md' %}
+<!-- capa:end:__base__ -->
+
+<!-- capa:start:template-context -->
+{% include 'template/.config/capabilities/instructions/template.md' %}
+<!-- capa:end:template-context -->
+{% else %}
+# CLAUDE Instructions
+
+See [AGENTS.md](./AGENTS.md) for instructions.
+
+@AGENTS.md
+{% endif %}
