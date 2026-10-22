@@ -4,6 +4,52 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.23.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.22.1..v0.23.0) - 2026-10-22
+
+### Bug Fixes
+
+- **(copier)** normalize composed instruction headings - ([268eb0f](https://github.com/MRDGH2821/copier-mr-mise/commit/268eb0f1e963ef10b09976e342035ccccb9235d8)) - MRDGH2821
+- fix path & syntax - ([173d6ac](https://github.com/MRDGH2821/copier-mr-mise/commit/173d6ac683cc27a5fe38838dee6b97c0f934d2c9)) - MRDGH2821
+- ignore generated AGENTS.md & CLAUDE.md - ([b614213](https://github.com/MRDGH2821/copier-mr-mise/commit/b6142131a904cf8efb68ff327f7181600dcf67a2)) - MRDGH2821
+- fix paths - ([b8a4c82](https://github.com/MRDGH2821/copier-mr-mise/commit/b8a4c824876f2794030f264d63672032cb711497)) - MRDGH2821
+
+### Documentation
+
+- require atomic conventional commits - ([bd958d9](https://github.com/MRDGH2821/copier-mr-mise/commit/bd958d95799fcde915d44149b43c884141d49a9c)) - MRDGH2821
+- rename title - ([72f21fd](https://github.com/MRDGH2821/copier-mr-mise/commit/72f21fd8540d64bbb5ba8663e160e3165143158d)) - MRDGH2821
+
+### Features
+
+- **(mise)** add more files to watch - ([a5f94fd](https://github.com/MRDGH2821/copier-mr-mise/commit/a5f94fd7ace0a1928ba091b9d11c0ce331ffeaf4)) - MRDGH2821
+- change baseline instructions - ([629357d](https://github.com/MRDGH2821/copier-mr-mise/commit/629357deb6eda00266997cc10163eb825e766c36)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(mise)** refresh Capa dependency lockfile - ([44526bd](https://github.com/MRDGH2821/copier-mr-mise/commit/44526bd4cda0bc283a2370891b8208a789a2e06a)) - MRDGH2821
+- merge pull request #12 from MRDGH2821/mrdgh2821/fix/forgejo-ci - ([b45fb38](https://github.com/MRDGH2821/copier-mr-mise/commit/b45fb3830ef6e83607c5524abb1eaa78c7b6307c)) - Mihir Rabade
+- update lockfile - ([d5edda7](https://github.com/MRDGH2821/copier-mr-mise/commit/d5edda703cf21a125497b4770f1101d488a676ec)) - MRDGH2821
+- install ai capabilities - ([96af138](https://github.com/MRDGH2821/copier-mr-mise/commit/96af1386f290e4cb782b1f82af25ad48458c5ecb)) - MRDGH2821
+- use instructions & rules from template - ([7a082bd](https://github.com/MRDGH2821/copier-mr-mise/commit/7a082bdce2cacfe9ef0718b1ff69d4537116b1fd)) - MRDGH2821
+- fix syntax and format file - ([0033f34](https://github.com/MRDGH2821/copier-mr-mise/commit/0033f340d0e26bd9319ebcf6445a0655660f6716)) - MRDGH2821
+- sync with root - ([2d116b3](https://github.com/MRDGH2821/copier-mr-mise/commit/2d116b311f5bcd814fb874284c2e239ad5e233b7)) - MRDGH2821
+- update agents.md - ([a6fa29d](https://github.com/MRDGH2821/copier-mr-mise/commit/a6fa29dd312001e7bee578ff883e1f7c5bc8bdad)) - MRDGH2821
+- update AGENTS.md - ([9b01ec2](https://github.com/MRDGH2821/copier-mr-mise/commit/9b01ec24a1a21c245eaf99805c5fc14de74d3450)) - MRDGH2821
+
+### Refactoring
+
+- **(copier)** compose agent instructions from focused sources - ([f681bf9](https://github.com/MRDGH2821/copier-mr-mise/commit/f681bf940564994c81f8122445be49b1a5379d1a)) - MRDGH2821
+- rename titles & files - ([07b5b91](https://github.com/MRDGH2821/copier-mr-mise/commit/07b5b91ffa07b8166ac6dcaf304a2f9588e9912c)) - MRDGH2821
+- rename file - ([17e0923](https://github.com/MRDGH2821/copier-mr-mise/commit/17e0923747ce408b50b40049342c735f6fcc0bca)) - MRDGH2821
+
+### Style
+
+- add final newlines to work notes - ([8c42be4](https://github.com/MRDGH2821/copier-mr-mise/commit/8c42be4befe9ceb99cb92ce249192fcc824ea33f)) - MRDGH2821
+- format files - ([1462f3d](https://github.com/MRDGH2821/copier-mr-mise/commit/1462f3d9e1670c7f5de896611172d0c7168f4a42)) - MRDGH2821
+- format files - ([69484da](https://github.com/MRDGH2821/copier-mr-mise/commit/69484da2b2ff48f74d155d6918adaa20dd48a6eb)) - MRDGH2821
+- format files - ([2b975cb](https://github.com/MRDGH2821/copier-mr-mise/commit/2b975cbcd092ef77caa87668330a1396a10b93b0)) - MRDGH2821
+
+---
+
 ## [0.22.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.22.0..v0.22.1) - 2026-10-22
 
 ### Bug Fixes
