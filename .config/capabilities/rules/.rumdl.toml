@@ -1,4 +1,0 @@
-extends = "../../rumdl.toml"
-
-[MD041]
-level = 2
