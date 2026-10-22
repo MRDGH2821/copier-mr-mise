@@ -14,6 +14,8 @@ generated-project context and recommendations live in
 `.config/capabilities/instructions/template.md`. Engineering, commit, AI co-author,
 AI work-log, AI review, and tooling policies live in `.config/capabilities/rules/`. `AGENTS.md` contains the
 rendered instructions, including when capa is not enabled.
+The sources use level-two headings; generated provider files supply the level-one
+heading. Local `.rumdl.toml` files validate the source fragments.
 
 {% if use_skills %}
 Edit these Markdown sources, then run `mise run ai-setup` to refresh capa-managed

@@ -37,6 +37,8 @@ Run `capa open` through mise to edit their declarations in the browser, then
 `mise run ai-setup` to regenerate provider instruction files. Edit the Markdown
 sources rather than capa-managed blocks in `AGENTS.md` or provider rule files.
 Keep sources outside `.agents/rules/`: capa uses that directory for generated output.
+Capability sources are level-two Markdown fragments; generated provider files
+provide the single level-one heading. Local `.rumdl.toml` files enforce this layout.
 
 All policies always apply. Providers without separate rule support receive
 them in `AGENTS.md`, so this split improves maintenance, not necessarily context size.

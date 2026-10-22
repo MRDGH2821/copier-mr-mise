@@ -1,6 +1,8 @@
+# Agent instructions
+
 <!-- capa:start:__base__ -->
 
-# Agent instruction sources
+## Agent instruction sources
 
 Edit `.config/capabilities/instructions/project.md` for common guidance and the
 other files in `.config/capabilities/instructions/` for project-specific context.
@@ -10,7 +12,7 @@ Run `mise run ai-setup` to refresh capa-managed provider instructions when
 their sources instead.
 Keep editable sources outside `.agents/rules/`, which capa prunes as generated output.
 
-## Layout
+### Layout
 
 | Path                   | Purpose                                             |
 | ---------------------- | --------------------------------------------------- |
@@ -23,15 +25,15 @@ Keep editable sources outside `.agents/rules/`, which capa prunes as generated o
 | `.config/cspell.json`  | Spell-check dictionary                              |
 | `.agents/logs/`        | AI-assisted work logs                               |
 
-## Best Practices
+### Best Practices
 
-### Before Making Changes
+#### Before Making Changes
 
 1. Understand the current state of the project
 2. Check if similar functionality already exists
 3. Review relevant configuration files
 
-### When Adding Dependencies
+#### When Adding Dependencies
 
 - Prefer tools that don't require heavy installation; add development tools via `mise.toml`
 - Use the project's package manager for application dependencies and keep lockfiles consistent.
@@ -39,7 +41,7 @@ Keep editable sources outside `.agents/rules/`, which capa prunes as generated o
 - Consider cross-platform compatibility
 - Update relevant configuration files
 
-### Testing Changes
+#### Testing Changes
 
 - Run relevant tests and configured checks; if no test command exists, verify the affected behavior directly.
 - Ensure documentation is updated

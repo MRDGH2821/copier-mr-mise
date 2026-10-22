@@ -1,6 +1,6 @@
-# Generated project context
+## Generated project context
 
-## Project Context
+### Project Context
 
 Read `README.md`, dependency manifests, and relevant source files to learn the
 project's purpose, architecture, and commands. The application language and
@@ -11,9 +11,9 @@ framework depend on the generated project.
 - **Purpose**: Standardized starting point with tool management, git hooks, and quality checks
 - **Template updates**: `copier update` (review scripts in the template's `copier.yml`)
 
-## Recommendations
+### Recommendations
 
-### Configuration directory
+#### Configuration directory
 
 If this project is a tool, CLI, or library that reads its own configuration,
 make it resolve that configuration from a project-level `.config/` directory

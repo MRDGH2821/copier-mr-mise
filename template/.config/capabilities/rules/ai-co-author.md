@@ -1,6 +1,6 @@
-# AI co-author policy
+## AI co-author policy
 
-## MANDATORY: AI Co-authored-by Trailer
+### MANDATORY: AI Co-authored-by Trailer
 
 > **Every commit made with AI assistance MUST include a `Co-authored-by` trailer. No exceptions.**
 

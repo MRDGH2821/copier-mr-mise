@@ -1,6 +1,6 @@
-# Tooling policy
+## Tooling policy
 
-## Setup: skills and MCP
+### Setup: skills and MCP
 
 Tools and tasks are managed by **mise**. Prefer an existing `mise run <task>`
 over an ad-hoc command. Inspect `mise.toml` and command `--help` output before
@@ -14,15 +14,15 @@ stale:
 
 If the project omits `capabilities.yaml`, use the available tools and instructions.
 
-## Dev Environment Tips
+### Dev Environment Tips
 
 - Use `--help` or `help` subcommand to get help on a command. It can even reveal hints on how to proceed ahead or optimize the number of steps.
 - Check tool documentation before asking the user for configuration details
 - Tools are managed by **mise**. Prefer `mise run <task>` over ad-hoc binaries when a task exists.
 
-## Tooling
+### Tooling
 
-### mise & hk
+#### mise & hk
 
 Use the configured mise and hk MCP tools when available. If their configuration
 is missing, report it and refer to:
@@ -30,7 +30,7 @@ is missing, report it and refer to:
 - mise: <https://mise.jdx.dev/mcp.html>
 - hk: <https://hk.jdx.dev/agents.html#mcp>
 
-### Using hk from a coding agent
+#### Using hk from a coding agent
 
 Inspect the configuration and plan before running. Scope checks to changed files
 with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`,
@@ -42,28 +42,28 @@ Consume JSON or JSONL diagnostics while retaining raw output, and review the
 diff produced by a fix. MCP clients should use `inspect_project`, `plan`, safe
 run tools, paged output, and `get_diff`.
 
-### MegaLinter
+#### MegaLinter
 
 Read `.mega-linter.yml` and the selected CI configuration to determine which
 checks block CI. Use the installed MegaLinter skill when available. Reports live
 in `megalinter-reports/`; distinguish failures from informational reports.
 
-### CSpell
+#### CSpell
 
 Use the hk `cspell` step to check affected files. Its command and options live
 in `.config/hk.pkl`. Correct spelling errors and add legitimate project-specific
 terms to the `words` array in `.config/cspell.json` rather than disabling checks.
 
-### Formatting and Hooks (hk)
+#### Formatting and Hooks (hk)
 
 Before committing, format affected files with `hk fix --no-stage` and run
 `hk run pre-commit --check` with the same file scope. Resolve failures and retry
 without skipping hooks. The `mise run fmt` task formats the full repository;
 review its scope before using it.
 
-## Troubleshooting
+### Troubleshooting
 
-### Common Issues
+#### Common Issues
 
 **Git hooks failing on commit:**
 
@@ -78,6 +78,6 @@ review its scope before using it.
 - Use proper capitalization for proper nouns
 - Don't add obvious typos to the dictionary
 
-### Getting Help
+#### Getting Help
 
 - Review existing configuration files for examples

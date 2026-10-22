@@ -1,6 +1,6 @@
-# Repository context
+## Repository context
 
-## Project Context
+### Project Context
 
 - **Project**: `copier-mr-mise` — Copier 9+ template for MRDGH2821 projects
 - **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, cspell, and optional AGENTS.md / capa skills
@@ -8,7 +8,7 @@
 
 This repository is the **template**, not a generated project. Generated files live under `template/` (`_subdirectory: template` in `copier.yml`).
 
-## Template repository layout
+### Template repository layout
 
 | Path                                | Purpose                                       |
 | ----------------------------------- | --------------------------------------------- |
@@ -16,7 +16,7 @@ This repository is the **template**, not a generated project. Generated files li
 | `template/`                         | Files copied into generated projects          |
 | `.github/workflows/mega-linter.yml` | MegaLinter CI configuration                   |
 
-## Copier maintenance
+### Copier maintenance
 
 Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
 Keep common policies in `.config/capabilities/rules/` and `template/.config/capabilities/rules/` aligned; keep Copier maintenance instructions in `.config/capabilities/instructions/repository.md`.
@@ -31,15 +31,15 @@ Keep common policies in `.config/capabilities/rules/` and `template/.config/capa
 - Check for missing closing tags or brackets
 - Test with `copier copy` into a throwaway directory when changing `copier.yml` or `template/`
 
-### Before changing the template
+#### Before changing the template
 
 1. Consider impact on users who will generate projects from this template
 2. If the file also exists under `template/`, update both (including `template/.config/capabilities/` when changing these instructions)
 
-### Dependency configuration
+#### Dependency configuration
 
 - Update relevant configuration files in **root and** `template/`
 
-### Template validation
+#### Template validation
 
 - Test template rendering with Copier when template files change

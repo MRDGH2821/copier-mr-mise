@@ -1,11 +1,11 @@
-# Commit policy
+## Commit policy
 
-## Branch naming strategy
+### Branch naming strategy
 
 Before creating a branch, follow the branch naming strategy in the project-root
 `CONTRIBUTING.md` (`#branch-naming-strategy`).
 
-## Commit Messages
+### Commit Messages
 
 Every commit MUST be atomic (one logical change), and every commit message MUST use Conventional Commits format: `<type>(<scope>): <description>`.
 Consult `cog.toml` for valid scopes and release hooks; it is the source of truth.

@@ -1,6 +1,8 @@
+# Agent instructions
+
 <!-- capa:start:__base__ -->
 
-# Agent instruction sources
+## Agent instruction sources
 
 Edit `.config/capabilities/instructions/project.md` for common guidance and the
 other files in `.config/capabilities/instructions/` for project-specific context.
@@ -10,7 +12,7 @@ Run `mise run ai-setup` to refresh capa-managed provider instructions when
 their sources instead.
 Keep editable sources outside `.agents/rules/`, which capa prunes as generated output.
 
-## Layout
+### Layout
 
 | Path                   | Purpose                                             |
 | ---------------------- | --------------------------------------------------- |
@@ -23,15 +25,15 @@ Keep editable sources outside `.agents/rules/`, which capa prunes as generated o
 | `.config/cspell.json`  | Spell-check dictionary                              |
 | `.agents/logs/`        | AI-assisted work logs                               |
 
-## Best Practices
+### Best Practices
 
-### Before Making Changes
+#### Before Making Changes
 
 1. Understand the current state of the project
 2. Check if similar functionality already exists
 3. Review relevant configuration files
 
-### When Adding Dependencies
+#### When Adding Dependencies
 
 - Prefer tools that don't require heavy installation; add development tools via `mise.toml`
 - Use the project's package manager for application dependencies and keep lockfiles consistent.
@@ -39,7 +41,7 @@ Keep editable sources outside `.agents/rules/`, which capa prunes as generated o
 - Consider cross-platform compatibility
 - Update relevant configuration files
 
-### Testing Changes
+#### Testing Changes
 
 - Run relevant tests and configured checks; if no test command exists, verify the affected behavior directly.
 - Ensure documentation is updated
@@ -167,7 +169,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 
-### General Guidelines
+## General Guidelines
 
 - Explain the intended change, state material assumptions, and clarify ambiguous requirements.
 - Read the relevant code and configuration before editing; reuse existing functionality.
@@ -177,94 +179,6 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 - Report what changed, which checks ran, and any failures or checks you could not run.
 
 <!-- capa:end:rule:engineering -->
-
-<!-- capa:start:rule:tooling -->
-
-## Tooling policy
-
-### Setup: skills and MCP
-
-Tools and tasks are managed by **mise**. Prefer an existing `mise run <task>`
-over an ad-hoc command. Inspect `mise.toml` and command `--help` output before
-assuming a task or option exists.
-
-If `capabilities.yaml` exists and project skills or MCP tools are missing or
-stale:
-
-1. From the repository root, run `mise run ai-setup` (or `capa install --yes`).
-2. Reload the agent session so installed skills and MCP servers are picked up.
-
-If the project omits `capabilities.yaml`, use the available tools and instructions.
-
-### Dev Environment Tips
-
-- Use `--help` or `help` subcommand to get help on a command. It can even reveal hints on how to proceed ahead or optimize the number of steps.
-- Check tool documentation before asking the user for configuration details
-- Tools are managed by **mise**. Prefer `mise run <task>` over ad-hoc binaries when a task exists.
-
-### Tooling
-
-#### mise & hk
-
-Use the configured mise and hk MCP tools when available. If their configuration
-is missing, report it and refer to:
-
-- mise: <https://mise.jdx.dev/mcp.html>
-- hk: <https://hk.jdx.dev/agents.html#mcp>
-
-#### Using hk from a coding agent
-
-Inspect the configuration and plan before running. Scope checks to changed files
-with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`,
-review command effects, and require approval for unknown or destructive commands.
-Use `--no-stage` when formatting. Use `--stash none` when checking an explicit
-file list in the working tree without stashing changes.
-
-Consume JSON or JSONL diagnostics while retaining raw output, and review the
-diff produced by a fix. MCP clients should use `inspect_project`, `plan`, safe
-run tools, paged output, and `get_diff`.
-
-#### MegaLinter
-
-Read `.mega-linter.yml` and the selected CI configuration to determine which
-checks block CI. Use the installed MegaLinter skill when available. Reports live
-in `megalinter-reports/`; distinguish failures from informational reports.
-
-#### CSpell
-
-Use the hk `cspell` step to check affected files. Its command and options live
-in `.config/hk.pkl`. Correct spelling errors and add legitimate project-specific
-terms to the `words` array in `.config/cspell.json` rather than disabling checks.
-
-#### Formatting and Hooks (hk)
-
-Before committing, format affected files with `hk fix --no-stage` and run
-`hk run pre-commit --check` with the same file scope. Resolve failures and retry
-without skipping hooks. The `mise run fmt` task formats the full repository;
-review its scope before using it.
-
-### Troubleshooting
-
-#### Common Issues
-
-**Git hooks failing on commit:**
-
-- Read the error message — it usually points directly to the fix
-- Try to fix the issue and retry the commit; do not skip hooks
-- Fix formatting first (`hk fix` or `mise run fmt`)
-- Then address spell checking and linting
-
-**Spell check failures:**
-
-- Add legitimate technical terms to `.config/cspell.json` `words` array
-- Use proper capitalization for proper nouns
-- Don't add obvious typos to the dictionary
-
-#### Getting Help
-
-- Review existing configuration files for examples
-
-<!-- capa:end:rule:tooling -->
 
 <!-- capa:start:rule:commits -->
 
@@ -382,3 +296,91 @@ Use `.config/capabilities/rules/ai-co-author.md` for the model, harness, and pro
 ```
 
 <!-- capa:end:rule:ai-reviews -->
+
+<!-- capa:start:rule:tooling -->
+
+## Tooling policy
+
+### Setup: skills and MCP
+
+Tools and tasks are managed by **mise**. Prefer an existing `mise run <task>`
+over an ad-hoc command. Inspect `mise.toml` and command `--help` output before
+assuming a task or option exists.
+
+If `capabilities.yaml` exists and project skills or MCP tools are missing or
+stale:
+
+1. From the repository root, run `mise run ai-setup` (or `capa install --yes`).
+2. Reload the agent session so installed skills and MCP servers are picked up.
+
+If the project omits `capabilities.yaml`, use the available tools and instructions.
+
+### Dev Environment Tips
+
+- Use `--help` or `help` subcommand to get help on a command. It can even reveal hints on how to proceed ahead or optimize the number of steps.
+- Check tool documentation before asking the user for configuration details
+- Tools are managed by **mise**. Prefer `mise run <task>` over ad-hoc binaries when a task exists.
+
+### Tooling
+
+#### mise & hk
+
+Use the configured mise and hk MCP tools when available. If their configuration
+is missing, report it and refer to:
+
+- mise: <https://mise.jdx.dev/mcp.html>
+- hk: <https://hk.jdx.dev/agents.html#mcp>
+
+#### Using hk from a coding agent
+
+Inspect the configuration and plan before running. Scope checks to changed files
+with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`,
+review command effects, and require approval for unknown or destructive commands.
+Use `--no-stage` when formatting. Use `--stash none` when checking an explicit
+file list in the working tree without stashing changes.
+
+Consume JSON or JSONL diagnostics while retaining raw output, and review the
+diff produced by a fix. MCP clients should use `inspect_project`, `plan`, safe
+run tools, paged output, and `get_diff`.
+
+#### MegaLinter
+
+Read `.mega-linter.yml` and the selected CI configuration to determine which
+checks block CI. Use the installed MegaLinter skill when available. Reports live
+in `megalinter-reports/`; distinguish failures from informational reports.
+
+#### CSpell
+
+Use the hk `cspell` step to check affected files. Its command and options live
+in `.config/hk.pkl`. Correct spelling errors and add legitimate project-specific
+terms to the `words` array in `.config/cspell.json` rather than disabling checks.
+
+#### Formatting and Hooks (hk)
+
+Before committing, format affected files with `hk fix --no-stage` and run
+`hk run pre-commit --check` with the same file scope. Resolve failures and retry
+without skipping hooks. The `mise run fmt` task formats the full repository;
+review its scope before using it.
+
+### Troubleshooting
+
+#### Common Issues
+
+**Git hooks failing on commit:**
+
+- Read the error message — it usually points directly to the fix
+- Try to fix the issue and retry the commit; do not skip hooks
+- Fix formatting first (`hk fix` or `mise run fmt`)
+- Then address spell checking and linting
+
+**Spell check failures:**
+
+- Add legitimate technical terms to `.config/cspell.json` `words` array
+- Use proper capitalization for proper nouns
+- Don't add obvious typos to the dictionary
+
+#### Getting Help
+
+- Review existing configuration files for examples
+
+<!-- capa:end:rule:tooling -->

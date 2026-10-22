@@ -1,4 +1,4 @@
-# AI-assisted work documentation
+## AI-assisted work documentation
 
 - Document all AI-assisted changes in the `.agents/logs` folder as markdown files
 - Use the naming format: `YYYY-MM-DD.md` (e.g., `2024-12-15.md`)
