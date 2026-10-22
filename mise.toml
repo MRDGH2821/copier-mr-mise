@@ -50,9 +50,10 @@ uv = "0.13.4"
 yq = "4.54.1"
 
 [[watch_files]]
+# tombi: format.rules.array-values-order = "ascending"
 patterns = [
+  ".config/capabilities/**/*.md",
   "capabilities.yaml",
-  "template/.config/capabilities/**/*.md",
-  ".config/capabilities/**/*.md"
+  "template/.config/capabilities/**/*.md"
 ]
 task = "ai-setup"
