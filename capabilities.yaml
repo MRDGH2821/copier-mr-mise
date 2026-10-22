@@ -43,9 +43,9 @@ providers:
 rules:
   - alwaysApply: true
     def:
-      repo: multica-ai/andrej-karpathy-skills::skills/karpathy-guidelines/SKILL.md
+      repo: multica-ai/andrej-karpathy-skills::.cursor/rules/karpathy-guidelines.mdc
     description: Andrej Karpathy's Guidelines
-    id: karpathy guidelines
+    id: karpathy-guidelines
     type: github
   - description: Engineering workflow and change discipline
     id: engineering
