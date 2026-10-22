@@ -50,5 +50,9 @@ uv = "0.13.4"
 yq = "4.54.1"
 
 [[watch_files]]
-patterns = ["capabilities.yaml"]
+patterns = [
+  "capabilities.yaml",
+  "template/.config/capabilities/**/*.md",
+  ".config/capabilities/**/*.md"
+]
 task = "ai-setup"
