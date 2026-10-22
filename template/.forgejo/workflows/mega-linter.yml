@@ -1,13 +1,13 @@
 ---
 concurrency:
   cancel-in-progress: true
-  group: ${{ github.ref }}-${{ github.workflow }}
+  group: ${{ forgejo.ref }}-${{ forgejo.workflow_ref }}
 # Comment env block if you do not want to apply fixes
 env:
   # Apply linter fixes configuration
   #
   # When active, APPLY_FIXES must also be defined as environment variable
-  # (in github/workflows/mega-linter.yml or other CI tool)
+  # (in .forgejo/workflows/mega-linter.yml or another CI tool)
   APPLY_FIXES: all
   # Decide which event triggers application of fixes in a commit or a PR
   # (pull_request, push, all)
@@ -18,35 +18,17 @@ env:
 jobs:
   megalinter:
     name: MegaLinter
-    # Give the default GITHUB_TOKEN write permission to commit and push, comment
-    # issues, and post new Pull Requests; remove the ones you do not need
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
+    # Forgejo's automatic token has repository write access for same-repository PRs.
     runs-on: ubuntu-latest
     steps:
       # Git Checkout
       - name: Checkout Code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to
-          # improve performance
           fetch-depth: 0
-          # Comment this line and uncomment the next one if you use APPLY_FIXES
-          # persist-credentials: false
           persist-credentials: true
-          # zizmor: ignore[artipacked]
-          # SECURITY NOTE: Using a Personal Access Token (PAT) is NOT
-          # recommended. Open-source projects have been heavily targeted by
-          # supply-chain attacks in recent months, and a leaked PAT can give
-          # attackers broad write access to your repository — better safe
-          # than sorry! If you only need workflows to re-trigger after
-          # MegaLinter applies fixes, prefer one of these safer alternatives:
-          #   - Manually re-run the workflow from the GitHub Actions tab, or
-          #   - Push another commit on the branch to trigger workflows again.
-          # Only define `secrets.PAT` if you fully understand the trade-off.
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          ref: ${{ forgejo.event.pull_request.head.sha || forgejo.sha }}
+          token: ${{ forgejo.token }}
       # MegaLinter
       # All available variables are described in documentation
       # https://megalinter.io/latest/config-file/
@@ -68,12 +50,12 @@ jobs:
           # Disable LLM Advisor for bot PRs (dependabot, renovate, etc.)
           LLM_ADVISOR_ENABLED: |-
             ${{
-              github.event_name != 'pull_request' ||
-              (github.event.pull_request.user.login != 'dependabot[bot]' &&
-                github.event.pull_request.user.login != 'renovate[bot]' &&
-                github.event.pull_request.user.login != 'github-actions[bot]' &&
-                !startsWith(github.event.pull_request.user.login, 'dependabot') &&
-                !startsWith(github.event.pull_request.user.login, 'renovate'))
+              forgejo.event_name != 'pull_request' ||
+              (forgejo.event.pull_request.user.login != 'dependabot[bot]' &&
+                forgejo.event.pull_request.user.login != 'renovate[bot]' &&
+                forgejo.event.pull_request.user.login != 'github-actions[bot]' &&
+                !startsWith(forgejo.event.pull_request.user.login, 'dependabot') &&
+                !startsWith(forgejo.event.pull_request.user.login, 'renovate'))
             }}
           # Validates all source when push on main, else just the git diff with
           # main. Override with true if you always want to lint all sources
@@ -84,8 +66,8 @@ jobs:
           # To validate only diff with main, set to:
           # VALIDATE_ALL_CODEBASE: >-
           #   ${{
-          #     github.event_name == 'push' &&
-          #     github.ref == 'refs/heads/main'
+          #     forgejo.event_name == 'push' &&
+          #     forgejo.ref == 'refs/heads/main'
           #   }}
           VALIDATE_ALL_CODEBASE: true
         id: ml
@@ -103,75 +85,100 @@ jobs:
           path: |
             megalinter-reports
             mega-linter.log
-      # Create pull request if applicable
-      # (for now works only on PR from same repository, not from forks)
-      - id: cpr
-        if: |-
-          steps.ml.outputs.has_updated_sources == 1 && (
-            env.APPLY_FIXES_EVENT == 'all' ||
-            env.APPLY_FIXES_EVENT == github.event_name
-          ) && env.APPLY_FIXES_MODE == 'pull_request' && (
-            github.event_name == 'push' ||
-            github.event.pull_request.head.repo.full_name == github.repository
-          ) && !contains(github.event.head_commit.message, 'skip fix')
-        name: Create Pull Request with applied fixes
-        uses: https://github.com/peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
-        with:
-          commit-message: "chore(megalinter): apply linters automatic fixes"
-          labels: bot
-          title: "chore(megalinter): apply linters automatic fixes"
-          # SECURITY NOTE: see the warning on the checkout step above —
-          # using `secrets.PAT` is NOT recommended for security reasons.
-          # Prefer manually re-running the workflow or pushing another
-          # commit on the branch to trigger workflows again.
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
       - env:
-          PR_NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
-          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+          FORGEJO_SERVER_URL: ${{ forgejo.server_url }}
+          FORGEJO_TOKEN: ${{ forgejo.token }}
         if: |-
-          steps.ml.outputs.has_updated_sources == 1 && (
+          (
             env.APPLY_FIXES_EVENT == 'all' ||
-            env.APPLY_FIXES_EVENT == github.event_name
-          ) && env.APPLY_FIXES_MODE == 'pull_request' && (
-            github.event_name == 'push' ||
-            github.event.pull_request.head.repo.full_name == github.repository
-          ) && !contains(github.event.head_commit.message, 'skip fix')
-        name: Create PR output
-        run: |
-          echo "PR Number - ${PR_NUMBER}"
-          echo "PR URL - ${PR_URL}"
-      # Push new commit if applicable
-      # (for now works only on PR from same repository, not from forks)
-      - if: |-
-          steps.ml.outputs.has_updated_sources == 1 && (
+            env.APPLY_FIXES_EVENT == forgejo.event_name
+          ) && env.APPLY_FIXES_MODE == 'pull_request' &&
+          forgejo.event_name == 'pull_request' &&
+          forgejo.event.pull_request.head.repo.full_name == forgejo.repository &&
+          !startsWith(forgejo.head_ref, 'megalinter/fixes/')
+        name: Authenticate Forgejo CLI
+        run: printf '%s' "$FORGEJO_TOKEN" | mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "$FORGEJO_SERVER_URL" auth add-token
+      - env:
+          FORGEJO_API_URL: ${{ forgejo.api_url }}
+          FORGEJO_FIX_BRANCH: megalinter/fixes/${{ forgejo.event.pull_request.number }}
+          FORGEJO_HEAD_REF: ${{ forgejo.head_ref }}
+          FORGEJO_PR_NUMBER: ${{ forgejo.event.pull_request.number }}
+          FORGEJO_REPOSITORY: ${{ forgejo.repository }}
+          FORGEJO_SERVER_URL: ${{ forgejo.server_url }}
+          FORGEJO_TOKEN: ${{ forgejo.token }}
+        if: |-
+          (
             env.APPLY_FIXES_EVENT == 'all' ||
-            env.APPLY_FIXES_EVENT == github.event_name
-          ) && env.APPLY_FIXES_MODE == 'commit' && github.ref != 'refs/heads/main' && (
-            github.event_name == 'push' ||
-            github.event.pull_request.head.repo.full_name == github.repository
-          ) && !contains(github.event.head_commit.message, 'skip fix')
-        name: Prepare commit
-        run: sudo chown -Rc $UID .git/
-      - if: |-
-          steps.ml.outputs.has_updated_sources == 1 && (
-            env.APPLY_FIXES_EVENT == 'all' ||
-            env.APPLY_FIXES_EVENT == github.event_name
-          ) && env.APPLY_FIXES_MODE == 'commit' && github.ref != 'refs/heads/main' && (
-            github.event_name == 'push' ||
-            github.event.pull_request.head.repo.full_name == github.repository
-          ) && !contains(github.event.head_commit.message, 'skip fix')
-        name: Commit and push applied linter fixes
-        uses: https://github.com/stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
-        with:
-          branch: |-
-            ${{
-              github.event.pull_request.head.ref ||
-              github.head_ref ||
-              github.ref
-            }}
-          commit_message: "chore(megalinter): apply linters fixes"
-          commit_user_email: 129584137+megalinter-bot@users.noreply.github.com
-          commit_user_name: megalinter-bot
+            env.APPLY_FIXES_EVENT == forgejo.event_name
+          ) && env.APPLY_FIXES_MODE == 'pull_request' &&
+          forgejo.event_name == 'pull_request' &&
+          forgejo.event.pull_request.head.repo.full_name == forgejo.repository &&
+          !startsWith(forgejo.head_ref, 'megalinter/fixes/')
+        name: Create or refresh pull request with fixes
+        run: |-
+          set -euo pipefail
+          title="chore(megalinter): apply linters automatic fixes"
+          body="Automated MegaLinter fixes for PR #${FORGEJO_PR_NUMBER}. Merge this pull request into ${FORGEJO_HEAD_REF} to apply them."
+          find_pr() {
+            node --input-type=module <<'NODE'
+          const apiUrl = process.env.FORGEJO_API_URL.replace(/\/+$/, "");
+          const repositoryParts = process.env.FORGEJO_REPOSITORY.split("/");
+          const repository = repositoryParts.map(encodeURIComponent).join("/");
+          const url = new URL(`${apiUrl}/repos/${repository}/pulls`);
+          url.searchParams.set("state", "open");
+          url.searchParams.set(
+            "head",
+            `${repositoryParts[0]}:${process.env.FORGEJO_FIX_BRANCH}`,
+          );
+          url.searchParams.set("base", process.env.FORGEJO_HEAD_REF);
+          url.searchParams.set("limit", "100");
+          const response = await fetch(url, {
+            headers: { Authorization: `token ${process.env.FORGEJO_TOKEN}` },
+          });
+          if (!response.ok) {
+            throw new Error(`Forgejo pull request search failed: ${response.status}`);
+          }
+          const pullRequests = await response.json();
+          const pullRequest = pullRequests.find(
+            ({ head, base }) =>
+              head.ref === process.env.FORGEJO_FIX_BRANCH &&
+              base.ref === process.env.FORGEJO_HEAD_REF,
+          );
+          if (pullRequest) {
+            console.log(`${pullRequest.number}\t${pullRequest.html_url}`);
+          }
+          NODE
+          }
+          git switch -c "${FORGEJO_FIX_BRANCH}"
+          git add -A
+          pull_request="$(find_pr)"
+          if git diff --cached --quiet; then
+            if [[ -n "${pull_request}" ]]; then
+              IFS=$'\t' read -r pr_number _ <<< "${pull_request}"
+              mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "$FORGEJO_SERVER_URL" pr close "${FORGEJO_REPOSITORY}#${pr_number}"
+            fi
+            exit 0
+          fi
+          git config user.name megalinter-bot
+          git config user.email 129584137+megalinter-bot@users.noreply.github.com
+          git commit -m "${title}"
+          git push --force origin "HEAD:refs/heads/${FORGEJO_FIX_BRANCH}"
+          pull_request="$(find_pr)"
+          if [[ -n "${pull_request}" ]]; then
+            IFS=$'\t' read -r pr_number pr_url <<< "${pull_request}"
+            mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "$FORGEJO_SERVER_URL" pr edit "${FORGEJO_REPOSITORY}#${pr_number}" title "$title"
+            mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "$FORGEJO_SERVER_URL" pr edit "${FORGEJO_REPOSITORY}#${pr_number}" body "$body"
+          else
+            mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "$FORGEJO_SERVER_URL" pr create "$title" --repo "$FORGEJO_REPOSITORY" --head "$FORGEJO_FIX_BRANCH" --base "$FORGEJO_HEAD_REF" --body "$body"
+            pull_request="$(find_pr)"
+            if [[ -z "${pull_request}" ]]; then
+              echo "Forgejo pull request was not found after creation." >&2
+              exit 1
+            fi
+            IFS=$'\t' read -r pr_number pr_url <<< "${pull_request}"
+          fi
+          mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "$FORGEJO_SERVER_URL" pr edit "${FORGEJO_REPOSITORY}#${pr_number}" labels --add bot
+          echo "Pull Request #${pr_number} - ${pr_url}"
 name: MegaLinter
 # Trigger mega-linter at every push. Action will also be visible from
 # Pull Requests to main
@@ -183,4 +190,3 @@ on: # yamllint disable-line rule:truthy
   # Comment this line to trigger action only on pull-requests
   # (not recommended if you don't pay for GH Actions)
   push:
-permissions: {}
