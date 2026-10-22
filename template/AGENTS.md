@@ -268,7 +268,7 @@ review its scope before using it.
 
 ## Commit Messages
 
-Follow Conventional Commits: `<type>(<scope>): <description>`.
+Every commit MUST be atomic (one logical change), and every commit message MUST use Conventional Commits format: `<type>(<scope>): <description>`.
 Consult `cog.toml` for valid scopes and release hooks; it is the source of truth.
 
 Version bumps use cocogitto (`cog bump`). Inspect the configured hooks before
