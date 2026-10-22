@@ -1,6 +1,4 @@
-## AI review policy
-
-### AI-Assisted Reviews
+## AI-Assisted Reviews
 
 When reviewing on behalf of a human, end the review with this footer:
 

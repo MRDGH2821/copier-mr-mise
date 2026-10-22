@@ -42,12 +42,6 @@ Consume JSON or JSONL diagnostics while retaining raw output, and review the
 diff produced by a fix. MCP clients should use `inspect_project`, `plan`, safe
 run tools, paged output, and `get_diff`.
 
-#### MegaLinter
-
-Read `.mega-linter.yml` and the selected CI configuration to determine which
-checks block CI. Use the installed MegaLinter skill when available. Reports live
-in `megalinter-reports/`; distinguish failures from informational reports.
-
 #### CSpell
 
 Use the hk `cspell` step to check affected files. Its command and options live
