@@ -3,7 +3,7 @@ detect-arch:
   artifacts:
     reports:
       dotenv: arch.env
-  image: debian:13-slim
+  image: debian@sha256:62bd423aeee912639ca8ee681c2b762cb3e25137e0a92b20be455898a9f034ad # debian:13-slim
   script:
     - |
       case "$(uname -m)" in
@@ -23,7 +23,7 @@ mise-check:
     paths:
       - .mise/installs/
       - .mise/cache/
-  image: debian:13-slim
+  image: debian@sha256:62bd423aeee912639ca8ee681c2b762cb3e25137e0a92b20be455898a9f034ad # debian:13-slim
   needs:
     - artifacts: true
       job: detect-arch
