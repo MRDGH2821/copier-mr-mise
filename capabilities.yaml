@@ -13,28 +13,22 @@ options:
   toolExposure: search
 plugins:
   - def:
-      description:
-        "Core skills library: TDD, debugging, collaboration patterns, and
-        proven techniques"
+      description: "Core skills library: TDD, debugging, collaboration patterns, and proven techniques"
       repo: obra/superpowers
     id: superpowers
     type: github
   - def:
-      description: Architecture analysis, code quality, and development workflow
-        skills by Ovid
+      description: Architecture analysis, code quality, and development workflow skills by Ovid
       repo: Ovid/paad::plugins/paad
     id: paad
     type: github
   - def:
-      description:
-        "Set up, run and fix MegaLinter on any repository: 100+ linters for
-        69+ languages, 23+ formats and 21+ tooling formats, from CI or locally."
+      description: "Set up, run and fix MegaLinter on any repository: 100+ linters for 69+ languages, 23+ formats and 21+ tooling formats, from CI or locally."
       repo: oxsecurity/megalinter
     id: megalinter
     type: github
   - def:
-      description: Matt Pocock's agent skills for real engineering (grilling,
-        spec/ticket flows, TDD, code review, domain modelling and more).
+      description: Matt Pocock's agent skills for real engineering (grilling, spec/ticket flows, TDD, code review, domain modelling and more).
       repo: mattpocock/skills
     id: mattpocock-skills
     type: github
@@ -48,7 +42,12 @@ providers:
   # keep-sorted end
 rules:
   - alwaysApply: true
-    description: Engineering workflow and change discipline
+    def:
+      repo: multica-ai/andrej-karpathy-skills::skills/karpathy-guidelines/SKILL.md
+    description: Andrej Karpathy's Guidelines
+    id: karpathy guidelines
+    type: github
+  - description: Engineering workflow and change discipline
     id: engineering
     path: template/.config/capabilities/rules/engineering.md
     type: local
