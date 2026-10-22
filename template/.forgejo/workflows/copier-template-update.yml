@@ -6,11 +6,11 @@ jobs:
     needs: preview
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           ref: ${{ forgejo.sha }}
-      - uses: https://github.com/jdx/mise-action
+      - uses: https://github.com/jdx/mise-action@fc42bcc7ddbf51124c30f95a877a0c5168a3bfde # v5.2.1
         with:
           cache: true
           install: false
@@ -21,7 +21,7 @@ jobs:
           FORGEJO_TOKEN: ${{ forgejo.token }}
         name: Authenticate Forgejo CLI
         run: printf '%s' "$FORGEJO_TOKEN" | mise exec forgejo:forgejo-contrib/forgejo-cli -- fj --host "$FORGEJO_SERVER_URL" auth add-token
-      - uses: actions/download-artifact
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: copier-update-preview
           path: ${{ runner.temp }}/copier-update-preview
@@ -71,11 +71,11 @@ jobs:
       update_available: ${{ steps.preview.outputs.update_available }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           ref: ${{ forgejo.sha }}
-      - uses: https://github.com/jdx/mise-action
+      - uses: https://github.com/jdx/mise-action@fc42bcc7ddbf51124c30f95a877a0c5168a3bfde # v5.2.1
         with:
           cache: false
           install: false
@@ -115,7 +115,7 @@ jobs:
           } > "${RUNNER_TEMP}/copier-preview.md"
           echo "update_available=true" >> "${FORGEJO_OUTPUT}"
       - if: steps.preview.outputs.update_available == 'true'
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           if-no-files-found: error
           name: copier-update-preview
