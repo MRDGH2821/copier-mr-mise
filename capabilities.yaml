@@ -81,8 +81,7 @@ servers:
       args:
         - mcp
       cmd: hk
-    description: hk gives coding agents a narrow, inspectable way to run project
-      checks and fixes.
+    description: hk gives coding agents a narrow, inspectable way to run project checks and fixes.
     id: hk
     type: mcp
   - def:
@@ -91,9 +90,7 @@ servers:
       cmd: mise
       env:
         MISE_EXPERIMENTAL: "1"
-    description:
-      The mise MCP server lets an AI assistant inspect a project's tools,
-      tasks, environment, and configuration, and run mise tasks.
+    description: The mise MCP server lets an AI assistant inspect a project's tools, tasks, environment, and configuration, and run mise tasks.
     id: mise
     type: mcp
 skills:
