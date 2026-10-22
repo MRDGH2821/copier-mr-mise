@@ -1,4 +1,4 @@
-## Repository context
+## Copier Template Repository context
 
 ### Project Context
 
