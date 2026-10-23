@@ -1,6 +1,6 @@
 version: 1
-generator: capa@2.2.0
-generatedAt: '2026-10-13T22:48:17.151Z'
+generator: capa@2.3.0
+generatedAt: '2026-10-22T09:44:24.869Z'
 skills:
   - id: atomic-commits
     source: github
@@ -16,31 +16,31 @@ skills:
     skillName: bootstrap
     requestedVersion: null
     requestedRef: null
-    resolvedRef: e458ae5e0747cdf9c521336bf3292eec96edff1e
-    resolvedVersion: null
+    resolvedRef: 2d9105e3970befb756bd82e2cc16b3c1599330b2
+    resolvedVersion: v2.3.0
   - id: capabilities-manager
     source: github
     repo: infragate/capa
     skillName: capabilities-manager
     requestedVersion: null
     requestedRef: null
-    resolvedRef: e458ae5e0747cdf9c521336bf3292eec96edff1e
-    resolvedVersion: null
+    resolvedRef: 2d9105e3970befb756bd82e2cc16b3c1599330b2
+    resolvedVersion: v2.3.0
   - id: gh
     source: github
     repo: cli/cli
     skillName: gh
     requestedVersion: null
     requestedRef: null
-    resolvedRef: 0cf1092493af067646fc5f3db9421c6a6ec9c938
-    resolvedVersion: null
+    resolvedRef: 7948e8056e45ac3c729b829e0eafe2d0797a95c6
+    resolvedVersion: v2.103.0
   - id: git-commit
     source: github
     repo: github/awesome-copilot
     skillName: git-commit
     requestedVersion: null
     requestedRef: null
-    resolvedRef: 9ce814859eaa473178a1463ee3aa0c54a8860b86
+    resolvedRef: 2d4b998d2df28917074ee33db45c9601484c72ad
     resolvedVersion: null
 plugins:
   - id: mattpocock-skills
@@ -62,7 +62,7 @@ plugins:
     requestedVersion: null
     requestedRef: null
     resolvedRef: 9949bad031045f366be2467e00e8371a7328a2e2
-    resolvedVersion: null
+    resolvedVersion: v10.1.0
     manifestName: megalinter
     manifestVersion: 1.0.5
   - id: paad
@@ -72,10 +72,10 @@ plugins:
     requestedSearchName: null
     requestedVersion: null
     requestedRef: null
-    resolvedRef: 5ac777c032e4e0f1ae72831ce2377282bf7dd421
+    resolvedRef: f22193fe8e14044a69706e6668178577c5940380
     resolvedVersion: null
     manifestName: paad
-    manifestVersion: 1.31.0
+    manifestVersion: 2.0.0
   - id: superpowers
     source: github
     repo: obra/superpowers
@@ -83,8 +83,8 @@ plugins:
     requestedSearchName: null
     requestedVersion: null
     requestedRef: null
-    resolvedRef: b36e0829c6d0140e93cfef2ca599b1b07d4a7797
-    resolvedVersion: null
+    resolvedRef: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
+    resolvedVersion: v7.0.1
     manifestName: superpowers
-    manifestVersion: 6.3.0
+    manifestVersion: 7.0.1
 hooks: []
