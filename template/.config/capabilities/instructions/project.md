@@ -8,6 +8,16 @@ Run `mise run ai-setup` to refresh capa-managed provider instructions when
 their sources instead.
 Keep editable sources outside `.agents/rules/`, which capa prunes as generated output.
 
+### Conditional guidance
+
+Read the relevant rule before acting:
+
+- Branching or committing: `.config/capabilities/rules/commits.md`.
+- For an AI-assisted commit, also read `.config/capabilities/rules/ai-co-author.md`.
+- Recording AI-assisted work: `.config/capabilities/rules/ai-logs.md`.
+- Reviewing on behalf of a human: `.config/capabilities/rules/ai-reviews.md`.
+- Using mise or hk, or running project checks: `.config/capabilities/rules/tooling.md`.
+
 ### Layout
 
 | Path                   | Purpose                                             |
