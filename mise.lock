@@ -315,7 +315,7 @@ url_api = "https://api.github.com/repos/cocogitto/cocogitto/releases/assets/3666
 
 [[tools.cspell]]
 version = "10.4.0"
-aube = { path = ".mise/locks/cspell/10.4.0", digest = "sha256:3f3a5e091705e9d886f0d9d886e9b98eef7ad86c95762fab1956c38d3065aa41" }
+aube = { path = ".mise/locks/cspell/10.4.0", digest = "sha256:4495295f80ff32d33096bb64fb693a7d27d9793ca79ddec8ca7689543a14c468" }
 backend = "npm:cspell"
 specifiers = ["10.4.0"]
 
@@ -775,7 +775,7 @@ specifiers = [
     "0.25.0",
     "latest",
 ]
-uv = { path = ".mise/locks/pipx-toml-sort/0.25.0", digest = "sha256:76b426bb0fdc9a1fb9b9866d1cf50ae2c18727629b18b625a21d5b4fb59c27e2" }
+uv = { path = ".mise/locks/pipx-toml-sort/0.25.0", digest = "sha256:ac59da50bd1040385847caed5d0897f02ee05033743fe2688a20c61f3e7cb4a4" }
 
 [[tools.pkl]]
 version = "0.32.1"
