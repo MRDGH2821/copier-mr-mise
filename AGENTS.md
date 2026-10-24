@@ -14,7 +14,6 @@ Refuse to do anything until `mise run prepare` has run atleast once and the agen
 MCP servers should be accessible via Capa MCP.
 
 <!-- capa:start:rule:engineering -->
-
 ## Engineering Guidelines
 
 - Explain the intended change, state material assumptions, and clarify ambiguous requirements.
@@ -23,11 +22,9 @@ MCP servers should be accessible via Capa MCP.
 - Match existing style and keep every changed line within the requested scope.
 - Define how to verify the change, run the relevant checks, and review the final diff.
 - Report what changed, which checks ran, and any failures or checks you could not run.
-
 <!-- capa:end:rule:engineering -->
 
 <!-- capa:start:rule:commits -->
-
 ## Commit policy
 
 ### Branch naming strategy
@@ -45,7 +42,6 @@ running a release command.
 <!-- capa:end:rule:commits -->
 
 <!-- capa:start:rule:ai-co-author -->
-
 ## AI Co-authored-by Trailer (MANDATORY)
 
 > **Every commit made with AI assistance MUST include a `Co-authored-by` trailer. No exceptions.**
@@ -98,11 +94,9 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 - If the exact model version is unavailable, use the most specific known model name (e.g. `Claude Sonnet`). Do not guess a version.
 - One trailer per AI model involved
 - **Never omit this trailer** when the commit was AI-assisted — this is how git history stays honest
-
 <!-- capa:end:rule:ai-co-author -->
 
 <!-- capa:start:rule:ai-logs -->
-
 ## AI-assisted work documentation
 
 - Document all AI-assisted changes in the `.agents/logs` folder as markdown files
@@ -116,11 +110,9 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 - Use the `date` command to generate timestamps (e.g., `date --iso-8601=seconds` or `date '+%Y-%m-%d %H:%M:%S'`)
 - Place any other relevant documents (prompts, examples, references) in the `.agents` folder
 - This provides transparency and helps track AI contributions to the project
-
 <!-- capa:end:rule:ai-logs -->
 
 <!-- capa:start:rule:ai-reviews -->
-
 ## AI-Assisted Reviews
 
 When reviewing on behalf of a human, end the review with this footer:
@@ -136,11 +128,9 @@ Use `.config/capabilities/rules/ai-co-author.md` for the model, harness, and pro
 
 <sub>Co-authored-by: <Model full Name and version> via <Harness> <noreply@provider-domain></sub>
 ```
-
 <!-- capa:end:rule:ai-reviews -->
 
 <!-- capa:start:rule:tooling -->
-
 ## Tooling policy
 
 ### Setup: skills and MCP
@@ -218,11 +208,9 @@ review its scope before using it.
 #### Getting Help
 
 - Review existing configuration files for examples
-
 <!-- capa:end:rule:tooling -->
 
 <!-- capa:start:__base__ -->
-
 ## Agent instruction sources
 
 Edit `.config/capabilities/instructions/project.md` for common guidance and the
@@ -266,11 +254,9 @@ Keep editable sources outside `.agents/rules/`, which capa prunes as generated o
 
 - Run relevant tests and configured checks; if no test command exists, verify the affected behavior directly.
 - Ensure documentation is updated
-
 <!-- capa:end:__base__ -->
 
 <!-- capa:start:repository-context -->
-
 ## Copier Template Repository context
 
 ### Project Context
@@ -296,7 +282,7 @@ Keep common policies in `.config/capabilities/rules/` and `template/.config/capa
 
 **Jinja templates** (do not break Copier syntax): `template/AGENTS.md.jinja`, `template/CLAUDE.md.jinja`, `template/README.md.jinja`, `template/package.json.jinja`, `template/capabilities.yaml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
 
-**Copier answers** (`copier.yml`): `project_name`, `ci` (`github` or `gitlab`), `use_agents`, `use_skills`, `use_taste_skill`. Post-copy checks mise; `lic` runs on copy; `capa install` runs automatically via mise's tool postinstall hook and its `capabilities.yaml` file watcher.
+**Copier answers** (`copier.yml`): `project_name`, `ci` (`github`, `gitlab`, or `forgejo`), `use_ai`, and `use_taste_skill` (available only when `use_ai` is enabled). Post-copy checks mise; `lic` runs on copy; Capa installs managed agent files and skills from `capabilities.yaml`.
 
 **Template syntax errors:**
 
@@ -316,13 +302,10 @@ Keep common policies in `.config/capabilities/rules/` and `template/.config/capa
 #### Template validation
 
 - Test template rendering with Copier when template files change
-
 <!-- capa:end:repository-context -->
 
 <!-- capa:start:rule:karpathy-guidelines -->
-
 ---
-
 description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
 alwaysApply: true
 ---
@@ -338,7 +321,6 @@ Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-s
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
 
 Before implementing:
-
 - State your assumptions explicitly. If uncertain, ask.
 - If multiple interpretations exist, present them - don't pick silently.
 - If a simpler approach exists, say so. Push back when warranted.
@@ -361,14 +343,12 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 **Touch only what you must. Clean up only your own mess.**
 
 When editing existing code:
-
 - Don't "improve" adjacent code, comments, or formatting.
 - Don't refactor things that aren't broken.
 - Match existing style, even if you'd do it differently.
 - If you notice unrelated dead code, mention it - don't delete it.
 
 When your changes create orphans:
-
 - Remove imports/variables/functions that YOUR changes made unused.
 - Don't remove pre-existing dead code unless asked.
 
@@ -379,13 +359,11 @@ The test: Every changed line should trace directly to the user's request.
 **Define success criteria. Loop until verified.**
 
 Transform tasks into verifiable goals:
-
 - "Add validation" → "Write tests for invalid inputs, then make them pass"
 - "Fix the bug" → "Write a test that reproduces it, then make it pass"
 - "Refactor X" → "Ensure tests pass before and after"
 
 For multi-step tasks, state a brief plan:
-
 ```
 1. [Step] → verify: [check]
 2. [Step] → verify: [check]
