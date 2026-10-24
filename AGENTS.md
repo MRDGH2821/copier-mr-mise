@@ -48,19 +48,13 @@ running a release command.
 
 ## AI Co-authored-by Trailer (MANDATORY)
 
-> **Every commit made with AI assistance MUST include a `Co-authored-by` trailer. No exceptions.**
-
-**Format:**
+Every AI-assisted commit MUST include this trailer:
 
 ```txt
 Co-authored-by: <Model full Name and version> via <Harness> <noreply@provider-domain>
 ```
 
-**Provider attribution addresses:**
-
-Choose the address for the model provider. The harness can come from a different provider.
-
-<!-- smt -->
+Use the email address for the model provider, not the harness provider.
 
 | Provider                | noreply address          |
 | ----------------------- | ------------------------ |
@@ -73,31 +67,20 @@ Choose the address for the model provider. The harness can come from a different
 | OpenAI (GPT / o-series) | `noreply@openai.com`     |
 | xAI (Grok)              | `noreply@x.ai`           |
 
-If the provider is not listed, search its official documentation or public repositories
-for a documented attribution email address. Use that address rather than guessing one
-from the provider's domain.
+If a provider is missing, search its official documentation or public
+repositories for a documented address; never guess from the provider's domain.
 
-**Examples:**
+Use the full model name and version supplied by the session. If the exact
+version is unavailable, use the most specific known name and do not guess.
+Use the common harness name. Add one trailer per AI model; never omit it.
 
-```txt
-feat(pre-commit): add spell checking to commit messages
-
-Co-authored-by: Claude Sonnet 4.6 via opencode <noreply@anthropic.com>
-```
+Example:
 
 ```txt
 fix(cspell): resolve configuration issue
 
 Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 ```
-
-**Rules:**
-
-- Use the **full model name and version** supplied by the current session (e.g. `Claude Sonnet 4.6`, not just `Claude`)
-- Use the **harness name** as it is commonly known (e.g. `Codex`, `opencode`, `Cursor`, `Copilot`, `Zed`). The harness is the application or CLI running the model.
-- If the exact model version is unavailable, use the most specific known model name (e.g. `Claude Sonnet`). Do not guess a version.
-- One trailer per AI model involved
-- **Never omit this trailer** when the commit was AI-assisted — this is how git history stays honest
 
 <!-- capa:end:rule:ai-co-author -->
 
@@ -123,16 +106,12 @@ Co-authored-by: GPT-4o via Cursor <noreply@openai.com>
 
 ## AI-Assisted Reviews
 
-When reviewing on behalf of a human, end the review with this footer:
-
-Use `.config/capabilities/rules/ai-co-author.md` for the model, harness, and provider email.
+When reviewing on behalf of a human, end with this footer. Get the model name,
+harness, and provider address from
+`.config/capabilities/rules/ai-co-author.md`.
 
 ```md
-<!-- Include a 3 line dash -->
-
----
-
-<!-- Use the co-author rule. In Markdown, render the footer as subscript when supported.-->
+***
 
 <sub>Co-authored-by: <Model full Name and version> via <Harness> <noreply@provider-domain></sub>
 ```
@@ -145,9 +124,11 @@ Use `.config/capabilities/rules/ai-co-author.md` for the model, harness, and pro
 
 ### Setup: skills and MCP
 
-Tools and tasks are managed by **mise**. Prefer an existing `mise run <task>`
-over an ad-hoc command. Inspect `mise.toml` and command `--help` output before
-assuming a task or option exists.
+Prefer an existing `mise run <task>` over an ad-hoc command. Inspect
+`mise.toml` and command `--help` output before assuming a task or option exists.
+
+Consult tool documentation and existing config examples before asking the user
+about configuration.
 
 If `capabilities.yaml` exists and project skills or MCP tools are missing or
 stale:
@@ -155,118 +136,78 @@ stale:
 1. From the repository root, run `mise run ai-setup` (or `capa install --yes`).
 2. Reload the agent session so installed skills and MCP servers are picked up.
 
-If the project omits `capabilities.yaml`, use the available tools and instructions.
+If the project omits `capabilities.yaml`, use the available tools and
+instructions.
 
-### Dev Environment Tips
+### mise & hk
 
-- Use `--help` or `help` subcommand to get help on a command. It can even reveal hints on how to proceed ahead or optimize the number of steps.
-- Check tool documentation before asking the user for configuration details
-- Tools are managed by **mise**. Prefer `mise run <task>` over ad-hoc binaries when a task exists.
-
-### Tooling
-
-#### mise & hk
-
-Use the configured mise and hk MCP tools when available. If their configuration
-is missing, report it and refer to:
+Use configured mise and hk MCP tools when available. If their configuration is
+missing, report it and refer to:
 
 - mise: <https://mise.jdx.dev/mcp.html>
 - hk: <https://hk.jdx.dev/agents.html#mcp>
 
-#### Using hk from a coding agent
+### Using hk from a coding agent
 
-Inspect the configuration and plan before running. Scope checks to changed files
-with `--files0-from` and use `--cd` to select the project root. Prefer `--safe`,
-review command effects, and require approval for unknown or destructive commands.
-Use `--no-stage` when formatting. Use `--stash none` when checking an explicit
-file list in the working tree without stashing changes.
+Inspect the configuration and plan before running checks. Scope them to changed
+files with `--files0-from` and select the project root with `--cd`. Prefer
+`--safe`; review command effects and require approval for unknown or destructive
+commands.
 
-Consume JSON or JSONL diagnostics while retaining raw output, and review the
-diff produced by a fix. MCP clients should use `inspect_project`, `plan`, safe
-run tools, paged output, and `get_diff`.
+Use `--no-stage` when formatting and `--stash none` when checking explicit
+working-tree files.
 
-#### CSpell
+Retain raw JSON or JSONL diagnostics and review diffs from fixes. MCP clients
+should use `inspect_project`, `plan`, safe run tools, paged output, and
+`get_diff`.
 
-Use the hk `cspell` step to check affected files. Its command and options live
-in `.config/hk.pkl`. Correct spelling errors and add legitimate project-specific
-terms to the `words` array in `.config/cspell.json` rather than disabling checks.
+### CSpell
 
-#### Formatting and Hooks (hk)
+Use the hk `cspell` step configured in `.config/hk.pkl`. Fix spelling errors
+and add legitimate project terms to `.config/cspell.json` instead of disabling
+the check.
+
+### Formatting and hooks
 
 Before committing, format affected files with `hk fix --no-stage` and run
-`hk run pre-commit --check` with the same file scope. Resolve failures and retry
-without skipping hooks. The `mise run fmt` task formats the full repository;
-review its scope before using it.
+`hk run pre-commit --check` on the same files. Resolve failures and retry
+without skipping hooks. `mise run fmt` formats the full repository; review its
+scope before running it.
 
-### Troubleshooting
-
-#### Common Issues
-
-**Git hooks failing on commit:**
-
-- Read the error message — it usually points directly to the fix
-- Try to fix the issue and retry the commit; do not skip hooks
-- Fix formatting first (`hk fix` or `mise run fmt`)
-- Then address spell checking and linting
-
-**Spell check failures:**
-
-- Add legitimate technical terms to `.config/cspell.json` `words` array
-- Use proper capitalization for proper nouns
-- Don't add obvious typos to the dictionary
-
-#### Getting Help
-
-- Review existing configuration files for examples
-
+If a hook fails, follow its diagnostic, fix the cause, and retry.
 <!-- capa:end:rule:tooling -->
 
 <!-- capa:start:__base__ -->
 
 ## Agent instruction sources
 
-Edit `.config/capabilities/instructions/project.md` for common guidance and the
-other files in `.config/capabilities/instructions/` for project-specific context.
-Edit `.config/capabilities/rules/` for shared policies.
-Run `mise run ai-setup` to refresh capa-managed provider instructions when
-`capabilities.yaml` is present. Provider instruction files are generated; edit
-their sources instead.
-Keep editable sources outside `.agents/rules/`, which capa prunes as generated output.
+Edit this file for shared guidance. Use other files in
+`.config/capabilities/instructions/` for project-specific context and
+`.config/capabilities/rules/` for shared policies.
 
-### Layout
+After editing these sources, run `mise run ai-setup` when `capabilities.yaml`
+exists. Otherwise, keep corresponding `AGENTS.md` sections in sync. Keep
+editable sources outside `.agents/rules/`; Capa prunes that generated directory.
 
-| Path                   | Purpose                                             |
-| ---------------------- | --------------------------------------------------- |
-| `mise.toml`            | Tools, tasks, `hk install --mise` postinstall hook  |
-| `.config/hk.pkl`       | hk hook config (pre-commit, commit-msg, fix, check) |
-| `capabilities.yaml`    | Skills, MCP servers, and providers (capa)           |
-| `cog.toml`             | Conventional-commit scopes and version bump hooks   |
-| `.mega-linter.yml`     | MegaLinter config                                   |
-| `.config/treefmt.toml` | Full-tree formatter                                 |
-| `.config/cspell.json`  | Spell-check dictionary                              |
-| `.agents/logs/`        | AI-assisted work logs                               |
+### Conditional guidance
 
-### Best Practices
+Read the relevant rule before acting:
 
-#### Before Making Changes
+- Branching or committing: `.config/capabilities/rules/commits.md`.
+- For an AI-assisted commit, also read `.config/capabilities/rules/ai-co-author.md`.
+- Recording AI-assisted work: `.config/capabilities/rules/ai-logs.md`.
+- Reviewing on behalf of a human: `.config/capabilities/rules/ai-reviews.md`.
+- Using mise or hk, or running project checks: `.config/capabilities/rules/tooling.md`.
 
-1. Understand the current state of the project
-2. Check if similar functionality already exists
-3. Review relevant configuration files
+### Dependencies
 
-#### When Adding Dependencies
+Prefer lightweight, cross-platform dependencies. Use the project's package
+manager, update relevant configuration and lockfiles, and document installation.
 
-- Prefer tools that don't require heavy installation; add development tools via `mise.toml`
-- Use the project's package manager for application dependencies and keep lockfiles consistent.
-- Document installation steps clearly
-- Consider cross-platform compatibility
-- Update relevant configuration files
+### Verification and documentation
 
-#### Testing Changes
-
-- Run relevant tests and configured checks; if no test command exists, verify the affected behavior directly.
-- Ensure documentation is updated
-
+If no relevant test or check exists, verify behavior directly. Update
+documentation when setup or behavior changes.
 <!-- capa:end:__base__ -->
 
 <!-- capa:start:repository-context -->
