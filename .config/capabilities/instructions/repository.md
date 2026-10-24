@@ -23,7 +23,7 @@ Keep common policies in `.config/capabilities/rules/` and `template/.config/capa
 
 **Jinja templates** (do not break Copier syntax): `template/AGENTS.md.jinja`, `template/CLAUDE.md.jinja`, `template/README.md.jinja`, `template/package.json.jinja`, `template/capabilities.yaml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
 
-**Copier answers** (`copier.yml`): `project_name`, `ci` (`github` or `gitlab`), `use_agents`, `use_skills`, `use_taste_skill`. Post-copy checks mise; `lic` runs on copy; `capa install` runs automatically via mise's tool postinstall hook and its `capabilities.yaml` file watcher.
+**Copier answers** (`copier.yml`): `project_name`, `ci` (`github`, `gitlab`, or `forgejo`), `use_ai`, and `use_taste_skill` (available only when `use_ai` is enabled). Post-copy checks mise; `lic` runs on copy; Capa installs managed agent files and skills from `capabilities.yaml`.
 
 **Template syntax errors:**
 
