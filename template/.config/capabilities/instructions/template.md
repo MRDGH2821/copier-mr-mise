@@ -2,9 +2,9 @@
 
 ### Project Context
 
-Read `README.md`, dependency manifests, and relevant source files to learn the
-project's purpose, architecture, and commands. The application language and
-framework depend on the generated project.
+Inspect source files, dependency manifests, and configuration to learn the
+project's purpose, architecture, and commands. Treat overview documentation as
+advisory; verify its claims against those maintained sources.
 
 - **Project Type**: Project scaffolded from [copier-mr-mise](https://github.com/MRDGH2821/copier-mr-mise)
 - **Key Technologies**: mise, hk, MegaLinter, cspell, capa
