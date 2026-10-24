@@ -23,6 +23,8 @@ Describe how the change affects projects generated from this template.
 
 Fork the repository and clone your fork, or use a branch if you have write access.
 Keep the change focused. Follow the existing configuration and file style.
+
+Prefer atomic commits: each commit should contain one logical change.
 Include documentation changes when setup or behavior changes.
 
 ## Set up the development environment
@@ -88,13 +90,18 @@ repository for the generated output:
 ```sh
 mise exec -- uvx --from copier copier copy --defaults --skip-tasks --vcs-ref=HEAD \
   --data project_name=TemplateCheck --data ci=github \
-  --data use_agents=true --data use_skills=true \
+  --data use_ai=true --data use_taste_skill=true \
   . ../copier-template-check-github
 
 mise exec -- uvx --from copier copier copy --defaults --skip-tasks --vcs-ref=HEAD \
   --data project_name=TemplateCheck --data ci=gitlab \
-  --data use_agents=false --data use_skills=false \
+  --data use_ai=false \
   . ../copier-template-check-gitlab
+
+mise exec -- uvx --from copier copier copy --defaults --skip-tasks --vcs-ref=HEAD \
+  --data project_name=TemplateCheck --data ci=forgejo \
+  --data use_ai=true --data use_taste_skill=false \
+  . ../copier-template-check-forgejo
 ```
 
 `uvx` runs Copier without adding it as a project dependency.
@@ -103,9 +110,9 @@ mise exec -- uvx --from copier copier copy --defaults --skip-tasks --vcs-ref=HEA
 These commands check rendering. They do not test post-copy commands or migrations.
 
 Inspect the generated content and selected CI files.
-Make sure that `AGENTS.md` and `capabilities.yaml` follow their selected options.
-Repeat with other affected combinations of `ci`, `use_agents`, `use_skills`,
-and `use_taste_skill`.
+When `use_ai` is false, verify AI files are omitted. When it is true, check that
+`AGENTS.md`, `capabilities.yaml`, and the optional taste skill render as selected.
+Repeat with other affected combinations of `ci`, `use_ai`, and `use_taste_skill`.
 
 If a change affects post-copy commands, test them in a disposable project.
 If it affects update behavior or migrations, test `copier update` from the relevant

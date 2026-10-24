@@ -50,7 +50,8 @@ rules:
     id: engineering
     path: template/.config/capabilities/rules/engineering.md
     type: local
-  - description: Branch naming and atomic Conventional Commits
+  - alwaysApply: true
+    description: Branch naming and atomic Conventional Commits
     id: commits
     path: template/.config/capabilities/rules/commits.md
     type: local
