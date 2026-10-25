@@ -55,22 +55,6 @@ rules:
     id: commits
     path: template/.config/capabilities/rules/commits.md
     type: local
-  - description: AI co-author trailers and provider attribution
-    id: ai-co-author
-    path: template/.config/capabilities/rules/ai-co-author.md
-    type: local
-  - description: AI-assisted work logs
-    id: ai-logs
-    path: template/.config/capabilities/rules/ai-logs.md
-    type: local
-  - description: AI-assisted review attribution
-    id: ai-reviews
-    path: template/.config/capabilities/rules/ai-reviews.md
-    type: local
-  - description: mise, hk, linting, and troubleshooting
-    id: tooling
-    path: template/.config/capabilities/rules/tooling.md
-    type: local
 servers:
   - def:
       args:
