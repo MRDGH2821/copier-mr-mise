@@ -1,5 +1,7 @@
 # copier-mr-mise
 
+[![MegaLinter](https://github.com/MRDGH2821/copier-mr-mise/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/MRDGH2821/copier-mr-mise/actions?query=workflow%3AMegaLinter+branch%3Amain)
+
 [Copier](https://copier.readthedocs.io/en/stable/) template for my projects.
 
 This template assumes that you have [mise](https://mise.jdx.dev/) installed already.
