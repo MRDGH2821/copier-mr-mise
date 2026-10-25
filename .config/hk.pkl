@@ -113,6 +113,9 @@ local linters = new Mapping<String, Step> {
     check = "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{files}}"
   }
   ["typos"] = Builtins.typos
+
+  // end
+  ["oxfmt-format"] = Builtins.oxfmt
 }
 exclude =
   List(

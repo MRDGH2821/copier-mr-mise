@@ -87,7 +87,7 @@ This repository is the **template**, not a generated project. Generated files li
 ### Template repository layout
 
 | Path                                | Purpose                                       |
-|-------------------------------------|-----------------------------------------------|
+| ----------------------------------- | --------------------------------------------- |
 | `copier.yml`                        | Copier questions, exclusions, post-copy tasks |
 | `template/`                         | Files copied into generated projects          |
 | `.github/workflows/mega-linter.yml` | MegaLinter CI configuration                   |

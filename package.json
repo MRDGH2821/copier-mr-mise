@@ -1,12 +1,12 @@
 {
-  "devDependencies": {
-    "@types/bun": "^1.4.4",
-    "oxfmt": "^0.74.0"
-  },
-  "license": "MIT",
   "name": "copier-mr-mise",
+  "version": "0.23.0",
+  "license": "MIT",
   "scripts": {
     "sync:mise": "bun .github/scripts/sync-mise-template.ts"
   },
-  "version": "0.23.0"
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "oxfmt": "^0.74.0"
+  }
 }
