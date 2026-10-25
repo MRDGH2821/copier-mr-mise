@@ -21,6 +21,8 @@ For a feature request, explain the problem, the proposed solution, and alternati
 
 Fork or clone the repository and create a branch for your change.
 Keep the change focused. Follow the existing code and configuration style.
+
+Prefer atomic commits: each commit should contain one logical change.
 Update documentation when setup or behavior changes.
 
 ## Set up the development environment

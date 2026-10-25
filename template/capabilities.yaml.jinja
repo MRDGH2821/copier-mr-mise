@@ -61,8 +61,7 @@ providers:
   - opencode
   # keep-sorted end
 rules:
-  - alwaysApply: true
-    def:
+  - def:
       repo: multica-ai/andrej-karpathy-skills::.cursor/rules/karpathy-guidelines.mdc
     description: Andrej Karpathy's Guidelines
     id: karpathy-guidelines
@@ -75,26 +74,6 @@ rules:
     description: Branch naming and atomic Conventional Commits
     id: commits
     path: .config/capabilities/rules/commits.md
-    type: local
-  - alwaysApply: true
-    description: AI co-author trailers and provider attribution
-    id: ai-co-author
-    path: .config/capabilities/rules/ai-co-author.md
-    type: local
-  - alwaysApply: true
-    description: AI-assisted work logs
-    id: ai-logs
-    path: .config/capabilities/rules/ai-logs.md
-    type: local
-  - alwaysApply: true
-    description: AI-assisted review attribution
-    id: ai-reviews
-    path: .config/capabilities/rules/ai-reviews.md
-    type: local
-  - alwaysApply: true
-    description: mise, hk, linting, and troubleshooting
-    id: tooling
-    path: .config/capabilities/rules/tooling.md
     type: local
 servers:
   - def:

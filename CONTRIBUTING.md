@@ -23,6 +23,8 @@ Describe how the change affects projects generated from this template.
 
 Fork the repository and clone your fork, or use a branch if you have write access.
 Keep the change focused. Follow the existing configuration and file style.
+
+Prefer atomic commits: each commit should contain one logical change.
 Include documentation changes when setup or behavior changes.
 
 ## Set up the development environment
