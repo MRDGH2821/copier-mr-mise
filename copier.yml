@@ -42,26 +42,6 @@ _migrations:
     version: v0.12.0
   - command: rm -f apm.yml apm.lock.yaml
     version: v0.13.0
-  # This idempotent migration preserves either old AI opt-in on project updates.
-  - command: |
-      python - <<'PY'
-      from pathlib import Path
-      import yaml
-
-      answers_path = Path("{{ _copier_conf.answers_file }}")
-      if answers_path.exists():
-          answers = yaml.safe_load(answers_path.read_text()) or {}
-          if "use_agents" in answers or "use_skills" in answers:
-              legacy_ai = any(
-                  bool(answers.get(key, False))
-                  for key in ("use_agents", "use_skills")
-              )
-              answers.setdefault("use_ai", legacy_ai)
-              answers.pop("use_agents", None)
-              answers.pop("use_skills", None)
-              answers_path.write_text(yaml.safe_dump(answers, sort_keys=False))
-      PY
-    when: "{{ _stage == 'before' }}"
 _min_copier_version: 9.3.0
 _subdirectory: template
 _tasks:
