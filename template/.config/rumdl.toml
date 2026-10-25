@@ -14,5 +14,6 @@ punctuation = ".,;:!。，；:"
 [global]
 disable = ["MD029", "MD033", "MD036", "MD004"]
 editorconfig = true
-exclude = ["**/.agents/skills/**"]
+# tombi: format.rules.array-values-order = "ascending"
+exclude = ["**/.agents/skills/**", "AGENTS.md", "CLAUDE.md"]
 extend-enable = ["MD047"]
