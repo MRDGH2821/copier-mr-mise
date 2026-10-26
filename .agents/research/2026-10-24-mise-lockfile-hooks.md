@@ -1,6 +1,6 @@
 # mise lockfile changes and automatic package installs
 
-Researched on 2026-10-24 against the official mise documentation index and the linked official docs. Repository configuration was inspected in [`mise.toml`](../../mise.toml) and [`template/mise.toml.jinja`](../../template/mise.toml.jinja).
+Researched on 2026-10-24 against the official mise documentation index and the linked official docs. Repository configuration was inspected in [`mise.toml`](../../mise.toml) and [`template/mise.toml.jinja`](../../template/mise.toml.jinja). <!-- rumdl-disable-line existing-relative-links -->
 
 ## Findings
 
@@ -22,8 +22,8 @@ Researched on 2026-10-24 against the official mise documentation index and the l
 
 ## This repository
 
-- Root [`mise.toml`](../../mise.toml#L4) has a `postinstall` hook that runs `hk install --mise` after mise installs tools. This is not an npm install hook. Its `[[watch_files]]` table (lines 53–60) watches capability configuration paths and runs `ai-setup`; it does not watch `package.json`, `package-lock.json`, `bun.lock`, or `bun.lockb`.
-- [`template/mise.toml.jinja`](../../template/mise.toml.jinja#L4) has the same mise-tool `postinstall` hook. Its `[[watch_files]]` entry (lines 60–62) watches only `capabilities.yaml` and runs `ai-setup`.
+- Root [`mise.toml`](../../mise.toml#L4) has a `postinstall` hook that runs `hk install --mise` after mise installs tools. This is not an npm install hook. Its `[[watch_files]]` table (lines 53–60) watches capability configuration paths and runs `ai-setup`; it does not watch `package.json`, `package-lock.json`, `bun.lock`, or `bun.lockb`. <!-- rumdl-disable-line existing-relative-links -->
+- [`template/mise.toml.jinja`](../../template/mise.toml.jinja#L4) has the same mise-tool `postinstall` hook. Its `[[watch_files]]` entry (lines 60–62) watches only `capabilities.yaml` and runs `ai-setup`. <!-- rumdl-disable-line existing-relative-links -->
 - Neither file configures `[deps.*]` or enables `experimental = true`. The root config's `lockfile = true` (line 9) enables mise's tool lockfile behavior, not application dependency installation. The configs define explicit `prepare` (`bun install`) and root `prepare-ci` (`bun ci`) tasks; those commands are not triggered merely by a package lockfile changing.
 
 **Conclusion:** Neither repository config enables automatic package installation on npm/Bun lockfile changes. A `[[watch_files]]` rule could be explicitly configured to run a package install, but would be prompt-checked and require shell activation; the experimental `[deps.bun]` provider would require explicit configuration (and `auto = true` for automatic pre-`mise run`/`mise exec` synchronization).
