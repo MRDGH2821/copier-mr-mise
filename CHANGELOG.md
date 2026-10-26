@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file. See [conven
 
 - run file migrations before Copier removes renamed template paths
 - migrate legacy Yamllint and Prettier configs with Ryl and Oxfmt
+- retain converted Ryl and Oxfmt configs after template application
 
 ---
 

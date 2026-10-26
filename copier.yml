@@ -42,6 +42,18 @@ _migrations:
     version: v0.10.0
     when: "{{ _stage == 'before' }}"
   - command: |
+      if [ -e .config/ryl.toml ]; then
+        mv -b .config/ryl.toml .copier-migration-ryl.toml
+      fi
+    version: v0.10.0
+    when: "{{ _stage == 'before' }}"
+  - command: |
+      if [ -e .copier-migration-ryl.toml ]; then
+        mv -b .copier-migration-ryl.toml .config/ryl.toml
+      fi
+    version: v0.10.0
+    when: "{{ _stage == 'after' }}"
+  - command: |
       if [ -e typos.toml ]; then
         mv -b typos.toml .typos.toml
       fi
@@ -59,9 +71,24 @@ _migrations:
     when: "{{ _stage == 'after' }}"
   - command: rm -f apm.yml apm.lock.yaml
     version: v0.13.0
-  - command: mise exec oxfmt -- oxfmt --migrate=prettier
+  - command: |
+      if [ ! -e .oxfmtrc.json ]; then
+        mise exec oxfmt -- oxfmt --migrate=prettier
+      fi
     version: v0.16.0
     when: "{{ _stage == 'before' }}"
+  - command: |
+      if [ -e .oxfmtrc.json ]; then
+        mv -b .oxfmtrc.json .copier-migration-oxfmt.json
+      fi
+    version: v0.16.0
+    when: "{{ _stage == 'before' }}"
+  - command: |
+      if [ -e .copier-migration-oxfmt.json ]; then
+        mv -b .copier-migration-oxfmt.json .oxfmtrc.json
+      fi
+    version: v0.16.0
+    when: "{{ _stage == 'after' }}"
 _min_copier_version: 9.3.0
 _subdirectory: template
 _tasks:
