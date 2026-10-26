@@ -22,26 +22,46 @@ _exclude:
   - ~*
   # keep-sorted end
 _migrations:
-  - command: mv -b .github/workflows/treefmt.yml .github/workflows/mise-check.yml
+  - command: |
+      if [ -e .github/workflows/treefmt.yml ]; then
+        mv -b .github/workflows/treefmt.yml .github/workflows/mise-check.yml
+      fi
     version: v0.4.1
-  - command: |
-      mkdir -p .config
-      mv -b cliff.toml .config/cliff.toml
-      mv -b .cspell.json .config/cspell.json
-      mv -b hk.pkl .config/hk.pkl
-      mv -b .rumdl.toml .config/rumdl.toml
-      mv -b .ryl.toml .config/ryl.toml
+    when: "{{ _stage == 'before' }}"
+  - command: mise exec uv -- uvx ryl --migrate-configs --migrate-write
     version: v0.10.0
-  - command: mv -b typos.toml .typos.toml
-    version: v0.11.0
+    when: "{{ _stage == 'before' }}"
   - command: |
+      set -e
       mkdir -p .config
-      mv -b .jscpd.json .config/jscpd.json
-      mv -b .treefmt.toml .config/treefmt.toml
-      rm -f  .github/workflows/cocogitto.yml
+      if [ -e cliff.toml ]; then mv -b cliff.toml .config/cliff.toml; fi
+      if [ -e .cspell.json ]; then mv -b .cspell.json .config/cspell.json; fi
+      if [ -e hk.pkl ]; then mv -b hk.pkl .config/hk.pkl; fi
+      if [ -e .rumdl.toml ]; then mv -b .rumdl.toml .config/rumdl.toml; fi
+      if [ -e .ryl.toml ]; then mv -b .ryl.toml .config/ryl.toml; fi
+    version: v0.10.0
+    when: "{{ _stage == 'before' }}"
+  - command: |
+      if [ -e typos.toml ]; then
+        mv -b typos.toml .typos.toml
+      fi
+    version: v0.11.0
+    when: "{{ _stage == 'before' }}"
+  - command: |
+      set -e
+      mkdir -p .config
+      if [ -e .jscpd.json ]; then mv -b .jscpd.json .config/jscpd.json; fi
+      if [ -e .treefmt.toml ]; then mv -b .treefmt.toml .config/treefmt.toml; fi
     version: v0.12.0
+    when: "{{ _stage == 'before' }}"
+  - command: rm -f .github/workflows/cocogitto.yml
+    version: v0.12.0
+    when: "{{ _stage == 'after' }}"
   - command: rm -f apm.yml apm.lock.yaml
     version: v0.13.0
+  - command: mise exec bun -- bunx oxfmt --migrate=prettier
+    version: v0.16.0
+    when: "{{ _stage == 'before' }}"
 _min_copier_version: 9.3.0
 _subdirectory: template
 _tasks:

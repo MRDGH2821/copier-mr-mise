@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [Unreleased]
+
+### Bug Fixes
+
+- run file migrations before Copier removes renamed template paths
+- migrate legacy Yamllint and Prettier configs with Ryl and Oxfmt
+
+---
+
 ## [0.23.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.22.1..v0.23.0) - 2026-10-22
 
 ### Bug Fixes
