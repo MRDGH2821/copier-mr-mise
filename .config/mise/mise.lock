@@ -829,7 +829,7 @@ specifiers = ["latest"]
 version = "0.25.0"
 backend = "pipx:toml-sort"
 specifiers = ["0.25.0"]
-uv = { path = "locks/pipx-toml-sort/0.25.0", digest = "sha256:7ed63223b7de7a660ce50173016668d48b4e572b16794434720d225dc0588d4d" }
+uv = { path = "locks/pipx-toml-sort/0.25.0", digest = "sha256:4fd091eaf0056127c5b4e0a4f5e18435082311d43767ed9ef49b0cadb1be85d0" }
 
 [[tools.pkl]]
 version = "0.32.2"
