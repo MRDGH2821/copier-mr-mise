@@ -26,6 +26,7 @@ HK_MISE = 1
 postinstall = ["hk install --mise"]
 
 [settings]
+experimental = true
 lockfile = true
 lockfile_auto_prune = true
 
