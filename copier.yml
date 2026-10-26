@@ -28,7 +28,7 @@ _migrations:
       fi
     version: v0.4.1
     when: "{{ _stage == 'before' }}"
-  - command: mise exec aqua:owenlamont/ryl@0.26.0 -- ryl --migrate-configs --migrate-write
+  - command: mise exec aqua:owenlamont/ryl -- ryl --migrate-configs --migrate-write
     version: v0.10.0
     when: "{{ _stage == 'before' }}"
   - command: |
@@ -59,7 +59,7 @@ _migrations:
     when: "{{ _stage == 'after' }}"
   - command: rm -f apm.yml apm.lock.yaml
     version: v0.13.0
-  - command: mise exec oxfmt@0.74.0 -- oxfmt --migrate=prettier
+  - command: mise exec oxfmt -- oxfmt --migrate=prettier
     version: v0.16.0
     when: "{{ _stage == 'before' }}"
 _min_copier_version: 9.3.0
