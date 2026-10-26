@@ -1,3 +1,23 @@
+[deps.bun]
+auto = true
+
+[deps.capabilities]
+description = "Install Agent plugins"
+outputs = [
+  "capabilities.lock",
+  ".agents/skills/",
+  ".codex/skills/",
+  ".claude/skills/",
+  ".cursor/skills/"
+]
+run = "capa install --yes"
+# tombi: format.rules.array-values-order = "ascending"
+sources = [
+  ".config/capabilities/",
+  "capabilities.yaml",
+  "template/.config/capabilities/"
+]
+
 [env]
 HK_MISE = 1
 
@@ -49,12 +69,3 @@ tombi = "1.9.4"
 typos = "1.51.1"
 uv = "0.13.5"
 yq = "4.54.1"
-
-[[watch_files]]
-# tombi: format.rules.array-values-order = "ascending"
-patterns = [
-  ".config/capabilities/**/*.md",
-  "capabilities.yaml",
-  "template/.config/capabilities/**/*.md"
-]
-task = "ai-setup"

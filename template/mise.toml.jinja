@@ -1,3 +1,25 @@
+[deps.bun]
+auto = true
+
+{% if use_ai %}
+[deps.capabilities]
+description = "Install Agent plugins"
+outputs = [
+  "capabilities.lock",
+  ".agents/skills/",
+  ".codex/skills/",
+  ".claude/skills/",
+  ".cursor/skills/"
+]
+run = "capa install --yes"
+# tombi: format.rules.array-values-order = "ascending"
+sources = [
+  ".config/capabilities/",
+  "capabilities.yaml",
+  "template/.config/capabilities/"
+]
+{% endif %}
+
 [env]
 HK_MISE = 1
 
@@ -13,7 +35,9 @@ lockfile_auto_prune = true
 use_git_credentials = true
 
 [tasks]
+{% if use_ai %}
 ai-setup = "capa install --yes"
+{% endif %}
 check = ["hk check --all", "cog check"]
 prepare-ci = ["bun ci"]
 
@@ -23,7 +47,11 @@ run = ["hk fix --all"]
 
 [tasks.prepare]
 interactive = true
-run = ["bun install", { task = "ai-setup" }]
+run = ["bun install",
+{% if use_ai %}
+{ task = "ai-setup" }
+{% endif %}
+]
 
 [tools]
 "aqua:google/keep-sorted" = "0.10.0"
@@ -44,7 +72,9 @@ git-cliff = "2.14.2"
 glab = "1.124.0"
 {% endif %}
 "github:MRDGH2821/Sort-Markdown-Tables" = "0.6.0"
+{% if use_ai %}
 "github:infragate/capa" = "2.4.0"
+{% endif %}
 hk = { version = "2.8.1", workflow = "release.yml" }
 ls-lint = "2.3.2"
 oxfmt = "0.74.0"
@@ -57,7 +87,3 @@ tombi = "1.9.4"
 typos = "1.51.1"
 uv = "0.13.5"
 yq = "4.54.1"
-
-[[watch_files]]
-patterns = ["capabilities.yaml"]
-task = "ai-setup"
