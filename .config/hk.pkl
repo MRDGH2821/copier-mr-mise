@@ -114,7 +114,7 @@ local linters = new Mapping<String, Step> {
   }
   ["typos"] = Builtins.typos
 
-  // end
+  // Ensure formatting
   ["oxfmt-format"] = Builtins.oxfmt
 }
 exclude =
