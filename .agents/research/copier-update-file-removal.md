@@ -1,0 +1,9 @@
+# Copier update: removed and renamed template files
+
+**Answer:** On a normal `copier update`, a path removed from the template is removed from the generated project by default; Copier does not infer a semantic move/rename that transfers the old file to its new path. Treat a rename as a removal plus an addition (old path gone, new path rendered); if the transition needs custom handling, define an update migration.
+
+Copier's update guide describes regenerating the old and new template outputs, comparing them, applying the template diff to the project, and running post-migrations. Its implementation removes paths found only in the old rendered template after applying that diff. [Updating a project](https://copier.readthedocs.io/en/stable/updating/#how-the-update-works) · [Copier v9.19.1 update implementation](https://github.com/copier-org/copier/blob/v9.19.1/copier/_main.py#L1706-L1707) · [old-only path removal helper](https://github.com/copier-org/copier/blob/v9.19.1/copier/_main.py#L1950-L2004).
+
+The word "deleted" in the guide's **Handling of deleted paths** section refers to the opposite case: paths the project consumer deleted from their generated project are excluded from future updates, so Copier does not recreate them. Exception: `skip_if_exists` paths are ensured to exist during updates. [Handling of deleted paths](https://copier.readthedocs.io/en/stable/updating/#handling-of-deleted-paths).
+
+Migrations are **not** needed just to remove an obsolete template path; they are the opt-in mechanism for custom before/after update work, such as relocating or transforming project-specific content. `_migrations` defaults to `[]`; migrations run only on update, with the documented version/condition rules. [Migrations setting](https://copier.readthedocs.io/en/stable/configuring/#migrations).
