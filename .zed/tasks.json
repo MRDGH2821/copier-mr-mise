@@ -1,7 +1,10 @@
 [
   {
     "allow_concurrent_runs": false,
-    "args": ["mise.toml", "./template/mise.toml.jinja"],
+    "args": [
+      ".config/mise/mise.toml",
+      "./template/.config/mise/mise.toml.jinja"
+    ],
     "command": "meld",
     "hide": "on_success",
     "label": "diff: mise.toml",

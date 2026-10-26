@@ -124,6 +124,7 @@ exclude =
     "**/.mise/**",
     "**/go.sum",
     "**/locks/**",
+    "**/mise/locks/**",
     "**/npm-shrinkwrap.json",
     "**/package-lock.json",
     "**/pnpm-lock.yaml",

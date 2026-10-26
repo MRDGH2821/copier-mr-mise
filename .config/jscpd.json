@@ -10,6 +10,7 @@
     "**/.rbenv/**",
     "**/.venv/**",
     "**/locks/**",
+    "**/mise/locks/**",
     "**/node_modules/**",
     "**/report/**",
     "*.lock",

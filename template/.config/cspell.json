@@ -5,6 +5,7 @@
     "**/.git/**",
     "**/.pnpm-lock.json",
     "**/bin/mise",
+    "**/mise/locks/**",
     "**/node_modules/**",
     "**/vscode-extension/**",
     "*.lock",
