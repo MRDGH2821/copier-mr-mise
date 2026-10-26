@@ -193,3 +193,11 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 <!-- capa:end:rule:karpathy-guidelines -->
+
+<!-- capa:start:rule:ai-artifacts -->
+## AI-generated artifact locations
+
+- For agent-plugin artifacts, use the plugin's dedicated subdirectory under `docs/` when it has one; keep its contents there (for example, `docs/superpowers/`).
+- If the plugin instead stores artifacts in a repository-root directory, move/use `.agents/<plugin-id>/` (for example, move `paad/` to `.agents/paad/`).
+- For other AI-generated artifacts, use `.agents/<artifact-type>/`, such as `.agents/logs/` for AI work logs or `.agents/research/` for research.
+<!-- capa:end:rule:ai-artifacts -->

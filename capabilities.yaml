@@ -55,6 +55,11 @@ rules:
     id: commits
     path: template/.config/capabilities/rules/commits.md
     type: local
+  - alwaysApply: true
+    description: Where to save AI-generated artifacts
+    id: ai-artifacts
+    path: template/.config/capabilities/rules/ai-artifacts.md
+    type: local
 servers:
   - def:
       args:
