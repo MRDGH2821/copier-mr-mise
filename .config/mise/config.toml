@@ -8,7 +8,9 @@ outputs = [
   ".agents/skills/",
   ".codex/skills/",
   ".claude/skills/",
-  ".cursor/skills/"
+  ".cursor/skills/",
+  ".mcp.json",
+  "opencode.json"
 ]
 run = "capa install --yes"
 # tombi: format.rules.array-values-order = "ascending"
