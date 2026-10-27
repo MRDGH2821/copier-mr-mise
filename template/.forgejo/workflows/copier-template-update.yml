@@ -34,7 +34,7 @@ jobs:
         run: |-
           set -euo pipefail
           title="Copier template update available"
-          preview="${RUNNER_TEMP}/copier-update-preview/preview.md"
+          preview="${RUNNER_TEMP}/copier-update-preview/copier-preview.md"
           issue=$(
             ISSUE_TITLE="${title}" node --input-type=module <<'NODE'
           const apiUrl = process.env.FORGEJO_API_URL.replace(/\/+$/, "");
