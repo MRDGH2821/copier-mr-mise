@@ -82,7 +82,7 @@ local linters = new Mapping<String, Step> {
   ["check-placeholders"] {
     check =
       "if grep -EIn '(<placeholder>|CHANGEME|FILL_ME_IN|NOCOMMIT)' {{files}}; then false; else test $? -eq 1; fi"
-    exclude = List("template/**", ".config/hk.pkl", ".config/cspell.json")
+    exclude = List(".config/hk.pkl", ".config/cspell.json")
   }
   ["ls_lint"] = Builtins.ls_lint
 
