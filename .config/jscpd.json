@@ -16,7 +16,6 @@
     "*.lock",
     ".agents/research/**",
     "AGENTS.md",
-    "apm.lock.yaml",
     "CLAUDE.md",
     "go.sum",
     "npm-shrinkwrap.json",
