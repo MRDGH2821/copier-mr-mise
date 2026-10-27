@@ -16,10 +16,24 @@ include = ["ryl.toml"]
 [[schemas]]
 path = "https://mise.jdx.dev/schema/mise.json"
 # tombi: format.rules.array-values-order = "ascending"
-include = ["**/.mise.toml", "**/mise.toml", ".mise.toml", "mise.toml"]
+include = [
+  "**/.config/mise/config.toml",
+  "**/.mise.toml",
+  "**/mise.toml",
+  ".config/mise/config.toml",
+  ".mise.toml",
+  "mise.toml"
+]
 
 [[schemas]]
 root = "tasks"
 path = "https://mise.jdx.dev/schema/mise-task.json"
 # tombi: format.rules.array-values-order = "ascending"
-include = ["**/.mise.toml", "**/mise.toml", ".mise.toml", "mise.toml"]
+include = [
+  "**/.config/mise/config.toml",
+  "**/.mise.toml",
+  "**/mise.toml",
+  ".config/mise/config.toml",
+  ".mise.toml",
+  "mise.toml"
+]
