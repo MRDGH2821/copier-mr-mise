@@ -4,11 +4,11 @@ type ToolSpec = string | { version: string };
 
 const root = resolve(import.meta.dir, "../..");
 const config = Bun.TOML.parse(
-  await Bun.file(resolve(root, "mise.toml")).text()
+  await Bun.file(resolve(root, ".config/mise/config.toml")).text()
 ) as {
   tools: Record<string, ToolSpec>;
 };
-const templatePath = resolve(root, "template/mise.toml.jinja");
+const templatePath = resolve(root, "template/.config/mise/config.toml.jinja");
 const lines = (await Bun.file(templatePath).text()).split(/(?<=\n)/);
 
 const versions = new Map<string, string>();

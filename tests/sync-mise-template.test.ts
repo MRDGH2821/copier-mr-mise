@@ -6,17 +6,18 @@ import { resolve, join } from "node:path";
 test("syncs CI-specific CLI versions into the template pins", async () => {
   const root = await mkdtemp(join(tmpdir(), "sync-mise-template-"));
   const scripts = join(root, ".github/scripts");
-  const template = join(root, "template/mise.toml.jinja");
+  const template = join(root, "template/.config/mise/config.toml.jinja");
   const script = join(scripts, "sync-mise-template.ts");
 
   try {
     await mkdir(scripts, { recursive: true });
-    await mkdir(join(root, "template"), { recursive: true });
+    await mkdir(join(root, "template/.config/mise"), { recursive: true });
+    await mkdir(join(root, ".config/mise"), { recursive: true });
     await cp(
       resolve(import.meta.dir, "../.github/scripts/sync-mise-template.ts"),
       script
     );
-    await writeFile(join(root, "mise.toml"), "[tools]\n");
+    await writeFile(join(root, ".config/mise/config.toml"), "[tools]\n");
     await writeFile(
       template,
       '[tools]\nglab = "1.122.0"\n"forgejo:forgejo-contrib/forgejo-cli" = "0.7.0"\n'
