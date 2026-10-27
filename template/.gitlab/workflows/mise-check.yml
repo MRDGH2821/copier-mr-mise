@@ -18,7 +18,7 @@ mise-check:
     key:
       files:
         - bin/mise
-        - mise.toml
+        - .config/mise/config.toml
       prefix: mise-debian13-${MISE_ARCH}
     paths:
       - .mise/installs/
