@@ -133,7 +133,7 @@ exclude =
     // keep-sorted end
   )
 
-steps {
+steps = new Mapping<String, Step | Group> {
   ["sorters"] = sorters
   ...linters
   // AIO
