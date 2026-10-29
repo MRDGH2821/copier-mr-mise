@@ -17,10 +17,7 @@
   },
   {
     "allow_concurrent_runs": false,
-    "args": [
-      "capabilities.yaml",
-      "./template/capabilities.yaml.jinja"
-    ],
+    "args": ["capabilities.yaml", "./template/capabilities.yaml.jinja"],
     "command": "meld",
     "hide": "on_success",
     "label": "diff: capabilities.yaml",
@@ -33,10 +30,7 @@
   },
   {
     "allow_concurrent_runs": false,
-    "args": [
-      "package.json",
-      "./template/package.json.jinja"
-    ],
+    "args": ["package.json", "./template/package.json.jinja"],
     "command": "meld",
     "hide": "on_success",
     "label": "diff: package.json",
@@ -49,10 +43,7 @@
   },
   {
     "allow_concurrent_runs": false,
-    "args": [
-      "./",
-      "./template/"
-    ],
+    "args": ["./", "./template/"],
     "command": "meld",
     "hide": "on_success",
     "label": "diff: template",
