@@ -36,6 +36,7 @@ jobs:
           branch: automation/mise-tool-updates
           commit-message: "build(mise): update tool versions"
           delete-branch: true
+          sign-commits: true
           title: "build(mise): update tool versions"
           token: ${{ secrets.GITHUB_TOKEN }}
 name: Mise Tool Updates
