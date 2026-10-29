@@ -89,6 +89,19 @@ _migrations:
       fi
     version: v0.16.0
     when: "{{ _stage == 'after' }}"
+  - command: |
+      if [ -e mise.toml ]; then
+        mv -b mise.toml .copier-migration-mise.toml
+      fi
+    version: v0.24.0
+    when: "{{ _stage == 'before' }}"
+  - command: |
+      if [ -e .copier-migration-mise.toml ]; then
+        mkdir -p .config/mise
+        mv -b .copier-migration-mise.toml .config/mise/config.toml
+      fi
+    version: v0.24.0
+    when: "{{ _stage == 'after' }}"
 _min_copier_version: 9.3.0
 _subdirectory: template
 _tasks:
