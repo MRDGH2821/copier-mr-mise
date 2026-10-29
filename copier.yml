@@ -99,6 +99,8 @@ _migrations:
       if [ -e .copier-migration-mise.toml ]; then
         mkdir -p .config/mise
         mv -b .copier-migration-mise.toml .config/mise/config.toml
+        rm -fr .mise/locks
+        rm -f mise.lock
       fi
     version: v0.24.0
     when: "{{ _stage == 'after' }}"
