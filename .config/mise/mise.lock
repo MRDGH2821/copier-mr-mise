@@ -325,7 +325,7 @@ url_api = "https://api.github.com/repos/cocogitto/cocogitto/releases/assets/3666
 
 [[tools.cspell]]
 version = "10.4.0"
-aube = { path = "locks/cspell/10.4.0", digest = "sha256:f7f230e5892993ec93ede1ed8ec90e777fa90a3668dd7ae587752c2f72afb26a" }
+aube = { path = "locks/cspell/10.4.0", digest = "sha256:c4b70dd92dfed744a4ebd80baae46e80b84da0746a53391bbb06afe42b61705f" }
 backend = "npm:cspell"
 specifiers = ["10.4.0"]
 
@@ -816,7 +816,7 @@ url_api = "https://api.github.com/repos/loeffel-io/ls-lint/releases/assets/64980
 
 [[tools.oxfmt]]
 version = "0.75.0"
-aube = { path = "locks/oxfmt/0.75.0", digest = "sha256:1d4f470a5dbba272218132db6ff9ba1911075d29dcd3253a0e02b4a5037a8a23" }
+aube = { path = "locks/oxfmt/0.75.0", digest = "sha256:ef5b827c78494795478d3f9fd2352df291b4650435ec4b445026fa44e74a974c" }
 backend = "npm:oxfmt"
 specifiers = ["0.75.0"]
 
