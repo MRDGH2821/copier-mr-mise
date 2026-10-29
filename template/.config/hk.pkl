@@ -137,7 +137,7 @@ steps = new Mapping<String, Step | Group> {
   ["sorters"] = sorters
   ...linters
   // AIO
-  ["oxfmt"] = Builtins.oxfmt
+  ["oxfmt"] = (Builtins.oxfmt) { depends = "sorters" }
 }
 
 hooks {
