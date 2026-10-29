@@ -4,13 +4,104 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
-## [Unreleased]
+## [0.24.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.23.0..v0.24.0) - 2026-10-29
 
 ### Bug Fixes
 
-- run file migrations before Copier removes renamed template paths
-- migrate legacy Yamllint and Prettier configs with Ryl and Oxfmt
-- retain converted Ryl and Oxfmt configs after template application
+- **(copier)** preserve legacy configuration on update - ([a4449e7](https://github.com/MRDGH2821/copier-mr-mise/commit/a4449e777ec925808b8cc7ad1e2ef994d3b83b3b)) - MRDGH2821
+- **(copier)** run Oxfmt migration with Bun - ([01c2d1f](https://github.com/MRDGH2821/copier-mr-mise/commit/01c2d1f1257eae2f934d311a94ea8984a34ee771)) - MRDGH2821
+- **(copier)** invoke migration tools directly through Mise - ([fccf58f](https://github.com/MRDGH2821/copier-mr-mise/commit/fccf58f59180b072021f0decd7482f441aa07e6b)) - MRDGH2821
+- **(copier)** preserve converted configs during update - ([da603f2](https://github.com/MRDGH2821/copier-mr-mise/commit/da603f2efd34ff6f5ffc702753a72173e7a425f8)) - MRDGH2821
+- **(copier)** read the uploaded Forgejo preview - ([ba96f5a](https://github.com/MRDGH2821/copier-mr-mise/commit/ba96f5ab1247b95898a0a9b570edfaa50ecd99ca)) - MRDGH2821
+- **(copier)** preserve mise.toml when the config path moves - ([25bd4e4](https://github.com/MRDGH2821/copier-mr-mise/commit/25bd4e4239156b5120c774d54a19a919ad970ebe)) - MRDGH2821
+- **(mise)** sync tool pins from the relocated config - ([89e6042](https://github.com/MRDGH2821/copier-mr-mise/commit/89e60426bb60697f58614f73882f9bb248d18513)) - MRDGH2821
+- **(mise)** drop the template-repo watch from generated config - ([931237c](https://github.com/MRDGH2821/copier-mr-mise/commit/931237c28889a563ac49e4337cb3aac94c834f7a)) - MRDGH2821
+- ensure oxfmt is formatting files - ([b3f4278](https://github.com/MRDGH2821/copier-mr-mise/commit/b3f42785ce060ecff89e239b0f4b5ce790ce3517)) - MRDGH2821
+- use correct file name - ([249ace4](https://github.com/MRDGH2821/copier-mr-mise/commit/249ace4d9b394428dc9d09c56a1668d4626e23d2)) - MRDGH2821
+
+### Documentation
+
+- **(copier)** condense capability guidance - ([4712cdf](https://github.com/MRDGH2821/copier-mr-mise/commit/4712cdf6127a444d828f033985df5cc1ab4546b1)) - MRDGH2821
+- **(mise)** point instructions at the relocated config - ([65a362f](https://github.com/MRDGH2821/copier-mr-mise/commit/65a362fe2f2ad63ea62c99950a7d6ff34c802aaf)) - MRDGH2821
+- explain mise dependency auto-install - ([5866edb](https://github.com/MRDGH2821/copier-mr-mise/commit/5866edbfc42f6c8ae6995aace2aff0506dfd1690)) - MRDGH2821
+- remove agent instruction sections from READMEs - ([c72b5e7](https://github.com/MRDGH2821/copier-mr-mise/commit/c72b5e79f85ebfaa958338bb16841a5075c0db6b)) - MRDGH2821
+- prefer source over mutable README context - ([3677b9d](https://github.com/MRDGH2821/copier-mr-mise/commit/3677b9d101961e8d7a6c339bdfb86af2115a20c5)) - MRDGH2821
+- add megalinter badge - ([6039aef](https://github.com/MRDGH2821/copier-mr-mise/commit/6039aef4a7b082a67148753d0e9e6fb4b311f1e6)) - MRDGH2821
+- document Copier update path behavior - ([8e5192f](https://github.com/MRDGH2821/copier-mr-mise/commit/8e5192f68aa40ecc700001b87cdcb6d72c942fd7)) - MRDGH2821
+- define AI artifact storage locations - ([b5b408f](https://github.com/MRDGH2821/copier-mr-mise/commit/b5b408f0713d775426cd34c735c9ee515cb74748)) - MRDGH2821
+
+### Features
+
+- **(copier)** unify AI support behind use_ai - ([4dbcebb](https://github.com/MRDGH2821/copier-mr-mise/commit/4dbcebb1b0bce077503259f7183eb43abbffa9f2)) - MRDGH2821
+- use mise deps properties - ([cbcca6a](https://github.com/MRDGH2821/copier-mr-mise/commit/cbcca6a781b1ca44160f4561322e2e99413e42dc)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(copier)** merge main while retaining capability optimizations - ([9e396dd](https://github.com/MRDGH2821/copier-mr-mise/commit/9e396dd66cb65ebd89765b5d111991b96dfd3ee5)) - MRDGH2821
+- **(copier)** remove redundant task - ([27759cc](https://github.com/MRDGH2821/copier-mr-mise/commit/27759ccb3908537f372892ff4df9f2c647a22c17)) - MRDGH2821
+- **(cspell)** update words - ([64903e5](https://github.com/MRDGH2821/copier-mr-mise/commit/64903e5d307ea223e1570d20fc401866fb1ea0dd)) - MRDGH2821
+- **(cspell)** stop ignoring the removed apm lock - ([f07490d](https://github.com/MRDGH2821/copier-mr-mise/commit/f07490dc2b03e1fd66f59871d5af0e0c28ed229a)) - MRDGH2821
+- **(hk)** ignore agent files form formatting - ([389782d](https://github.com/MRDGH2821/copier-mr-mise/commit/389782d7d7330465693840b0615db64e902ad7cc)) - MRDGH2821
+- **(hk)** stop excluding template files in generated projects - ([3938787](https://github.com/MRDGH2821/copier-mr-mise/commit/3938787809451cbd12169c456556ffc71314c3f1)) - MRDGH2821
+- **(hk)** update steps - ([27e06f6](https://github.com/MRDGH2821/copier-mr-mise/commit/27e06f658953fb94340c3ed8baa9b9e8fda54294)) - MRDGH2821
+- **(hk)** fix config - ([49b0e25](https://github.com/MRDGH2821/copier-mr-mise/commit/49b0e253e0b2bc5082b7f15770e1b527ba17d395)) - MRDGH2821
+- **(hk)** sync config - ([f20d487](https://github.com/MRDGH2821/copier-mr-mise/commit/f20d487d7663891acf7586bf2d674345ab4bad35)) - MRDGH2821
+- **(hk)** update config - ([c8cd4df](https://github.com/MRDGH2821/copier-mr-mise/commit/c8cd4df758a22bd12d712732efa28b4efa59933c)) - MRDGH2821
+- **(jscpd)** ignore agent instruction files - ([1942a01](https://github.com/MRDGH2821/copier-mr-mise/commit/1942a0152c4bef8979b2f4f0c8ab796b44ff764c)) - MRDGH2821
+- **(jscpd)** drop ignores that only applied to this template repo - ([3a6e931](https://github.com/MRDGH2821/copier-mr-mise/commit/3a6e93141e721f3df3d730cf3cce9879325a8bc2)) - MRDGH2821
+- **(mise)** attach the schema to the relocated config - ([2a782ed](https://github.com/MRDGH2821/copier-mr-mise/commit/2a782ed31bcb73d4f72fb64ee72310077f30b11c)) - MRDGH2821
+- **(mise)** update output list - ([024c286](https://github.com/MRDGH2821/copier-mr-mise/commit/024c2865dc8d65d12a751fa45a49e04b4cb3966d)) - MRDGH2821
+- **(zed)** diff the relocated mise config - ([92dc6c8](https://github.com/MRDGH2821/copier-mr-mise/commit/92dc6c83bdc96053b35b6af92204c9122da9438e)) - MRDGH2821
+- merge pull request #13 from MRDGH2821/MRDGH2821/split-agents.md - ([bf71d25](https://github.com/MRDGH2821/copier-mr-mise/commit/bf71d256f2fc7bddd32e9c50eb4674f9f471f9aa)) - Mihir Rabade
+- merge pull request #14 from MRDGH2821/automation/mise-tool-updates - ([ee96ee1](https://github.com/MRDGH2821/copier-mr-mise/commit/ee96ee1597a08ad2cec8da66b2ae42a0dad66fb1)) - Mihir Rabade
+- merge pull request #16 from MRDGH2821/mrdgh2821/docs/mise-lockfile-hooks - ([fcb543b](https://github.com/MRDGH2821/copier-mr-mise/commit/fcb543b6e1e1375335086a32665943fe2af3f1ca)) - Mihir Rabade
+- ignore agents.md from formatting - ([aedadb2](https://github.com/MRDGH2821/copier-mr-mise/commit/aedadb2b2b6cae66b1202cd2cd64aa511c7eebfc)) - MRDGH2821
+- add sorting directives - ([2c63f32](https://github.com/MRDGH2821/copier-mr-mise/commit/2c63f3233f38d61af0950dfaaad34750b4efb0cb)) - MRDGH2821
+- merge pull request #15 from MRDGH2821/mrdgh2821/refactor/conditional-capability-guidance - ([b3e6536](https://github.com/MRDGH2821/copier-mr-mise/commit/b3e6536f6f64d427b16f983c61c0fa20c807323b)) - Mihir Rabade
+- add lychee ignore config - ([786e341](https://github.com/MRDGH2821/copier-mr-mise/commit/786e341d887779b93ecf4e5abeb76d6acce362d8)) - MRDGH2821
+- add v8rignore - ([e1fc6bd](https://github.com/MRDGH2821/copier-mr-mise/commit/e1fc6bdb44e8c08d55bfe22555e114a7986b4b6a)) - MRDGH2821
+- merge pull request #17 from MRDGH2821/MRDGH2821/fix/megalinter - ([a9bc1ec](https://github.com/MRDGH2821/copier-mr-mise/commit/a9bc1ec943edefadf080c80f08eaa7c130a48869)) - Mihir Rabade
+- add schema url & reorder plugins - ([7244b9e](https://github.com/MRDGH2821/copier-mr-mise/commit/7244b9e823d974c5a063769fcf7dc5f427a43b96)) - MRDGH2821
+- unpin versions - ([3da64a5](https://github.com/MRDGH2821/copier-mr-mise/commit/3da64a535e8d6670b5ade4f541c508aa6d485167)) - MRDGH2821
+- merge pull request #20 from MRDGH2821/MRDGH2821/fix/mise-toml-migration - ([fe2fad9](https://github.com/MRDGH2821/copier-mr-mise/commit/fe2fad9a73f24f5654e7da3ea99d65f73628c782)) - Mihir Rabade
+- update refs - ([14048cf](https://github.com/MRDGH2821/copier-mr-mise/commit/14048cfde06d43b116b579dda78bb1ecd8c2625f)) - MRDGH2821
+- update deps - ([7c5dc97](https://github.com/MRDGH2821/copier-mr-mise/commit/7c5dc97226a116000095bd1ddd7c946ef311fa2f)) - MRDGH2821
+
+### Refactoring
+
+- **(copier)** defer event-specific capability guidance - ([17d6cd7](https://github.com/MRDGH2821/copier-mr-mise/commit/17d6cd73ed033a3628b9310918c3e5b8789be855)) - MRDGH2821
+- **(copier)** remove alwaysApply flags - ([040e5bf](https://github.com/MRDGH2821/copier-mr-mise/commit/040e5bf709e904795cede2aa9b3fbe919fb3f983)) - MRDGH2821
+- **(copier)** defer root event-specific rules - ([df7046e](https://github.com/MRDGH2821/copier-mr-mise/commit/df7046ef137068f2f7260a5d77c5a583dcd82449)) - MRDGH2821
+- move mise config in .config - ([1787ed7](https://github.com/MRDGH2821/copier-mr-mise/commit/1787ed727e1f932107455be3268f1c5f7a14b4ac)) - MRDGH2821
+
+### Style
+
+- format file - ([f6df4f7](https://github.com/MRDGH2821/copier-mr-mise/commit/f6df4f733534340c343c2e5a8cf9ce5d0f401df2)) - MRDGH2821
+- format files - ([02d55c0](https://github.com/MRDGH2821/copier-mr-mise/commit/02d55c0c1ff43ec0af626cfb099aaf1fbf5affb4)) - MRDGH2821
+- format files - ([16bdde4](https://github.com/MRDGH2821/copier-mr-mise/commit/16bdde408e3fb57a7652f74557602509b9545d2c)) - MRDGH2821
+- format files & fix linter errors - ([d2ea950](https://github.com/MRDGH2821/copier-mr-mise/commit/d2ea9508982b90426b9c4e163f3ab62ed7614122)) - MRDGH2821
+- format files - ([7733217](https://github.com/MRDGH2821/copier-mr-mise/commit/7733217c0c0ba6c32bf1d3b4d6ed48e8fdd8ea69)) - MRDGH2821
+- format files - ([518cfae](https://github.com/MRDGH2821/copier-mr-mise/commit/518cfae41e9388150b2a58cc08024ec4d4eccd4a)) - MRDGH2821
+
+### Build
+
+- **(mise)** update tool versions - ([b6ee8e1](https://github.com/MRDGH2821/copier-mr-mise/commit/b6ee8e11f00f7904cfbc13fa998384666dd83e70)) - MRDGH2821
+- **(mise)** mirror lockfile auto-prune setting - ([b8edffc](https://github.com/MRDGH2821/copier-mr-mise/commit/b8edffc46f7966802cc691cdc607ccf0f3ba3d60)) - MRDGH2821
+- **(mise)** update versions - ([1356bb9](https://github.com/MRDGH2821/copier-mr-mise/commit/1356bb9e019adf09171afefea8838dd2b7def581)) - MRDGH2821
+- **(mise)** update versions - ([8146e28](https://github.com/MRDGH2821/copier-mr-mise/commit/8146e289524fd14da219cf8df83007eb984b2c58)) - MRDGH2821
+- **(mise)** enable experimental mode - ([5c37d65](https://github.com/MRDGH2821/copier-mr-mise/commit/5c37d65eb0258e56f9e7b40baf7c255e61312660)) - MRDGH2821
+- **(mise)** update lock files - ([1e02540](https://github.com/MRDGH2821/copier-mr-mise/commit/1e02540c1a850c2b8397012661683cf11ea3fe62)) - MRDGH2821
+- **(mise)** update versions - ([e0e10e5](https://github.com/MRDGH2821/copier-mr-mise/commit/e0e10e53fc960d46aaa0ccbd7d949944108c17d6)) - MRDGH2821
+- **(mise)** update lock files - ([70568f5](https://github.com/MRDGH2821/copier-mr-mise/commit/70568f58f9eef28d320af6ea2702eff3133f4df9)) - MRDGH2821
+- update versions - ([bb78810](https://github.com/MRDGH2821/copier-mr-mise/commit/bb788105f9bdd98bd4e8b65e2e70219e1555fa77)) - MRDGH2821
+- update lock file - ([0b183ad](https://github.com/MRDGH2821/copier-mr-mise/commit/0b183ad3391786de83fd39aafacc0e976514f6cf)) - MRDGH2821
+
+### Ci
+
+- **(github)** stage the relocated mise config on tool updates - ([3f51acf](https://github.com/MRDGH2821/copier-mr-mise/commit/3f51acfa1b559d1c4a922037b1ed09a6bf10a72f)) - MRDGH2821
+- **(mise)** key the GitLab cache on the relocated config - ([94afa41](https://github.com/MRDGH2821/copier-mr-mise/commit/94afa416670da608a861a08af596848becccd6ef)) - MRDGH2821
+- update refs - ([553460b](https://github.com/MRDGH2821/copier-mr-mise/commit/553460be470a70a6f177985db206602e7cb28bf8)) - MRDGH2821
+- update refs - ([4274c4b](https://github.com/MRDGH2821/copier-mr-mise/commit/4274c4b9e705ca7902b80eb70d389b3ed0a0faa4)) - MRDGH2821
 
 ---
 
