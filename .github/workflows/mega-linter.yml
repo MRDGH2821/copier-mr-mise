@@ -119,6 +119,7 @@ jobs:
         with:
           commit-message: "chore(megalinter): apply linters automatic fixes"
           labels: bot
+          sign-commits: true
           title: "chore(megalinter): apply linters automatic fixes"
           # SECURITY NOTE: see the warning on the checkout step above —
           # using `secrets.PAT` is NOT recommended for security reasons.
