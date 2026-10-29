@@ -3,7 +3,8 @@
 ### Setup: skills and MCP
 
 Prefer an existing `mise run <task>` over an ad-hoc command. Inspect
-`mise.toml` and command `--help` output before assuming a task or option exists.
+`.config/mise/config.toml` and command `--help` output before assuming a
+task or option exists.
 
 Consult tool documentation and existing config examples before asking the user
 about configuration.

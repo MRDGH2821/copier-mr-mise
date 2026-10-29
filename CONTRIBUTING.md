@@ -38,7 +38,8 @@ mise install
 mise run prepare
 ```
 
-Read `mise.toml` before trusting it. Installation runs the configured tool hooks.
+Read `.config/mise/config.toml` before trusting it. Installation runs the
+configured tool hooks.
 The `prepare` task installs the package dependencies with Bun.
 The tool installation also configures Git hooks with hk.
 
@@ -130,7 +131,7 @@ mise run check
 
 The `fmt` task formats the repository. Review its diff before committing.
 The `check` task runs hk checks and validates commit history with cocogitto.
-These tasks are defined in `mise.toml`.
+These tasks are defined in `.config/mise/config.toml`.
 
 For a smaller formatting change, pass the affected files to
 `mise exec -- hk fix --no-stage`. Agent-specific guidance for scoped checks

@@ -1,6 +1,6 @@
-amends "package://github.com/jdx/hk/releases/download/v2.8.1/hk@2.8.1#/Config.pkl"
+amends "package://github.com/jdx/hk/releases/download/v2.9.0/hk@2.9.0#/Config.pkl"
 
-import "package://github.com/jdx/hk/releases/download/v2.8.1/hk@2.8.1#/Builtins.pkl"
+import "package://github.com/jdx/hk/releases/download/v2.9.0/hk@2.9.0#/Builtins.pkl"
 
 local sorters = new Group {
   steps {
@@ -73,8 +73,8 @@ local linters = new Mapping<String, Step> {
   // Config Files
   ["pkl"] = Builtins.pkl
   ["pkl_format"] = Builtins.pkl_format
-  ["tombi"] = Builtins.tombi
-  ["tombi_format"] = (Builtins.tombi_format) { depends = List("sorters") }
+  ["tombi"] = (Builtins.tombi) { depends = "tombi_format" }
+  ["tombi_format"] = Builtins.tombi_format
 
   // Misc
   ["check_merge_conflict"] = Builtins.check_merge_conflict
@@ -92,7 +92,7 @@ local linters = new Mapping<String, Step> {
 
   // Text
   ["fix_smart_quotes"] = Builtins.fix_smart_quotes
-  ["rumdl"] = (Builtins.rumdl) { depends = List("rumdl-format") }
+  ["rumdl"] = (Builtins.rumdl) { depends = List("rumdl_format") }
   ["rumdl_format"] = Builtins.rumdl_format
   ["ryl"] = Builtins.ryl
   ["ryl_markdown"] = Builtins.ryl_markdown
@@ -132,11 +132,12 @@ exclude =
     "CLAUDE.md"
     // keep-sorted end
   )
-steps {
+
+steps = new Mapping<String, Step | Group> {
   ["sorters"] = sorters
   ...linters
   // AIO
-  ["oxfmt"] = (Builtins.oxfmt) { depends = "sorters" }
+  ["oxfmt"] = Builtins.oxfmt
 }
 
 hooks {

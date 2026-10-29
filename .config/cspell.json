@@ -12,7 +12,6 @@
     ".mise",
     ".vscode",
     ".zed",
-    "apm.lock.yaml",
     "go.sum",
     "megalinter",
     "megalinter-reports",
@@ -69,12 +68,11 @@
     "stefanzweifel",
     "templatify",
     "Tera",
-    "Tombi",
+    "tombi",
     "topo",
     "treefmt",
     "Typst",
     "venv",
-    "vercel",
     "yamlfix",
     "zizmor"
   ]

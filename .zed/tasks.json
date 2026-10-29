@@ -2,12 +2,12 @@
   {
     "allow_concurrent_runs": false,
     "args": [
-      ".config/mise/mise.toml",
-      "./template/.config/mise/mise.toml.jinja"
+      ".config/mise/config.toml",
+      "./template/.config/mise/config.toml.jinja"
     ],
     "command": "meld",
     "hide": "on_success",
-    "label": "diff: mise.toml",
+    "label": "diff: mise config",
     "reveal": "always",
     "reveal_target": "dock",
     "save": "all",
@@ -17,7 +17,10 @@
   },
   {
     "allow_concurrent_runs": false,
-    "args": ["capabilities.yaml", "./template/capabilities.yaml.jinja"],
+    "args": [
+      "capabilities.yaml",
+      "./template/capabilities.yaml.jinja"
+    ],
     "command": "meld",
     "hide": "on_success",
     "label": "diff: capabilities.yaml",
@@ -30,7 +33,10 @@
   },
   {
     "allow_concurrent_runs": false,
-    "args": ["package.json", "./template/package.json.jinja"],
+    "args": [
+      "package.json",
+      "./template/package.json.jinja"
+    ],
     "command": "meld",
     "hide": "on_success",
     "label": "diff: package.json",
@@ -43,7 +49,10 @@
   },
   {
     "allow_concurrent_runs": false,
-    "args": ["./", "./template/"],
+    "args": [
+      "./",
+      "./template/"
+    ],
     "command": "meld",
     "hide": "on_success",
     "label": "diff: template",

@@ -16,13 +16,11 @@
     "*.lock",
     ".agents/research/**",
     "AGENTS.md",
-    "apm.lock.yaml",
     "CLAUDE.md",
     "go.sum",
     "npm-shrinkwrap.json",
     "package-lock.json",
-    "pnpm-lock.yaml",
-    "template/**"
+    "pnpm-lock.yaml"
   ],
   "reporters": ["html", "markdown"],
   "threshold": 0
