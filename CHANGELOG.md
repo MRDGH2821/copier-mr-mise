@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.25.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.24.1..v0.25.0) - 2026-11-03
+
+### Features
+
+- **(mise)** remove ruff, add python - ([4e5c8da](https://github.com/MRDGH2821/copier-mr-mise/commit/4e5c8da8beb00a492df71e8ae53731fe6752a74d)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update words - ([21b1bf6](https://github.com/MRDGH2821/copier-mr-mise/commit/21b1bf6ea57787dbf7c7294979966536467bd714)) - MRDGH2821
+- **(hk)** update versions - ([07d4b84](https://github.com/MRDGH2821/copier-mr-mise/commit/07d4b848792a121b4f79fc125f39ceddcfa8166c)) - MRDGH2821
+- consolidate agent ignores - ([f973274](https://github.com/MRDGH2821/copier-mr-mise/commit/f973274738b40748c6a14f00735bc6198020d5b4)) - MRDGH2821
+- merge remote-tracking branch 'origin/automation/mise-tool-updates' - ([4cf7c6c](https://github.com/MRDGH2821/copier-mr-mise/commit/4cf7c6cab42cc06e103cd7dd5fa81a2d50fe7799)) - MRDGH2821
+- merge pull request #27 from MRDGH2821/automation/mise-tool-updates - ([be912d3](https://github.com/MRDGH2821/copier-mr-mise/commit/be912d3b28b1a14d2832b2b8c202013825d977cb)) - Mihir Rabade
+
+### Build
+
+- **(mise)** use pypi instead of pipx - ([79dbaa1](https://github.com/MRDGH2821/copier-mr-mise/commit/79dbaa15fc36149fd9cc7852f96100245f06ee39)) - MRDGH2821
+- **(mise)** update tool versions - ([35eb3ce](https://github.com/MRDGH2821/copier-mr-mise/commit/35eb3ce454f53754a6453e310f0dfe714156a35e)) - github-actions[bot]
+- **(mise)** update lockfiles - ([fc33911](https://github.com/MRDGH2821/copier-mr-mise/commit/fc33911df8a9ee3ece0624d7b5227c3acc2f8c59)) - MRDGH2821
+- **(mise)** update tool versions - ([caf534f](https://github.com/MRDGH2821/copier-mr-mise/commit/caf534feb020b703112c0e34cdfa2ba0de6ecb67)) - github-actions[bot]
+- **(mise)** update tools - ([19f62ac](https://github.com/MRDGH2821/copier-mr-mise/commit/19f62acfa115868a201f0ad4fd1b135164339888)) - MRDGH2821
+
+---
+
 ## [0.24.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.24.0..v0.24.1) - 2026-10-29
 
 ### Bug Fixes
