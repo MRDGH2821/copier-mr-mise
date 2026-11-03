@@ -3,13 +3,15 @@ auto = true
 
 [deps.capabilities]
 description = "Install Agent plugins"
+# tombi: format.rules.array-values-order = "ascending"
 outputs = [
-  "capabilities.lock",
   ".agents/skills/",
-  ".codex/skills/",
-  ".claude/skills/",
-  ".cursor/skills/",
+  ".claude/",
+  ".codex/",
+  ".cursor/",
+  ".kiro/",
   ".mcp.json",
+  "capabilities.lock",
   "opencode.json"
 ]
 run = "capa install --yes"
@@ -63,9 +65,9 @@ git-cliff = "2.14.2"
 hk = { version = "2.9.0", workflow = "release.yml" }
 ls-lint = "2.3.2"
 oxfmt = "0.75.0"
-"pipx:lorenzwalthert/gitignore-tidy" = "latest"
-"pipx:toml-sort" = "0.25.0"
 pkl = "0.32.2"
+"pypi:lorenzwalthert/gitignore-tidy" = "latest"
+"pypi:toml-sort" = "0.25.0"
 ruff = "0.17.3"
 rumdl = "0.3.2"
 tombi = "1.9.7"
