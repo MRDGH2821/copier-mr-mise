@@ -3,6 +3,7 @@ auto = true
 
 {% if use_ai %}
 [deps.capabilities]
+auto = true
 description = "Install Agent plugins"
 # tombi: format.rules.array-values-order = "ascending"
 outputs = [
@@ -28,8 +29,16 @@ sources = [
 HK_MISE = 1
 
 [hooks]
-# Automatically install/update hooks when tools are installed
-postinstall = ["hk install --mise"]
+# Automatically install/update git hooks when tools are installed.
+{% if use_ai %}
+# Then reconcile agent capabilities — capa is installed as a mise tool, so it
+# is guaranteed present by the time postinstall runs.
+{% endif %}
+postinstall = ["hk install --mise",
+{% if use_ai %}
+{ task = "ai-setup" }
+{% endif %}
+]
 
 [settings]
 experimental = true
