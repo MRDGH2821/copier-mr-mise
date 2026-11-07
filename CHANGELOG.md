@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.25.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.25.0..v0.25.1) - 2026-11-07
+
+### Bug Fixes
+
+- **(hk)** ensure oxfmt runs last exclusively - ([7aefaf7](https://github.com/MRDGH2821/copier-mr-mise/commit/7aefaf7a68ac941f5742389edcc4b027731181f2)) - MRDGH2821
+- **(mise)** keep postinstall comment in sync and surviving template render - ([b3bef82](https://github.com/MRDGH2821/copier-mr-mise/commit/b3bef82a31129fc003ca48d46ef1ec75b024400d)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- sync template - ([7324c35](https://github.com/MRDGH2821/copier-mr-mise/commit/7324c350a102356b20e7d26efef9669fd7d2d18f)) - MRDGH2821
+- remove opencode, add kiro-cli - ([d6a52d7](https://github.com/MRDGH2821/copier-mr-mise/commit/d6a52d7f3a66541a603b9728b2975c3ccabfc342)) - MRDGH2821
+
+### Style
+
+- **(mise)** inline the use_ai guard in tasks.prepare run array - ([2997b6d](https://github.com/MRDGH2821/copier-mr-mise/commit/2997b6d432329261287eafb4ce2ce4e3500ab4df)) - MRDGH2821
+
+### Build
+
+- **(mise)** auto-run capa install via deps and postinstall hook - ([35e9417](https://github.com/MRDGH2821/copier-mr-mise/commit/35e9417bb56ba2bd03b9aaf3f274c54aae06d1b1)) - MRDGH2821
+- update versions - ([11b3d4d](https://github.com/MRDGH2821/copier-mr-mise/commit/11b3d4d4f28af53c15d4dd5fa9eb54b5ab829ed0)) - MRDGH2821
+
+---
+
 ## [0.25.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.24.1..v0.25.0) - 2026-11-03
 
 ### Features
