@@ -30,15 +30,11 @@ HK_MISE = 1
 
 [hooks]
 # Automatically install/update git hooks when tools are installed.
-{% if use_ai %}
+{%- if use_ai %}
 # Then reconcile agent capabilities — capa is installed as a mise tool, so it
 # is guaranteed present by the time postinstall runs.
-{% endif %}
-postinstall = ["hk install --mise",
-{% if use_ai %}
-{ task = "ai-setup" }
-{% endif %}
-]
+{%- endif %}
+postinstall = ["hk install --mise"{% if use_ai %}, { task = "ai-setup" }{% endif %}]
 
 [settings]
 experimental = true
