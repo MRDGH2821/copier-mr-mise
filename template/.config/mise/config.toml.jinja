@@ -57,11 +57,7 @@ run = ["hk fix --all"]
 
 [tasks.prepare]
 interactive = true
-run = ["bun install",
-{% if use_ai %}
-{ task = "ai-setup" }
-{% endif %}
-]
+run = ["bun install"{% if use_ai %}, { task = "ai-setup" }{% endif %}]
 
 [tools]
 "aqua:google/keep-sorted" = "0.10.0"
