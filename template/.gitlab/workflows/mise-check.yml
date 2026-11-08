@@ -13,7 +13,7 @@ detect-arch:
       esac > arch.env
 mise-check:
   before_script:
-    - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates tar
+    - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates tar libatomic1 git
   cache:
     key:
       files:
