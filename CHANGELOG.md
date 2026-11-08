@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.25.2](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.25.1..v0.25.2) - 2026-11-08
+
+### Bug Fixes
+
+- add necessary packages - ([c9ab904](https://github.com/MRDGH2821/copier-mr-mise/commit/c9ab904e991bf80aa576c8a3f499898f74ce5f7b)) - MRDGH2821
+
+---
+
 ## [0.25.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.25.0..v0.25.1) - 2026-11-07
 
 ### Bug Fixes
