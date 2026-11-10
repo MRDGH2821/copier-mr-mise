@@ -41,3 +41,10 @@ Use the default triage labels. See `docs/agents/triage-labels.md`.
 ### Domain docs
 
 Use a single-context glossary and ADR layout. See `docs/agents/domain.md`.
+
+## Pull requests
+
+Before creating a pull request, check that the current branch follows the
+branch-naming strategy in `CONTRIBUTING.md` (`#branch-naming-strategy`). If it
+does not, tell the user, rename the branch to a compliant name, then create the
+pull request.
