@@ -12,7 +12,7 @@ editable sources outside `.agents/rules/`; Capa prunes that generated directory.
 
 Read the relevant rule before acting:
 
-- Branching or committing: `.config/capabilities/rules/commits.md`.
+- Branching, committing, or creating a pull request: `.config/capabilities/rules/commits.md`.
 - For an AI-assisted commit, also read `.config/capabilities/rules/ai-co-author.md`.
 - Recording AI-assisted work: `.config/capabilities/rules/ai-logs.md`.
 - Reviewing on behalf of a human: `.config/capabilities/rules/ai-reviews.md`.
@@ -27,10 +27,3 @@ manager, update relevant configuration and lockfiles, and document installation.
 
 If no relevant test or check exists, verify behavior directly. Update
 documentation when setup or behavior changes.
-
-## Pull requests
-
-Before creating a pull request, check that the current branch follows the
-branch-naming strategy in `CONTRIBUTING.md` (`#branch-naming-strategy`). If it
-does not, tell the user, rename the branch to a compliant name, then create the
-pull request.

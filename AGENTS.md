@@ -26,27 +26,6 @@ not installed:
 
 MCP servers should be accessible via Capa MCP.
 
-## Agent skills
-
-### Issue tracker
-
-GitHub Issues is the issue tracker. See `docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-Use the default triage labels. See `docs/agents/triage-labels.md`.
-
-### Domain docs
-
-Use a single-context glossary and ADR layout. See `docs/agents/domain.md`.
-
-## Pull requests
-
-Before creating a pull request, check that the current branch follows the
-branch-naming strategy in `CONTRIBUTING.md` (`#branch-naming-strategy`). If it
-does not, tell the user, rename the branch to a compliant name, then create the
-pull request.
-
 <!-- capa:start:rule:engineering -->
 ## Engineering Guidelines
 
@@ -65,6 +44,10 @@ pull request.
 
 Before creating a branch, follow the branch naming strategy in the project-root
 `CONTRIBUTING.md` (`#branch-naming-strategy`).
+
+Before creating a pull request, check that the current branch follows the
+branch-naming strategy. If it does not, tell the user, rename the branch to a
+compliant name, then create the pull request.
 
 ### Commit Messages
 
@@ -90,7 +73,7 @@ editable sources outside `.agents/rules/`; Capa prunes that generated directory.
 
 Read the relevant rule before acting:
 
-- Branching or committing: `.config/capabilities/rules/commits.md`.
+- Branching, committing, or creating a pull request: `.config/capabilities/rules/commits.md`.
 - For an AI-assisted commit, also read `.config/capabilities/rules/ai-co-author.md`.
 - Recording AI-assisted work: `.config/capabilities/rules/ai-logs.md`.
 - Reviewing on behalf of a human: `.config/capabilities/rules/ai-reviews.md`.
@@ -105,27 +88,6 @@ manager, update relevant configuration and lockfiles, and document installation.
 
 If no relevant test or check exists, verify behavior directly. Update
 documentation when setup or behavior changes.
-
-## Agent skills
-
-### Issue tracker
-
-GitHub Issues is the issue tracker. See `docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-Use the default triage labels. See `docs/agents/triage-labels.md`.
-
-### Domain docs
-
-Use a single-context glossary and ADR layout. See `docs/agents/domain.md`.
-
-## Pull requests
-
-Before creating a pull request, check that the current branch follows the
-branch-naming strategy in `CONTRIBUTING.md` (`#branch-naming-strategy`). If it
-does not, tell the user, rename the branch to a compliant name, then create the
-pull request.
 <!-- capa:end:__base__ -->
 
 <!-- capa:start:repository-context -->
@@ -175,6 +137,22 @@ Keep common policies in `.config/capabilities/rules/` and `template/.config/capa
 
 - Test template rendering with Copier when template files change
 <!-- capa:end:repository-context -->
+
+<!-- capa:start:agent-skills -->
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues is the issue tracker. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the default triage labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Use a single-context glossary and ADR layout. See `docs/agents/domain.md`.
+<!-- capa:end:agent-skills -->
 
 <!-- capa:start:rule:karpathy-guidelines -->
 ---
