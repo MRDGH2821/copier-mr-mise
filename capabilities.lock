@@ -1,6 +1,6 @@
 version: 1
 generator: capa@2.4.0
-generatedAt: '2026-10-29T20:22:52.255Z'
+generatedAt: '2026-11-10T20:18:18.933Z'
 skills:
   - id: atomic-commits
     source: github
@@ -40,7 +40,7 @@ skills:
     skillName: git-commit
     requestedVersion: null
     requestedRef: null
-    resolvedRef: b6483db44fb602654bca6a097185fcaddb305f97
+    resolvedRef: 227949a7542a55d2155c00e7cdb998d9a0fee4f3
     resolvedVersion: null
 plugins:
   - id: mattpocock-skills
@@ -61,10 +61,10 @@ plugins:
     requestedSearchName: null
     requestedVersion: null
     requestedRef: null
-    resolvedRef: 9949bad031045f366be2467e00e8371a7328a2e2
-    resolvedVersion: v10.1.0
+    resolvedRef: f2fe8c1cba37091848df3e524066c8c23ef353ed
+    resolvedVersion: v10.2.0
     manifestName: megalinter
-    manifestVersion: 1.0.5
+    manifestVersion: 1.0.27
   - id: paad
     source: github
     repo: Ovid/paad
@@ -72,10 +72,10 @@ plugins:
     requestedSearchName: null
     requestedVersion: null
     requestedRef: null
-    resolvedRef: 980e0d63bd61408326babe0f4d2f50a5b10cd5fe
+    resolvedRef: b57ee4201f1bff94b01dbb6ca40f1ab5323f7602
     resolvedVersion: null
     manifestName: paad
-    manifestVersion: 2.0.2
+    manifestVersion: 2.1.0
   - id: superpowers
     source: github
     repo: obra/superpowers
@@ -83,8 +83,8 @@ plugins:
     requestedSearchName: null
     requestedVersion: null
     requestedRef: null
-    resolvedRef: 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b
-    resolvedVersion: v7.0.1
+    resolvedRef: 22f0b463e7a5e579904dd6211a520321035526f7
+    resolvedVersion: v7.0.2
     manifestName: superpowers
-    manifestVersion: 7.0.1
+    manifestVersion: 7.0.2
 hooks: []
