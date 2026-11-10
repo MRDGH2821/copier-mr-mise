@@ -17,6 +17,19 @@
   },
   {
     "allow_concurrent_runs": false,
+    "args": [".config/hk.pkl", "./template/.config/hk.pkl.jinja"],
+    "command": "meld",
+    "hide": "on_success",
+    "label": "diff: hk config",
+    "reveal": "always",
+    "reveal_target": "dock",
+    "save": "all",
+    "shell": "system",
+    "show_command": true,
+    "show_summary": true
+  },
+  {
+    "allow_concurrent_runs": false,
     "args": ["capabilities.yaml", "./template/capabilities.yaml.jinja"],
     "command": "meld",
     "hide": "on_success",
