@@ -5,6 +5,15 @@ agents:
     - id: template-context
       path: .config/capabilities/instructions/template.md
       type: local
+{% if use_taste_skill %}
+    - id: ui-design
+      type: inline
+      content: |
+        ## UI design
+
+        When creating or modifying user interfaces, read and follow the project's
+        `DESIGN.md`. If it does not exist, suggest creating one to the user.
+{% endif %}
   base:
     path: .config/capabilities/instructions/project.md
     type: local
