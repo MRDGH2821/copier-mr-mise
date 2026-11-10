@@ -127,6 +127,7 @@ exclude =
   )
 
 steps = new Mapping<String, Step | Group> {
+  ["no_commit_to_branch"] = Builtins.no_commit_to_branch
   ["sorters"] = sorters
   ...linters
   // AIO
