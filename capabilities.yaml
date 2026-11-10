@@ -5,6 +5,9 @@ agents:
     - id: repository-context
       path: .config/capabilities/instructions/repository.md
       type: local
+    - id: agent-skills
+      path: .config/capabilities/instructions/agent-skills.md
+      type: local
   base:
     path: template/.config/capabilities/instructions/project.md
     type: local
