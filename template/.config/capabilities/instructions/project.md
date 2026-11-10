@@ -27,3 +27,17 @@ manager, update relevant configuration and lockfiles, and document installation.
 
 If no relevant test or check exists, verify behavior directly. Update
 documentation when setup or behavior changes.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues is the issue tracker. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the default triage labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Use a single-context glossary and ADR layout. See `docs/agents/domain.md`.
