@@ -1,6 +1,6 @@
-amends "package://github.com/jdx/hk/releases/download/v2.11.1/hk@2.11.1#/Config.pkl"
+amends "package://github.com/jdx/hk/releases/download/v2.12.0/hk@2.12.0#/Config.pkl"
 
-import "package://github.com/jdx/hk/releases/download/v2.11.1/hk@2.11.1#/Builtins.pkl"
+import "package://github.com/jdx/hk/releases/download/v2.12.0/hk@2.12.0#/Builtins.pkl"
 
 {% raw %}
 local sorters = new Group {
@@ -38,13 +38,13 @@ local sorters = new Group {
         """
     }
     ["keep-sorted"] {
-      check = "keep-sorted --mode lint {{ files }}"
-      fix = "keep-sorted --mode fix {{ files }}"
+      check = "keep-sorted --mode lint {{files}}"
+      fix = "keep-sorted --mode fix {{files}}"
     }
     ["toml-sort"] {
-      check = "toml-sort --check --sort-table-keys --sort-inline-tables {{ files }}"
+      check = "toml-sort --check --sort-table-keys --sort-inline-tables {{files}}"
       exclude = List("**/tombi.toml")
-      fix = "toml-sort --in-place --sort-table-keys --sort-inline-tables {{ files }}"
+      fix = "toml-sort --in-place --sort-table-keys --sort-inline-tables {{files}}"
       types = List("toml")
     }
     ["key-sort"] {
@@ -59,8 +59,8 @@ local sorters = new Group {
       types = List("json")
     }
     ["gitignore-tidy"] {
-      check = "gitignore-tidy {{ files }}"
-      fix = "gitignore-tidy {{ files }}"
+      check = "gitignore-tidy {{files}}"
+      fix = "gitignore-tidy {{files}}"
       glob = List("**/.*ignore", ".*ignore")
     }
   }
@@ -82,7 +82,7 @@ local linters = new Mapping<String, Step> {
   ["check_shebang_scripts_are_executable"] = Builtins.check_shebang_scripts_are_executable
   ["check-placeholders"] {
     check =
-      "if grep -EIn '(<placeholder>|CHANGEME|FILL_ME_IN|NOCOMMIT)' {{ files }}; then false; else test $? -eq 1; fi"
+      "if grep -EIn '(<placeholder>|CHANGEME|FILL_ME_IN|NOCOMMIT)' {{files}}; then false; else test $? -eq 1; fi"
     exclude = List("template/**", ".config/hk.pkl", ".config/cspell.json")
   }
   ["ls_lint"] = Builtins.ls_lint
@@ -94,8 +94,8 @@ local linters = new Mapping<String, Step> {
   ["ryl"] = Builtins.ryl
   ["ryl_markdown"] = Builtins.ryl_markdown
   ["sort-markdown-tables"] {
-    check = "smt --check {{ files }}"
-    fix = "smt --in-place {{ files }}"
+    check = "smt --check {{files}}"
+    fix = "smt --in-place {{files}}"
     types = List("markdown")
   }
 
@@ -116,7 +116,7 @@ local linters = new Mapping<String, Step> {
 
   // Spell Check
   ["cspell"] {
-    check = "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{ files }}"
+    check = "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{files}}"
   }
   ["typos"] = Builtins.typos
 }
@@ -151,7 +151,7 @@ hooks {
       ["cocogitto_commit_msg"] = Builtins.cocogitto_commit_msg
       ["cspell"] {
         check =
-          "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{ commit_msg_file }}"
+          "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{commit_msg_file}}"
       }
       ["typos"] = Builtins.typos
     }
