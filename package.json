@@ -1,6 +1,6 @@
 {
   "name": "copier-mr-mise",
-  "version": "0.26.0",
+  "version": "0.26.1",
   "license": "MIT",
   "scripts": {
     "fmt": "oxfmt",

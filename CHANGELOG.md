@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.26.1](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.26.0..v0.26.1) - 2026-11-11
+
+### Bug Fixes
+
+- remove opencode - ([263e8bd](https://github.com/MRDGH2821/copier-mr-mise/commit/263e8bd41321506d8832a0aa978200a242d9b354)) - MRDGH2821
+
+### Documentation
+
+- fix reference - ([f6a84af](https://github.com/MRDGH2821/copier-mr-mise/commit/f6a84af5f7969b3f0f50d7ba45431a39a3515882)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- merge pull request #30 from MRDGH2821/chore/release - ([c7bfe1b](https://github.com/MRDGH2821/copier-mr-mise/commit/c7bfe1b7e40e62506fad3f39dcfea51eb0f627ae)) - Mihir Rabade
+- refresh lockfile - ([dfb4914](https://github.com/MRDGH2821/copier-mr-mise/commit/dfb49148333ae158827fedf759fc49a93a2a13ce)) - MRDGH2821
+
+### Refactoring
+
+- **(hk)** put linters in groups - ([8a6f375](https://github.com/MRDGH2821/copier-mr-mise/commit/8a6f3759a540bdd29d32b1434fe75d0e3f8e271c)) - MRDGH2821
+- change yamllint to ryl - ([aea8e42](https://github.com/MRDGH2821/copier-mr-mise/commit/aea8e428da6a930a649470171407cb3823240836)) - MRDGH2821
+
+### Build
+
+- **(mise)** update versions - ([a133e21](https://github.com/MRDGH2821/copier-mr-mise/commit/a133e214b2e59cda80b43222b0fdd4a0dc24fc2f)) - MRDGH2821
+
+---
+
 ## [0.26.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.25.2..v0.26.0) - 2026-11-11
 
 ### Bug Fixes
