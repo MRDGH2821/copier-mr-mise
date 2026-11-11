@@ -11,7 +11,7 @@ project intends a public release. This keeps `main` protected and preserves the
 tagged bump commit as an ancestor when using a merge commit. GitHub protection
 rules can require PRs and disallow force pushes, while merge methods determine
 commit identity/history
-([CONTRIBUTING.md](../../CONTRIBUTING.md#L22-L28),
+([CONTRIBUTING.md](../../CONTRIBUTING.md#branch-naming-strategy),
 [GitHub protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches),
 [GitHub merge methods](https://docs.github.com/en/pull-requests/reference/pull-request-merges)).
 
@@ -34,7 +34,7 @@ Do **not** assume every PR uses a merge commit. The observed merge commit for PR
   Release ([same hook](../../cog.toml#L9-L10);
   [Cocogitto post-bump hooks](https://docs.cocogitto.io/guide/bump.html#post-bump-hooks)).
 - Cocogitto is configured to ignore merge commits for bump analysis. Therefore release-driving commit types should remain visible in non-merge commits that Cocogitto sees; for squash-based PRs, use an intentional Conventional Commit squash title/message ([`cog.toml`](../../cog.toml#L7-L8); [Cocogitto bump guide](https://docs.cocogitto.io/guide/bump.html#auto-bump-commit-types)).
-- Contribution instructions require PRs in the repo's development flow and prescribe branch names in the form `<username>/<work type>/<work name>` for agents; they also require Conventional Commit messages ([`CONTRIBUTING.md`](../../CONTRIBUTING.md#L50-L73), [`CONTRIBUTING.md`](../../CONTRIBUTING.md#L144-L163), [`CONTRIBUTING.md`](../../CONTRIBUTING.md#L165-L177)).
+- Contribution instructions require PRs in the repo's development flow and prescribe branch names in the form `<username>/<work type>/<work name>` for agents; they also require Conventional Commit messages ([`CONTRIBUTING.md`](../../CONTRIBUTING.md#branch-naming-strategy), [`CONTRIBUTING.md`](../../CONTRIBUTING.md#commit-messages)).
 
 ## What `cog bump` does
 
@@ -74,7 +74,7 @@ mark a breaking change
 ## Recommended safe release sequence
 
 1. **Finish and merge product changes first.** Land feature/fix PRs to `main` through the repository's required review/check process. This lets the release bump be calculated against the integrated history rather than an unmerged feature branch; protected branch rules can require changes to reach the branch through PRs ([GitHub protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)).
-2. **Create a release PR branch from current `main`.** Use the repo's branch pattern, e.g. `<username>/chore/release-version`, and ensure the release PR is based on the current target branch ([`CONTRIBUTING.md`](../../CONTRIBUTING.md#L50-L73); [GitHub protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)).
+2. **Create a release PR branch from current `main`.** Use the repo's branch pattern, e.g. `<username>/chore/release-version`, and ensure the release PR is based on the current target branch ([`CONTRIBUTING.md`](../../CONTRIBUTING.md#branch-naming-strategy); [GitHub protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches)).
 3. **Preview, then bump.** Run `cog bump --auto --dry-run`; review whether the calculated increment matches the changes. Then run `cog bump --auto` on that branch. Cocogitto's pre-hooks update package version/changelog, its configured bump commit records them, and the signed-tag hook runs locally ([`cog.toml`](../../cog.toml#L1-L17); [Cocogitto bump guide](https://docs.cocogitto.io/guide/bump.html)).
 4. **Inspect the release PR.** Confirm `package.json` version, `CHANGELOG.md` content, the generated bump commit, and expected signed local tag name/target. The release PR transports file edits and commits to `main`; the tag still needs to target the commit object that actually lands on `main` ([GitHub merge methods](https://docs.github.com/en/pull-requests/reference/pull-request-merges)).
 5. **Merge using a method compatible with the local tag.** Prefer a merge
