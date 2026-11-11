@@ -3,6 +3,7 @@
   "version": "0.25.2",
   "license": "MIT",
   "scripts": {
+    "fmt": "oxfmt",
     "sync:mise": "bun .github/scripts/sync-mise-template.ts"
   },
   "devDependencies": {

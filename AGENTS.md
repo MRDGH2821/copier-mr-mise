@@ -2,124 +2,29 @@
 
 This file provides guidance for AI coding assistants working with this project.
 
-If none of the skills or tools specified in `.config/mise/config.toml` are available, run the following commands and alert the user to reload the agent.
+Before starting a task, verify that the skills required for it are available in
+the current session, every tool listed in `.config/mise/config.toml` is
+installed, and the MCP servers required for it are reachable through Capa MCP.
+Configuration alone does not prove availability.
 
-```sh
-mise trust
-mise install
-mise run prepare
-```
+If a required skill or MCP server is unavailable, or any configured mise tool is
+not installed:
 
-Refuse to do anything until `mise run prepare` has run atleast once and the agent is reloaded with the skills & MCP servers as specified in `capabilities.yaml`.
+1. Stop before doing task work and tell the user what is missing.
+2. Offer these recovery commands from the repository root:
+
+   ```sh
+   mise trust
+   mise install
+   mise run prepare
+   ```
+
+3. Wait for the user to complete setup and reload the agent session.
+4. After reload, verify availability again. Continue only when the required
+   skills are visible, every configured mise tool is installed, and the
+   required MCP servers are reachable.
+
 MCP servers should be accessible via Capa MCP.
-
-<!-- capa:start:rule:engineering -->
-## Engineering Guidelines
-
-- Explain the intended change, state material assumptions, and clarify ambiguous requirements.
-- Read the relevant code and configuration before editing; reuse existing functionality.
-- Inspect the working tree and preserve changes made by the user or other agents.
-- Match existing style and keep every changed line within the requested scope.
-- Define how to verify the change, run the relevant checks, and review the final diff.
-- Report what changed, which checks ran, and any failures or checks you could not run.
-<!-- capa:end:rule:engineering -->
-
-<!-- capa:start:rule:commits -->
-## Commit policy
-
-### Branch naming strategy
-
-Before creating a branch, follow the branch naming strategy in the project-root
-`CONTRIBUTING.md` (`#branch-naming-strategy`).
-
-### Commit Messages
-
-Every commit MUST be atomic (one logical change), and every commit message MUST use Conventional Commits format: `<type>(<scope>): <description>`.
-Consult `cog.toml` for valid scopes and release hooks; it is the source of truth.
-
-Version bumps use cocogitto (`cog bump`). Inspect the configured hooks before
-running a release command.
-<!-- capa:end:rule:commits -->
-
-<!-- capa:start:__base__ -->
-## Agent instruction sources
-
-Edit this file for shared guidance. Use other files in
-`.config/capabilities/instructions/` for project-specific context and
-`.config/capabilities/rules/` for shared policies.
-
-After editing these sources, run `mise run ai-setup` when `capabilities.yaml`
-exists. Otherwise, keep corresponding `AGENTS.md` sections in sync. Keep
-editable sources outside `.agents/rules/`; Capa prunes that generated directory.
-
-### Conditional guidance
-
-Read the relevant rule before acting:
-
-- Branching or committing: `.config/capabilities/rules/commits.md`.
-- For an AI-assisted commit, also read `.config/capabilities/rules/ai-co-author.md`.
-- Recording AI-assisted work: `.config/capabilities/rules/ai-logs.md`.
-- Reviewing on behalf of a human: `.config/capabilities/rules/ai-reviews.md`.
-- Using mise or hk, or running project checks: `.config/capabilities/rules/tooling.md`.
-
-### Dependencies
-
-Prefer lightweight, cross-platform dependencies. Use the project's package
-manager, update relevant configuration and lockfiles, and document installation.
-
-### Verification and documentation
-
-If no relevant test or check exists, verify behavior directly. Update
-documentation when setup or behavior changes.
-<!-- capa:end:__base__ -->
-
-<!-- capa:start:repository-context -->
-## Copier Template Repository context
-
-### Project Context
-
-- **Project**: `copier-mr-mise` — Copier 9+ template for MRDGH2821 projects
-- **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, cspell, and optional AGENTS.md / capa skills
-- **Usage**: `copier copy gh:MRDGH2821/copier-mr-mise "/path/to/folder"` then later `copier update`
-
-This repository is the **template**, not a generated project. Generated files live under `template/` (`_subdirectory: template` in `copier.yml`).
-
-### Template repository layout
-
-| Path                                | Purpose                                       |
-| ----------------------------------- | --------------------------------------------- |
-| `copier.yml`                        | Copier questions, exclusions, post-copy tasks |
-| `template/`                         | Files copied into generated projects          |
-| `.github/workflows/mega-linter.yml` | MegaLinter CI configuration                   |
-
-### Copier maintenance
-
-Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
-Keep common policies in `.config/capabilities/rules/` and `template/.config/capabilities/rules/` aligned; keep Copier maintenance instructions in `.config/capabilities/instructions/repository.md`.
-
-**Jinja templates** (do not break Copier syntax): `template/AGENTS.md.jinja`, `template/CLAUDE.md.jinja`, `template/README.md.jinja`, `template/package.json.jinja`, `template/capabilities.yaml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
-
-**Copier answers** (`copier.yml`): `project_name`, `ci` (`github`, `gitlab`, or `forgejo`), `use_ai`, and `use_taste_skill` (available only when `use_ai` is enabled). Post-copy checks mise; `lic` runs on copy; Capa installs managed agent files and skills from `capabilities.yaml`.
-
-**Template syntax errors:**
-
-- Ensure Jinja / Copier syntax is valid before committing
-- Check for missing closing tags or brackets
-- Test with `copier copy` into a throwaway directory when changing `copier.yml` or `template/`
-
-#### Before changing the template
-
-1. Consider impact on users who will generate projects from this template
-2. If the file also exists under `template/`, update both (including `template/.config/capabilities/` when changing these instructions)
-
-#### Dependency configuration
-
-- Update relevant configuration files in **root and** `template/`
-
-#### Template validation
-
-- Test template rendering with Copier when template files change
-<!-- capa:end:repository-context -->
 
 <!-- capa:start:rule:karpathy-guidelines -->
 ---
@@ -194,6 +99,53 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 <!-- capa:end:rule:karpathy-guidelines -->
 
+<!-- capa:start:rule:engineering -->
+## Engineering Guidelines
+
+- Explain the intended change, state material assumptions, and clarify ambiguous requirements.
+- Read the relevant code and configuration before editing; reuse existing functionality.
+- Inspect the working tree and preserve changes made by the user or other agents.
+- Match existing style and keep every changed line within the requested scope.
+- Define how to verify the change, run the relevant checks, and review the final diff.
+- Report what changed, which checks ran, and any failures or checks you could not run.
+<!-- capa:end:rule:engineering -->
+
+<!-- capa:start:rule:commits -->
+## Commit policy
+
+### Branch naming strategy
+
+Before creating a branch, follow the branch naming strategy in the project-root
+`CONTRIBUTING.md` (`#branch-naming-strategy`).
+
+Before creating a pull or merge request, check whether the branch has an open
+request and whether its name follows the branch-naming strategy.
+
+- If an open request already exists, leave the branch name unchanged and notify
+  the user if it does not comply.
+- Treat common names such as `main`, `master`, and release branches as
+  protected. Leave protected branches unchanged and ask the user how to proceed.
+- For other branches, check remote protection. If protection cannot be
+  determined, ask the user rather than assume the branch is unprotected.
+- For an unprotected, non-compliant branch without an open request, propose a
+  compliant name and wait for approval. If declined, stop unless the user
+  explicitly authorizes an exception.
+- For a pushed branch, explain that a native remote rename removes the old
+  remote name and ask for approval before using it. After approval, use a native
+  rename when available and update the local branch and upstream.
+- If native remote rename is unavailable, propose pushing the new name while
+  retaining the old remote branch. Obtain separate approval before deleting the
+  old remote branch.
+
+### Commit Messages
+
+Every commit MUST be atomic (one logical change), and every commit message MUST use Conventional Commits format: `<type>(<scope>): <description>`.
+Consult `cog.toml` for valid scopes and release hooks; it is the source of truth.
+
+Version bumps use cocogitto (`cog bump`). Inspect the configured hooks before
+running a release command.
+<!-- capa:end:rule:commits -->
+
 <!-- capa:start:rule:ai-artifacts -->
 ## AI-generated artifact locations
 
@@ -201,3 +153,99 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 - If the plugin instead stores artifacts in a repository-root directory, move/use `.agents/<plugin-id>/` (for example, move `paad/` to `.agents/paad/`).
 - For other AI-generated artifacts, use `.agents/<artifact-type>/`, such as `.agents/logs/` for AI work logs or `.agents/research/` for research.
 <!-- capa:end:rule:ai-artifacts -->
+
+<!-- capa:start:__base__ -->
+## Agent instruction sources
+
+Edit this file for shared guidance. Use other files in
+`.config/capabilities/instructions/` for project-specific context and
+`.config/capabilities/rules/` for shared policies.
+
+After editing these sources, run `mise run ai-setup` when `capabilities.yaml`
+exists. Otherwise, keep corresponding `AGENTS.md` sections in sync. Keep
+editable sources outside `.agents/rules/`; Capa prunes that generated directory.
+
+### Conditional guidance
+
+Read the relevant rule before acting:
+
+- Branching, committing, or creating a pull request: `.config/capabilities/rules/commits.md`.
+- For an AI-assisted commit, also read `.config/capabilities/rules/ai-co-author.md`.
+- Recording AI-assisted work: `.config/capabilities/rules/ai-logs.md`.
+- Reviewing on behalf of a human: `.config/capabilities/rules/ai-reviews.md`.
+- Using mise or hk, or running project checks: `.config/capabilities/rules/tooling.md`.
+
+### Dependencies
+
+Prefer lightweight, cross-platform dependencies. Use the project's package
+manager, update relevant configuration and lockfiles, and document installation.
+
+### Verification and documentation
+
+If no relevant test or check exists, verify behavior directly. Update
+documentation when setup or behavior changes.
+<!-- capa:end:__base__ -->
+
+<!-- capa:start:repository-context -->
+## Copier Template Repository context
+
+### Project Context
+
+- **Project**: `copier-mr-mise` — Copier 9+ template for MRDGH2821 projects
+- **Purpose**: Scaffold new repos with mise tools, hk git hooks, MegaLinter, cspell, and optional AGENTS.md / capa skills
+- **Usage**: `copier copy gh:MRDGH2821/copier-mr-mise "/path/to/folder"` then later `copier update`
+
+This repository is the **template**, not a generated project. Generated files live under `template/` (`_subdirectory: template` in `copier.yml`).
+
+### Template repository layout
+
+| Path                                | Purpose                                       |
+| ----------------------------------- | --------------------------------------------- |
+| `copier.yml`                        | Copier questions, exclusions, post-copy tasks |
+| `template/`                         | Files copied into generated projects          |
+| `.github/workflows/mega-linter.yml` | MegaLinter CI configuration                   |
+
+### Copier maintenance
+
+Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
+Keep common policies in `.config/capabilities/rules/` and `template/.config/capabilities/rules/` aligned; keep Copier maintenance instructions in `.config/capabilities/instructions/repository.md`.
+
+**Jinja templates** (do not break Copier syntax): `template/AGENTS.md.jinja`, `template/CLAUDE.md.jinja`, `template/README.md.jinja`, `template/package.json.jinja`, `template/capabilities.yaml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
+
+**Copier answers** (`copier.yml`): `project_name`, `ci` (`github`, `gitlab`, or `forgejo`), `use_ai`, and `use_taste_skill` (available only when `use_ai` is enabled). Post-copy checks mise; `lic` runs on copy; Capa installs managed agent files and skills from `capabilities.yaml`.
+
+**Template syntax errors:**
+
+- Ensure Jinja / Copier syntax is valid before committing
+- Check for missing closing tags or brackets
+- Test with `copier copy` into a throwaway directory when changing `copier.yml` or `template/`
+
+#### Before changing the template
+
+1. Consider impact on users who will generate projects from this template
+2. If the file also exists under `template/`, update both (including `template/.config/capabilities/` when changing these instructions)
+
+#### Dependency configuration
+
+- Update relevant configuration files in **root and** `template/`
+
+#### Template validation
+
+- Test template rendering with Copier when template files change
+<!-- capa:end:repository-context -->
+
+<!-- capa:start:agent-skills -->
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues is the issue tracker. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the default triage labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Use a single-context glossary and ADR layout. See `docs/agents/domain.md`.
+<!-- capa:end:agent-skills -->

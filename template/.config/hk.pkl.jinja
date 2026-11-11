@@ -1,7 +1,8 @@
-amends "package://github.com/jdx/hk/releases/download/v2.11.1/hk@2.11.1#/Config.pkl"
+amends "package://github.com/jdx/hk/releases/download/v2.12.0/hk@2.12.0#/Config.pkl"
 
-import "package://github.com/jdx/hk/releases/download/v2.11.1/hk@2.11.1#/Builtins.pkl"
+import "package://github.com/jdx/hk/releases/download/v2.12.0/hk@2.12.0#/Builtins.pkl"
 
+{% raw %}
 local sorters = new Group {
   steps {
     ["cspell-sort"] {
@@ -104,6 +105,15 @@ local linters = new Mapping<String, Step> {
   ["newlines"] = Builtins.newlines
   ["mixed_line_ending"] = Builtins.mixed_line_ending
 
+{% endraw %}{% if use_taste_skill %}
+{% raw %}
+  // Design
+  ["design.md"] {
+    check = "designmd lint {{ files }}"
+    glob = List("DESIGN.md", "**/DESIGN.md")
+  }
+{% endraw %}{% endif %}{% raw %}
+
   // Spell Check
   ["cspell"] {
     check = "cspell --no-must-find-files --no-progress --no-summary --gitignore --files {{files}}"
@@ -127,6 +137,7 @@ exclude =
   )
 
 steps = new Mapping<String, Step | Group> {
+  ["no_commit_to_branch"] = Builtins.no_commit_to_branch
   ["sorters"] = sorters
   ...linters
   // AIO
@@ -146,3 +157,4 @@ hooks {
     }
   }
 }
+{% endraw %}
