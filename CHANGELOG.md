@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.26.3](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.26.2..v0.26.3) - 2026-11-11
+
+### Bug Fixes
+
+- clarify Capa MCP availability checks - ([e424a7a](https://github.com/MRDGH2821/copier-mr-mise/commit/e424a7a19c5282b48431defc287c3c448d73a19a)) - MRDGH2821
+
+### Documentation
+
+- clarify Capa MCP tool checks - ([5fad680](https://github.com/MRDGH2821/copier-mr-mise/commit/5fad680a34893a9ba580efb68deac1e034dc0f6f)) - MRDGH2821
+
+### Style
+
+- add final newline - ([fad1968](https://github.com/MRDGH2821/copier-mr-mise/commit/fad1968410c752dd2ddbae5ae069ca2fe85c9706)) - MRDGH2821
+
+---
+
 ## [0.26.2](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.26.1..v0.26.2) - 2026-11-11
 
 ### Bug Fixes
