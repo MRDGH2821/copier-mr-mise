@@ -2,23 +2,32 @@
 
 This file provides guidance for AI coding assistants working with this project.
 
-Before starting, identify the skills, mise tools, and MCP tools this task needs.
-Check only those dependencies; an unrelated missing skill, tool, or server must
-not block the task.
+## Check task dependencies
 
-For MCP dependencies managed by Capa, use the Capa MCP tools exposed in the
-current session. This project uses `toolExposure: search`, so discover upstream
-tools with Capa's `search` tool and invoke them with `call_tool`. A successful
-call verifies the capability needed for the task. Do not infer server health
-from `.mcp.json`, the absence of a direct upstream tool, or a shell request to
-the local Capa URL; agent runtimes may isolate loopback networking.
+Identify the skills, mise tools, and MCP tools this task needs. Check only those
+dependencies. Missing unrelated tools must not block the task.
 
-If a required tool is not exposed or its call fails, report the check and say
-the capability is unavailable from this session. That does not establish that
-the Capa service or upstream server is stopped. Continue work that does not
-depend on it, and stop only the part that cannot proceed without it. Recommend
-`mise trust`, `mise install`, and `mise run prepare` only when setup is the
-identified cause of a required dependency being unavailable.
+### Check Capa MCP
+
+This project uses `toolExposure: search`. Capa exposes `search` and `call_tool`;
+upstream tools are discovered on demand and may not appear by their own names.
+
+1. Call Capa `search` with the task, server, or tool name.
+2. If search returns a matching tool, Capa MCP is reachable and the tool is
+   registered. Use `call_tool` to run the task's operation.
+3. If search responds but finds no match, Capa MCP is reachable, but the tool
+   was not found. Search by its configured name or description before reporting
+   it unavailable.
+4. If `search` is missing or fails before returning results, report that Capa
+   MCP is unavailable in this agent session. This does not prove the Capa
+   service is stopped.
+5. If `call_tool` fails, report the tool and exact error. Do not claim the
+   server is down unless the error confirms that.
+
+Do not probe the local Capa URL with shell `curl`; the shell may not share the
+agent's network. Continue work that does not need the unavailable capability.
+Recommend `mise trust`, `mise install`, or `mise run prepare` only when setup is
+the confirmed cause of a required dependency being unavailable.
 
 <!-- capa:start:rule:karpathy-guidelines -->
 ---
