@@ -4,6 +4,56 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.26.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.25.2..v0.26.0) - 2026-11-11
+
+### Bug Fixes
+
+- remove redundant docs from template - ([5d8e62b](https://github.com/MRDGH2821/copier-mr-mise/commit/5d8e62b1b64138eccd56fc1820a7265540a5569e)) - MRDGH2821
+
+### Documentation
+
+- **(copier)** correct agent instruction placement - ([74ff944](https://github.com/MRDGH2821/copier-mr-mise/commit/74ff944fd7d9be94fada1c894a0ef2e5c16e1017)) - MRDGH2821
+- **(copier)** clarify branch rename approval - ([f119afc](https://github.com/MRDGH2821/copier-mr-mise/commit/f119afcf4c0a432e05f4a12e023fc535fb2172a8)) - MRDGH2821
+- gate work on installed capabilities - ([cdf0828](https://github.com/MRDGH2821/copier-mr-mise/commit/cdf0828175ac66668f877c5c752220ab7593f511)) - MRDGH2821
+- configure engineering skill guidance - ([de240ea](https://github.com/MRDGH2821/copier-mr-mise/commit/de240ea2536d4e5759eb13e889985a6cb480a7f3)) - MRDGH2821
+- check branch naming before PR creation - ([5fefeec](https://github.com/MRDGH2821/copier-mr-mise/commit/5fefeeca351cbd2d0ac2bd48b198649cf3f57099)) - MRDGH2821
+- refresh plugin compatibility research - ([4bdb039](https://github.com/MRDGH2821/copier-mr-mise/commit/4bdb039962048d46055661f78f8093ce35b05d6a)) - MRDGH2821
+- standardize AI log entries - ([ea8029b](https://github.com/MRDGH2821/copier-mr-mise/commit/ea8029ba6c8c84f00bdefa619f141a71830c364f)) - MRDGH2821
+- add version bumping guidance - ([530e2f0](https://github.com/MRDGH2821/copier-mr-mise/commit/530e2f00020db07caf297447c762fcb3652863fd)) - MRDGH2821
+
+### Features
+
+- **(copier)** add conditional UI design guidance - ([63faf0f](https://github.com/MRDGH2821/copier-mr-mise/commit/63faf0f1c3c4fb7d6a5df71f5715b1ca2d4361ad)) - MRDGH2821
+- **(copier)** conditionally add DESIGN.md linting - ([2105d4b](https://github.com/MRDGH2821/copier-mr-mise/commit/2105d4bddc0ed446ccda11ac9cf07c3f51457995)) - MRDGH2821
+- **(hk)** add branch protection hook - ([de7f212](https://github.com/MRDGH2821/copier-mr-mise/commit/de7f2120f5340e6138ae761052ba52cc786b5e75)) - MRDGH2821
+- update ai plugins - ([7bfe22d](https://github.com/MRDGH2821/copier-mr-mise/commit/7bfe22de043b405981b518ce117d5d8040bcf0ad)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update words - ([45d2a2f](https://github.com/MRDGH2821/copier-mr-mise/commit/45d2a2f0970758cceda2885396e1a2ab83b1aae0)) - MRDGH2821
+- **(cspell)** update words - ([ecc2e65](https://github.com/MRDGH2821/copier-mr-mise/commit/ecc2e65da1b2055fa9401a8821d806b3fba1c998)) - MRDGH2821
+- **(hk)** sync with template - ([269a088](https://github.com/MRDGH2821/copier-mr-mise/commit/269a08897273b90714165e6684bbc69d5ffa8ee5)) - MRDGH2821
+- **(megalinter)** add post lint formatting - ([f14dffe](https://github.com/MRDGH2821/copier-mr-mise/commit/f14dffe8dab468e6cda90c25835c726a05b55d13)) - MRDGH2821
+- update ai setup - ([24a98b7](https://github.com/MRDGH2821/copier-mr-mise/commit/24a98b7a2fcba3b8ae05433067e6f8913cc3fc3b)) - MRDGH2821
+- ignore cspell file - ([12f822b](https://github.com/MRDGH2821/copier-mr-mise/commit/12f822bc45069f126f02855d4de144d15c6aa15e)) - MRDGH2821
+- add format script - ([00d70cc](https://github.com/MRDGH2821/copier-mr-mise/commit/00d70ccce03776ab5461e620164b4be88e46b6ef)) - MRDGH2821
+- ignore reddit links - ([10e0f5f](https://github.com/MRDGH2821/copier-mr-mise/commit/10e0f5faafe34690af29d28711160ccac1a052b5)) - MRDGH2821
+- merge pull request #29 from MRDGH2821/dev - ([9216c91](https://github.com/MRDGH2821/copier-mr-mise/commit/9216c915c88f86cb3753d217f74607d76ce977ff)) - Mihir Rabade
+
+### Refactoring
+
+- **(megalinter)** move into .config - ([678f06e](https://github.com/MRDGH2821/copier-mr-mise/commit/678f06ec83aa0fb6d7cdc588f95771562a2190b8)) - MRDGH2821
+
+### Build
+
+- **(mise)** update versions - ([20ba643](https://github.com/MRDGH2821/copier-mr-mise/commit/20ba6439118c729bb68af86b05a68967ccacfb55)) - MRDGH2821
+
+### Ci
+
+- update versions - ([c3e431c](https://github.com/MRDGH2821/copier-mr-mise/commit/c3e431c5795084177ed55eac0243decbe595346e)) - MRDGH2821
+
+---
+
 ## [0.25.2](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.25.1..v0.25.2) - 2026-11-08
 
 ### Bug Fixes
