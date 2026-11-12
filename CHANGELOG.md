@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.26.4](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.26.3..v0.26.4) - 2026-11-12
+
+### Documentation
+
+- **(copier)** simplify shared branch policy - ([1aa703e](https://github.com/MRDGH2821/copier-mr-mise/commit/1aa703efd94df9f1a9f52377c529fe344b432fc7)) - MRDGH2821
+
+---
+
 ## [0.26.3](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.26.2..v0.26.3) - 2026-11-11
 
 ### Bug Fixes
