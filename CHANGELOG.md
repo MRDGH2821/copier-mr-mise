@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.27.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.26.4..v0.27.0) - 2026-11-14
+
+### Features
+
+- **(hk)** allow no files on keep-sorted - ([0dc7733](https://github.com/MRDGH2821/copier-mr-mise/commit/0dc773382014152a03cc61740c51d37d20c8bdd5)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- sync configs - ([9065b0c](https://github.com/MRDGH2821/copier-mr-mise/commit/9065b0c5a91f6f8a38833076b2a632b72c3b209a)) - MRDGH2821
+
+### Build
+
+- **(mise)** update versions - ([e9f56dc](https://github.com/MRDGH2821/copier-mr-mise/commit/e9f56dc0f69dffe06bd483e9626f1255b9c38428)) - MRDGH2821
+
+---
+
 ## [0.26.4](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.26.3..v0.26.4) - 2026-11-12
 
 ### Documentation
