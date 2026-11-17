@@ -133,6 +133,85 @@ local spell_linters = new Group {
     ["typos"] = Builtins.typos
   }
 }
+
+local bun_fmt = new Step {
+  check = new Command {
+    argv =
+      List(
+        "bun",
+        "fmt",
+        "--check",
+        "--no-error-on-unmatched-pattern",
+        "--log-level=silent",
+        "{{files}}",
+      )
+  }
+  check_list_files = new Command {
+    argv =
+      List(
+        "bun",
+        "fmt",
+        "--list-different",
+        "--log-level=silent",
+        "{{files}}",
+      )
+  }
+  fix = new Command {
+    argv =
+      List(
+        "bun",
+        "fmt",
+        "--no-error-on-unmatched-pattern",
+        "--log-level=silent",
+        "{{files}}",
+      )
+  }
+  depends = "keep-sorted"
+  exclusive = true
+  glob =
+    List(
+      // JS/TS
+      "**/*.js",
+      "**/*.mjs",
+      "**/*.cjs",
+      "**/*.ts",
+      "**/*.mts",
+      "**/*.cts",
+      // React
+      "**/*.jsx",
+      "**/*.tsx",
+      "**/*.mdx",
+      // Frontend Frameworks
+      "**/*.vue",
+      "**/*.svelte",
+      // JSON
+      "**/*.json",
+      "**/*.jsonc",
+      "**/*.json5",
+      // YAML
+      "**/*.yaml",
+      "**/*.yml",
+      // TOML
+      "**/*.toml",
+      // Markdown
+      "**/*.md",
+      "**/*.markdown",
+      // HTML
+      "**/*.html",
+      "**/*.htm",
+      // CSS
+      "**/*.css",
+      "**/*.scss",
+      "**/*.less",
+      // GraphQL
+      "**/*.graphql",
+      "**/*.gql",
+      // Handlebars
+      "**/*.handlebars",
+      "**/*.hbs",
+    )
+}
+
 exclude =
   List(
     // keep-sorted start
@@ -157,7 +236,7 @@ steps = new Mapping<String, Step | Group> {
   ["misc"] = misc_linters
   ["secrets"] = secret_linters
   ["spell"] = spell_linters
-  ["oxfmt"] = (Builtins.oxfmt) { depends = "keep-sorted"; exclusive = true }
+  ["bun_fmt"] = bun_fmt
 }
 
 hooks {
