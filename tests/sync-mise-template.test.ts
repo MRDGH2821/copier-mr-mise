@@ -1,7 +1,7 @@
 import { expect, test } from "bun:test";
 import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { resolve, join } from "node:path";
+import { join, resolve } from "node:path";
 
 test("syncs CI-specific CLI versions into the template pins", async () => {
   const root = await mkdtemp(join(tmpdir(), "sync-mise-template-"));
