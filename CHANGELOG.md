@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.28.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.27.0..v0.28.0) - 2026-11-17
+
+### Bug Fixes
+
+- **(hk)** move hook to pre-commit & pre-push - ([e0afbf9](https://github.com/MRDGH2821/copier-mr-mise/commit/e0afbf99c3f04258f9480cc702fcd81d42724054)) - MRDGH2821
+- ignore kiro agent folder - ([255a0d1](https://github.com/MRDGH2821/copier-mr-mise/commit/255a0d186efc0176f91f194c85c735aa9bba5451)) - MRDGH2821
+
+### Features
+
+- migrate oxfmt settings to bunfig - ([016cdaa](https://github.com/MRDGH2821/copier-mr-mise/commit/016cdaae152b71290448733265091e890c27739e)) - MRDGH2821
+
+### Style
+
+- format files - ([1e6565d](https://github.com/MRDGH2821/copier-mr-mise/commit/1e6565d82294a3851e4d9ca0b0682c23b596a8c5)) - MRDGH2821
+
+### Build
+
+- **(mise)** update versions - ([b50fa40](https://github.com/MRDGH2821/copier-mr-mise/commit/b50fa40b975006520611e56b30acdd0a915d87c7)) - MRDGH2821
+
+### Ci
+
+- update actions - ([a1ef37e](https://github.com/MRDGH2821/copier-mr-mise/commit/a1ef37ec40fcc253a89bd8f7d0b5e0aac8dc8abb)) - MRDGH2821
+
+---
+
 ## [0.27.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.26.4..v0.27.0) - 2026-11-14
 
 ### Features
