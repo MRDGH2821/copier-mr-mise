@@ -143,7 +143,6 @@ exclude =
   )
 
 steps = new Mapping<String, Step | Group> {
-  ["no_commit_to_branch"] = Builtins.no_commit_to_branch
   ["sorters"] = sorters
   ["config"] = config_linters
   ["style"] = style_linters
@@ -155,6 +154,16 @@ steps = new Mapping<String, Step | Group> {
 }
 
 hooks {
+  ["pre-commit"] {
+    steps {
+      ["no_commit_to_branch"] = Builtins.no_commit_to_branch
+    }
+  }
+  ["pre-push"] {
+    steps {
+      ["no_commit_to_branch"] = Builtins.no_commit_to_branch
+    }
+  }
   ["commit-msg"] {
     steps {
       ["check_conventional_commit"] = Builtins.check_conventional_commit
