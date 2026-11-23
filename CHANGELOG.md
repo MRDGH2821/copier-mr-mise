@@ -4,6 +4,48 @@ All notable changes to this project will be documented in this file. See [conven
 
 ---
 
+## [0.29.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.28.0..v0.29.0) - 2026-11-23
+
+### Bug Fixes
+
+- **(github)** correct shellcheck assignment - ([7205100](https://github.com/MRDGH2821/copier-mr-mise/commit/72051006eea4b8c5ff1b15d3667b6fa44d988706)) - MRDGH2821
+- **(megalinter)** ignore Reddit www links - ([eb9c0b2](https://github.com/MRDGH2821/copier-mr-mise/commit/eb9c0b2cc798faac67780499f93a4f7e4403685c)) - MRDGH2821
+- remove comma - ([17367c0](https://github.com/MRDGH2821/copier-mr-mise/commit/17367c0261de44c83277600de7b45fa2be4013ed)) - MRDGH2821
+- ensure capa server is started - ([f44d209](https://github.com/MRDGH2821/copier-mr-mise/commit/f44d20927b0d4f58649bbd0318b79b6101bf5c65)) - MRDGH2821
+
+### Documentation
+
+- **(copier)** extend AI attribution guidance - ([d5feaf9](https://github.com/MRDGH2821/copier-mr-mise/commit/d5feaf934351709a382f4046e1fb3a4697dec10e)) - MRDGH2821
+- **(copier)** rename AI attribution rule - ([85cd62a](https://github.com/MRDGH2821/copier-mr-mise/commit/85cd62aabbefaf81795e06ca38a55f254a135344)) - MRDGH2821
+- **(megalinter)** research container image caching - ([1d753aa](https://github.com/MRDGH2821/copier-mr-mise/commit/1d753aa8e9d9aa8480e513c14d7edffdaa8b17d9)) - MRDGH2821
+
+### Features
+
+- **(copier)** add tag message skill - ([10f61e8](https://github.com/MRDGH2821/copier-mr-mise/commit/10f61e83cb78e1b3d7ec9ef114196e8b08aabd6c)) - MRDGH2821
+- **(github)** add template comparison script - ([695f9a0](https://github.com/MRDGH2821/copier-mr-mise/commit/695f9a0181888ba9de794c3c31b6617737def91c)) - MRDGH2821
+
+### Miscellaneous Chores
+
+- **(cspell)** update words - ([26c4ca6](https://github.com/MRDGH2821/copier-mr-mise/commit/26c4ca636a2cd364123df587ca57a466a588e317)) - MRDGH2821
+- merge pull request #31 from MRDGH2821/chore/release - ([7afefbb](https://github.com/MRDGH2821/copier-mr-mise/commit/7afefbb5f67e6fcf2d282dd31aebcbd018a25c1c)) - Mihir Rabade
+
+### Style
+
+- add final newline - ([c3cfbbc](https://github.com/MRDGH2821/copier-mr-mise/commit/c3cfbbcdb877acdc2a95503f114a0b5f09c5fa66)) - MRDGH2821
+
+### Build
+
+- **(mise)** update tools - ([a4cc4e4](https://github.com/MRDGH2821/copier-mr-mise/commit/a4cc4e428db57bda11ed7287b77ca87b23d47c08)) - MRDGH2821
+
+### Ci
+
+- **(megalinter)** update ref - ([eee1376](https://github.com/MRDGH2821/copier-mr-mise/commit/eee13765d8beb6de8dfc4a7123550a001e3769c4)) - MRDGH2821
+- update refs - ([e3d5ba5](https://github.com/MRDGH2821/copier-mr-mise/commit/e3d5ba58a193ea19f99a43744e5c614bf330c00a)) - MRDGH2821
+- use mise container images - ([87f8b62](https://github.com/MRDGH2821/copier-mr-mise/commit/87f8b628b016a9dcabfd7739bf024a4fa3329499)) - MRDGH2821
+- unpin container image - ([e9342bd](https://github.com/MRDGH2821/copier-mr-mise/commit/e9342bd25de54c9f094e1960831005afd2e4bf20)) - MRDGH2821
+
+---
+
 ## [0.28.0](https://github.com/MRDGH2821/copier-mr-mise/compare/v0.27.0..v0.28.0) - 2026-11-17
 
 ### Bug Fixes
