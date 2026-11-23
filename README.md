@@ -26,6 +26,14 @@ Copier will warn you about scripts. Review them in [copier.yml](./copier.yml)
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, checks, and template validation.
 
+To compare the repository root with the template, run:
+
+```sh
+sh .github/scripts/diff-template.sh
+```
+
+The command lists files unique to either directory and matching files that differ, without showing their contents. It excludes the template directory itself, Git metadata, dependencies, worktrees, and local tool caches. Like `diff`, it exits with status 1 when differences are found.
+
 ## License
 
 [MIT](./LICENCE.txt)

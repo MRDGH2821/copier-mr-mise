@@ -178,7 +178,7 @@ editable sources outside `.agents/rules/`; Capa prunes that generated directory.
 Read the relevant rule before acting:
 
 - Branching, committing, or creating a pull request: `.config/capabilities/rules/commits.md`.
-- For an AI-assisted commit, also read `.config/capabilities/rules/ai-co-author.md`.
+- Committing or publishing or editing reviews, pull requests, issues, or comments: `.config/capabilities/rules/ai-attribution.md`.
 - Recording AI-assisted work: `.config/capabilities/rules/ai-logs.md`.
 - Reviewing on behalf of a human: `.config/capabilities/rules/ai-reviews.md`.
 - Using mise or hk, or running project checks: `.config/capabilities/rules/tooling.md`.
@@ -205,6 +205,9 @@ documentation when setup or behavior changes.
 
 This repository is the **template**, not a generated project. Generated files live under `template/` (`_subdirectory: template` in `copier.yml`).
 
+When shared instructions refer to `.config/capabilities/rules/`, read the corresponding files under `template/.config/capabilities/rules/` in this repository.
+Generated projects use the paths as written.
+
 ### Template repository layout
 
 | Path                                | Purpose                                       |
@@ -216,7 +219,7 @@ This repository is the **template**, not a generated project. Generated files li
 ### Copier maintenance
 
 Many tooling files exist at the **root** (this repo) **and** under `template/` (generated projects). When you change a shared config, update both copies.
-Keep common policies in `.config/capabilities/rules/` and `template/.config/capabilities/rules/` aligned; keep Copier maintenance instructions in `.config/capabilities/instructions/repository.md`.
+Keep shared policies in `template/.config/capabilities/rules/`; the root capabilities configuration uses them directly. Keep Copier maintenance instructions in `.config/capabilities/instructions/repository.md`.
 
 **Jinja templates** (do not break Copier syntax): `template/AGENTS.md.jinja`, `template/CLAUDE.md.jinja`, `template/README.md.jinja`, `template/package.json.jinja`, `template/capabilities.yaml.jinja`, `template/.v8rignore.jinja`, `template/{{_copier_conf.answers_file}}.jinja`.
 

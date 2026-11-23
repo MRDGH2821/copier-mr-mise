@@ -101,6 +101,30 @@ servers:
     type: mcp
 skills:
   - def:
+      content: |
+        ---
+        name: tag-message
+        description: Draft a brief annotated SemVer tag message from commits since the previous release tag. Use when asked for a tag message; do not create a tag.
+        ---
+
+        # Tag message
+
+        Find the nearest SemVer tag reachable from HEAD, including lightweight and
+        annotated tags. Accept an optional `v` prefix and valid SemVer prerelease
+        and build suffixes; exclude non-SemVer tags. A tag at HEAD is the previous
+        tag and means there are no new commits. If several SemVer tags point to
+        the nearest commit, use the highest SemVer precedence; if still ambiguous,
+        ask which tag to use. Do not rely on tag creation dates or Git glob
+        patterns as SemVer validation. If history or tags are incomplete, say so.
+
+        Read commits in `<previous-tag>..HEAD` and inspect changes when commit
+        messages are unclear. If no SemVer tag is reachable or the range has no
+        commits, report that and stop. Otherwise, output only a clear one- or
+        two-line annotation summarizing the most meaningful changes. Do not
+        create, modify, or push tags.
+    id: tag-message
+    type: inline
+  - def:
       description: Guide for managing capabilities with capa CLI
       repo: infragate/capa@capabilities-manager
     id: capabilities-manager
