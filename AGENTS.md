@@ -178,7 +178,7 @@ editable sources outside `.agents/rules/`; Capa prunes that generated directory.
 Read the relevant rule before acting:
 
 - Branching, committing, or creating a pull request: `.config/capabilities/rules/commits.md`.
-- Committing or publishing or editing reviews, pull requests, issues, or comments: `.config/capabilities/rules/ai-co-author.md`.
+- Committing or publishing or editing reviews, pull requests, issues, or comments: `.config/capabilities/rules/ai-attribution.md`.
 - Recording AI-assisted work: `.config/capabilities/rules/ai-logs.md`.
 - Reviewing on behalf of a human: `.config/capabilities/rules/ai-reviews.md`.
 - Using mise or hk, or running project checks: `.config/capabilities/rules/tooling.md`.
